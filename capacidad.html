@@ -372,6 +372,15 @@ header.top .seg { background: rgba(0, 0, 0, .18); }
 @media (max-width: 480px) { .resumen .ind { grid-template-columns: minmax(0, 1fr); } }
 .movil { display: none; margin: -4px 0 0; font-size: 13.5px; color: var(--muted); }
 @media (max-width: 600px) { .movil { display: block; } }
+/* v10: Incoterm en palabras */
+.incos .row.inco { width: 100%; border: 0; background: none; font: inherit; color: inherit; text-align: left; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 12px; }
+.incos .row.inco .l { font-size: 16px; }
+.incos .row.inco[aria-checked="true"] { background: var(--lab-soft); }
+.incos .row.inco[aria-checked="true"] .l { font-weight: 600; }
+.incos .row.inco .pill { min-width: 3.4em; justify-content: center; font-variant-numeric: tabular-nums; }
+.incos .row.inco .pill.you { background: var(--lab); color: #fff; }
+.incos .sug { color: var(--lab) !important; font-weight: 600; }
+.incos .row.inco:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: -3px; }
 
 </style>
 </head>

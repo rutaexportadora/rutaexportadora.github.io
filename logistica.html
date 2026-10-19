@@ -372,6 +372,15 @@ header.top .seg { background: rgba(0, 0, 0, .18); }
 @media (max-width: 480px) { .resumen .ind { grid-template-columns: minmax(0, 1fr); } }
 .movil { display: none; margin: -4px 0 0; font-size: 13.5px; color: var(--muted); }
 @media (max-width: 600px) { .movil { display: block; } }
+/* v10: Incoterm en palabras */
+.incos .row.inco { width: 100%; border: 0; background: none; font: inherit; color: inherit; text-align: left; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 12px; }
+.incos .row.inco .l { font-size: 16px; }
+.incos .row.inco[aria-checked="true"] { background: var(--lab-soft); }
+.incos .row.inco[aria-checked="true"] .l { font-weight: 600; }
+.incos .row.inco .pill { min-width: 3.4em; justify-content: center; font-variant-numeric: tabular-nums; }
+.incos .row.inco .pill.you { background: var(--lab); color: #fff; }
+.incos .sug { color: var(--lab) !important; font-weight: 600; }
+.incos .row.inco:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: -3px; }
 
 </style>
 </head>
@@ -412,15 +421,17 @@ header.top .seg { background: rgba(0, 0, 0, .18); }
 </section>
 
 <section class="panel" id="despacho" data-lab="3" hidden>
-  <div class="phead"><span class="lab">Laboratorio 3 · Cadena puerta a puerta y costo logístico</span><h2>¿Cuánto cuesta llevarlo?</h2><p class="sub">Para llevarle la carga a este cliente: escoja el Incoterm, diga quién hace cada tramo y cuánto le cuesta a usted.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>En cada despacho</span></div>
+  <div class="phead"><span class="lab">Laboratorio 3 · Cadena puerta a puerta y costo logístico</span><h2>¿Cuánto cuesta llevarlo?</h2><p class="sub">Para llevarle la carga a este cliente: hasta dónde la lleva usted, quién hace cada tramo y cuánto le cuesta.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>En cada despacho</span></div>
+  <p class="gtitle">¿Hasta dónde lleva usted la carga?</p>
+  <div class="group incos" id="incos" role="radiogroup" aria-label="Hasta dónde lleva usted la carga"></div>
+  <p class="foot"><span id="o-inco-tip"></span> <button class="link sm" id="b-inco7" type="button">Ver los siete Incoterms</button></p>
   <div class="group">
-    <div class="row"><span class="l">Incoterm</span><select class="s" id="f-inco" data-k="inco" aria-label="Incoterm" style="width:7em"><option>EXW</option><option>FCA</option><option>FOB</option><option>CFR</option><option>CIF</option><option>DAP</option><option>DDP</option></select></div>
+    <div class="row" id="r-inco7" hidden><span class="l">Incoterm<small>Si ya sabe cuál va a usar</small></span><select class="s" id="f-inco" data-k="inco" aria-label="Incoterm" style="width:7em"><option>EXW</option><option>FCA</option><option>FOB</option><option>CFR</option><option>CIF</option><option>DAP</option><option>DDP</option></select></div>
     <div class="row"><span class="l"><span data-u="Unos">Kilos</span> de este despacho</span><span class="unit"><input class="n" id="f-dkg" data-k="dkg" inputmode="decimal" aria-label="Cantidad del despacho"><em data-u="abbr">kg</em></span></div>
   </div>
-  <p class="foot" id="o-inco-tip"></p>
   <p class="gtitle">Tramos del despacho: ¿quién lo hace?</p>
   <div class="group"><div id="chain"></div><div class="row add"><button class="link" id="b-add-tramo" type="button">+ Agregar tramo</button></div></div>
-  <p class="foot">Al cambiar el Incoterm, los seis tramos se ajustan a lo normal para ese término. Puede cambiarlos. Agregue los que le cobren aparte, como fumigación o inspecciones.</p>
+  <p class="foot">Al cambiar hasta dónde lleva la carga, los seis tramos se ajustan a lo normal para ese Incoterm. Puede cambiarlos. Agregue los que le cobren aparte, como fumigación o inspecciones.</p>
   <div class="stats">
     <div class="stat"><span class="k">El despacho le cuesta</span><span class="v" id="o-dcosto">—</span><span class="s">lo que hace usted o contrata</span></div>
     <div class="stat"><span class="k"><span>Por <span data-u="uno">kilo</span></span></span><span class="v" id="o-dkilo">—</span><span class="s">pasa a la herramienta 1, «Costo»</span></div>
@@ -976,6 +987,9 @@ const INCO_TIP = {
   DAP: "DAP: lleva la carga hasta el lugar acordado en destino, sin los impuestos de entrada.",
   DDP: "DDP: paga todo, incluidos los impuestos de entrada en destino.",
 };
+// Incoterm en palabras: hasta dónde lleva usted la carga
+const LLEVA = [["EXW", "Hasta mi bodega"], ["FCA", "Hasta el transportador que diga el cliente"], ["FOB", "Hasta el barco, en el puerto de Colombia"], ["CFR", "Hasta el puerto del cliente", "CIF"], ["DAP", "Hasta la puerta del cliente", "DDP"]];
+const MAS = { CFR: " Si además paga el seguro, es CIF.", DAP: " Si además paga los impuestos de entrada, es DDP." };
 const CHECKS = ["El Incoterm y el lugar, por ejemplo «FOB Buenaventura»", "El producto, la calidad y el empaque", "La cantidad y el precio por unidad en dólares", "La forma de pago", "La fecha de despacho", "Hasta cuándo vale la oferta"];
 const TIPOS = ["Importador", "Tostador o fábrica", "Distribuidor", "Marca", "Cadena o supermercado", "Tienda pequeña", "Otro"];
 const MONEDAS = ["Dólares", "Euros", "Pesos", "Otra"];
@@ -1187,7 +1201,8 @@ function render() {
     "Hay temas a medias. Ninguno frena por sí solo, pero juntos pesan.",
     "Hay un «No» en precio, plata o documentos, o el puntaje es bajo. Son temas que frenan cualquier pedido."));
   // Despacho
-  setText("o-inco-tip", INCO_TIP[st.inco] || "");
+  setText("o-inco-tip", (INCO_TIP[st.inco] || "") + (MAS[st.inco] || ""));
+  pintarIncos(st, c);
   st.tramos.forEach((t, i) => { const el = $("#f-esl-" + i), cp = t.quien === "Comprador"; if (el) el.disabled = cp; setText("t-esl-" + i, cp ? "Lo paga el comprador" : "Me cuesta"); });
   setText("o-dcosto", c.dcosto > 0 ? pesos(c.dcosto) : "—");
   setText("o-dkilo", pesos(c.dkilo)); setText("o-dpct", pct(c.dpct)); setLight("l-dpct", c.cD); setLight("l-dpct2", c.cD); $("#e-dpct").dataset.c = c.cD;
@@ -1226,6 +1241,16 @@ function render() {
   window.__pdf = () => ({ titulo: "Mi logística y mi comprador", corto: "logística y comprador", st, defs, c1: c, c2: null, ejemplo: S.ejemplo, datos: datosPDF(st, c) });
 }
 
+function pintarIncos(st, c) {
+  const sug = (c.inco || "").split(" o ");
+  $("#incos").innerHTML = LLEVA.map(([code, txt, alt]) => {
+    const on = st.inco === code || (!!alt && st.inco === alt), cod = !!alt && st.inco === alt ? alt : code;
+    return `<button class="row tap inco" type="button" role="radio" aria-checked="${on}" data-inco="${code}"><span class="check">✓</span><span class="l">${txt}${sug.includes(code) ? `<small class="sug">Según sus respuestas</small>` : ""}</span><span class="pill${on ? " you" : ""}">${cod}</span></button>`;
+  }).join("");
+  $$("#incos [data-inco]").forEach((b) => (b.onclick = () => { if (S.st.inco === b.dataset.inco) return; S.st.inco = b.dataset.inco; $("#f-inco").value = S.st.inco; onField("inco"); }));
+  const sel = $("#f-inco"); if (sel && sel.value !== st.inco) sel.value = st.inco;
+}
+
 function open() {
   asegurarTramos();
   buildRows();
@@ -1234,6 +1259,7 @@ function open() {
   render();
 }
 $("#b-copiar").onclick = () => copiar(window.__ficha(), "msg-copia");
+$("#b-inco7").onclick = () => { const r = $("#r-inco7"); r.hidden = !r.hidden; $("#b-inco7").textContent = r.hidden ? "Ver los siete Incoterms" : "Ocultar la lista"; };
 setupPDF("b-pdf", () => window.__pdf());
 setupShell(S, open);
 tabs();

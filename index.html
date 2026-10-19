@@ -96,17 +96,12 @@ section { padding-block: 14px; }
 .tool .go small { display: block; font-weight: 500; color: #7A6858; font-size: 13px; }
 .tool .go .arr { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(140deg, var(--c1), var(--c2)); color: #fff; flex: none; transition: transform .18s; }
 .tool:hover .go .arr { transform: translate(2px,-2px); }
-.uso { padding: 16px 20px; display: grid; gap: 12px; }
-.uso .kick { font-size: 11.5px; }
-.uso .pasos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 10px 24px; }
-.uso .paso { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 10px; align-items: start; font-size: 13.5px; line-height: 1.45; color: var(--mut); }
-.uso .paso svg { color: var(--car); margin-top: 1px; }
-.uso .paso b { display: block; color: var(--ink); font-size: 14px; font-weight: 600; }
-.priv { padding: 16px 20px; display: flex; gap: 14px; align-items: flex-start; }
-.priv svg { flex: none; color: var(--ok); margin-top: 2px; }
-.priv p { margin: 0; font-size: 14px; color: var(--mut); }
-.priv b { color: var(--ink); }
-footer { padding-block: 26px 40px; font-size: 12.5px; color: var(--dim); max-width: 760px; }
+.nota { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 8px 26px; padding-block: 22px 0; }
+.nota p { margin: 0; display: grid; grid-template-columns: auto minmax(0,1fr); gap: 8px; align-items: start; font-size: 12.5px; line-height: 1.45; color: var(--dim); }
+.nota svg { color: var(--car); opacity: .85; margin-top: 1px; }
+.nota b { color: var(--mut); font-weight: 600; }
+footer { padding-block: 18px 36px; margin-top: 18px; border-top: 1px solid var(--line); font-size: 11.5px; line-height: 1.5; color: var(--dim); }
+footer b { color: var(--mut); font-weight: 600; }
 @media (max-width: 560px) {
   .gate .card { padding: 28px 20px 22px; }
   .tool { padding: 26px 18px 18px; min-height: 0; }
@@ -157,22 +152,13 @@ footer { padding-block: 26px 40px; font-size: 12.5px; color: var(--dim); max-wid
       </div>
     </section>
 
-    <section aria-labelledby="t-uso">
-      <div class="uso glass">
-        <span class="kick" id="t-uso">Cómo se usan</span>
-        <div class="pasos">
-          <div class="paso"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path><path d="M10 19v-3.96 3.15"></path><path d="M7 19h5"></path><rect width="6" height="10" x="16" y="12" rx="2"></rect></svg><div><b>Escriba el nombre de su empresa</b>Arranca en blanco. Para ver cómo se llena, toque «Ver ejemplo».</div></div>
-          <div class="paso"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v8"></path><path d="m16 6-4 4-4-4"></path><rect width="20" height="8" x="2" y="14" rx="2"></rect><path d="M6 18h.01"></path><path d="M10 18h.01"></path></svg><div><b>Use siempre el mismo aparato</b>Ahí se guardan sus datos. Para no perderlos: «Mis análisis» → «Guardar copia».</div></div>
-          <div class="paso"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg><div><b>Descargue el PDF de cada ficha</b>Envíe las dos al correo del programa a más tardar el miércoles 4 de noviembre.</div></div>
-        </div>
-      </div>
+    <section class="nota" aria-label="Cómo se usan">
+      <p><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="15" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path><path d="M10 19v-3.96 3.15"></path><path d="M7 19h5"></path><rect width="6" height="10" x="16" y="12" rx="2"></rect></svg><span><b>Arranca en blanco.</b> Para ver cómo se llena, toque «Ver ejemplo».</span></p>
+      <p><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="15" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v8"></path><path d="m16 6-4 4-4-4"></path><rect width="20" height="8" x="2" y="14" rx="2"></rect><path d="M6 18h.01"></path><path d="M10 18h.01"></path></svg><span><b>Use siempre el mismo aparato.</b> Para no perder sus datos: «Mis análisis» → «Guardar copia».</span></p>
+      <p><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="15" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg><span><b>Envíe el PDF de cada ficha.</b> Al correo del programa, a más tardar el miércoles 4 de noviembre.</span></p>
     </section>
 
-    <section>
-      <div class="priv glass"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg><p><b>Sus datos son suyos.</b> Lo que escribe se guarda solo en su aparato: nadie más lo ve, ni nosotros, a menos que usted envíe su ficha. Las herramientas estarán disponibles hasta el <b>12 de mayo de 2027</b>; antes de esa fecha, guarde sus fichas en PDF y una copia de sus datos. ¿Dudas? Escríbanos a <b>rutaexportadoracch@gmail.com</b>.</p></div>
-    </section>
-
-    <footer>Herramientas de análisis para uso propio. Los resultados salen solo de los datos que escribe cada empresa y sirven para entender su operación. No son una recomendación de vender, comprar, invertir, contratar ni fijar un precio. Se entregan tal como están, para usar durante el programa y hasta el 12 de mayo de 2027; después de esa fecha pueden dejar de estar disponibles.</footer>
+    <footer><b>Sus datos son suyos:</b> se guardan solo en su aparato y nadie más los ve, ni nosotros, a menos que usted envíe su ficha. Disponibles hasta el 12 de mayo de 2027. ¿Dudas? rutaexportadoracch@gmail.com. Herramientas de análisis para uso propio: los resultados salen solo de sus datos y no son una recomendación de vender, comprar, invertir, contratar ni fijar un precio. Se entregan tal como están y después de esa fecha pueden dejar de estar disponibles.</footer>
   </div>
 </div>
 
