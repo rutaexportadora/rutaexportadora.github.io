@@ -80,7 +80,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; ma
 .hero p { margin: 0; font-size: clamp(16px, 2.1vw, 18px); color: var(--mut); max-width: 62ch; }
 section { padding-block: 14px; }
 .tools { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 20px; }
-.tool { position: relative; overflow: hidden; padding: 32px 28px 24px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 18px; min-height: 360px; text-decoration: none; transition: transform .18s, border-color .18s, background .18s; }
+.tool { position: relative; overflow: hidden; padding: 32px 28px 24px; display: grid; grid-template-rows: auto 1fr auto; gap: 20px; min-height: 300px; text-decoration: none; transition: transform .18s, border-color .18s, background .18s; }
 .tool::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--c1), var(--c2)); }
 .tool::after { content: ""; position: absolute; right: -90px; top: -110px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, var(--c1), transparent 68%); opacity: .2; pointer-events: none; }
 .tool:hover { transform: translateY(-3px); border-color: var(--line2); background: var(--glass2); }
@@ -138,15 +138,13 @@ footer b { color: var(--mut); font-weight: 600; }
     <section aria-label="Herramientas">
       <div class="tools">
         <a class="tool glass" href="capacidad.html" style="--c1:#8DB86F;--c2:#A8741F">
-          <div class="head"><span class="tile xl" style="--c1:#8DB86F;--c2:#A8741F"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg></span><div><span class="num">Herramienta 1</span><h3>Mi capacidad y mis costos</h3></div></div>
-          <p>Cuánto puede producir, dónde se frena su proceso y cuánto le cuesta cada kilo, prenda o unidad.</p>
-          <div class="chips"><span class="chip labc">Laboratorios 1 y 2</span><span class="chip">Proceso</span><span class="chip">Números</span><span class="chip">Costo</span><span class="chip">Dólar</span><span class="chip">Ficha</span></div>
+          <div class="head"><span class="tile xl" style="--c1:#8DB86F;--c2:#A8741F"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg></span><div><span class="num">Herramienta 1 · Laboratorios 1 y 2</span><h3>Mi capacidad y mis costos</h3></div></div>
+          <p>Su capacidad, su cuello de botella y su costo por unidad.</p>
           <div class="go"><span>Abrir herramienta<small>Mejor en computador</small></span><span class="arr"><svg stroke="currentColor" fill="none" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div>
         </a>
         <a class="tool glass" href="logistica.html" style="--c1:#4FA6C6;--c2:#8E3A26">
-          <div class="head"><span class="tile xl" style="--c1:#4FA6C6;--c2:#8E3A26"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg></span><div><span class="num">Herramienta 2</span><h3>Mi logística y mi comprador</h3></div></div>
-          <p>Qué tan preparado está para un cliente, cuánto cuesta llevarle la carga, qué precio cubre lo que quiere ganar y qué operador le sale mejor.</p>
-          <div class="chips"><span class="chip labc">Laboratorios 3 y 4</span><span class="chip">¿Preparado?</span><span class="chip">Despacho</span><span class="chip">Cliente</span><span class="chip">Precio</span><span class="chip">Ficha</span></div>
+          <div class="head"><span class="tile xl" style="--c1:#4FA6C6;--c2:#8E3A26"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg></span><div><span class="num">Herramienta 2 · Laboratorios 3 y 4</span><h3>Mi logística y mi comprador</h3></div></div>
+          <p>Su preparación para un cliente, su costo logístico y su precio de referencia.</p>
           <div class="go"><span>Abrir herramienta<small>Mejor en computador</small></span><span class="arr"><svg stroke="currentColor" fill="none" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div>
         </a>
       </div>

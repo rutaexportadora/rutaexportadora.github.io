@@ -652,8 +652,7 @@ function construirPDF(sp) {
     doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); negro(); doc.text(limpio(`${rs.n.V} en verde · ${rs.n.A} en amarillo · ${rs.n.R} en rojo`), M + bw + 5, y - 0.4); y += 8;
   }
   if (rs.ind != null) {
-    doc.setFont("helvetica", "bold"); doc.setFontSize(12); negro(); doc.text(limpio(`Índice de preparación: ${rs.ind} de 100`), M, y); y += 4.6;
-    doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); gris(); doc.text(doc.splitTextToSize(limpio(NOTA_IND), W - 2 * M), M, y); y += 8;
+    doc.setFont("helvetica", "bold"); doc.setFontSize(12); negro(); doc.text(limpio(`Índice de preparación: ${rs.ind} de 100`), M, y); y += 8;
   }
   const escPDF = (e, x, yy, w) => { if (!e) return; const seg = [["R", 0, e.a], ["A", e.a, e.g], ["V", e.g, 1]]; seg.forEach(([k, a0, a1]) => { if (a1 <= a0) return; const col = PDFCOL[k]; doc.setFillColor(col[0] + (255 - col[0]) * 0.45, col[1] + (255 - col[1]) * 0.45, col[2] + (255 - col[2]) * 0.45); doc.rect(x + w * a0, yy - 2.6, w * (a1 - a0), 1.8, "F"); }); doc.setFillColor(42, 29, 22); doc.circle(x + w * e.p, yy - 1.7, 1.25, "F"); };
   const cx1 = M + 76, cx2 = M + 128, wv = sp.c2 ? 46 : 68, gx = M + 148, gw = W - M - gx;
@@ -968,7 +967,7 @@ const NOTA_IND = "Verde vale 100, amarillo 50 y rojo 0. Sirve para compararse co
 function resumenHTML(rs) {
   const bar = rs.tot ? `<div class="mix" role="img" aria-label="${rs.n.V} en verde, ${rs.n.A} en amarillo y ${rs.n.R} en rojo">${["R", "A", "V"].map((k) => (rs.n[k] ? `<i data-c="${k}" style="flex:${rs.n[k]}"><span>${rs.n[k]}</span></i>` : "")).join("")}</div>` : "";
   const ci = rs.ind == null ? "" : rs.ind >= 70 ? "V" : rs.ind >= 40 ? "A" : "R";
-  const ind = `<div class="ind"><div class="ik"><span class="k">Índice de preparación</span><b data-c="${ci}">${rs.ind == null ? "—" : rs.ind}<small> de 100</small></b></div><p>${rs.ind == null ? "Sale cuando complete más números." : NOTA_IND}</p></div>`;
+  const ind = `<div class="ind"><div class="ik"><span class="k">Índice de preparación</span><b data-c="${ci}">${rs.ind == null ? "—" : rs.ind}<small> de 100</small></b></div>${rs.ind == null ? "<p>Sale cuando complete más números.</p>" : ""}</div>`;
   return `${ind}<span class="k">Su ficha en un vistazo</span>${bar}<p>${esc(rs.text)}</p>`;
 }
 
