@@ -362,6 +362,16 @@ header.top .link.ej:hover { background: rgba(255, 250, 243, .08); }
 header.top { background: radial-gradient(90% 140% at 100% -10%, rgba(63, 102, 49, .6), transparent 58%), radial-gradient(70% 120% at -5% 0%, rgba(168, 116, 31, .48), transparent 62%), radial-gradient(60% 90% at 60% 120%, rgba(27, 84, 112, .5), transparent 60%), #3A2B20; }
 header.top .who input, header.top .banner { background: rgba(255, 250, 243, .1); }
 header.top .seg { background: rgba(0, 0, 0, .18); }
+/* v10: índice de preparación */
+.resumen .ind { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 18px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--hair); }
+.resumen .ind .ik { display: grid; gap: 2px; }
+.resumen .ind b { font-family: var(--serif); font-size: 44px; line-height: 1; font-weight: 600; letter-spacing: -.02em; color: var(--ink); }
+.resumen .ind b[data-c="V"] { color: var(--v-ink) } .resumen .ind b[data-c="A"] { color: var(--a-ink) } .resumen .ind b[data-c="R"] { color: var(--r-ink) }
+.resumen .ind b small { font-family: var(--font); font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.resumen .ind p { font-size: 13.5px; color: var(--muted); }
+@media (max-width: 480px) { .resumen .ind { grid-template-columns: minmax(0, 1fr); } }
+.movil { display: none; margin: -4px 0 0; font-size: 13.5px; color: var(--muted); }
+@media (max-width: 600px) { .movil { display: block; } }
 
 </style>
 </head>
@@ -369,6 +379,7 @@ header.top .seg { background: rgba(0, 0, 0, .18); }
 <header class="top"><div class="wrap">
   <div class="toprow"><span class="kicker"><span class="mark" aria-hidden="true"></span><a class="home" href="./">← Inicio</a><span class="kt">Herramienta de análisis · 1 de 2</span></span><span class="acts"><button class="link ej" id="b-verej" type="button">Ver ejemplo</button><button class="link" id="b-empresas" type="button">Mis análisis</button></span></div>
   <h1>Mi capacidad y mis costos</h1>
+  <p class="movil">Funciona en el celular, pero en el computador se trabaja más cómodo.</p>
   <div class="banner" id="banner" hidden><span><b>Ejemplo:</b> Café Ejemplo S.A.S., un café inventado para practicar.</span><button class="btn primary" id="b-volver" type="button">Volver a mi empresa</button></div>
   <div class="who">
     <label class="fld"><span>Su empresa</span><input id="f-empresa" data-k="empresa" data-kind="text" placeholder="Nombre de la empresa"></label>
@@ -630,6 +641,10 @@ function construirPDF(sp) {
     let x = M; const bw = 60, tot = rs.tot;
     ["R", "A", "V"].forEach((k) => { if (!rs.n[k]) return; const w = (bw * rs.n[k]) / tot, col = PDFCOL[k]; doc.setFillColor(col[0], col[1], col[2]); doc.rect(x, y - 3, w, 3.2, "F"); x += w; });
     doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); negro(); doc.text(limpio(`${rs.n.V} en verde · ${rs.n.A} en amarillo · ${rs.n.R} en rojo`), M + bw + 5, y - 0.4); y += 8;
+  }
+  if (rs.ind != null) {
+    doc.setFont("helvetica", "bold"); doc.setFontSize(12); negro(); doc.text(limpio(`Índice de preparación: ${rs.ind} de 100`), M, y); y += 4.6;
+    doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); gris(); doc.text(doc.splitTextToSize(limpio(NOTA_IND), W - 2 * M), M, y); y += 8;
   }
   const escPDF = (e, x, yy, w) => { if (!e) return; const seg = [["R", 0, e.a], ["A", e.a, e.g], ["V", e.g, 1]]; seg.forEach(([k, a0, a1]) => { if (a1 <= a0) return; const col = PDFCOL[k]; doc.setFillColor(col[0] + (255 - col[0]) * 0.45, col[1] + (255 - col[1]) * 0.45, col[2] + (255 - col[2]) * 0.45); doc.rect(x + w * a0, yy - 2.6, w * (a1 - a0), 1.8, "F"); }); doc.setFillColor(42, 29, 22); doc.circle(x + w * e.p, yy - 1.7, 1.25, "F"); };
   const cx1 = M + 76, cx2 = M + 128, wv = sp.c2 ? 46 : 68, gx = M + 148, gw = W - M - gx;
@@ -922,6 +937,7 @@ function fichaTexto(titulo, st, defs, c1, c2, extra) {
     L.push(b ? `${d.k}: antes ${e(a)} ${a[1]} → ahora ${e(b)} ${b[1]}` : `${e(a)} ${d.k}: ${a[1]}${a[2] ? " (" + a[2] + ")" : ""}`);
   });
   if (extra) L.push("", extra);
+  const ri = resumenFicha(defs, c1); if (ri.ind != null) L.splice(4, 0, `Índice de preparación: ${ri.ind} de 100`, "");
   L.push("", "Análisis propio con los datos escritos por la empresa. No es una recomendación.");
   return L.join("\n");
 }
@@ -935,11 +951,16 @@ function resumenFicha(defs, c) {
   if (tot) partes.push(`De ${tot} números: ${n.V} en verde, ${n.A} en amarillo y ${n.R} en rojo.`);
   if (rojos.length) partes.push("En rojo: " + rojos.join(", ") + ".");
   if (faltan.length) partes.push("Sin datos todavía: " + faltan.join(", ") + ".");
-  return { n, tot, c: n.R ? "R" : n.A ? "A" : tot ? "V" : "", text: partes.join(" ") || "Complete las secciones para ver su ficha." };
+  // Índice de preparación: verde 100, amarillo 50, rojo 0; sale cuando hay datos en al menos 6 de cada 10 números
+  const ind = col.length && tot / col.length >= 0.6 ? Math.round((n.V * 100 + n.A * 50) / tot) : null;
+  return { n, tot, ind, c: n.R ? "R" : n.A ? "A" : tot ? "V" : "", text: partes.join(" ") || "Complete las secciones para ver su ficha." };
 }
+const NOTA_IND = "Verde vale 100, amarillo 50 y rojo 0. Sirve para compararse consigo mismo con el tiempo, no con otras empresas.";
 function resumenHTML(rs) {
   const bar = rs.tot ? `<div class="mix" role="img" aria-label="${rs.n.V} en verde, ${rs.n.A} en amarillo y ${rs.n.R} en rojo">${["R", "A", "V"].map((k) => (rs.n[k] ? `<i data-c="${k}" style="flex:${rs.n[k]}"><span>${rs.n[k]}</span></i>` : "")).join("")}</div>` : "";
-  return `<span class="k">Su ficha en un vistazo</span>${bar}<p>${esc(rs.text)}</p>`;
+  const ci = rs.ind == null ? "" : rs.ind >= 70 ? "V" : rs.ind >= 40 ? "A" : "R";
+  const ind = `<div class="ind"><div class="ik"><span class="k">Índice de preparación</span><b data-c="${ci}">${rs.ind == null ? "—" : rs.ind}<small> de 100</small></b></div><p>${rs.ind == null ? "Sale cuando complete más números." : NOTA_IND}</p></div>`;
+  return `${ind}<span class="k">Su ficha en un vistazo</span>${bar}<p>${esc(rs.text)}</p>`;
 }
 
 const AVISO = "Herramienta de análisis para uso propio. Los resultados salen solo de los datos que usted escribe y sirven para entender su operación. No son una recomendación de vender, comprar, invertir, contratar ni fijar un precio: cada decisión es de su empresa. Lo que escribe se guarda solo en este aparato. Disponible hasta el " + FIN + "; antes de esa fecha, guarde su ficha en PDF y una copia de sus datos.";
