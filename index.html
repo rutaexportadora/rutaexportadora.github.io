@@ -92,9 +92,9 @@ section { padding-block: 14px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; align-content: start; position: relative; z-index: 1; }
 .chip { font-size: 12.5px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: rgba(0,0,0,.14); border: 1px solid var(--line); color: var(--mut); }
 .chip.labc { color: #fff; border-color: transparent; background: linear-gradient(140deg, var(--c1), var(--c2)); }
-.tool .go { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 20px; border-radius: 16px; background: linear-gradient(180deg, #F7F2EA, #E9DFD0); color: #2A1D16; font-weight: 600; font-size: 17px; box-shadow: 0 12px 26px -14px rgba(0,0,0,.7); }
-.tool .go small { display: block; font-weight: 500; color: #7A6858; font-size: 13px; }
-.tool .go .arr { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(140deg, var(--c1), var(--c2)); color: #fff; flex: none; transition: transform .18s; }
+.tool .txt { display: grid; gap: 14px; align-content: start; justify-items: start; position: relative; z-index: 1; }
+.tool .go { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 15px 20px; border-radius: 16px; background: linear-gradient(180deg, #F7F2EA, #E9DFD0); color: #2A1D16; font-weight: 600; font-size: 17px; box-shadow: 0 12px 26px -14px rgba(0,0,0,.7); }
+.tool .go .arr { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: linear-gradient(140deg, var(--c1), var(--c2)); color: #fff; flex: none; transition: transform .18s; }
 .tool:hover .go .arr { transform: translate(2px,-2px); }
 .nota { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 8px 26px; padding-block: 22px 0; }
 .nota p { margin: 0; display: grid; grid-template-columns: auto minmax(0,1fr); gap: 8px; align-items: start; font-size: 12.5px; line-height: 1.45; color: var(--dim); }
@@ -138,14 +138,14 @@ footer b { color: var(--mut); font-weight: 600; }
     <section aria-label="Herramientas">
       <div class="tools">
         <a class="tool glass" href="capacidad.html" style="--c1:#8DB86F;--c2:#A8741F">
-          <div class="head"><span class="tile xl" style="--c1:#8DB86F;--c2:#A8741F"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg></span><div><span class="num">Herramienta 1 · Laboratorios 1 y 2</span><h3>Mi capacidad y mis costos</h3></div></div>
-          <p>Su capacidad, su cuello de botella y su costo por unidad.</p>
-          <div class="go"><span>Abrir herramienta<small>Mejor en computador</small></span><span class="arr"><svg stroke="currentColor" fill="none" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div>
+          <div class="head"><span class="tile xl" style="--c1:#8DB86F;--c2:#A8741F"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><path d="m12 14 4-4"></path><path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg></span><div><span class="num">Herramienta 1</span><h3>Analizando mi capacidad y mis costos</h3></div></div>
+          <div class="txt"><p>Su capacidad, su cuello de botella y su costo por unidad.</p><span class="chip labc">Laboratorios 1 y 2</span></div>
+          <div class="go"><span>Abrir herramienta</span><span class="arr"><svg stroke="currentColor" fill="none" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div>
         </a>
         <a class="tool glass" href="logistica.html" style="--c1:#4FA6C6;--c2:#8E3A26">
-          <div class="head"><span class="tile xl" style="--c1:#4FA6C6;--c2:#8E3A26"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg></span><div><span class="num">Herramienta 2 · Laboratorios 3 y 4</span><h3>Mi logística y mi comprador</h3></div></div>
-          <p>Su preparación para un cliente, su costo logístico y su precio de referencia.</p>
-          <div class="go"><span>Abrir herramienta<small>Mejor en computador</small></span><span class="arr"><svg stroke="currentColor" fill="none" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div>
+          <div class="head"><span class="tile xl" style="--c1:#4FA6C6;--c2:#8E3A26"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="26" width="26" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg></span><div><span class="num">Herramienta 2</span><h3>Analizando mi logística y mi comprador</h3></div></div>
+          <div class="txt"><p>Su preparación para un cliente, su costo logístico y su precio de referencia.</p><span class="chip labc">Laboratorios 3 y 4</span></div>
+          <div class="go"><span>Abrir herramienta</span><span class="arr"><svg stroke="currentColor" fill="none" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div>
         </a>
       </div>
     </section>
