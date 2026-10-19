@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23D7A56C'/%3E%3Cstop offset='1' stop-color='%233F6631'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M18 46 30 20l8 14 4-6 6 18Z' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi capacidad y mis costos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Herramientas de análisis · paleta de la Ruta: crema y café, un color por laboratorio, semáforo propio */
+:root {
+  --bg: #F7F2EA; --card: #FFFDF9; --ink: #2A1D16; --muted: #7A6858; --faint: #B3A391;
+  --hair: rgba(42, 29, 22, .1); --fill: #F1E9DD; --track: #EAE0D2; --thumb: #FFFDF9;
+  --accent: #8A5A2B; --accent-soft: rgba(184, 132, 79, .16); --on-accent: #FFFFFF;
+  --v: #4F8A3C; --a: #D39A22; --r: #C0492F; --off: #D8CBB8;
+  --v-ink: #3F6631; --a-ink: #95600F; --r-ink: #A33A22;
+  --v-soft: rgba(79, 138, 60, .13); --a-soft: rgba(211, 154, 34, .16); --r-soft: rgba(192, 73, 47, .11);
+  --bar: #D8CBB8; --shadow: 0 1px 2px rgba(42, 29, 22, .05), 0 6px 18px -6px rgba(42, 29, 22, .08);
+  --l0: #8A5A2B; --l0s: rgba(184, 132, 79, .16); --l1: #3F6631; --l1s: rgba(127, 168, 98, .17); --l2: #9A6A1A; --l2s: rgba(221, 176, 79, .2);
+  --l3: #1B5470; --l3s: rgba(63, 149, 181, .15); --l4: #8E3A26; --l4s: rgba(207, 114, 83, .15);
+  --lab: var(--accent); --lab-soft: var(--accent-soft);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1B130E; --card: #2A1F18; --ink: #F7F2EA; --muted: #BBAA97; --faint: #7E6B5A;
+  --hair: rgba(255, 250, 243, .11); --fill: #36291F; --track: #36291F; --thumb: #5A4636;
+  --accent: #D7A56C; --accent-soft: rgba(215, 165, 108, .18); --on-accent: #2A1D16;
+  --v: #7FBF63; --a: #E5B04A; --r: #E5735A; --off: #4A3B30;
+  --v-ink: #A9CF8C; --a-ink: #F0C46A; --r-ink: #F2A58C;
+  --v-soft: rgba(127, 191, 99, .16); --a-soft: rgba(229, 176, 74, .16); --r-soft: rgba(229, 115, 90, .16);
+  --bar: #4A3B30; --shadow: none;
+  --l0: #D7A56C; --l0s: rgba(215, 165, 108, .18); --l1: #A9CF8C; --l1s: rgba(141, 184, 111, .18); --l2: #E5BC5C; --l2s: rgba(229, 188, 92, .18);
+  --l3: #7CC0DA; --l3s: rgba(79, 166, 198, .18); --l4: #EE9C80; --l4s: rgba(217, 128, 95, .18); color-scheme: dark } }
+:root[data-theme="dark"], header.top {
+  --bg: #1B130E; --card: #2A1F18; --ink: #F7F2EA; --muted: #BBAA97; --faint: #7E6B5A;
+  --hair: rgba(255, 250, 243, .11); --fill: #36291F; --track: #36291F; --thumb: #5A4636;
+  --accent: #D7A56C; --accent-soft: rgba(215, 165, 108, .18); --on-accent: #2A1D16;
+  --v: #7FBF63; --a: #E5B04A; --r: #E5735A; --off: #4A3B30;
+  --v-ink: #A9CF8C; --a-ink: #F0C46A; --r-ink: #F2A58C;
+  --v-soft: rgba(127, 191, 99, .16); --a-soft: rgba(229, 176, 74, .16); --r-soft: rgba(229, 115, 90, .16);
+  --bar: #4A3B30; --shadow: none;
+  --l0: #D7A56C; --l0s: rgba(215, 165, 108, .18); --l1: #A9CF8C; --l1s: rgba(141, 184, 111, .18); --l2: #E5BC5C; --l2s: rgba(229, 188, 92, .18);
+  --l3: #7CC0DA; --l3s: rgba(79, 166, 198, .18); --l4: #EE9C80; --l4s: rgba(217, 128, 95, .18); color-scheme: dark }
+
+* { box-sizing: border-box }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 760px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+button { font: inherit; color: inherit; }
+input, select { font: inherit; color: var(--ink); }
+
+/* Encabezado */
+header.top .wrap { padding-block: 28px 10px; display: grid; gap: 12px; }
+.toprow { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.kicker { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
+h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.08; font-weight: 700; letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+.who { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 10px; }
+.who .fld { display: grid; gap: 4px; min-width: 0; }
+.who .fld > span { font-size: 12.5px; font-weight: 600; color: var(--muted); padding-left: 4px; }
+.who .fld.wide { grid-column: 1 / -1; }
+.who input { width: 100%; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 11px 14px; font-size: 17px; font-weight: 600; }
+.who input::placeholder { color: var(--faint); font-weight: 500; }
+.privado { display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px; border-radius: 14px; background: var(--accent-soft); color: var(--ink); font-size: 15px; line-height: 1.45; }
+.privado svg { color: var(--accent); flex: none; margin-top: 1px; }
+.cli { margin: 2px 0 0; font-size: 18px; }
+.cli b { font-weight: 700; }
+.ctxrow { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.hint { font-size: 14px; color: var(--muted); }
+
+/* Botones */
+.link { border: 0; background: none; color: var(--accent); font-size: 17px; font-weight: 500; cursor: pointer; padding: 6px 2px; }
+.btn { border: 0; border-radius: 999px; padding: 10px 18px; font-size: 16px; font-weight: 600; cursor: pointer; background: var(--accent-soft); color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn:focus-visible, .link:focus-visible, input:focus-visible, select:focus-visible, .seg button:focus-visible, .pick:focus-visible, .row.tap:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; box-shadow: 0 0 0 1px var(--accent); }
+
+/* Control segmentado */
+.seg { display: inline-flex; background: var(--track); border-radius: 10px; padding: 2px; gap: 2px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { border: 0; background: transparent; border-radius: 8px; padding: 6px 14px; font-size: 14px; font-weight: 500; color: var(--ink); cursor: pointer; white-space: nowrap; flex: 1 0 auto; }
+.seg button[aria-pressed="true"], .seg button[aria-selected="true"] { background: var(--thumb); box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 0 0 .5px rgba(0, 0, 0, .04); font-weight: 600; }
+.seg.small button { padding: 5px 11px; font-size: 13.5px; }
+
+/* Aviso de ejemplo */
+.banner { background: var(--card); border-radius: 14px; padding: 12px 14px 12px 16px; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; box-shadow: var(--shadow); }
+.banner span { font-size: 15px; color: var(--muted); }
+.banner b { color: var(--ink); font-weight: 600; }
+
+/* Pestañas */
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); }
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  nav.tabs { background: color-mix(in srgb, var(--bg) 80%, transparent); -webkit-backdrop-filter: saturate(180%) blur(18px); backdrop-filter: saturate(180%) blur(18px); }
+}
+nav.tabs .wrap { padding-block: 10px; display: flex; }
+nav.tabs .seg { width: 100%; }
+
+/* Secciones */
+main .wrap { padding-block: 12px 48px; }
+section.panel { display: grid; gap: 22px; }
+.phead { display: grid; gap: 6px; padding-top: 10px; }
+.phead .lab { font-size: 13px; font-weight: 600; color: var(--muted); }
+h2 { font-size: clamp(26px, 5vw, 32px); line-height: 1.12; font-weight: 700; letter-spacing: -.022em; margin: 0; text-wrap: balance; }
+.sub { margin: 0; color: var(--muted); font-size: 17px; max-width: 58ch; }
+
+/* Listas agrupadas */
+.gtitle { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin: 0 0 -14px 16px; }
+.group { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 14px; align-items: center; padding: 11px 16px; min-height: 50px; position: relative; }
+.row + .row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 1px; background: var(--hair); }
+.row .l { font-size: 16.5px; min-width: 0; }
+.row .l small { display: block; font-size: 13.5px; color: var(--muted); margin-top: 1px; }
+.row .l .mark { color: var(--a-ink); font-weight: 700; }
+.row.stack { grid-template-columns: minmax(0, 1fr); }
+.row.q { grid-template-columns: 14px minmax(0, 1fr) auto; }
+.row.q .dot { align-self: start; margin-top: 6px; }
+.row.tap { cursor: pointer; }
+.row .chev { color: var(--faint); font-size: 22px; line-height: 1; }
+.row .r { display: flex; gap: 8px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.foot { font-size: 13.5px; color: var(--muted); margin: -14px 16px 0; }
+.unit { display: inline-flex; align-items: center; gap: 6px; }
+.unit em { font-style: normal; font-size: 14px; color: var(--muted); min-width: 2.2em; }
+input.n, input.t, select.s { background: var(--fill); border: 0; border-radius: 9px; padding: 8px 11px; font-size: 17px; font-weight: 600; min-width: 0; }
+input.n { width: 8.6em; text-align: right; font-variant-numeric: tabular-nums; }
+input.n.sm { width: 5.2em; }
+input.n:disabled { opacity: .35; }
+input.t { width: 100%; }
+select.s { -webkit-appearance: none; appearance: none; padding-right: 30px; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%; background-size: 5px 5px; background-repeat: no-repeat; cursor: pointer; max-width: 100%; }
+input::placeholder { color: var(--faint); font-weight: 500; }
+.paso { grid-template-columns: 20px minmax(0, 1fr) auto; align-items: start; gap: 8px 10px; }
+.paso .x { margin-top: 5px; }
+.paso .pn { color: var(--muted); font-weight: 600; font-size: 15px; text-align: center; padding-top: 9px; }
+.paso .fields { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-end; }
+.mini { display: grid; gap: 4px; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
+.mini input.n { width: 7.4em; font-size: 16px; padding: 7px 10px; }
+.mini input.t { font-size: 16px; padding: 7px 10px; }
+.mini select.s { font-size: 15px; padding: 7px 28px 7px 10px; width: auto; }
+.eq { font-size: 13px; color: var(--muted); padding-bottom: 9px; }
+.steprow { display: grid; grid-template-columns: 20px minmax(0, 1fr) 7.2em; gap: 10px; align-items: center; }
+.steprow b { color: var(--muted); font-weight: 600; font-size: 15px; text-align: center; }
+.steprow input.n { width: 100%; }
+.check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--faint); display: inline-grid; place-items: center; font-size: 13px; font-weight: 700; color: transparent; flex: none; }
+.row[aria-checked="true"] .check { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* Semáforo */
+.dot { width: 12px; height: 12px; border-radius: 50%; background: var(--off); display: inline-block; flex: none; }
+.dot.L { width: 16px; height: 16px; }
+.dot[data-c="V"] { background: var(--v) } .dot[data-c="A"] { background: var(--a) } .dot[data-c="R"] { background: var(--r) }
+.status { display: flex; gap: 11px; align-items: flex-start; padding: 13px 16px; border-radius: 14px; background: var(--card); box-shadow: var(--shadow); font-size: 15.5px; }
+.status .dot { margin-top: 4px; }
+.status[data-c="V"] { background: var(--v-soft); box-shadow: none } .status[data-c="A"] { background: var(--a-soft); box-shadow: none } .status[data-c="R"] { background: var(--r-soft); box-shadow: none }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--fill); color: var(--muted); white-space: nowrap; }
+.pill[data-c="V"] { background: var(--v-soft); color: var(--v-ink) } .pill[data-c="A"] { background: var(--a-soft); color: var(--a-ink) } .pill[data-c="R"] { background: var(--r-soft); color: var(--r-ink) }
+.pill.you { background: var(--accent-soft); color: var(--accent); }
+.row > .pill { justify-self: start; }
+.row > .pill:last-child { justify-self: end; }
+
+/* Cifras */
+.stats { display: flex; flex-wrap: wrap; gap: 12px; }
+.stat { flex: 1 1 160px; background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 3px; align-content: start; box-shadow: var(--shadow); min-width: 0; }
+.stat .k { font-size: 13.5px; font-weight: 600; color: var(--muted); display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.stat .v { font-size: clamp(24px, 4.6vw, 30px); font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.15; overflow-wrap: anywhere; }
+.stat .s { font-size: 13.5px; color: var(--muted); }
+.stat.hero { flex-basis: 100%; padding: 20px; }
+.stat.hero .v { font-size: clamp(38px, 9vw, 56px); letter-spacing: -.03em; }
+
+/* Barras */
+.bars { display: grid; gap: 12px; padding: 14px 16px 16px; }
+.bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 10px; font-size: 14.5px; }
+.bar .lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar .val { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar .track { grid-column: 1 / -1; height: 8px; background: var(--fill); border-radius: 4px; overflow: hidden; }
+.bar .fill { display: block; height: 100%; background: var(--bar); border-radius: 4px; }
+.bar.cuello .fill { background: var(--r); }
+.bar.cuello .lbl, .bar.cuello .val { color: var(--r-ink); font-weight: 600; }
+
+/* Tarjetas para escoger */
+.picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.pick { border: 0; text-align: left; background: var(--card); border-radius: 14px; padding: 12px 13px; display: grid; gap: 5px; box-shadow: var(--shadow); cursor: pointer; min-width: 0; outline: 2px solid transparent; outline-offset: -2px; }
+.pick[aria-pressed="true"] { outline-color: var(--accent); }
+.pick .nm { font-size: 14.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pick .vd { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+
+/* Gráfico mensual */
+.months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px; align-items: end; height: 132px; padding: 16px 16px 12px; }
+.months .m { display: grid; gap: 6px; justify-items: center; align-self: end; font-size: 11px; color: var(--muted); }
+.months .col { width: 64%; border-radius: 4px; background: var(--fill); min-height: 3px; display: block; }
+.months .col[data-c="V"] { background: var(--v) } .months .col[data-c="A"] { background: var(--a) } .months .col[data-c="R"] { background: var(--r) }
+
+/* Ficha */
+.ficha { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.tile { background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 4px; box-shadow: var(--shadow); min-width: 0; align-content: start; }
+.tile .k { font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.tile .v { font-size: 22px; font-weight: 700; letter-spacing: -.015em; display: flex; gap: 9px; align-items: center; overflow-wrap: anywhere; }
+.tile .v.long { font-size: 17px; }
+.tile .s { font-size: 13.5px; color: var(--muted); }
+.tile .cmp { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; align-items: center; margin-top: 4px; font-size: 15px; }
+.tile .cmp .w { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.tile .cmp b { display: flex; gap: 8px; align-items: center; font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+
+/* Hoja de empresas */
+.sheet { position: fixed; inset: 0; z-index: 20; background: rgba(0, 0, 0, .32); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sheet .box { background: var(--bg); border-radius: 18px; width: min(440px, 100%); max-height: 80vh; overflow: auto; padding: 18px; display: grid; gap: 16px; }
+.sheet h3 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+.x { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--fill); color: var(--muted); font-size: 19px; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; flex: none; padding: 0; }
+.x:hover { color: var(--r-ink); background: var(--r-soft); }
+.x:focus-visible { outline: 3px solid var(--accent-soft); box-shadow: 0 0 0 1px var(--accent); }
+.item .open { border: 0; background: none; text-align: left; padding: 2px 0; cursor: pointer; display: grid; gap: 2px; min-width: 0; }
+.item .open b { font-size: 16.5px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.item .open small { font-size: 13.5px; color: var(--muted); }
+.item.on { background: var(--accent-soft); }
+.btn.danger { background: var(--r); color: #fff; }
+.row.add { min-height: 46px; padding-block: 6px; }
+.row.add .link { font-size: 16px; font-weight: 600; padding: 6px 0; }
+.mejora-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+
+.next { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; padding-top: 4px; }
+.note { font-size: 13.5px; color: var(--muted); }
+.copiado { font-size: 14px; color: var(--v-ink); font-weight: 600; }
+textarea.out { width: 100%; min-height: 10em; font: inherit; font-size: 14px; background: var(--card); color: var(--ink); border: 1px solid var(--hair); border-radius: 12px; padding: 12px; }
+footer .wrap { padding-block: 8px 40px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+@media (max-width: 600px) {
+  .who { grid-template-columns: minmax(0, 1fr); }
+  .row.q { grid-template-columns: 14px minmax(0, 1fr); }
+  .row.q .seg { grid-column: 2; justify-self: start; }
+  .row.wrapm { grid-template-columns: minmax(0, 1fr); }
+  .row.wrapm > :last-child { justify-self: start; }
+  .row.wrapm:has(> .unit) { grid-template-columns: minmax(0, 1fr) auto; }
+  .row.wrapm:has(> .unit) > :last-child { justify-self: end; }
+  input.n { width: 6.8em; }
+  .seg button { padding: 6px 10px; }
+  .picks { grid-template-columns: minmax(0, 1fr); }
+  body { font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) { .bar .fill, .months .col { transition: width .35s ease, height .35s ease } }
+@media print {
+  nav.tabs, .banner, .next, .noprint, header .seg, #b-empresas, .x, .row.add { display: none !important }
+  section.panel[hidden] { display: grid !important }
+  section.panel { break-inside: avoid-page; margin-bottom: 24px }
+  body { background: #fff }
+  .group, .stat, .tile, .status { box-shadow: none; border: 1px solid #ddd }
+}
+.tramo .seg { grid-column: 1 / -1; justify-self: start; }
+.togs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tog { border: 1.5px solid var(--hair); background: var(--card); border-radius: 999px; padding: 6px 12px; font-size: 14px; cursor: pointer; color: var(--muted); }
+.tog[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.tog[aria-pressed="true"]::before { content: "✓ "; }
+
+/* Escala de rojo a verde en cada número de la ficha */
+.gauge { position: relative; display: flex; height: 6px; border-radius: 3px; margin: 8px 0 4px; }
+.gauge i { display: block; height: 100%; opacity: .38; }
+.gauge i:first-child { border-radius: 3px 0 0 3px; } .gauge i:nth-child(3) { border-radius: 0 3px 3px 0; }
+.gauge i[data-c="R"] { background: var(--r) } .gauge i[data-c="A"] { background: var(--a) } .gauge i[data-c="V"] { background: var(--v) }
+.gauge b { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); border: 2.5px solid var(--card); box-shadow: 0 0 0 .5px var(--hair); }
+/* Resumen de la ficha */
+.resumen { background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 10px; box-shadow: var(--shadow); }
+.resumen .k { font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.resumen p { margin: 0; font-size: 15.5px; }
+.mix { display: flex; gap: 3px; height: 26px; }
+.mix i { display: grid; place-items: center; border-radius: 6px; font-style: normal; font-size: 13px; font-weight: 700; color: #fff; min-width: 26px; }
+.mix i[data-c="R"] { background: var(--r) } .mix i[data-c="A"] { background: var(--a) } .mix i[data-c="V"] { background: var(--v) }
+/* Tubo: el producto baja paso por paso; el ancho es lo máximo de cada paso */
+.tubo { padding: 14px 16px 16px; display: grid; gap: 12px; }
+.tleg { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13.5px; color: var(--muted); }
+.tleg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+.tleg i.flow { background: var(--accent); } .tleg i.wall { background: var(--bar); } .tleg i.neck { background: var(--r); }
+.trows { display: grid; }
+.trow { display: grid; grid-template-columns: minmax(0, 34%) minmax(0, 1fr) minmax(64px, auto); gap: 0 12px; align-items: stretch; min-height: 44px; }
+.trow .tn, .trow .tv { display: flex; align-items: center; font-size: 14.5px; padding: 6px 0; min-width: 0; overflow-wrap: anywhere; }
+.trow .tv { justify-content: flex-end; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+.trow .tp { display: flex; justify-content: center; }
+.trow .pipe { display: flex; justify-content: center; background: var(--bar); height: 100%; min-width: 6px; transition: width .35s ease; }
+.trow .pipe .fl { display: block; height: 100%; background: var(--accent); max-width: 100%; }
+.trow:first-child .pipe { border-radius: 8px 8px 0 0; } .trow:last-child .pipe { border-radius: 0 0 8px 8px; }
+.trow.neck .pipe { background: var(--r); }
+.trow .tn small { display: block; font-size: 12px; font-weight: 600; color: var(--r-ink); }
+.trow .tn > span { display: block; }
+.trow.neck .pipe .fl.over { background: var(--r); }
+.trow.neck .tn, .trow.neck .tv { color: var(--r-ink); font-weight: 600; }
+.lineas { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; counter-reset: l; }
+.lineas li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; font-size: 15.5px; counter-increment: l; }
+.lineas li::before { content: counter(l); width: 24px; height: 24px; border-radius: 50%; background: var(--fill); color: var(--muted); font-size: 13px; font-weight: 700; display: grid; place-items: center; }
+@media (max-width: 600px) { .trow { grid-template-columns: minmax(0, 36%) minmax(0, 1fr) minmax(58px, auto); gap: 0 8px; } .trow .tn, .trow .tv { font-size: 13.5px; } }
+@media print { .gauge i { opacity: .5 } }
+
+/* v7: qué produce, unidad, cuándo se usa cada pestaña */
+.uso { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 11px; }
+.uso svg { flex: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--hair); background: var(--card); border-radius: 999px; padding: 8px 14px; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+.mide { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.mide > span:first-child { font-size: 12.5px; font-weight: 600; color: var(--muted); padding-left: 4px; }
+.confirm { display: grid; gap: 10px; padding: 12px 14px; border-radius: 12px; background: var(--a-soft); }
+.confirm .acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.home { font-size: 15px; font-weight: 600; color: var(--accent); text-decoration: none; }
+
+/* v7.1: celular */
+@media (max-width: 600px) {
+  .row.wrapm.gasto { grid-template-columns: minmax(0, 1fr); }
+  .row.wrapm.gasto > .unit { justify-self: end; }
+}
+@media (max-width: 480px) {
+  nav.tabs .seg { flex-wrap: wrap; overflow: visible; }
+  nav.tabs .seg button { flex: 1 0 30%; }
+  .tramo .seg { width: 100%; flex-wrap: wrap; overflow: visible; }
+  .tramo .seg button { padding: 5px 6px; font-size: 12.5px; }
+}
+
+/* v8: identidad de la Ruta (misma entrada que el inicio, un color por laboratorio) */
+section.panel[data-lab="0"], nav.tabs button[data-lab="0"] { --lab: var(--l0); --lab-soft: var(--l0s); }
+section.panel[data-lab="1"], nav.tabs button[data-lab="1"] { --lab: var(--l1); --lab-soft: var(--l1s); }
+section.panel[data-lab="2"], nav.tabs button[data-lab="2"] { --lab: var(--l2); --lab-soft: var(--l2s); }
+section.panel[data-lab="3"], nav.tabs button[data-lab="3"] { --lab: var(--l3); --lab-soft: var(--l3s); }
+section.panel[data-lab="4"], nav.tabs button[data-lab="4"] { --lab: var(--l4); --lab-soft: var(--l4s); }
+h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.012em; }
+h1 { font-size: clamp(31px, 6vw, 42px); }
+.sheet h3 { font-family: var(--serif); font-weight: 600; }
+header.top { position: relative; overflow: hidden; color: var(--ink); background: radial-gradient(90% 140% at 100% -10%, rgba(63, 102, 49, .55), transparent 58%), radial-gradient(70% 120% at -5% 0%, rgba(168, 116, 31, .4), transparent 62%), radial-gradient(60% 90% at 60% 120%, rgba(27, 84, 112, .45), transparent 60%), #1B130E; }
+header.top .wrap { position: relative; padding-block: 24px 22px; }
+header.top .kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); }
+header.top .kicker .mark { width: 26px; height: 26px; border-radius: 8px; flex: none; background: linear-gradient(140deg, #D7A56C, #3F6631); box-shadow: 0 1px 0 rgba(255, 255, 255, .3) inset; }
+header.top .who input, header.top .banner { background: rgba(255, 250, 243, .07); border: 1px solid var(--hair); box-shadow: none; }
+header.top .seg { background: rgba(0, 0, 0, .25); }
+header.top .btn.primary { background: linear-gradient(180deg, #F7F2EA, #E9DFD0); color: #2A1D16; }
+.phead .lab { display: inline-flex; align-items: center; gap: 8px; justify-self: start; font-size: 12.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--lab); }
+.phead .lab::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--lab); flex: none; }
+.uso { color: var(--lab); background: var(--lab-soft); }
+nav.tabs { border-bottom: 1px solid var(--hair); }
+nav.tabs .seg button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+nav.tabs .seg button::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lab); opacity: .55; flex: none; }
+nav.tabs .seg button[aria-selected="true"] { color: var(--lab); }
+nav.tabs .seg button[aria-selected="true"]::before { opacity: 1; }
+.stat.hero { border-top: 3px solid var(--lab); }
+.tleg i.flow, .trow .pipe .fl { background: var(--lab); }
+.group, .stat, .tile, .resumen, .pick { border: 1px solid var(--hair); }
+.status[data-c] { border: 0; }
+@media print { header.top { background: none; } }
+header.top .kicker .kt::before { content: "·"; margin-right: 10px; }
+.home, #b-empresas { white-space: nowrap; }
+@media (max-width: 600px) { header.top .kicker .kt { display: none; } }
+
+/* v9: análisis agrupados por empresa, copia de seguridad, borrar todo */
+.lista { display: grid; gap: 14px; }
+.lista .grupo { display: grid; gap: 6px; }
+.lista .gtitle { margin: 0 0 0 16px; text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); }
+.link.sm { font-size: 14px; padding: 0; }
+.link.danger { color: var(--r-ink); justify-self: start; }
+#borrar-todo .r { display: flex; gap: 8px; flex-wrap: wrap; }
+.rango { margin: -4px 16px 12px; font-size: 13px; color: var(--muted); text-align: center; }
+.months .m.sel { color: var(--ink); font-weight: 700; }
+/* v10: arranca en blanco; el ejemplo se abre con un botón */
+header.top .acts { display: inline-flex; align-items: center; gap: 6px 14px; flex-wrap: wrap; justify-content: flex-end; }
+header.top .link.ej { font-size: 14.5px; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--hair); color: var(--ink); }
+header.top .link.ej:hover { background: rgba(255, 250, 243, .08); }
+/* v10: un poco más claro (cabecera y modo oscuro) */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #2A1F17; --card: #372A20; --fill: #433428; --track: #433428; --hair: rgba(255, 250, 243, .13); } }
+:root[data-theme="dark"], header.top { --bg: #2A1F17; --card: #372A20; --fill: #433428; --track: #433428; --muted: #CBBBA8; --hair: rgba(255, 250, 243, .14); }
+header.top { background: radial-gradient(90% 140% at 100% -10%, rgba(63, 102, 49, .6), transparent 58%), radial-gradient(70% 120% at -5% 0%, rgba(168, 116, 31, .48), transparent 62%), radial-gradient(60% 90% at 60% 120%, rgba(27, 84, 112, .5), transparent 60%), #3A2B20; }
+header.top .who input, header.top .banner { background: rgba(255, 250, 243, .1); }
+header.top .seg { background: rgba(0, 0, 0, .18); }
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="toprow"><span class="kicker"><span class="mark" aria-hidden="true"></span><a class="home" href="./">← Inicio</a><span class="kt">Herramienta de análisis · 1 de 2</span></span><span class="acts"><button class="link ej" id="b-verej" type="button">Ver ejemplo</button><button class="link" id="b-empresas" type="button">Mis análisis</button></span></div>
+  <h1>Mi capacidad y mis costos</h1>
+  <div class="banner" id="banner" hidden><span><b>Ejemplo:</b> Café Ejemplo S.A.S., un café inventado para practicar.</span><button class="btn primary" id="b-volver" type="button">Volver a mi empresa</button></div>
+  <div class="who">
+    <label class="fld"><span>Su empresa</span><input id="f-empresa" data-k="empresa" data-kind="text" placeholder="Nombre de la empresa"></label>
+    <label class="fld"><span>Producto</span><input id="f-producto" data-k="producto" data-kind="text" placeholder="Qué vende"></label>
+    <label class="fld wide"><span>Cliente potencial</span><input id="f-cliente" data-k="cliente" data-kind="text" placeholder="Ej.: importador en Nueva York"></label>
+  </div>
+  <div class="mide"><span>Mide su producto en</span><span class="seg small" data-k="unidad" role="group" aria-label="Unidad de medida"><button data-v="kg">Kilos</button><button data-v="prendas">Prendas</button><button data-v="unidades">Unidades</button></span></div>
+</div></header>
+<nav class="tabs" aria-label="Secciones"><div class="wrap"><div class="seg" role="tablist"><button type="button" role="tab" data-p="proceso" data-lab="1">Proceso</button><button type="button" role="tab" data-p="numeros" data-lab="1">Números</button><button type="button" role="tab" data-p="costo" data-lab="2">Costo</button><button type="button" role="tab" data-p="dolar" data-lab="2">Dólar</button><button type="button" role="tab" data-p="ficha" data-lab="0">Ficha</button></div></div></nav>
+<main><div class="wrap">
+<section class="panel" id="proceso" data-lab="1">
+  <div class="phead"><span class="lab">Laboratorio 1 · Proceso y cuello de botella</span><h2>¿Cuánto puedo producir?</h2><p class="sub">Escriba sus pasos en orden, desde que entra la materia prima hasta que el producto queda listo en su bodega.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Se llena una vez · revísela si cambia su proceso</span></div>
+  <div class="privado"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Zm3 4a1.5 1.5 0 0 1 .8 2.77V18a.8.8 0 0 1-1.6 0v-1.23A1.5 1.5 0 0 1 12 14Z"/></svg><span><b>Sus datos son suyos.</b> Se guardan solo en este aparato y nadie más los ve, a menos que usted comparta su ficha. Escriba lo más cercano a la realidad que pueda: entre más reales los datos, más útil el análisis.</span></div>
+  <p class="gtitle">¿Qué produce?</p>
+  <div class="group"><div class="row stack" style="gap:10px">
+    <div class="chips" id="modelos" role="group" aria-label="Qué produce"></div>
+    <span class="note" id="o-modelo">Escoja uno y la herramienta le propone los pasos típicos. Los puede cambiar, quitar o agregar.</span>
+    <div class="confirm" id="w-modelo" hidden><span id="t-modelo"></span><div class="acts"><button class="btn primary" id="b-modelo-si" type="button">Usar los pasos típicos</button><button class="btn" id="b-modelo-no" type="button">Dejar los míos</button></div></div>
+  </div></div>
+  <p class="gtitle">Sus pasos</p>
+  <div class="group"><div id="pasos"></div><div class="row add"><button class="link" id="b-add-paso" type="button">+ Agregar paso</button></div></div>
+  <p class="foot"><b>Máximo al mes:</b> si a ese paso le llegara todo el producto que quisiera, ¿cuántos <span data-u="unos">kilos</span> alcanzaría a hacer en un mes? Por ejemplo, si la trilladora le recibe máximo 750 kg por semana, son 3.000 kg al mes. <b>Me cuesta:</b> lo que paga por ese paso, por <span data-u="uno">kilo</span>, por libra o en total. El empaque y el transporte para exportar van en la herramienta 2, «Despacho».</p>
+  <div class="group">
+    <div class="row"><span class="l">Hoy produce al mes</span><span class="unit"><input class="n" id="f-produce" data-k="produce" inputmode="decimal" aria-label="Lo que produce hoy al mes"><em data-u="abbr">kg</em></span></div>
+    <div class="row"><span class="l">Costo de sus pasos, por <span data-u="uno">kilo</span><small>Pasa solo a «Costo»</small></span><b id="o-pasoskg" style="font-size:18px">—</b></div>
+  </div>
+  <p class="gtitle">¿Qué paso lo frena?</p>
+  <div class="group"><div class="tubo">
+    <span class="note" style="font-size:14.5px">Imagine que su producto baja por un tubo, paso por paso. El ancho de cada tramo es lo máximo que ese paso aguanta al mes. Lo azul es lo que pasa hoy.</span>
+    <div class="tleg"><span><i class="flow"></i><span id="o-leg-hoy">Lo que produce hoy</span></span><span><i class="wall"></i>Lo máximo de cada paso</span><span><i class="neck"></i>El paso que lo frena</span></div>
+    <div class="trows" id="tubo"></div>
+  </div></div>
+  <div class="status" id="e-cuello"><ol class="lineas" id="m-cuello"></ol></div>
+  <p class="foot">Por eso se llama cuello de botella: por más grande que sea la botella, solo sale lo que deja pasar el cuello.</p>
+  <div class="stats">
+    <div class="stat"><span class="k">Lo máximo que puede sacar</span><span class="v" id="o-techo">—</span><span class="s"><span data-u="unos">kilos</span> al mes</span></div>
+    <div class="stat"><span class="k">Hoy usa <span class="dot" id="l-uso"></span></span><span class="v" id="o-uso">—</span><span class="s" id="o-uso-s">de lo que puede producir</span></div>
+    <div class="stat"><span class="k">Espacio libre</span><span class="v" id="o-libre">—</span><span class="s"><span data-u="unos">kilos</span> más al mes, sin tocar el cuello</span></div>
+  </div>
+  <div class="status" id="e-uso"><span class="dot" id="l-uso2"></span><span id="m-uso"></span></div>
+  <div class="group"><div class="row wrapm"><span class="l">¿Su máximo real es otro?<small>Si sabe que lo máximo que puede sacar al mes no es lo que calcula la herramienta, escríbalo aquí.</small></span><span class="unit"><input class="n" id="f-techo" data-k="techo" inputmode="decimal" aria-label="Lo máximo que puede sacar al mes"><em data-u="abbr">kg</em></span></div></div>
+  <p class="gtitle">Desperdicio</p>
+  <div class="group"><div class="row wrapm"><span class="l">¿Dónde se le va más tiempo o plata?</span>
+    <select class="s" id="f-desp" data-k="desperdicio" aria-label="Desperdicio"><option value="">Escoja uno</option><option>Esperas</option><option>Producto quieto en bodega</option><option>Producto dañado o repetido</option><option>Mover la carga de más</option><option>Vueltas y búsquedas del personal</option><option>Producir sin pedido</option><option>Papeleo o documentación</option></select></div></div>
+  <p class="foot" id="o-desp"></p>
+  <div class="next"><span></span><button class="btn primary" data-go="numeros" type="button">Siguiente</button></div>
+</section>
+
+<section class="panel" id="numeros" data-lab="1" hidden>
+  <div class="phead"><span class="lab">Laboratorio 1 · Indicadores y mejoras</span><h2>Dos números para mirar cada mes</h2><p class="sub">El primero sale solo. El segundo lo escribe usted. Abajo, sus mejoras.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Cada mes</span></div>
+  <div class="group">
+    <div class="row q"><span class="dot" id="l-n-uso"></span><span class="l">De lo que puede producir, ¿cuánto usa hoy?<small>Sale solo de «Proceso». Verde desde 60 %.</small></span><b id="o-n-uso" style="font-size:19px">—</b></div>
+    <div class="row q"><span class="dot" id="l-pierde"></span><span class="l">De cada 100 <span data-u="unos">kilos</span> que entran, ¿cuántos se dañan, se rechazan o hay que repetir?<small>No cuente lo que se va por la naturaleza del proceso, como la cascarilla en la trilla. Verde hasta 3 · rojo más de 6.</small></span><input class="n sm" id="f-pierde" data-k="pierde" inputmode="decimal" aria-label="Producto dañado de cada 100"></div>
+  </div>
+  <p class="foot">Los pedidos a tiempo y los días para alistar un pedido están en la herramienta 2, «Despacho».</p>
+  <p class="gtitle">Mejoras posibles</p>
+  <div id="mejoras" style="display:grid;gap:12px"></div>
+  <div class="group"><div class="row add"><button class="link" id="b-add-mej" type="button">+ Agregar mejora</button></div></div>
+  <p class="foot">Prioridad 1: ayuda mucho y es fácil. Prioridad 4: ni lo uno ni lo otro.</p>
+  <div class="next"><button class="btn" data-go="proceso" type="button">Atrás</button><button class="btn primary" data-go="costo" type="button">Siguiente</button></div>
+</section>
+
+<section class="panel" id="costo" data-lab="2" hidden>
+  <div class="phead"><span class="lab">Laboratorio 2 · Estructura de costos</span><h2>¿Cuánto me cuesta <span data-u="art">un kilo</span>?</h2><p class="sub">La materia prima, lo que cuestan sus pasos, el despacho y lo que paga cada mes.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Revísela cuando cambien sus costos</span></div>
+  <p class="gtitle">Cada <span data-u="uno">kilo</span></p>
+  <div class="group">
+    <div class="row wrapm"><span class="l">Materia prima o compra del producto</span><span class="unit"><input class="n" id="f-mp" data-k="mp" inputmode="decimal" aria-label="Materia prima"><em>$/<span data-u="uno">kilo</span></em></span></div>
+    <div class="row"><span class="l">Sus pasos<small id="o-pasos-det">Sale de «Proceso»</small></span><b id="o-pasoskg2" style="font-size:18px">—</b></div>
+    <div class="row wrapm"><span class="l">El despacho<small>Sale de la herramienta 2, «Despacho» → «Por <span data-u="uno">kilo</span>». Si aún no lo tiene, ponga un estimado</small></span><span class="unit"><input class="n" id="f-despkg" data-k="despKg" inputmode="decimal" aria-label="Despacho"><em>$/<span data-u="uno">kilo</span></em></span></div>
+  </div>
+  <p class="gtitle">Cada mes, venda o no venda</p>
+  <div class="group"><div id="gastos"></div><div class="row add"><button class="link" id="b-add-gasto" type="button">+ Agregar gasto</button></div></div>
+  <p class="foot"><b>Casi siempre se olvidan</b> su propio sueldo y el desgaste de los equipos. Estos gastos se reparten entre lo que produce al mes.</p>
+  <p class="gtitle">Lo que le ofrece a este cliente</p>
+  <div class="group">
+    <div class="row wrapm"><span class="l">Precio que le ofrece a este cliente, por <span data-u="uno">kilo</span></span><span class="unit"><input class="n" id="f-precio" data-k="precio" inputmode="decimal" aria-label="Precio que le ofrece"><em>US$</em></span></div>
+    <div class="row wrapm"><span class="l">Dólar de hoy<small>el ejemplo usa la TRM del 13 de octubre de 2026</small></span><span class="unit"><input class="n" id="f-dolar" data-k="dolar" inputmode="decimal" aria-label="Dólar de hoy"><em>$</em></span></div>
+  </div>
+  <div class="stats">
+    <div class="stat hero"><span class="k"><span>De cada <span data-u="uno">kilo</span> que vende le queda</span> <span class="dot L" id="l-margen"></span></span><span class="v" id="o-margen">—</span><span class="s" id="o-mes"></span></div>
+    <div class="stat"><span class="k"><span><span data-u="Art">Un kilo</span> le cuesta</span></span><span class="v" id="o-costo">—</span><span class="s">materia prima, pasos, despacho y gastos del mes</span></div>
+    <div class="stat"><span class="k"><span>Recibe por <span data-u="uno">kilo</span></span></span><span class="v" id="o-ingreso">—</span><span class="s">en pesos, con el dólar de hoy</span></div>
+    <div class="stat"><span class="k"><span>Ganancia por <span data-u="uno">kilo</span></span></span><span class="v" id="o-gana">—</span></div>
+  </div>
+  <div class="status" id="e-margen"><span class="dot" id="l-margen2"></span><span id="m-margen"></span></div>
+  <div class="next"><button class="btn" data-go="numeros" type="button">Atrás</button><button class="btn primary" data-go="dolar" type="button">Siguiente</button></div>
+</section>
+
+<section class="panel" id="dolar" data-lab="2" hidden>
+  <div class="phead"><span class="lab">Laboratorio 2 · Punto de equilibrio y uso de recursos</span><h2>¿A qué dólar deja de ganar?</h2><p class="sub">Todo sale de «Costo». Abajo puede probar el dólar que quiera.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Revísela cuando se mueva el dólar</span></div>
+  <div class="stats">
+    <div class="stat hero"><span class="k">Su dólar de equilibrio</span><span class="v" id="o-deq">—</span><span class="s">Si el dólar baja de aquí, con sus datos pierde plata</span></div>
+    <div class="stat"><span class="k">Dólar de hoy</span><span class="v" id="o-dhoy">—</span></div>
+    <div class="stat"><span class="k">El dólar puede bajar <span class="dot" id="l-holgura"></span></span><span class="v" id="o-holgura">—</span><span class="s">antes de que pierda plata</span></div>
+    <div class="stat"><span class="k"><span><span data-u="Unos">Kilos</span> que necesita vender al mes para no perder</span> <span class="dot" id="l-seg"></span></span><span class="v" id="o-kgeq">—</span><span class="s" id="o-kgeq-s"></span></div>
+  </div>
+  <div class="status" id="e-holgura"><span class="dot" id="l-holgura2"></span><span id="m-holgura"></span></div>
+  <p class="gtitle">Si el dólar se mueve</p>
+  <div class="group"><div id="escenarios"></div>
+    <div class="row wrapm"><span class="l">Pruebe un dólar</span><span class="r"><span class="unit"><input class="n" id="f-prueba" data-k="prueba" inputmode="decimal" aria-label="Dólar para probar"><em>$</em></span><span class="pill" id="o-prueba">—</span></span></div>
+  </div>
+  <p class="gtitle">Para ganar más sin subir el precio</p>
+  <div class="group">
+    <div class="row q"><span class="dot" id="l-llenar"></span><span class="l">Si produce lo máximo que puede<small id="t-llenar"></small></span><b id="o-llenar" style="font-size:19px">—</b></div>
+    <div class="row q"><span class="dot" id="l-merma"></span><span class="l" id="q-merma">Si se le dañan solo 3 de cada 100<small>Compra menos materia prima por cada <span data-u="uno">kilo</span> que vende</small></span><b id="o-merma" style="font-size:19px">—</b></div>
+    <div class="row q"><span class="dot" id="l-dos"></span><span class="l">Las dos juntas<small id="t-dos"></small></span><b id="o-dos" style="font-size:19px">—</b></div>
+  </div>
+  <p class="foot">Cada cifra es lo que le quedaría de cada <span data-u="uno">kilo</span> vendido.</p>
+  <div class="next"><button class="btn" data-go="costo" type="button">Atrás</button><button class="btn primary" data-go="ficha" type="button">Ver mi ficha</button></div>
+</section>
+
+<section class="panel" id="ficha" data-lab="0" hidden>
+  <div class="phead"><span class="lab">Su resultado</span><h2>Mi ficha</h2><p class="cli" id="ficha-cli"></p><p class="sub" id="ficha-sub"></p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Descárguela cada vez que actualice</span></div>
+  <div class="resumen" id="resumen"></div>
+  <p class="foot">En cada número, la barra va de rojo a verde y el punto muestra dónde está usted con sus datos.</p>
+  <div class="ficha" id="tiles"></div>
+  <div class="group noprint"><div class="row stack" style="gap:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><button class="btn primary" id="b-pdf" type="button">Descargar PDF</button><button class="btn" id="b-copiar" type="button">Copiar resumen</button><span class="copiado" id="msg-copia"></span></div>
+    <span class="note">El PDF lleva la fecha, el cliente potencial, sus resultados y todos sus datos. Guárdelo cada vez que actualice el análisis: así tiene su histórico.</span>
+    <textarea class="out" id="msg-copia-txt" hidden aria-label="Resumen para copiar"></textarea>
+  </div></div>
+</section>
+
+</div></main>
+<div class="sheet" id="sheet" hidden><div class="box" role="dialog" aria-modal="true" aria-label="Mis análisis">
+  <div class="toprow"><h3>Mis análisis</h3><button class="link" id="b-cerrar" type="button">Listo</button></div>
+  <p class="note" style="margin:-6px 0 0">Haga un análisis por cada cliente potencial. Se guardan solo en este aparato.</p>
+  <div id="lista" class="lista"></div>
+  <div style="display:grid;gap:10px">
+    <button class="btn primary" id="b-copia" type="button">Nuevo análisis para otro cliente</button>
+    <span class="note" style="margin-top:-4px">Copia los datos de su empresa. Solo cambie lo de ese cliente.</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="b-nueva" type="button">Empezar en blanco</button><button class="btn" id="b-ejemplo" type="button">Ver el ejemplo</button></div>
+  </div>
+  <p class="gtitle" style="margin:4px 0 -8px 16px">Copia de seguridad</p>
+  <div class="group"><div class="row stack" style="gap:10px">
+    <span class="note">Guarde una copia cada vez que actualice y antes del 12 de mayo de 2027. Con ella recupera sus datos si se borran del navegador, o los pasa a otro aparato.</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" id="b-bk-guardar" type="button">Guardar copia</button><button class="btn" id="b-bk-abrir" type="button">Abrir una copia</button><input type="file" id="bk-file" accept=".json,application/json" hidden></div>
+    <span class="note"><button class="link sm" id="b-bk-copiar" type="button">Copiar como texto</button> · <button class="link sm" id="b-bk-pegar" type="button">Pegar texto</button></span>
+    <textarea class="out" id="bk-txt" hidden aria-label="Texto de la copia" style="min-height:6em"></textarea>
+    <button class="btn primary" id="b-bk-ok" type="button" hidden>Recuperar</button>
+    <span class="copiado" id="bk-msg" role="status"></span>
+  </div></div>
+  <div class="group"><div class="row stack" style="gap:6px" id="borrar-todo">
+    <button class="link sm danger" id="b-borrar-todo" type="button">Borrar todo lo guardado en este aparato</button>
+    <span class="note">Úselo si otra persona usa este computador o celular.</span>
+  </div></div>
+</div></div>
+<footer><div class="wrap" id="aviso"></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+// Utilidades compartidas de las herramientas de análisis
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const ok = (x) => typeof x === "number" && isFinite(x);
+const fmt = (n, d = 0) => ok(n) ? n.toLocaleString("es-CO", { minimumFractionDigits: d, maximumFractionDigits: d }) : "—";
+const pesos = (n) => ok(n) ? (n < 0 ? "−$ " : "$ ") + fmt(Math.abs(Math.round(n))) : "—";
+const usd = (n) => ok(n) ? "US$ " + fmt(n, 2) : "—";
+const pct = (n, d = 1) => ok(n) ? fmt(n * 100, d) + " %" : "—";
+const hi = (x, g, a) => !ok(x) ? "" : x >= g ? "V" : x >= a ? "A" : "R";
+const lo = (x, g, a) => !ok(x) ? "" : x <= g ? "V" : x <= a ? "A" : "R";
+const pick = (c, v, a, r, e = "") => c === "V" ? v : c === "A" ? a : c === "R" ? r : e;
+const N = (v) => (v === "" || v == null ? NaN : Number(v));
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+const EMO = { V: "🟢", A: "🟡", R: "🔴" };
+
+// ---------- Unidad en que mide la empresa: kilos, prendas o unidades ----------
+const UNIDADES = {
+  kg: { abbr: "kg", uno: "kilo", unos: "kilos", Uno: "Kilo", Unos: "Kilos", art: "un kilo", Art: "Un kilo", libra: true },
+  prendas: { abbr: "prendas", uno: "prenda", unos: "prendas", Uno: "Prenda", Unos: "Prendas", art: "una prenda", Art: "Una prenda", libra: false },
+  unidades: { abbr: "und.", uno: "unidad", unos: "unidades", Uno: "Unidad", Unos: "Unidades", art: "una unidad", Art: "Una unidad", libra: false },
+};
+const U = (st) => UNIDADES[(st && st.unidad) || "kg"] || UNIDADES.kg;
+// Pinta las palabras de unidad que hay en la página: <span data-u="unos"></span>
+function pintarUnidad(st) { const u = U(st); $$("[data-u]").forEach((el) => { const v = u[el.dataset.u]; if (v !== undefined) el.textContent = v; }); }
+
+function parseNum(s) {
+  if (typeof s === "number") return s;
+  s = String(s || "").trim().replace(/\s|\$|%|US/gi, "");
+  if (!s) return NaN;
+  if (s.includes(",")) s = s.replace(/\./g, "").replace(",", ".");
+  else if (/^-?\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, "");
+  return Number(s);
+}
+const getPath = (o, p) => p.split(".").reduce((x, k) => (x == null ? x : x[k]), o);
+function setPath(o, p, v) { const ks = p.split("."); let x = o; ks.slice(0, -1).forEach((k) => (x = x[k])); x[ks[ks.length - 1]] = v; }
+const showNum = (v, d) => (v === "" || v == null || !ok(Number(v))) ? "" : Number(v).toLocaleString("es-CO", { maximumFractionDigits: d ?? 2 });
+
+function setLight(id, c) { const el = document.getElementById(id); if (el) el.dataset.c = c || ""; }
+function setText(id, t) { const el = document.getElementById(id); if (el) el.textContent = t; }
+
+// Campos dentro de "root": data-k="ruta", data-kind="num|text|sel"; controles segmentados .seg[data-k] con botones data-v
+function bindFields(root, st, onChange) {
+  $$("[data-k]", root).forEach((el) => {
+    if (el.classList.contains("seg")) return;
+    const k = el.dataset.k, kind = el.dataset.kind || (el.tagName === "SELECT" ? "sel" : "num");
+    const v = getPath(st, k);
+    el.value = kind === "num" ? showNum(v, el.dataset.d ? Number(el.dataset.d) : 2) : (v ?? "");
+    el.oninput = () => {
+      const val = kind === "num" ? (el.value.trim() === "" ? "" : parseNum(el.value)) : el.value;
+      setPath(st, k, val); onChange(k);
+    };
+  });
+  $$(".seg[data-k]", root).forEach((g) => {
+    const k = g.dataset.k;
+    $$("button", g).forEach((b) => {
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(getPath(st, k) === b.dataset.v));
+      b.onclick = () => {
+        setPath(st, k, b.dataset.v);
+        $$("button", g).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        onChange(k);
+      };
+    });
+  });
+}
+
+function tabs() {
+  const btns = $$("nav.tabs button");
+  const show = (id) => {
+    btns.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.p === id)));
+    $$("section.panel").forEach((p) => (p.hidden = p.id !== id));
+  };
+  btns.forEach((b) => (b.onclick = () => { show(b.dataset.p); window.scrollTo({ top: 0 }); }));
+  $$("[data-go]").forEach((b) => (b.onclick = () => { show(b.dataset.go); window.scrollTo({ top: 0 }); }));
+  const h = (location.hash || "").slice(1);
+  show(h && $(`nav.tabs button[data-p="${h}"]`) ? h : btns[0].dataset.p);
+}
+
+function copiar(text, msgId) {
+  const done = () => setText(msgId, "Copiado. Ya lo puede pegar en un correo o un mensaje.");
+  const fallback = () => { const ta = document.getElementById(msgId + "-txt"); if (ta) { ta.hidden = false; ta.value = text; ta.select(); } setText(msgId, "Seleccione el texto y cópielo."); };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+}
+// ---------- PDF de la ficha (histórico) ----------
+const PDFCOL = { V: [79, 138, 60], A: [211, 154, 34], R: [192, 73, 47] };
+const limpio = (t) => String(t ?? "").replace(/−/g, "-").replace(/ /g, " ").replace(/[→]/g, "a").replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\xFF€•–—“”‘’]/g, "");
+function hoyLargo() { try { return new Date().toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return new Date().toISOString().slice(0, 10); } }
+function construirPDF(sp) {
+  const J = window.jspdf && window.jspdf.jsPDF; if (!J) return null;
+  const doc = new J({ unit: "mm", format: "letter" });
+  const W = 215.9, H = 279.4, M = 18; let y = M;
+  const gris = () => doc.setTextColor(122, 104, 88), negro = () => doc.setTextColor(42, 29, 22);
+  const pie = () => { doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); gris(); doc.text(doc.splitTextToSize(limpio(AVISO), W - 2 * M), M, H - 14); };
+  const salto = (h) => { if (y + h > H - 22) { pie(); doc.addPage(); y = M; } };
+  const punto = (x, yy, c) => { const col = PDFCOL[c] || [216, 203, 184]; doc.setFillColor(col[0], col[1], col[2]); doc.circle(x, yy - 1.2, 1.6, "F"); };
+  doc.setFillColor(184, 132, 79); doc.rect(0, 0, W, 3, "F");
+  doc.setFont("helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(138, 90, 43); doc.text("RUTA DE PRODUCTIVIDAD Y LOGISTICA PARA LA EXPORTACION", M, y); y += 6;
+  doc.setFont("times", "bold"); doc.setFontSize(21); negro(); doc.text(limpio(sp.titulo), M, y + 4); y += 11;
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5); gris();
+  doc.text(limpio(`Empresa: ${sp.st.empresa || "—"}   ·   Producto: ${sp.st.producto || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Cliente potencial: ${sp.st.cliente || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Fecha: ${hoyLargo()}${sp.ejemplo ? "   ·   Ejemplo con datos inventados" : ""}`), M, y); y += 9;
+  const seccion = (t) => { salto(12); doc.setFont("helvetica", "bold"); doc.setFontSize(12.5); negro(); doc.text(limpio(t), M, y); y += 3; doc.setDrawColor(227, 216, 200); doc.line(M, y, W - M, y); y += 6; };
+  seccion("Resultados");
+  const rs = resumenFicha(sp.defs, sp.c1);
+  if (rs.tot) {
+    let x = M; const bw = 60, tot = rs.tot;
+    ["R", "A", "V"].forEach((k) => { if (!rs.n[k]) return; const w = (bw * rs.n[k]) / tot, col = PDFCOL[k]; doc.setFillColor(col[0], col[1], col[2]); doc.rect(x, y - 3, w, 3.2, "F"); x += w; });
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); negro(); doc.text(limpio(`${rs.n.V} en verde · ${rs.n.A} en amarillo · ${rs.n.R} en rojo`), M + bw + 5, y - 0.4); y += 8;
+  }
+  const escPDF = (e, x, yy, w) => { if (!e) return; const seg = [["R", 0, e.a], ["A", e.a, e.g], ["V", e.g, 1]]; seg.forEach(([k, a0, a1]) => { if (a1 <= a0) return; const col = PDFCOL[k]; doc.setFillColor(col[0] + (255 - col[0]) * 0.45, col[1] + (255 - col[1]) * 0.45, col[2] + (255 - col[2]) * 0.45); doc.rect(x + w * a0, yy - 2.6, w * (a1 - a0), 1.8, "F"); }); doc.setFillColor(42, 29, 22); doc.circle(x + w * e.p, yy - 1.7, 1.25, "F"); };
+  const cx1 = M + 76, cx2 = M + 128, wv = sp.c2 ? 46 : 68, gx = M + 148, gw = W - M - gx;
+  if (sp.c2) { doc.setFont("helvetica", "bold"); doc.setFontSize(8.5); gris(); doc.text("ANTES", cx1, y); doc.text("AHORA", cx2, y); y += 5; }
+  sp.defs.forEach((d) => {
+    const a = d.f(sp.c1), b = sp.c2 ? d.f(sp.c2) : null;
+    doc.setFontSize(10); doc.setFont("helvetica", "bold");
+    const lab = doc.splitTextToSize(limpio(d.k), 72);
+    doc.setFont("helvetica", "normal");
+    const va = doc.splitTextToSize(limpio(a[1] + (!b && a[2] ? "  (" + a[2] + ")" : "")), wv - 5);
+    const vb = b ? doc.splitTextToSize(limpio(b[1]), wv - 5) : [];
+    const h = Math.max(lab.length, va.length, vb.length) * 4.6 + 2.5;
+    salto(h);
+    doc.setFontSize(10); doc.setFont("helvetica", "bold"); negro(); doc.text(lab, M, y);
+    doc.setFont("helvetica", "normal");
+    if (!d.neutral) punto(cx1 + 1.6, y, a[0]); doc.text(va, cx1 + (d.neutral ? 0 : 5), y);
+    if (!sp.c2 && d.g && a[0]) escPDF(d.g(sp.c1), gx, y, gw);
+    if (b) { if (!d.neutral) punto(cx2 + 1.6, y, b[0]); doc.text(vb, cx2 + (d.neutral ? 0 : 5), y); }
+    y += h;
+  });
+  y += 3;
+  (sp.datos || []).forEach(([t, rows]) => {
+    seccion("Sus datos · " + t);
+    rows.forEach(([k, v]) => {
+      doc.setFontSize(9.5); doc.setFont("helvetica", "normal");
+      const kl = doc.splitTextToSize(limpio(k), 92), vl = doc.splitTextToSize(limpio(v || "—"), W - 2 * M - 98);
+      const h = Math.max(kl.length, vl.length) * 4.3 + 1.8;
+      salto(h); doc.setFontSize(9.5); doc.setFont("helvetica", "normal"); gris(); doc.text(kl, M, y); negro(); doc.text(vl, M + 98, y); y += h;
+    });
+    y += 3;
+  });
+  pie();
+  return doc;
+}
+// ---------- Descargas: dentro de claude.ai, con la confirmación del visitante; fuera, directo ----------
+const ENMARCADO = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
+let _dl = null;
+const listoDescargas = new Promise((res) => {
+  if (!ENMARCADO) return res(true);
+  try { if (window.claude && window.claude.use) window.claude.use("downloads").then((d) => { _dl = d; res(!!d); }, () => res(false)); else res(false); } catch (e) { res(false); }
+});
+async function guardarArchivo(nombre, blob, msg) {
+  if (_dl) {
+    try { await _dl.save({ filename: nombre, data: blob }); return true; }
+    catch (e) { if (msg) msg(e && e.code === "declined" ? "" : "No se pudo guardar aquí."); return false; }
+  }
+  if (!ENMARCADO) {
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); return true;
+  }
+  return false;
+}
+const fechaArchivo = () => { const f = new Date(); return `${String(f.getDate()).padStart(2, "0")}-${String(f.getMonth() + 1).padStart(2, "0")}-${f.getFullYear()}`; };
+const nombreArchivo = (t, ext) => limpio(t).replace(/[\\/:*?"<>|]/g, "").replace(/\s+/g, " ").trim() + "." + ext;
+
+function setupPDF(btnId, getSpec) {
+  const b = document.getElementById(btnId); if (!b) return;
+  const msg = (t) => setText("msg-copia", t);
+  b.hidden = ENMARCADO;
+  listoDescargas.then((okd) => { b.hidden = !okd; });
+  b.onclick = async () => {
+    const sp = getSpec(); const doc = construirPDF(sp);
+    if (!doc) return;
+    const nombre = nombreArchivo(`Ficha ${sp.corto} ${sp.st.empresa || "sin nombre"} ${sp.st.cliente || ""} ${fechaArchivo()}`, "pdf");
+    if (await guardarArchivo(nombre, doc.output("blob"), msg)) msg("PDF guardado.");
+  };
+}
+
+// ---------- Análisis guardados en este aparato: uno por cada cliente potencial, agrupados por empresa ----------
+const FIN = "12 de mayo de 2027"; // hasta cuándo quedan disponibles las herramientas
+// Nombre de empresa comparable: sin tildes, mayúsculas, espacios, puntos ni sigla societaria
+const normE = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "").replace(/(sasbic|sas|ltda|sa|eu|sca|scs)$/, "");
+const claveDe = (st, id) => normE(st && st.empresa) || "#" + id;
+function tieneDatos(x) { if (x == null || x === "") return false; if (Array.isArray(x)) return x.some(tieneDatos); if (typeof x === "object") return Object.values(x).some(tieneDatos); return true; }
+// Completa lo vacío de «d» con lo de «s»; en listas, mes por mes, sin mezclar dentro de un mismo mes
+function fusionar(d, s) {
+  if (Array.isArray(d) && Array.isArray(s)) { s.forEach((x, i) => { if (i >= d.length) d.push(x); else if (!tieneDatos(d[i]) && tieneDatos(x)) d[i] = x; }); return d; }
+  if (d && s && typeof d === "object" && typeof s === "object") { Object.keys(s).forEach((k) => { if (!tieneDatos(d[k])) d[k] = s[k]; else if (d[k] && typeof d[k] === "object") fusionar(d[k], s[k]); }); return d; }
+  return tieneDatos(d) ? d : s;
+}
+
+// opt.propio: campos de cada cliente (se vacían al copiar un análisis)
+// opt.compartido: campos de toda la empresa (iguales en todos los análisis de esa empresa, nunca entre empresas)
+// opt.migrar: arregla datos de versiones anteriores
+function makeStore(KEY, EX, BLANK, opt = {}) {
+  const SH = opt.compartido || [], PROPIO = opt.propio || ["cliente"], MIG = opt.migrar || (() => {});
+  let db = null;
+  try { db = JSON.parse(localStorage.getItem(KEY)); } catch (e) { db = null; }
+  if (!db || typeof db !== "object" || !db.items || typeof db.items !== "object") db = { items: {}, actual: "" };
+  if (!db.porEmpresa || typeof db.porEmpresa !== "object") {
+    db.porEmpresa = {};
+    if (db.comp && SH.some((f) => tieneDatos(db.comp[f]))) { // versión anterior: un solo histórico por aparato
+      const id = db.items[db.actual] ? db.actual : Object.keys(db.items)[0];
+      if (id) db.porEmpresa[claveDe(db.items[id].st, id)] = db.comp;
+    }
+  }
+  delete db.comp;
+  Object.keys(db.items).forEach((i) => { const it = db.items[i]; if (!it || !it.st || it.nuevo) delete db.items[i]; }); // análisis en blanco que nunca se tocaron
+  Object.values(db.items).forEach((it) => MIG(it.st));
+  Object.values(db.porEmpresa).forEach((b) => b && MIG(b));
+  const vacio = (k) => (BLANK[k] === undefined ? "" : clone(BLANK[k]));
+  const ligar = (st, id) => {
+    if (!SH.length) return;
+    const k = claveDe(st, id); let b = db.porEmpresa[k];
+    if (!b) b = db.porEmpresa[k] = {};
+    SH.forEach((f) => { if (b[f] != null) st[f] = b[f]; else b[f] = st[f]; });
+  };
+  const usadas = () => new Set(Object.entries(db.items).map(([i, it]) => claveDe(it.st, i)));
+  const podar = () => { const u = usadas(); Object.keys(db.porEmpresa).forEach((k) => { if (!u.has(k)) delete db.porEmpresa[k]; }); };
+  const recientes = () => Object.entries(db.items).sort((a, b) => (b[1].upd || 0) - (a[1].upd || 0)).map((x) => x[0]);
+  const S = {
+    db, st: null, ejemplo: false, previo: "",
+    persist() { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} },
+    clave() { return S.ejemplo ? "" : claveDe(S.st, db.actual); },
+    lista() { return Object.entries(db.items).map(([id, it]) => ({ id, clave: claveDe(it.st, id), empresa: it.st.empresa || "", cliente: it.st.cliente || "", upd: it.upd || 0 })).sort((a, b) => b.upd - a.upd); },
+    verEjemplo() { if (!S.ejemplo && db.actual) S.previo = db.actual; S.ejemplo = true; db.actual = ""; S.persist(); S.st = clone(EX); },
+    volver() { const id = S.previo && db.items[S.previo] ? S.previo : recientes()[0]; if (id) S.abrir(id); else S.nueva(false); },
+    tocar() { const it = db.items[db.actual]; if (!S.ejemplo && it && it.nuevo) { delete it.nuevo; S.persist(); } },
+    nueva(copiar) {
+      const id = "a" + Date.now() + Math.floor(Math.random() * 1000);
+      let st = clone(BLANK);
+      if (copiar && !S.ejemplo && S.st) { st = clone(S.st); PROPIO.forEach((k) => (st[k] = vacio(k))); }
+      db.items[id] = copiar ? { st, upd: Date.now() } : { st, upd: Date.now(), nuevo: true }; db.actual = id; S.ejemplo = false; S.st = st; ligar(st, id); S.persist();
+    },
+    abrir(id) { const it = db.items[id]; if (!it) return S.volver(); S.ejemplo = false; db.actual = id; S.st = it.st; ligar(S.st, id); S.persist(); },
+    borrar(id) { delete db.items[id]; podar(); if (S.previo === id) S.previo = ""; if (db.actual === id) { db.actual = ""; S.previo = ""; S.volver(); } S.persist(); },
+    guardar() { if (S.ejemplo) return; const it = db.items[db.actual]; if (!it) return; it.upd = Date.now(); S.persist(); },
+    // Cambió el nombre de la empresa: el histórico de la empresa anterior nunca pasa a otra empresa
+    cambioEmpresa(k0) {
+      if (S.ejemplo || !SH.length || !k0) return false;
+      const id = db.actual, k = claveDe(S.st, id); if (k === k0) return false;
+      const otros = Object.entries(db.items).some(([i, it]) => i !== id && claveDe(it.st, i) === k0);
+      const nuevo = db.porEmpresa[k];
+      if (nuevo) SH.forEach((f) => { if (nuevo[f] == null) nuevo[f] = otros ? vacio(f) : S.st[f]; else if (!otros) fusionar(nuevo[f], S.st[f]); S.st[f] = nuevo[f]; });
+      else { const b = {}; SH.forEach((f) => { b[f] = otros ? vacio(f) : S.st[f]; S.st[f] = b[f]; }); db.porEmpresa[k] = b; }
+      podar(); S.persist(); return true;
+    },
+    // Copia de seguridad: los análisis de la empresa abierta y su histórico
+    exportar() {
+      if (S.ejemplo) return null;
+      const k = S.clave(), items = {}, pe = {};
+      Object.entries(db.items).forEach(([i, it]) => { if (claveDe(it.st, i) === k) items[i] = it; });
+      if (db.porEmpresa[k]) pe[k] = db.porEmpresa[k];
+      return { app: "ruta-cch", herramienta: KEY, version: 2, fecha: new Date().toISOString(), empresa: S.st.empresa || "", items, porEmpresa: pe };
+    },
+    importar(o) {
+      if (o && o.st && !o.app) { const i = "a" + Date.now(); o = { app: "ruta-cch", herramienta: KEY, items: { [i]: { st: o.st, upd: Date.now() } }, porEmpresa: o.comp ? { [claveDe(o.st, i)]: o.comp } : {} }; } // copia en texto de la versión anterior
+      if (!o || o.app !== "ruta-cch") throw new Error("formato");
+      if (o.herramienta !== KEY) throw new Error("otra");
+      const ids = Object.keys(o.items || {}).filter((i) => o.items[i] && o.items[i].st);
+      if (!ids.length) throw new Error("vacia");
+      ids.forEach((i) => { const it = o.items[i]; MIG(it.st); const ya = db.items[i]; if (!ya || (it.upd || 0) > (ya.upd || 0)) db.items[i] = { st: it.st, upd: it.upd || Date.now() }; });
+      Object.entries(o.porEmpresa || {}).forEach(([k, b]) => { if (!b) return; MIG(b); if (db.porEmpresa[k]) fusionar(db.porEmpresa[k], b); else db.porEmpresa[k] = b; });
+      ids.sort((a, b) => (o.items[b].upd || 0) - (o.items[a].upd || 0));
+      S.abrir(ids[0]);
+      return ids.length;
+    },
+    borrarTodo() { try { localStorage.removeItem(KEY); } catch (e) {} db.items = {}; db.porEmpresa = {}; db.actual = ""; S.previo = ""; S.ejemplo = false; S.nueva(false); },
+  };
+  if (db.actual && db.items[db.actual]) S.abrir(db.actual); else S.volver(); // arranca en blanco; el ejemplo se ve con «Ver ejemplo»
+  podar(); S.persist();
+  return S;
+}
+function fechaCorta(t) { try { return new Date(t).toLocaleDateString("es-CO", { day: "numeric", month: "short", year: "numeric" }); } catch (e) { return ""; } }
+
+// Encabezado común: empresa, producto, cliente potencial, y la lista de análisis guardados
+function setupShell(S, onOpen) {
+  const sheet = $("#sheet");
+  const paintHeader = () => { $("#banner").hidden = !S.ejemplo; $("#b-copia").hidden = S.ejemplo; $("#b-verej").hidden = S.ejemplo; };
+  const abrirListo = () => { sheet.hidden = true; paintHeader(); onOpen(); window.scrollTo({ top: 0 }); };
+  const fila = (e) => `<div class="row item${!S.ejemplo && e.id === S.db.actual ? " on" : ""}" data-row="${e.id}">
+      <button class="open" data-open="${e.id}" type="button"><b>${esc(e.cliente || "Sin cliente potencial")}</b><small>${esc(fechaCorta(e.upd))}${!S.ejemplo && e.id === S.db.actual ? " · abierto" : ""}</small></button>
+      <button class="x" data-del="${e.id}" type="button" aria-label="Borrar este análisis">×</button></div>`;
+  const listar = () => {
+    const L = S.lista(), G = new Map();
+    L.forEach((e) => { if (!G.has(e.clave)) G.set(e.clave, { nombre: e.empresa, items: [] }); G.get(e.clave).items.push(e); });
+    $("#lista").innerHTML = L.length ? [...G.values()].map((g) => `<div class="grupo"><p class="gtitle">${esc(g.nombre || "Sin nombre de empresa")}</p><div class="group">${g.items.map(fila).join("")}</div></div>`).join("")
+      : `<div class="group"><div class="row"><span class="l" style="color:var(--muted)">Todavía no hay análisis guardados en este aparato.</span></div></div>`;
+    $$("[data-open]", sheet).forEach((b) => (b.onclick = () => { S.abrir(b.dataset.open); abrirListo(); }));
+    $$("[data-del]", sheet).forEach((b) => (b.onclick = () => {
+      const row = b.closest(".item"), id = b.dataset.del;
+      row.innerHTML = `<span class="l">¿Borrar este análisis? No se puede recuperar.</span><span class="r"><button class="btn danger" type="button" data-si>Borrar</button><button class="btn" type="button" data-no>No</button></span>`;
+      $("[data-si]", row).onclick = () => { const era = !S.ejemplo && S.db.actual === id; S.borrar(id); listar(); if (era) { paintHeader(); onOpen(); } };
+      $("[data-no]", row).onclick = listar;
+    }));
+  };
+  $("#b-empresas").onclick = () => { listar(); bkMsg(""); sheet.hidden = false; };
+  $("#b-cerrar").onclick = () => (sheet.hidden = true);
+  sheet.onclick = (e) => { if (e.target === sheet) sheet.hidden = true; };
+  const nueva = (copiar) => { S.nueva(copiar); abrirListo(); const f = $(copiar ? "#f-cliente" : "#f-empresa"); if (f) f.focus(); };
+  $("#b-nueva").onclick = () => nueva(false);
+  $("#b-volver").onclick = () => { S.volver(); abrirListo(); };
+  $("#b-verej").onclick = () => { S.verEjemplo(); abrirListo(); };
+  // Un análisis en blanco cuenta como suyo apenas escriba o marque algo
+  const marcar = (e) => { if (S.ejemplo) return; const t = e.target; if (!t || !t.closest || t.closest("#sheet, nav.tabs, .toprow, .banner, .next")) return; if (e.type === "click" && !t.closest("button, [role=checkbox]")) return; S.tocar(); };
+  document.addEventListener("input", marcar, true); document.addEventListener("click", marcar, true);
+  $("#b-copia").onclick = () => nueva(true);
+  $("#b-ejemplo").onclick = () => { S.verEjemplo(); abrirListo(); };
+  // Si cambia el nombre de la empresa, cada empresa conserva su propio histórico
+  const fe = $("#f-empresa"); let k0 = "";
+  if (fe) { fe.addEventListener("focus", () => { k0 = S.clave(); }); fe.addEventListener("change", () => { if (S.cambioEmpresa(k0)) onOpen(); k0 = S.clave(); }); }
+  // Copia de seguridad en un archivo; en texto si el aparato no deja descargar
+  const bkMsg = (t) => setText("bk-msg", t);
+  const leer = (o) => {
+    try { const n = S.importar(o); $("#bk-txt").hidden = true; $("#b-bk-ok").hidden = true; abrirListo(); listar(); bkMsg(n === 1 ? "Se recuperó 1 análisis." : `Se recuperaron ${n} análisis.`); sheet.hidden = false; }
+    catch (err) { bkMsg(err && err.message === "otra" ? "Esa copia es de la otra herramienta. Ábrala allá." : "Esa copia no se pudo leer."); }
+  };
+  const gb = $("#b-bk-guardar");
+  gb.hidden = ENMARCADO; listoDescargas.then((okd) => { gb.hidden = !okd; });
+  gb.onclick = async () => {
+    const o = S.exportar(); if (!o) { bkMsg("Abra primero uno de sus análisis."); return; }
+    const nombre = nombreArchivo(`Copia ${document.title} ${o.empresa || "sin nombre"} ${fechaArchivo()}`, "json");
+    if (await guardarArchivo(nombre, new Blob([JSON.stringify(o)], { type: "application/json" }), bkMsg)) bkMsg("Copia guardada. Déjela en su correo o en una carpeta donde no se pierda.");
+  };
+  const fi = $("#bk-file");
+  $("#b-bk-abrir").onclick = () => { fi.value = ""; fi.click(); };
+  fi.onchange = () => {
+    const f = fi.files && fi.files[0]; if (!f) return;
+    const r = new FileReader();
+    r.onload = () => { let o = null; try { o = JSON.parse(String(r.result)); } catch (e) { bkMsg("Esa copia no se pudo leer."); return; } leer(o); };
+    r.onerror = () => bkMsg("Esa copia no se pudo leer.");
+    r.readAsText(f);
+  };
+  $("#b-bk-copiar").onclick = () => {
+    const o = S.exportar(); if (!o) { bkMsg("Abra primero uno de sus análisis."); return; }
+    const code = "RC2:" + btoa(unescape(encodeURIComponent(JSON.stringify(o))));
+    const done = () => bkMsg("Copia copiada. Péguela en un correo para usted mismo.");
+    const fb = () => { const ta = $("#bk-txt"); ta.hidden = false; ta.value = code; ta.select(); bkMsg("Seleccione el texto y cópielo."); };
+    try { navigator.clipboard.writeText(code).then(done, fb); } catch (err) { fb(); }
+  };
+  $("#b-bk-pegar").onclick = () => { const ta = $("#bk-txt"); ta.hidden = false; ta.value = ""; ta.focus(); $("#b-bk-ok").hidden = false; bkMsg("Pegue aquí el texto de la copia y toque «Recuperar»."); };
+  $("#b-bk-ok").onclick = () => {
+    let o = null;
+    try { const raw = $("#bk-txt").value.trim().replace(/^(AN1|RC2):/, ""); o = JSON.parse(decodeURIComponent(escape(atob(raw)))); }
+    catch (err) { bkMsg("Ese texto no se pudo leer. Copie el texto completo."); return; }
+    leer(o);
+  };
+  // Borrar todo lo de este aparato
+  const bt = $("#b-borrar-todo");
+  bt.onclick = () => {
+    const box = $("#borrar-todo"), antes = box.innerHTML;
+    box.innerHTML = `<span class="l">¿Borrar todos los análisis guardados en este aparato? No se pueden recuperar, salvo con una copia.</span><span class="r" style="justify-content:flex-start"><button class="btn danger" type="button" data-si>Borrar todo</button><button class="btn" type="button" data-no>No</button></span>`;
+    $("[data-si]", box).onclick = () => { S.borrarTodo(); box.innerHTML = antes; setupBorrar(); listar(); paintHeader(); onOpen(); bkMsg("Se borró todo lo de este aparato."); };
+    $("[data-no]", box).onclick = () => { box.innerHTML = antes; setupBorrar(); };
+  };
+  const setupBorrar = () => { $("#b-borrar-todo").onclick = bt.onclick; };
+  paintHeader();
+}
+
+// Encabezado de la ficha: cliente potencial y fecha
+function fichaCliente(S) {
+  const c = S.st.cliente;
+  $("#ficha-cli").innerHTML = c ? `Cliente potencial: <b>${esc(c)}</b>` : `Cliente potencial: <span style="color:var(--muted)">escríbalo arriba</span>`;
+  setText("ficha-sub", S.ejemplo ? "Ejemplo: Café Ejemplo S.A.S., con datos inventados." : "Análisis del " + hoyLargo() + ".");
+}
+
+// Listas que crecen: botón «+» y «×» para quitar
+function listaEditable(arr, min, max, nuevo, rebuild, btnId) {
+  const b = document.getElementById(btnId);
+  if (b) { b.hidden = arr.length >= max; b.onclick = () => { if (arr.length < max) { arr.push(nuevo()); rebuild(); } }; }
+  return (i) => { if (arr.length > min) { arr.splice(i, 1); rebuild(); } };
+}
+
+// Escala de rojo a verde: dónde queda un número. dir "hi": más es mejor; "lo": menos es mejor
+function escala(v, min, max, a, g, dir) {
+  if (!ok(v) || !ok(a) || !ok(g)) return null;
+  const pos = (x) => { const t = (x - min) / (max - min); return Math.max(0, Math.min(1, dir === "hi" ? t : 1 - t)); };
+  return { p: pos(v), a: pos(a), g: pos(g) };
+}
+function escalaHTML(e) {
+  if (!e) return "";
+  const w = (x) => (x * 100).toFixed(1) + "%";
+  return `<span class="gauge" aria-hidden="true"><i data-c="R" style="width:${w(e.a)}"></i><i data-c="A" style="width:${w(e.g - e.a)}"></i><i data-c="V" style="width:${w(1 - e.g)}"></i><b style="left:${w(e.p)}"></b></span>`;
+}
+// Ficha: una tarjeta por indicador, con su escala de rojo a verde
+function fichaTiles(defs, c1, c2) {
+  return defs.map((d) => {
+    const a = d.f(c1), b = c2 ? d.f(c2) : null;
+    const dt = (x, L) => d.neutral ? "" : `<span class="dot${L ? " L" : ""}" data-c="${x[0]}"></span>`;
+    const ga = d.g && a[0] ? escalaHTML(d.g(c1)) : "";
+    if (!b) return `<div class="tile"><span class="k">${esc(d.k)}</span><span class="v${String(a[1]).length > 22 ? " long" : ""}">${dt(a, 1)}${esc(a[1])}</span>${ga}${a[2] ? `<span class="s">${esc(a[2])}</span>` : ""}</div>`;
+    return `<div class="tile"><span class="k">${esc(d.k)}</span><div class="cmp"><span class="w">Antes</span><b>${dt(a)}${esc(a[1])}</b><span class="w">Ahora</span><b>${dt(b)}${esc(b[1])}</b></div>${b[2] ? `<span class="s">${esc(b[2])}</span>` : ""}</div>`;
+  }).join("");
+}
+function fichaTexto(titulo, st, defs, c1, c2, extra) {
+  const L = [titulo, `Empresa: ${st.empresa || "—"} · Producto: ${st.producto || "—"}`, `Cliente potencial: ${st.cliente || "—"}`, ""];
+  defs.forEach((d) => {
+    const a = d.f(c1), b = c2 ? d.f(c2) : null;
+    const e = (x) => d.neutral ? "•" : (EMO[x[0]] || "⚪");
+    L.push(b ? `${d.k}: antes ${e(a)} ${a[1]} → ahora ${e(b)} ${b[1]}` : `${e(a)} ${d.k}: ${a[1]}${a[2] ? " (" + a[2] + ")" : ""}`);
+  });
+  if (extra) L.push("", extra);
+  L.push("", "Análisis propio con los datos escritos por la empresa. No es una recomendación.");
+  return L.join("\n");
+}
+
+function resumenFicha(defs, c) {
+  const col = defs.filter((d) => !d.neutral).map((d) => [d, d.f(c)[0]]);
+  const n = { V: 0, A: 0, R: 0 }; col.forEach(([, x]) => { if (n[x] !== undefined) n[x]++; });
+  const rojos = col.filter((x) => x[1] === "R").map((x) => x[0].k.toLowerCase());
+  const faltan = col.filter((x) => !x[1]).map((x) => x[0].k.toLowerCase());
+  const tot = n.V + n.A + n.R, partes = [];
+  if (tot) partes.push(`De ${tot} números: ${n.V} en verde, ${n.A} en amarillo y ${n.R} en rojo.`);
+  if (rojos.length) partes.push("En rojo: " + rojos.join(", ") + ".");
+  if (faltan.length) partes.push("Sin datos todavía: " + faltan.join(", ") + ".");
+  return { n, tot, c: n.R ? "R" : n.A ? "A" : tot ? "V" : "", text: partes.join(" ") || "Complete las secciones para ver su ficha." };
+}
+function resumenHTML(rs) {
+  const bar = rs.tot ? `<div class="mix" role="img" aria-label="${rs.n.V} en verde, ${rs.n.A} en amarillo y ${rs.n.R} en rojo">${["R", "A", "V"].map((k) => (rs.n[k] ? `<i data-c="${k}" style="flex:${rs.n[k]}"><span>${rs.n[k]}</span></i>` : "")).join("")}</div>` : "";
+  return `<span class="k">Su ficha en un vistazo</span>${bar}<p>${esc(rs.text)}</p>`;
+}
+
+const AVISO = "Herramienta de análisis para uso propio. Los resultados salen solo de los datos que usted escribe y sirven para entender su operación. No son una recomendación de vender, comprar, invertir, contratar ni fijar un precio: cada decisión es de su empresa. Lo que escribe se guarda solo en este aparato. Disponible hasta el " + FIN + "; antes de esa fecha, guarde su ficha en PDF y una copia de sus datos.";
+
+// Herramienta 1 · Mi capacidad y mis costos (v7)
+const KEY = "analisis:h1:v5";
+const paso = (nombre, kg, costo, unidad, kgTotal) => ({ nombre, kg, costo, unidad: unidad || "u", kgTotal: kgTotal ?? "" });
+const gasto = (nombre, valor) => ({ nombre, valor: valor ?? "" });
+const GASTOS0 = () => [gasto("Su sueldo (lo que debería ganar usted)"), gasto("Arriendo, contador, servicios y otros"), gasto("Arreglos y desgaste de equipos")];
+// Pasos típicos por tipo de producto (se pueden cambiar)
+const MODELOS = {
+  "Café verde": { u: "kg", pasos: ["Recibir y pesar el pergamino", "Guardar en bodega", "Trillar", "Seleccionar"] },
+  "Café tostado": { u: "kg", pasos: ["Recibir el café verde", "Tostar", "Reposar y moler", "Empacar y sellar", "Etiquetar"] },
+  "Panela": { u: "kg", pasos: ["Cortar y llevar la caña", "Moler", "Evaporar en la hornilla", "Moldear o pulverizar", "Empacar"] },
+  "Cacao": { u: "kg", pasos: ["Recibir el cacao en baba", "Fermentar", "Secar", "Seleccionar"] },
+  "Tabaco": { u: "kg", pasos: ["Cosechar", "Curar", "Fermentar", "Clasificar", "Enfardar en pacas"] },
+  "Confección": { u: "prendas", pasos: ["Cortar", "Coser", "Terminar y revisar", "Planchar y etiquetar", "Empacar"] },
+  "Otro": { u: null, pasos: ["", "", "", ""] },
+};
+const EX = {
+  empresa: "Café Ejemplo S.A.S.", producto: "Café verde excelso", cliente: "Importador en Nueva York", modelo: "Café verde", unidad: "kg",
+  pasos: [paso("Recibir y pesar el pergamino", 6000, 150), paso("Guardar en bodega", 12000, ""), paso("Trillar", 3000, 800, "lb"), paso("Seleccionar", 4000, 400)],
+  produce: 2250, techo: "", desperdicio: "Esperas", pierde: 5,
+  mejoras: [
+    { texto: "Reservar turno con la trilladora una semana antes de cada pedido", ayuda: "Sí", facil: "Sí", quien: "El gerente", cuando: "30 de octubre" },
+    { texto: "Trillar solo café con pedido confirmado", ayuda: "Sí", facil: "No", quien: "El comercial", cuando: "30 de noviembre" },
+    { texto: "Revisar la selección para repetir menos", ayuda: "No", facil: "Sí", quien: "El jefe de planta", cuando: "15 de noviembre" },
+  ],
+  mp: 22580, despKg: 2736,
+  gastos: [gasto("Su sueldo (lo que debería ganar usted)", 2500000), gasto("Operario, arriendo, contador y servicios", 4300000), gasto("Arreglos y desgaste de equipos", 200000)],
+  precio: 10, dolar: 3194.44, prueba: 3000,
+};
+const BLANK = {
+  empresa: "", producto: "", cliente: "", modelo: "", unidad: "kg", pasos: Array.from({ length: 4 }, () => paso("", "", "")), produce: "", techo: "", desperdicio: "",
+  pierde: "", mejoras: Array.from({ length: 3 }, () => ({ texto: "", ayuda: "", facil: "", quien: "", cuando: "" })),
+  mp: "", despKg: "", gastos: GASTOS0(), precio: "", dolar: "", prueba: "",
+};
+const PREG_DESP = {
+  "Esperas": "Para pensar: ¿se podrían reservar los turnos con terceros antes de tener el pedido encima?",
+  "Producto quieto en bodega": "Para pensar: ¿cuánta plata hay hoy quieta en bodega, y desde cuándo?",
+  "Producto dañado o repetido": "Para pensar: ¿en qué paso se daña? Lo que se repite se paga dos veces.",
+  "Mover la carga de más": "Para pensar: ¿cuántas veces se mueve la carga antes de salir? ¿Se podrían juntar viajes?",
+  "Vueltas y búsquedas del personal": "Para pensar: ¿cuánto tiempo se va en buscar herramientas, empaques o papeles? ¿Está cada cosa a la mano?",
+  "Producir sin pedido": "Para pensar: ¿lo que produce coincide con lo que vende?",
+  "Papeleo o documentación": "Para pensar: ¿qué firma, formato o trámite nadie revisa?",
+};
+const S = makeStore(KEY, EX, BLANK, { propio: ["cliente", "precio"] });
+const mejoraVacia = () => ({ texto: "", ayuda: "", facil: "", quien: "", cuando: "" });
+const unis = (u) => (u.libra ? [["u", "por " + u.uno], ["lb", "por libra"], ["total", "en total"]] : [["u", "por " + u.uno], ["total", "en total"]]);
+
+function costoU(p, u) {
+  const c = N(p.costo); if (!ok(c)) return NaN;
+  if (p.unidad === "lb" && u.libra) return c * 2;
+  if (p.unidad === "total") { const k = N(p.kgTotal); return ok(k) && k > 0 ? c / k : NaN; }
+  return c;
+}
+function prioridad(m) {
+  if (!m.ayuda || !m.facil) return 0;
+  return m.ayuda === "Sí" ? (m.facil === "Sí" ? 1 : 2) : (m.facil === "Sí" ? 3 : 4);
+}
+const PCOL = ["", "V", "A", "", "R"];
+
+function calc(s) {
+  const c = { s }, u = U(s);
+  const conKg = s.pasos.filter((p) => ok(N(p.kg)) && N(p.kg) > 0);
+  c.techoPasos = conKg.length ? Math.min(...conKg.map((p) => N(p.kg))) : NaN;
+  c.techo = ok(N(s.techo)) && N(s.techo) > 0 ? N(s.techo) : c.techoPasos;
+  c.cuelloIdx = s.pasos.findIndex((p) => N(p.kg) === c.techoPasos);
+  c.cuello = c.cuelloIdx >= 0 ? (s.pasos[c.cuelloIdx].nombre || "Paso " + (c.cuelloIdx + 1)) : "";
+  c.prod = N(s.produce);
+  c.uso = c.prod / c.techo; c.cUso = hi(c.uso, 0.6, 0.4);
+  c.cPierde = lo(N(s.pierde), 3, 6);
+  const z = (x) => (ok(N(x)) ? N(x) : 0);
+  c.pasoKg = s.pasos.map((p) => costoU(p, u));
+  const algunPaso = c.pasoKg.some(ok);
+  c.pasosKg = c.pasoKg.reduce((a, x) => a + (ok(x) ? x : 0), 0);
+  const v = (ok(N(s.mp)) || algunPaso || ok(N(s.despKg))) ? z(s.mp) + c.pasosKg + z(s.despKg) : NaN;
+  const fijos = (s.gastos || []).reduce((a, g) => a + z(g.valor), 0);
+  c.var = v; c.fijos = fijos; c.fijoKg = fijos / c.prod;
+  c.costo = v + c.fijoKg;
+  c.ingreso = N(s.precio) * N(s.dolar); c.gana = c.ingreso - c.costo; c.margen = c.gana / c.ingreso; c.cMargen = hi(c.margen, 0.2, 0.1);
+  c.ganaMes = c.gana * c.prod;
+  c.deq = c.costo / N(s.precio); c.holgura = (N(s.dolar) - c.deq) / N(s.dolar); c.cHolgura = hi(c.holgura, 0.15, 0.05);
+  const contrib = c.ingreso - v; c.kgeq = contrib > 0 ? fijos / contrib : NaN; c.seg = (c.prod - c.kgeq) / c.prod; c.cSeg = hi(c.seg, 0.3, 0.15);
+  c.mAt = (d) => { const ing = N(s.precio) * d; return (ing - c.costo) / ing; };
+  const p0 = N(s.pierde) / 100, mpMejor = ok(p0) && p0 > 0.03 ? z(s.mp) * (1 - p0) / 0.97 : z(s.mp);
+  const costoCon = (mp, kg) => (ok(v) ? mp + c.pasosKg + z(s.despKg) : NaN) + fijos / kg;
+  c.mLlenar = (c.ingreso - costoCon(z(s.mp), c.techo)) / c.ingreso;
+  c.mMerma = (c.ingreso - costoCon(mpMejor, c.prod)) / c.ingreso;
+  const cDos = costoCon(mpMejor, c.techo); c.mDos = (c.ingreso - cDos) / c.ingreso; c.deqDos = cDos / N(s.precio);
+  c.mejor = s.mejoras.filter((m) => m.texto && prioridad(m)).sort((a, b) => prioridad(a) - prioridad(b))[0];
+  return c;
+}
+
+function ficha(u) {
+  return [
+    { k: "Usa de lo que puede producir", g: (c) => escala(c.uso, 0, 1, 0.4, 0.6, "hi"), f: (c) => [c.cUso, pct(c.uso, 0), c.cuello ? "Cuello de botella: " + c.cuello : ""] },
+    { k: "Producto dañado o repetido", g: (c) => escala(N(c.s.pierde), 0, 12, 6, 3, "lo"), f: (c) => [c.cPierde, ok(N(c.s.pierde)) ? fmt(N(c.s.pierde)) + " de cada 100 " + u.unos : "—"] },
+    { k: `De cada ${u.uno} que vende le queda`, g: (c) => escala(c.margen, -0.1, 0.4, 0.1, 0.2, "hi"), f: (c) => [c.cMargen, pct(c.margen), ok(c.costo) ? `${u.Art} le cuesta ${pesos(c.costo)}` : ""] },
+    { k: "El dólar puede bajar", g: (c) => escala(c.holgura, -0.1, 0.3, 0.05, 0.15, "hi"), f: (c) => [c.cHolgura, pct(c.holgura), ok(c.deq) ? "Dólar de equilibrio: " + pesos(c.deq) : ""] },
+    { k: `${u.Unos} para no perder, al mes`, g: (c) => escala(c.seg, -0.2, 0.6, 0.15, 0.3, "hi"), f: (c) => [c.cSeg, ok(c.kgeq) ? fmt(c.kgeq) + " " + u.abbr : "—", ok(c.prod) && ok(c.kgeq) ? "Hoy produce " + fmt(c.prod) + " " + u.abbr : ""] },
+    { k: "Mejora en prioridad", neutral: true, f: (c) => ["", c.mejor ? c.mejor.texto : "—", c.mejor ? [c.mejor.quien, c.mejor.cuando].filter(Boolean).join(" · ") : ""] },
+  ];
+}
+
+function datosPDF(s, c) {
+  const u = U(s);
+  const pasos = s.pasos.map((p, i) => [p.nombre || "Paso " + (i + 1), [ok(N(p.kg)) ? "máximo " + fmt(N(p.kg)) + " " + u.abbr + " al mes" : "", ok(c.pasoKg[i]) ? pesos(c.pasoKg[i]) + " por " + u.uno : ""].filter(Boolean).join(" · ")]).filter((r) => r[1]);
+  return [
+    ["Proceso", [["Qué produce", s.modelo || "—"], ["Mide en", u.unos]].concat(pasos, [["Cuello de botella", c.cuello || "—"], ["Lo máximo que puede sacar al mes", ok(c.techo) ? fmt(c.techo) + " " + u.abbr : "—"], ["Hoy produce al mes", ok(c.prod) ? fmt(c.prod) + " " + u.abbr : "—"], ["Desperdicio que más ve", s.desperdicio || "—"]])],
+    ["Números y mejoras", [[`Dañados o repetidos de cada 100 ${u.unos}`, ok(N(s.pierde)) ? fmt(N(s.pierde)) : "—"]]
+      .concat(s.mejoras.filter((m) => m.texto).map((m) => [m.texto, [prioridad(m) ? "Prioridad " + prioridad(m) : "", m.quien, m.cuando].filter(Boolean).join(" · ")]))],
+    ["Costo", [[`Materia prima por ${u.uno}`, pesos(N(s.mp))], [`Sus pasos por ${u.uno}`, pesos(c.pasosKg)], [`Despacho por ${u.uno}`, pesos(N(s.despKg))]]
+      .concat((s.gastos || []).filter((g) => g.nombre || ok(N(g.valor))).map((g) => [(g.nombre || "Gasto") + " (al mes)", pesos(N(g.valor))]))
+      .concat([[`Precio que le ofrece a este cliente, por ${u.uno}`, usd(N(s.precio))], ["Dólar usado", pesos(N(s.dolar))], [`${u.Art} le cuesta`, pesos(c.costo)], [`Ganancia por ${u.uno}`, pesos(c.gana)], ["Dólar de equilibrio", pesos(c.deq)]])],
+  ];
+}
+
+function buildModelos() {
+  const st = S.st;
+  $("#modelos").innerHTML = Object.keys(MODELOS).map((m) => `<button class="chip" type="button" data-m="${esc(m)}" aria-pressed="${st.modelo === m}">${esc(m)}</button>`).join("");
+  $$("#modelos [data-m]").forEach((b) => (b.onclick = () => escogerModelo(b.dataset.m)));
+}
+let modeloPend = null;
+function aplicarModelo(m) {
+  const st = S.st, M = MODELOS[m];
+  st.modelo = m; if (M.u) st.unidad = M.u;
+  st.pasos = M.pasos.map((n) => paso(n, "", ""));
+  $("#w-modelo").hidden = true; modeloPend = null; open();
+}
+function escogerModelo(m) {
+  const st = S.st, M = MODELOS[m];
+  const tienePasos = st.pasos.some((p) => p.nombre || ok(N(p.kg)) || ok(N(p.costo)));
+  if (!tienePasos) return aplicarModelo(m);
+  st.modelo = m; if (M.u) st.unidad = M.u; modeloPend = m;
+  $("#t-modelo").textContent = `Ya tiene pasos escritos. ¿Los cambia por los típicos de ${m.toLowerCase()}? Se borran los números de sus pasos.`;
+  $("#w-modelo").hidden = false; open();
+}
+
+function buildRows() {
+  const st = S.st, u = U(st);
+  buildModelos();
+  const quitarPaso = listaEditable(st.pasos, 1, 12, () => paso("", "", ""), open, "b-add-paso");
+  $("#pasos").innerHTML = st.pasos.map((p, i) => `<div class="row paso"><b class="pn">${i + 1}</b>
+    <input class="t" id="f-paso-${i}" data-k="pasos.${i}.nombre" data-kind="text" placeholder="Paso ${i + 1}: ¿qué se hace?" aria-label="Paso ${i + 1}">
+    ${st.pasos.length > 1 ? `<button class="x" type="button" data-qp="${i}" aria-label="Quitar el paso ${i + 1}">×</button>` : "<span></span>"}
+    <div class="fields">
+      <label class="mini">Máximo al mes<span class="unit"><input class="n" id="f-kg-${i}" data-k="pasos.${i}.kg" inputmode="decimal" aria-label="Máximo que puede hacer al mes el paso ${i + 1}"><em>${u.abbr}</em></span></label>
+      <label class="mini">Me cuesta<span class="unit"><input class="n" id="f-co-${i}" data-k="pasos.${i}.costo" inputmode="decimal" aria-label="Cuánto cuesta el paso ${i + 1}"><select class="s u" id="f-un-${i}" data-k="pasos.${i}.unidad" aria-label="Unidad del costo">${unis(u).map(([v, t]) => `<option value="${v}">${t}</option>`).join("")}</select></span></label>
+      <label class="mini" id="w-tot-${i}">Para cuántos ${u.unos}<span class="unit"><input class="n" id="f-kt-${i}" data-k="pasos.${i}.kgTotal" inputmode="decimal" aria-label="Cuántos cubre el total"><em>${u.abbr}</em></span></label>
+      <span class="eq" id="o-eq-${i}"></span>
+    </div></div>`).join("");
+  $$("[data-qp]").forEach((b) => (b.onclick = () => quitarPaso(Number(b.dataset.qp))));
+  const quitarMej = listaEditable(st.mejoras, 1, 6, mejoraVacia, open, "b-add-mej");
+  $("#mejoras").innerHTML = st.mejoras.map((m, i) => `<div class="group">
+    <div class="row stack"><div class="mejora-top"><input class="t" id="f-mej-${i}" data-k="mejoras.${i}.texto" data-kind="text" placeholder="Mejora ${i + 1}: ¿qué haría?" aria-label="Mejora ${i + 1}">${st.mejoras.length > 1 ? `<button class="x" type="button" data-qm="${i}" aria-label="Quitar la mejora ${i + 1}">×</button>` : ""}</div></div>
+    <div class="row"><span class="l">¿Ayuda mucho?</span><span class="seg small" data-k="mejoras.${i}.ayuda" role="group" aria-label="¿Ayuda mucho?"><button data-v="Sí">Sí</button><button data-v="No">No</button></span></div>
+    <div class="row"><span class="l">¿Es fácil?</span><span class="seg small" data-k="mejoras.${i}.facil" role="group" aria-label="¿Es fácil?"><button data-v="Sí">Sí</button><button data-v="No">No</button></span></div>
+    <div class="row stack"><div class="fields" style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:flex-end">
+      <span class="pill" id="o-pr-${i}">Sin prioridad</span>
+      <label class="mini">Responsable<input class="t" id="f-qn-${i}" data-k="mejoras.${i}.quien" data-kind="text" placeholder="¿Quién la hace?" style="width:11em"></label>
+      <label class="mini">Fecha límite<input class="t" id="f-cu-${i}" data-k="mejoras.${i}.cuando" data-kind="text" placeholder="¿Para cuándo?" style="width:10em"></label>
+    </div></div>
+  </div>`).join("");
+  $$("[data-qm]").forEach((b) => (b.onclick = () => quitarMej(Number(b.dataset.qm))));
+  if (!Array.isArray(st.gastos)) st.gastos = GASTOS0();
+  const quitarGasto = listaEditable(st.gastos, 1, 10, () => gasto(""), open, "b-add-gasto");
+  $("#gastos").innerHTML = st.gastos.map((g, i) => `<div class="row wrapm gasto"><span class="l" style="display:flex;gap:8px;align-items:center">
+      <input class="t" id="f-gn-${i}" data-k="gastos.${i}.nombre" data-kind="text" placeholder="Gasto ${i + 1}: ¿qué paga cada mes?" aria-label="Gasto ${i + 1}" style="flex:1;min-width:0">
+      ${st.gastos.length > 1 ? `<button class="x" type="button" data-qg="${i}" aria-label="Quitar el gasto ${i + 1}">×</button>` : ""}</span>
+    <span class="unit"><input class="n" id="f-gv-${i}" data-k="gastos.${i}.valor" inputmode="decimal" aria-label="Valor al mes del gasto ${i + 1}"><em>$/mes</em></span></div>`).join("");
+  $$("[data-qg]").forEach((b) => (b.onclick = () => quitarGasto(Number(b.dataset.qg))));
+}
+
+function render() {
+  S.guardar();
+  const st = S.st, c = calc(st), u = U(st);
+  pintarUnidad(st);
+  // Proceso
+  st.pasos.forEach((p, i) => {
+    const w = $("#w-tot-" + i); if (w) w.hidden = p.unidad !== "total";
+    const e = $("#o-eq-" + i); if (!e) return;
+    const k = c.pasoKg[i];
+    e.textContent = ok(k) && p.unidad !== "u" ? "= " + pesos(k) + " por " + u.uno + (p.unidad === "lb" ? " (1 kg = 2 lb)" : "") : "";
+  });
+  setText("o-modelo", st.modelo && MODELOS[st.modelo] && st.modelo !== "Otro" ? `Pasos típicos de ${st.modelo.toLowerCase()}. Cámbielos, quítelos o agregue los suyos.` : "Escoja uno y la herramienta le propone los pasos típicos. Los puede cambiar, quitar o agregar.");
+  $("#f-techo").placeholder = ok(c.techoPasos) ? fmt(c.techoPasos) : "";
+  setText("o-pasoskg", c.pasoKg.some(ok) ? pesos(c.pasosKg) : "—");
+  const conKg = st.pasos.map((p, i) => ({ p, i, kg: N(p.kg) })).filter((x) => ok(x.kg) && x.kg > 0);
+  const maxKg = Math.max(1, ...conKg.map((x) => x.kg));
+  const hayProd = ok(c.prod) && c.prod > 0;
+  $("#tubo").innerHTML = conKg.map(({ p, i, kg }) => {
+    const neck = i === c.cuelloIdx && conKg.length >= 2, fw = hayProd ? Math.min(c.prod / kg, 1) * 100 : 0;
+    return `<div class="trow${neck ? " neck" : ""}"><span class="tn"><span>${esc(p.nombre || "Paso " + (i + 1))}${neck ? "<small>aquí se frena</small>" : ""}</span></span><span class="tp"><span class="pipe" style="width:${(kg / maxKg) * 100}%"><span class="fl${hayProd && c.prod > kg ? " over" : ""}" style="width:${fw}%"></span></span></span><span class="tv">${fmt(kg)} ${u.abbr}</span></div>`;
+  }).join("") || '<span class="note">Aquí aparece su tubo cuando escriba el máximo al mes de cada paso.</span>';
+  setText("o-leg-hoy", hayProd ? `Lo que produce hoy: ${fmt(c.prod)} ${u.abbr}` : "Lo que produce hoy");
+  const otro = ok(N(st.techo)) && N(st.techo) > 0 && N(st.techo) !== c.techoPasos;
+  const L = [];
+  if (conKg.length >= 2) {
+    L.push(hayProd ? `Hoy pasan <b>${fmt(c.prod)} ${u.abbr}</b> al mes por todos sus pasos.` : "Escriba arriba cuánto produce hoy al mes para ver lo que pasa por el tubo.");
+    L.push(`<b>${esc(c.cuello)}</b> es el paso más angosto: no le caben más de <b>${fmt(c.techoPasos)} ${u.abbr}</b> al mes.`);
+    L.push(`Aunque los otros pasos den para más, su empresa no puede sacar más de <b>${fmt(c.techo)} ${u.abbr}</b> al mes${otro ? " (el máximo real que usted escribió)" : ""}. Para producir más, el paso que hay que mirar primero es <b>${esc(c.cuello)}</b>.`);
+  } else L.push("Escriba el máximo al mes de cada paso: aquí verá cuál lo frena.");
+  $("#m-cuello").innerHTML = L.map((x) => `<li><span>${x}</span></li>`).join("");
+  setText("o-techo", fmt(c.techo)); setText("o-uso", pct(c.uso, 0));
+  setText("o-libre", ok(c.techo) && hayProd ? fmt(Math.max(0, c.techo - c.prod)) : "—");
+  setText("o-uso-s", ok(c.uso) ? `de lo que puede producir: ${fmt(c.prod)} de ${fmt(c.techo)} ${u.abbr}` : "de lo que puede producir");
+  setLight("l-uso", c.cUso); setLight("l-uso2", c.cUso); $("#e-uso").dataset.c = c.cUso;
+  setText("m-uso", pick(c.cUso, "Usa buena parte de lo que puede producir.", "Podría producir más: más producción repartiría mejor los gastos del mes.", "Buena parte del mes su empresa podría hacer más de lo que hace.", "Escriba sus pasos, el máximo de cada uno y lo que produce hoy."));
+  setText("o-desp", PREG_DESP[st.desperdicio] || "");
+  // Números
+  setLight("l-n-uso", c.cUso); setText("o-n-uso", pct(c.uso, 0));
+  setLight("l-pierde", c.cPierde);
+  st.mejoras.forEach((m, i) => { const p = prioridad(m), el = $("#o-pr-" + i); if (!el) return; el.textContent = p ? "Prioridad " + p : "Sin prioridad"; el.dataset.c = PCOL[p] || ""; });
+  // Costo
+  setText("o-pasoskg2", c.pasoKg.some(ok) ? pesos(c.pasosKg) : "—");
+  const det = st.pasos.map((p, i) => ok(c.pasoKg[i]) && c.pasoKg[i] > 0 ? `${p.nombre || "Paso " + (i + 1)} ${pesos(c.pasoKg[i])}` : "").filter(Boolean);
+  setText("o-pasos-det", det.length ? `Por ${u.uno}, de «Proceso»: ` + det.join(" · ") : "Sale de «Proceso»: escriba allá cuánto le cuesta cada paso.");
+  setText("o-costo", pesos(c.costo)); setText("o-ingreso", pesos(c.ingreso)); setText("o-gana", pesos(c.gana));
+  setText("o-margen", pct(c.margen)); setLight("l-margen", c.cMargen); setLight("l-margen2", c.cMargen); $("#e-margen").dataset.c = c.cMargen;
+  setText("o-mes", ok(c.ganaMes) ? `Ganancia del mes: ${pesos(c.ganaMes)}, con los ${fmt(c.prod)} ${u.abbr} que produce` : "");
+  setText("m-margen", pick(c.cMargen, "Margen amplio: resiste una baja del dólar.", "Margen ajustado: hay poco espacio para imprevistos.", "Margen estrecho: una baja pequeña del dólar lleva a pérdida.", "Complete sus costos, el precio que le ofrece a este cliente y el dólar."));
+  // Dólar
+  setText("o-deq", pesos(c.deq)); setText("o-dhoy", pesos(N(st.dolar))); setText("o-holgura", pct(c.holgura));
+  setLight("l-holgura", c.cHolgura); setLight("l-holgura2", c.cHolgura); $("#e-holgura").dataset.c = c.cHolgura;
+  setText("m-holgura", pick(c.cHolgura, "El dólar puede bajar bastante antes de que pierda plata.", "Hay poco espacio si el dólar baja.", "Casi cualquier baja del dólar le hace perder plata.", "Complete «Costo» para ver su dólar de equilibrio."));
+  setText("o-kgeq", ok(c.kgeq) ? fmt(c.kgeq) + " " + u.abbr : "—"); setLight("l-seg", c.cSeg);
+  setText("o-kgeq-s", ok(c.seg) ? `Hoy produce ${fmt(c.prod)}: le sobran ${fmt(c.prod - c.kgeq)} ${u.abbr}` : "");
+  const esc5 = [["Baja 10 %", -0.1], ["Baja 5 %", -0.05], ["Como hoy", 0], ["Sube 5 %", 0.05], ["Sube 10 %", 0.1]];
+  $("#escenarios").innerHTML = esc5.map(([t, p]) => { const d = N(st.dolar) * (1 + p), m = c.mAt(d), cc = hi(m, 0.2, 0.1);
+    return `<div class="row"><span class="l"${p === 0 ? ' style="font-weight:600"' : ""}>${t}<small>${pesos(d)}</small></span><span class="pill" data-c="${cc}">${ok(m) ? "Le queda " + pct(m) : "—"}</span></div>`; }).join("");
+  const mp = c.mAt(N(st.prueba)); const op = $("#o-prueba"); op.textContent = ok(mp) ? "Le queda " + pct(mp) : "—"; op.dataset.c = hi(mp, 0.2, 0.1);
+  setText("o-llenar", pct(c.mLlenar)); setLight("l-llenar", hi(c.mLlenar, 0.2, 0.1));
+  setText("t-llenar", ok(c.techo) && ok(c.prod) ? `Vender ${fmt(c.techo)} ${u.abbr} al mes en vez de ${fmt(c.prod)}: los gastos del mes se reparten entre más producción` : "Los gastos del mes se reparten entre más producción");
+  const pq = $("#q-merma"); pq.firstChild.textContent = ok(N(st.pierde)) && N(st.pierde) > 3 ? `Si se le dañan 3 de cada 100 en vez de ${fmt(N(st.pierde))}` : "Si se le dañan solo 3 de cada 100";
+  setText("o-merma", pct(c.mMerma)); setLight("l-merma", hi(c.mMerma, 0.2, 0.1));
+  setText("o-dos", pct(c.mDos)); setLight("l-dos", hi(c.mDos, 0.2, 0.1));
+  setText("t-dos", ok(c.deqDos) ? `Su dólar de equilibrio bajaría a ${pesos(c.deqDos)}` : "");
+  // Ficha
+  const F = ficha(u);
+  fichaCliente(S);
+  $("#tiles").innerHTML = fichaTiles(F, c, null);
+  $("#resumen").innerHTML = resumenHTML(resumenFicha(F, c));
+  window.__ficha = () => fichaTexto("Ficha · Mi capacidad y mis costos", st, F, c, null, `Dólar usado: ${pesos(N(st.dolar))} · Precio que le ofrece: ${usd(N(st.precio))} por ${u.uno}`);
+  window.__pdf = () => ({ titulo: "Mi capacidad y mis costos", corto: "capacidad y costos", st, defs: F, c1: c, c2: null, ejemplo: S.ejemplo, datos: datosPDF(st, c) });
+}
+
+function onField(k) { if (k === "unidad") return open(); render(); }
+function open() {
+  buildRows();
+  bindFields(document.body, S.st, onField);
+  render();
+}
+$("#b-modelo-si").onclick = () => modeloPend && aplicarModelo(modeloPend);
+$("#b-modelo-no").onclick = () => { $("#w-modelo").hidden = true; modeloPend = null; };
+$("#b-copiar").onclick = () => copiar(window.__ficha(), "msg-copia");
+setupPDF("b-pdf", () => window.__pdf());
+setupShell(S, open);
+tabs();
+open();
+
+document.getElementById('aviso').textContent = AVISO;
+</script>
+</body>
+</html>

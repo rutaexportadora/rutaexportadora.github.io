@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23D7A56C'/%3E%3Cstop offset='1' stop-color='%233F6631'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M18 46 30 20l8 14 4-6 6 18Z' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi logística y mi comprador</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Herramientas de análisis · paleta de la Ruta: crema y café, un color por laboratorio, semáforo propio */
+:root {
+  --bg: #F7F2EA; --card: #FFFDF9; --ink: #2A1D16; --muted: #7A6858; --faint: #B3A391;
+  --hair: rgba(42, 29, 22, .1); --fill: #F1E9DD; --track: #EAE0D2; --thumb: #FFFDF9;
+  --accent: #8A5A2B; --accent-soft: rgba(184, 132, 79, .16); --on-accent: #FFFFFF;
+  --v: #4F8A3C; --a: #D39A22; --r: #C0492F; --off: #D8CBB8;
+  --v-ink: #3F6631; --a-ink: #95600F; --r-ink: #A33A22;
+  --v-soft: rgba(79, 138, 60, .13); --a-soft: rgba(211, 154, 34, .16); --r-soft: rgba(192, 73, 47, .11);
+  --bar: #D8CBB8; --shadow: 0 1px 2px rgba(42, 29, 22, .05), 0 6px 18px -6px rgba(42, 29, 22, .08);
+  --l0: #8A5A2B; --l0s: rgba(184, 132, 79, .16); --l1: #3F6631; --l1s: rgba(127, 168, 98, .17); --l2: #9A6A1A; --l2s: rgba(221, 176, 79, .2);
+  --l3: #1B5470; --l3s: rgba(63, 149, 181, .15); --l4: #8E3A26; --l4s: rgba(207, 114, 83, .15);
+  --lab: var(--accent); --lab-soft: var(--accent-soft);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1B130E; --card: #2A1F18; --ink: #F7F2EA; --muted: #BBAA97; --faint: #7E6B5A;
+  --hair: rgba(255, 250, 243, .11); --fill: #36291F; --track: #36291F; --thumb: #5A4636;
+  --accent: #D7A56C; --accent-soft: rgba(215, 165, 108, .18); --on-accent: #2A1D16;
+  --v: #7FBF63; --a: #E5B04A; --r: #E5735A; --off: #4A3B30;
+  --v-ink: #A9CF8C; --a-ink: #F0C46A; --r-ink: #F2A58C;
+  --v-soft: rgba(127, 191, 99, .16); --a-soft: rgba(229, 176, 74, .16); --r-soft: rgba(229, 115, 90, .16);
+  --bar: #4A3B30; --shadow: none;
+  --l0: #D7A56C; --l0s: rgba(215, 165, 108, .18); --l1: #A9CF8C; --l1s: rgba(141, 184, 111, .18); --l2: #E5BC5C; --l2s: rgba(229, 188, 92, .18);
+  --l3: #7CC0DA; --l3s: rgba(79, 166, 198, .18); --l4: #EE9C80; --l4s: rgba(217, 128, 95, .18); color-scheme: dark } }
+:root[data-theme="dark"], header.top {
+  --bg: #1B130E; --card: #2A1F18; --ink: #F7F2EA; --muted: #BBAA97; --faint: #7E6B5A;
+  --hair: rgba(255, 250, 243, .11); --fill: #36291F; --track: #36291F; --thumb: #5A4636;
+  --accent: #D7A56C; --accent-soft: rgba(215, 165, 108, .18); --on-accent: #2A1D16;
+  --v: #7FBF63; --a: #E5B04A; --r: #E5735A; --off: #4A3B30;
+  --v-ink: #A9CF8C; --a-ink: #F0C46A; --r-ink: #F2A58C;
+  --v-soft: rgba(127, 191, 99, .16); --a-soft: rgba(229, 176, 74, .16); --r-soft: rgba(229, 115, 90, .16);
+  --bar: #4A3B30; --shadow: none;
+  --l0: #D7A56C; --l0s: rgba(215, 165, 108, .18); --l1: #A9CF8C; --l1s: rgba(141, 184, 111, .18); --l2: #E5BC5C; --l2s: rgba(229, 188, 92, .18);
+  --l3: #7CC0DA; --l3s: rgba(79, 166, 198, .18); --l4: #EE9C80; --l4s: rgba(217, 128, 95, .18); color-scheme: dark }
+
+* { box-sizing: border-box }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 760px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+button { font: inherit; color: inherit; }
+input, select { font: inherit; color: var(--ink); }
+
+/* Encabezado */
+header.top .wrap { padding-block: 28px 10px; display: grid; gap: 12px; }
+.toprow { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.kicker { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
+h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.08; font-weight: 700; letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+.who { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 10px; }
+.who .fld { display: grid; gap: 4px; min-width: 0; }
+.who .fld > span { font-size: 12.5px; font-weight: 600; color: var(--muted); padding-left: 4px; }
+.who .fld.wide { grid-column: 1 / -1; }
+.who input { width: 100%; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 11px 14px; font-size: 17px; font-weight: 600; }
+.who input::placeholder { color: var(--faint); font-weight: 500; }
+.privado { display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px; border-radius: 14px; background: var(--accent-soft); color: var(--ink); font-size: 15px; line-height: 1.45; }
+.privado svg { color: var(--accent); flex: none; margin-top: 1px; }
+.cli { margin: 2px 0 0; font-size: 18px; }
+.cli b { font-weight: 700; }
+.ctxrow { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.hint { font-size: 14px; color: var(--muted); }
+
+/* Botones */
+.link { border: 0; background: none; color: var(--accent); font-size: 17px; font-weight: 500; cursor: pointer; padding: 6px 2px; }
+.btn { border: 0; border-radius: 999px; padding: 10px 18px; font-size: 16px; font-weight: 600; cursor: pointer; background: var(--accent-soft); color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn:focus-visible, .link:focus-visible, input:focus-visible, select:focus-visible, .seg button:focus-visible, .pick:focus-visible, .row.tap:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; box-shadow: 0 0 0 1px var(--accent); }
+
+/* Control segmentado */
+.seg { display: inline-flex; background: var(--track); border-radius: 10px; padding: 2px; gap: 2px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { border: 0; background: transparent; border-radius: 8px; padding: 6px 14px; font-size: 14px; font-weight: 500; color: var(--ink); cursor: pointer; white-space: nowrap; flex: 1 0 auto; }
+.seg button[aria-pressed="true"], .seg button[aria-selected="true"] { background: var(--thumb); box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 0 0 .5px rgba(0, 0, 0, .04); font-weight: 600; }
+.seg.small button { padding: 5px 11px; font-size: 13.5px; }
+
+/* Aviso de ejemplo */
+.banner { background: var(--card); border-radius: 14px; padding: 12px 14px 12px 16px; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; box-shadow: var(--shadow); }
+.banner span { font-size: 15px; color: var(--muted); }
+.banner b { color: var(--ink); font-weight: 600; }
+
+/* Pestañas */
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); }
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  nav.tabs { background: color-mix(in srgb, var(--bg) 80%, transparent); -webkit-backdrop-filter: saturate(180%) blur(18px); backdrop-filter: saturate(180%) blur(18px); }
+}
+nav.tabs .wrap { padding-block: 10px; display: flex; }
+nav.tabs .seg { width: 100%; }
+
+/* Secciones */
+main .wrap { padding-block: 12px 48px; }
+section.panel { display: grid; gap: 22px; }
+.phead { display: grid; gap: 6px; padding-top: 10px; }
+.phead .lab { font-size: 13px; font-weight: 600; color: var(--muted); }
+h2 { font-size: clamp(26px, 5vw, 32px); line-height: 1.12; font-weight: 700; letter-spacing: -.022em; margin: 0; text-wrap: balance; }
+.sub { margin: 0; color: var(--muted); font-size: 17px; max-width: 58ch; }
+
+/* Listas agrupadas */
+.gtitle { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin: 0 0 -14px 16px; }
+.group { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 14px; align-items: center; padding: 11px 16px; min-height: 50px; position: relative; }
+.row + .row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 1px; background: var(--hair); }
+.row .l { font-size: 16.5px; min-width: 0; }
+.row .l small { display: block; font-size: 13.5px; color: var(--muted); margin-top: 1px; }
+.row .l .mark { color: var(--a-ink); font-weight: 700; }
+.row.stack { grid-template-columns: minmax(0, 1fr); }
+.row.q { grid-template-columns: 14px minmax(0, 1fr) auto; }
+.row.q .dot { align-self: start; margin-top: 6px; }
+.row.tap { cursor: pointer; }
+.row .chev { color: var(--faint); font-size: 22px; line-height: 1; }
+.row .r { display: flex; gap: 8px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.foot { font-size: 13.5px; color: var(--muted); margin: -14px 16px 0; }
+.unit { display: inline-flex; align-items: center; gap: 6px; }
+.unit em { font-style: normal; font-size: 14px; color: var(--muted); min-width: 2.2em; }
+input.n, input.t, select.s { background: var(--fill); border: 0; border-radius: 9px; padding: 8px 11px; font-size: 17px; font-weight: 600; min-width: 0; }
+input.n { width: 8.6em; text-align: right; font-variant-numeric: tabular-nums; }
+input.n.sm { width: 5.2em; }
+input.n:disabled { opacity: .35; }
+input.t { width: 100%; }
+select.s { -webkit-appearance: none; appearance: none; padding-right: 30px; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%; background-size: 5px 5px; background-repeat: no-repeat; cursor: pointer; max-width: 100%; }
+input::placeholder { color: var(--faint); font-weight: 500; }
+.paso { grid-template-columns: 20px minmax(0, 1fr) auto; align-items: start; gap: 8px 10px; }
+.paso .x { margin-top: 5px; }
+.paso .pn { color: var(--muted); font-weight: 600; font-size: 15px; text-align: center; padding-top: 9px; }
+.paso .fields { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-end; }
+.mini { display: grid; gap: 4px; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
+.mini input.n { width: 7.4em; font-size: 16px; padding: 7px 10px; }
+.mini input.t { font-size: 16px; padding: 7px 10px; }
+.mini select.s { font-size: 15px; padding: 7px 28px 7px 10px; width: auto; }
+.eq { font-size: 13px; color: var(--muted); padding-bottom: 9px; }
+.steprow { display: grid; grid-template-columns: 20px minmax(0, 1fr) 7.2em; gap: 10px; align-items: center; }
+.steprow b { color: var(--muted); font-weight: 600; font-size: 15px; text-align: center; }
+.steprow input.n { width: 100%; }
+.check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--faint); display: inline-grid; place-items: center; font-size: 13px; font-weight: 700; color: transparent; flex: none; }
+.row[aria-checked="true"] .check { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* Semáforo */
+.dot { width: 12px; height: 12px; border-radius: 50%; background: var(--off); display: inline-block; flex: none; }
+.dot.L { width: 16px; height: 16px; }
+.dot[data-c="V"] { background: var(--v) } .dot[data-c="A"] { background: var(--a) } .dot[data-c="R"] { background: var(--r) }
+.status { display: flex; gap: 11px; align-items: flex-start; padding: 13px 16px; border-radius: 14px; background: var(--card); box-shadow: var(--shadow); font-size: 15.5px; }
+.status .dot { margin-top: 4px; }
+.status[data-c="V"] { background: var(--v-soft); box-shadow: none } .status[data-c="A"] { background: var(--a-soft); box-shadow: none } .status[data-c="R"] { background: var(--r-soft); box-shadow: none }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--fill); color: var(--muted); white-space: nowrap; }
+.pill[data-c="V"] { background: var(--v-soft); color: var(--v-ink) } .pill[data-c="A"] { background: var(--a-soft); color: var(--a-ink) } .pill[data-c="R"] { background: var(--r-soft); color: var(--r-ink) }
+.pill.you { background: var(--accent-soft); color: var(--accent); }
+.row > .pill { justify-self: start; }
+.row > .pill:last-child { justify-self: end; }
+
+/* Cifras */
+.stats { display: flex; flex-wrap: wrap; gap: 12px; }
+.stat { flex: 1 1 160px; background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 3px; align-content: start; box-shadow: var(--shadow); min-width: 0; }
+.stat .k { font-size: 13.5px; font-weight: 600; color: var(--muted); display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.stat .v { font-size: clamp(24px, 4.6vw, 30px); font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.15; overflow-wrap: anywhere; }
+.stat .s { font-size: 13.5px; color: var(--muted); }
+.stat.hero { flex-basis: 100%; padding: 20px; }
+.stat.hero .v { font-size: clamp(38px, 9vw, 56px); letter-spacing: -.03em; }
+
+/* Barras */
+.bars { display: grid; gap: 12px; padding: 14px 16px 16px; }
+.bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 10px; font-size: 14.5px; }
+.bar .lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar .val { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar .track { grid-column: 1 / -1; height: 8px; background: var(--fill); border-radius: 4px; overflow: hidden; }
+.bar .fill { display: block; height: 100%; background: var(--bar); border-radius: 4px; }
+.bar.cuello .fill { background: var(--r); }
+.bar.cuello .lbl, .bar.cuello .val { color: var(--r-ink); font-weight: 600; }
+
+/* Tarjetas para escoger */
+.picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.pick { border: 0; text-align: left; background: var(--card); border-radius: 14px; padding: 12px 13px; display: grid; gap: 5px; box-shadow: var(--shadow); cursor: pointer; min-width: 0; outline: 2px solid transparent; outline-offset: -2px; }
+.pick[aria-pressed="true"] { outline-color: var(--accent); }
+.pick .nm { font-size: 14.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pick .vd { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+
+/* Gráfico mensual */
+.months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px; align-items: end; height: 132px; padding: 16px 16px 12px; }
+.months .m { display: grid; gap: 6px; justify-items: center; align-self: end; font-size: 11px; color: var(--muted); }
+.months .col { width: 64%; border-radius: 4px; background: var(--fill); min-height: 3px; display: block; }
+.months .col[data-c="V"] { background: var(--v) } .months .col[data-c="A"] { background: var(--a) } .months .col[data-c="R"] { background: var(--r) }
+
+/* Ficha */
+.ficha { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.tile { background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 4px; box-shadow: var(--shadow); min-width: 0; align-content: start; }
+.tile .k { font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.tile .v { font-size: 22px; font-weight: 700; letter-spacing: -.015em; display: flex; gap: 9px; align-items: center; overflow-wrap: anywhere; }
+.tile .v.long { font-size: 17px; }
+.tile .s { font-size: 13.5px; color: var(--muted); }
+.tile .cmp { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; align-items: center; margin-top: 4px; font-size: 15px; }
+.tile .cmp .w { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.tile .cmp b { display: flex; gap: 8px; align-items: center; font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+
+/* Hoja de empresas */
+.sheet { position: fixed; inset: 0; z-index: 20; background: rgba(0, 0, 0, .32); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sheet .box { background: var(--bg); border-radius: 18px; width: min(440px, 100%); max-height: 80vh; overflow: auto; padding: 18px; display: grid; gap: 16px; }
+.sheet h3 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+.x { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--fill); color: var(--muted); font-size: 19px; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; flex: none; padding: 0; }
+.x:hover { color: var(--r-ink); background: var(--r-soft); }
+.x:focus-visible { outline: 3px solid var(--accent-soft); box-shadow: 0 0 0 1px var(--accent); }
+.item .open { border: 0; background: none; text-align: left; padding: 2px 0; cursor: pointer; display: grid; gap: 2px; min-width: 0; }
+.item .open b { font-size: 16.5px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.item .open small { font-size: 13.5px; color: var(--muted); }
+.item.on { background: var(--accent-soft); }
+.btn.danger { background: var(--r); color: #fff; }
+.row.add { min-height: 46px; padding-block: 6px; }
+.row.add .link { font-size: 16px; font-weight: 600; padding: 6px 0; }
+.mejora-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+
+.next { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; padding-top: 4px; }
+.note { font-size: 13.5px; color: var(--muted); }
+.copiado { font-size: 14px; color: var(--v-ink); font-weight: 600; }
+textarea.out { width: 100%; min-height: 10em; font: inherit; font-size: 14px; background: var(--card); color: var(--ink); border: 1px solid var(--hair); border-radius: 12px; padding: 12px; }
+footer .wrap { padding-block: 8px 40px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+@media (max-width: 600px) {
+  .who { grid-template-columns: minmax(0, 1fr); }
+  .row.q { grid-template-columns: 14px minmax(0, 1fr); }
+  .row.q .seg { grid-column: 2; justify-self: start; }
+  .row.wrapm { grid-template-columns: minmax(0, 1fr); }
+  .row.wrapm > :last-child { justify-self: start; }
+  .row.wrapm:has(> .unit) { grid-template-columns: minmax(0, 1fr) auto; }
+  .row.wrapm:has(> .unit) > :last-child { justify-self: end; }
+  input.n { width: 6.8em; }
+  .seg button { padding: 6px 10px; }
+  .picks { grid-template-columns: minmax(0, 1fr); }
+  body { font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) { .bar .fill, .months .col { transition: width .35s ease, height .35s ease } }
+@media print {
+  nav.tabs, .banner, .next, .noprint, header .seg, #b-empresas, .x, .row.add { display: none !important }
+  section.panel[hidden] { display: grid !important }
+  section.panel { break-inside: avoid-page; margin-bottom: 24px }
+  body { background: #fff }
+  .group, .stat, .tile, .status { box-shadow: none; border: 1px solid #ddd }
+}
+.tramo .seg { grid-column: 1 / -1; justify-self: start; }
+.togs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tog { border: 1.5px solid var(--hair); background: var(--card); border-radius: 999px; padding: 6px 12px; font-size: 14px; cursor: pointer; color: var(--muted); }
+.tog[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.tog[aria-pressed="true"]::before { content: "✓ "; }
+
+/* Escala de rojo a verde en cada número de la ficha */
+.gauge { position: relative; display: flex; height: 6px; border-radius: 3px; margin: 8px 0 4px; }
+.gauge i { display: block; height: 100%; opacity: .38; }
+.gauge i:first-child { border-radius: 3px 0 0 3px; } .gauge i:nth-child(3) { border-radius: 0 3px 3px 0; }
+.gauge i[data-c="R"] { background: var(--r) } .gauge i[data-c="A"] { background: var(--a) } .gauge i[data-c="V"] { background: var(--v) }
+.gauge b { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); border: 2.5px solid var(--card); box-shadow: 0 0 0 .5px var(--hair); }
+/* Resumen de la ficha */
+.resumen { background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 10px; box-shadow: var(--shadow); }
+.resumen .k { font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.resumen p { margin: 0; font-size: 15.5px; }
+.mix { display: flex; gap: 3px; height: 26px; }
+.mix i { display: grid; place-items: center; border-radius: 6px; font-style: normal; font-size: 13px; font-weight: 700; color: #fff; min-width: 26px; }
+.mix i[data-c="R"] { background: var(--r) } .mix i[data-c="A"] { background: var(--a) } .mix i[data-c="V"] { background: var(--v) }
+/* Tubo: el producto baja paso por paso; el ancho es lo máximo de cada paso */
+.tubo { padding: 14px 16px 16px; display: grid; gap: 12px; }
+.tleg { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13.5px; color: var(--muted); }
+.tleg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+.tleg i.flow { background: var(--accent); } .tleg i.wall { background: var(--bar); } .tleg i.neck { background: var(--r); }
+.trows { display: grid; }
+.trow { display: grid; grid-template-columns: minmax(0, 34%) minmax(0, 1fr) minmax(64px, auto); gap: 0 12px; align-items: stretch; min-height: 44px; }
+.trow .tn, .trow .tv { display: flex; align-items: center; font-size: 14.5px; padding: 6px 0; min-width: 0; overflow-wrap: anywhere; }
+.trow .tv { justify-content: flex-end; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+.trow .tp { display: flex; justify-content: center; }
+.trow .pipe { display: flex; justify-content: center; background: var(--bar); height: 100%; min-width: 6px; transition: width .35s ease; }
+.trow .pipe .fl { display: block; height: 100%; background: var(--accent); max-width: 100%; }
+.trow:first-child .pipe { border-radius: 8px 8px 0 0; } .trow:last-child .pipe { border-radius: 0 0 8px 8px; }
+.trow.neck .pipe { background: var(--r); }
+.trow .tn small { display: block; font-size: 12px; font-weight: 600; color: var(--r-ink); }
+.trow .tn > span { display: block; }
+.trow.neck .pipe .fl.over { background: var(--r); }
+.trow.neck .tn, .trow.neck .tv { color: var(--r-ink); font-weight: 600; }
+.lineas { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; counter-reset: l; }
+.lineas li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; font-size: 15.5px; counter-increment: l; }
+.lineas li::before { content: counter(l); width: 24px; height: 24px; border-radius: 50%; background: var(--fill); color: var(--muted); font-size: 13px; font-weight: 700; display: grid; place-items: center; }
+@media (max-width: 600px) { .trow { grid-template-columns: minmax(0, 36%) minmax(0, 1fr) minmax(58px, auto); gap: 0 8px; } .trow .tn, .trow .tv { font-size: 13.5px; } }
+@media print { .gauge i { opacity: .5 } }
+
+/* v7: qué produce, unidad, cuándo se usa cada pestaña */
+.uso { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 11px; }
+.uso svg { flex: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--hair); background: var(--card); border-radius: 999px; padding: 8px 14px; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+.mide { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.mide > span:first-child { font-size: 12.5px; font-weight: 600; color: var(--muted); padding-left: 4px; }
+.confirm { display: grid; gap: 10px; padding: 12px 14px; border-radius: 12px; background: var(--a-soft); }
+.confirm .acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.home { font-size: 15px; font-weight: 600; color: var(--accent); text-decoration: none; }
+
+/* v7.1: celular */
+@media (max-width: 600px) {
+  .row.wrapm.gasto { grid-template-columns: minmax(0, 1fr); }
+  .row.wrapm.gasto > .unit { justify-self: end; }
+}
+@media (max-width: 480px) {
+  nav.tabs .seg { flex-wrap: wrap; overflow: visible; }
+  nav.tabs .seg button { flex: 1 0 30%; }
+  .tramo .seg { width: 100%; flex-wrap: wrap; overflow: visible; }
+  .tramo .seg button { padding: 5px 6px; font-size: 12.5px; }
+}
+
+/* v8: identidad de la Ruta (misma entrada que el inicio, un color por laboratorio) */
+section.panel[data-lab="0"], nav.tabs button[data-lab="0"] { --lab: var(--l0); --lab-soft: var(--l0s); }
+section.panel[data-lab="1"], nav.tabs button[data-lab="1"] { --lab: var(--l1); --lab-soft: var(--l1s); }
+section.panel[data-lab="2"], nav.tabs button[data-lab="2"] { --lab: var(--l2); --lab-soft: var(--l2s); }
+section.panel[data-lab="3"], nav.tabs button[data-lab="3"] { --lab: var(--l3); --lab-soft: var(--l3s); }
+section.panel[data-lab="4"], nav.tabs button[data-lab="4"] { --lab: var(--l4); --lab-soft: var(--l4s); }
+h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.012em; }
+h1 { font-size: clamp(31px, 6vw, 42px); }
+.sheet h3 { font-family: var(--serif); font-weight: 600; }
+header.top { position: relative; overflow: hidden; color: var(--ink); background: radial-gradient(90% 140% at 100% -10%, rgba(63, 102, 49, .55), transparent 58%), radial-gradient(70% 120% at -5% 0%, rgba(168, 116, 31, .4), transparent 62%), radial-gradient(60% 90% at 60% 120%, rgba(27, 84, 112, .45), transparent 60%), #1B130E; }
+header.top .wrap { position: relative; padding-block: 24px 22px; }
+header.top .kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); }
+header.top .kicker .mark { width: 26px; height: 26px; border-radius: 8px; flex: none; background: linear-gradient(140deg, #D7A56C, #3F6631); box-shadow: 0 1px 0 rgba(255, 255, 255, .3) inset; }
+header.top .who input, header.top .banner { background: rgba(255, 250, 243, .07); border: 1px solid var(--hair); box-shadow: none; }
+header.top .seg { background: rgba(0, 0, 0, .25); }
+header.top .btn.primary { background: linear-gradient(180deg, #F7F2EA, #E9DFD0); color: #2A1D16; }
+.phead .lab { display: inline-flex; align-items: center; gap: 8px; justify-self: start; font-size: 12.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--lab); }
+.phead .lab::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--lab); flex: none; }
+.uso { color: var(--lab); background: var(--lab-soft); }
+nav.tabs { border-bottom: 1px solid var(--hair); }
+nav.tabs .seg button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+nav.tabs .seg button::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lab); opacity: .55; flex: none; }
+nav.tabs .seg button[aria-selected="true"] { color: var(--lab); }
+nav.tabs .seg button[aria-selected="true"]::before { opacity: 1; }
+.stat.hero { border-top: 3px solid var(--lab); }
+.tleg i.flow, .trow .pipe .fl { background: var(--lab); }
+.group, .stat, .tile, .resumen, .pick { border: 1px solid var(--hair); }
+.status[data-c] { border: 0; }
+@media print { header.top { background: none; } }
+header.top .kicker .kt::before { content: "·"; margin-right: 10px; }
+.home, #b-empresas { white-space: nowrap; }
+@media (max-width: 600px) { header.top .kicker .kt { display: none; } }
+
+/* v9: análisis agrupados por empresa, copia de seguridad, borrar todo */
+.lista { display: grid; gap: 14px; }
+.lista .grupo { display: grid; gap: 6px; }
+.lista .gtitle { margin: 0 0 0 16px; text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); }
+.link.sm { font-size: 14px; padding: 0; }
+.link.danger { color: var(--r-ink); justify-self: start; }
+#borrar-todo .r { display: flex; gap: 8px; flex-wrap: wrap; }
+.rango { margin: -4px 16px 12px; font-size: 13px; color: var(--muted); text-align: center; }
+.months .m.sel { color: var(--ink); font-weight: 700; }
+/* v10: arranca en blanco; el ejemplo se abre con un botón */
+header.top .acts { display: inline-flex; align-items: center; gap: 6px 14px; flex-wrap: wrap; justify-content: flex-end; }
+header.top .link.ej { font-size: 14.5px; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--hair); color: var(--ink); }
+header.top .link.ej:hover { background: rgba(255, 250, 243, .08); }
+/* v10: un poco más claro (cabecera y modo oscuro) */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #2A1F17; --card: #372A20; --fill: #433428; --track: #433428; --hair: rgba(255, 250, 243, .13); } }
+:root[data-theme="dark"], header.top { --bg: #2A1F17; --card: #372A20; --fill: #433428; --track: #433428; --muted: #CBBBA8; --hair: rgba(255, 250, 243, .14); }
+header.top { background: radial-gradient(90% 140% at 100% -10%, rgba(63, 102, 49, .6), transparent 58%), radial-gradient(70% 120% at -5% 0%, rgba(168, 116, 31, .48), transparent 62%), radial-gradient(60% 90% at 60% 120%, rgba(27, 84, 112, .5), transparent 60%), #3A2B20; }
+header.top .who input, header.top .banner { background: rgba(255, 250, 243, .1); }
+header.top .seg { background: rgba(0, 0, 0, .18); }
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="toprow"><span class="kicker"><span class="mark" aria-hidden="true"></span><a class="home" href="./">← Inicio</a><span class="kt">Herramienta de análisis · 2 de 2</span></span><span class="acts"><button class="link ej" id="b-verej" type="button">Ver ejemplo</button><button class="link" id="b-empresas" type="button">Mis análisis</button></span></div>
+  <h1>Mi logística y mi comprador</h1>
+  <div class="banner" id="banner" hidden><span><b>Ejemplo:</b> Café Ejemplo S.A.S., un café inventado para practicar.</span><button class="btn primary" id="b-volver" type="button">Volver a mi empresa</button></div>
+  <div class="who">
+    <label class="fld"><span>Su empresa</span><input id="f-empresa" data-k="empresa" data-kind="text" placeholder="Nombre de la empresa"></label>
+    <label class="fld"><span>Producto</span><input id="f-producto" data-k="producto" data-kind="text" placeholder="Qué vende"></label>
+    <label class="fld wide"><span>Cliente potencial</span><input id="f-cliente" data-k="cliente" data-kind="text" placeholder="Ej.: importador en Nueva York"></label>
+  </div>
+  <div class="mide"><span>Mide su producto en</span><span class="seg small" data-k="unidad" role="group" aria-label="Unidad de medida"><button data-v="kg">Kilos</button><button data-v="prendas">Prendas</button><button data-v="unidades">Unidades</button></span></div>
+  <div class="group">
+    <div class="row wrapm"><span class="l"><span data-u="Unos">Kilos</span> que le puede ofrecer a este cliente cada mes<small>lo que le queda libre después de atender a sus clientes de aquí</small></span><span class="unit"><input class="n" id="f-kgmes" data-k="kgMes" inputmode="decimal" aria-label="Cantidad que le puede ofrecer cada mes"><em data-u="abbr">kg</em></span></div>
+    <div class="row wrapm"><span class="l">Precio que le ofrece a este cliente, por <span data-u="uno">kilo</span></span><span class="unit"><input class="n" id="f-precio" data-k="precio" inputmode="decimal" aria-label="Precio que le ofrece por unidad"><em>US$</em></span></div>
+    <div class="row wrapm"><span class="l">Dólar de hoy<small>el ejemplo usa la TRM del 13 de octubre de 2026</small></span><span class="unit"><input class="n" id="f-dolar" data-k="dolar" inputmode="decimal" aria-label="Dólar de hoy"><em>$</em></span></div>
+  </div>
+</div></header>
+<nav class="tabs" aria-label="Secciones"><div class="wrap"><div class="seg" role="tablist"><button type="button" role="tab" data-p="listo" data-lab="3">¿Preparado?</button><button type="button" role="tab" data-p="despacho" data-lab="3">Despacho</button><button type="button" role="tab" data-p="comprador" data-lab="4">Cliente</button><button type="button" role="tab" data-p="precio" data-lab="4">Precio</button><button type="button" role="tab" data-p="ficha" data-lab="0">Ficha</button></div></div></nav>
+<main><div class="wrap">
+<section class="panel" id="listo" data-lab="3">
+  <div class="phead"><span class="lab">Laboratorio 3 · ¿Dónde estoy parado?</span><h2>¿Qué tan preparado está para este potencial cliente?</h2><p class="sub">Nueve preguntas sobre su empresa frente a este cliente. Contéstelas con sinceridad: el análisis es para usted.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Una vez por cliente</span></div>
+  <div class="privado"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Zm3 4a1.5 1.5 0 0 1 .8 2.77V18a.8.8 0 0 1-1.6 0v-1.23A1.5 1.5 0 0 1 12 14Z"/></svg><span><b>Sus datos son suyos.</b> Se guardan solo en este aparato y nadie más los ve, a menos que usted comparta su ficha. Escriba lo más cercano a la realidad que pueda: entre más reales los datos, más útil el análisis.</span></div>
+  <div class="group" id="preguntas"></div>
+  <p class="foot">Sí vale 2 puntos, a medias 1 y no 0.</p>
+  <p class="gtitle">Su resultado</p>
+  <div class="stats">
+    <div class="stat hero"><span class="k">Su punto de partida <span class="dot L" id="l-listo"></span></span><span class="v" id="o-listo" style="font-size:clamp(30px,7vw,44px)">—</span><span class="s" id="o-puntos"></span></div>
+    <div class="stat"><span class="k">Lo que más pesa hoy</span><span class="v" id="o-frena" style="font-size:21px">—</span></div>
+    <div class="stat"><span class="k">Hasta dónde puede llevar su carga hoy</span><span class="v" id="o-inco" style="font-size:21px">—</span><span class="s" id="o-inco-s"></span></div>
+  </div>
+  <div class="status" id="e-listo"><span class="dot" id="l-listo2"></span><span id="m-listo"></span></div>
+  <p class="foot">Para otro cliente potencial, haga otro análisis desde «Mis análisis».</p>
+  <div class="next"><span></span><button class="btn primary" data-go="despacho" type="button">Siguiente</button></div>
+</section>
+
+<section class="panel" id="despacho" data-lab="3" hidden>
+  <div class="phead"><span class="lab">Laboratorio 3 · Cadena puerta a puerta y costo logístico</span><h2>¿Cuánto cuesta llevarlo?</h2><p class="sub">Para llevarle la carga a este cliente: escoja el Incoterm, diga quién hace cada tramo y cuánto le cuesta a usted.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>En cada despacho</span></div>
+  <div class="group">
+    <div class="row"><span class="l">Incoterm</span><select class="s" id="f-inco" data-k="inco" aria-label="Incoterm" style="width:7em"><option>EXW</option><option>FCA</option><option>FOB</option><option>CFR</option><option>CIF</option><option>DAP</option><option>DDP</option></select></div>
+    <div class="row"><span class="l"><span data-u="Unos">Kilos</span> de este despacho</span><span class="unit"><input class="n" id="f-dkg" data-k="dkg" inputmode="decimal" aria-label="Cantidad del despacho"><em data-u="abbr">kg</em></span></div>
+  </div>
+  <p class="foot" id="o-inco-tip"></p>
+  <p class="gtitle">Tramos del despacho: ¿quién lo hace?</p>
+  <div class="group"><div id="chain"></div><div class="row add"><button class="link" id="b-add-tramo" type="button">+ Agregar tramo</button></div></div>
+  <p class="foot">Al cambiar el Incoterm, los seis tramos se ajustan a lo normal para ese término. Puede cambiarlos. Agregue los que le cobren aparte, como fumigación o inspecciones.</p>
+  <div class="stats">
+    <div class="stat"><span class="k">El despacho le cuesta</span><span class="v" id="o-dcosto">—</span><span class="s">lo que hace usted o contrata</span></div>
+    <div class="stat"><span class="k"><span>Por <span data-u="uno">kilo</span></span></span><span class="v" id="o-dkilo">—</span><span class="s">pasa a la herramienta 1, «Costo»</span></div>
+    <div class="stat"><span class="k">Sobre la venta <span class="dot" id="l-dpct"></span></span><span class="v" id="o-dpct">—</span><span class="s" id="o-venta"></span></div>
+  </div>
+  <div class="status" id="e-dpct"><span class="dot" id="l-dpct2"></span><span id="m-dpct"></span></div>
+  <p class="gtitle">Cumplir con el pedido</p>
+  <div class="group">
+    <div class="row q"><span class="dot" id="l-tiempo"></span><span class="l">De cada 10 pedidos a sus clientes, ¿cuántos llegan en la fecha prometida?<small>Verde 9 o 10 · rojo 6 o menos.</small></span><input class="n sm" id="f-tiempo" data-k="aTiempo" inputmode="decimal" aria-label="Pedidos a tiempo de cada 10"></div>
+    <div class="row q"><span class="dot" id="l-dias"></span><span class="l">¿Cuántos días pasan desde que le confirman un pedido hasta que está listo para salir?<small>Verde hasta 7 · rojo más de 15.</small></span><input class="n sm" id="f-dias" data-k="dias" inputmode="decimal" aria-label="Días para alistar un pedido"></div>
+  </div>
+  <p class="gtitle">Compartir contenedor o contenedor propio</p>
+  <div class="group">
+    <div class="row wrapm"><span class="l">Flete compartiendo contenedor<small>carga consolidada: paga solo su espacio</small></span><span class="unit"><input class="n" id="f-cons" data-k="consolidado" inputmode="decimal" aria-label="Flete consolidado"><em>US$</em></span></div>
+    <div class="row wrapm"><span class="l">Flete de un contenedor solo para usted</span><span class="unit"><input class="n" id="f-cont" data-k="contenedor" inputmode="decimal" aria-label="Flete contenedor propio"><em>US$</em></span></div>
+  </div>
+  <p class="foot" id="m-cons"></p>
+  <div class="next"><button class="btn" data-go="listo" type="button">Atrás</button><button class="btn primary" data-go="comprador" type="button">Siguiente</button></div>
+</section>
+
+<section class="panel" id="comprador" data-lab="4" hidden>
+  <div class="phead"><span class="lab">Laboratorio 4 · Encaje con el cliente</span><h2>¿Qué tanto encaja este cliente con su empresa?</h2><p class="sub">Cinco preguntas sobre este cliente.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Una vez por cliente</span></div>
+  <div id="bform" style="display:grid;gap:22px"></div>
+  <p class="foot">El encaje sale solo de lo que usted escribe sobre su capacidad y las condiciones de este cliente. No califica al cliente.</p>
+  <div class="next"><button class="btn" data-go="despacho" type="button">Atrás</button><button class="btn primary" data-go="precio" type="button">Siguiente</button></div>
+</section>
+
+<section class="panel" id="precio" data-lab="4" hidden>
+  <div class="phead"><span class="lab">Laboratorio 4 · Criterios para cotizar y comparar fletes</span><h2>¿Qué precio cubre lo que quiero ganar?</h2><p class="sub">Para este cliente: su costo, el margen que quisiera y un colchón por si baja el dólar.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>En cada cotización</span></div>
+  <div class="group">
+    <div class="row wrapm"><span class="l"><span data-u="Art">Un kilo</span> le cuesta<small>de la herramienta 1, «Costo»</small></span><span class="unit"><input class="n" id="f-cprod" data-k="cprod" inputmode="decimal" aria-label="Costo"><em>$/<span data-u="uno">kilo</span></em></span></div>
+    <div class="row wrapm"><span class="l">¿Ese costo ya incluye el despacho?<small id="o-plog-s"></small></span><span class="seg small" data-k="incluyeLog" role="group" aria-label="¿Incluye el despacho?"><button data-v="Sí">Sí</button><button data-v="No">No</button></span></div>
+    <div class="row wrapm"><span class="l">Margen que usted quisiera</span><span class="unit"><input class="n sm" id="f-quiere" data-k="quiere" inputmode="decimal" aria-label="Margen que quisiera"><em>%</em></span></div>
+    <div class="row wrapm"><span class="l">Colchón por si baja el dólar</span><span class="unit"><input class="n sm" id="f-colchon" data-k="colchon" inputmode="decimal" aria-label="Colchón"><em>%</em></span></div>
+  </div>
+  <p class="foot" id="o-dcot"></p>
+  <div class="stats">
+    <div class="stat hero"><span class="k">Precio de referencia</span><span class="v" id="o-pmin">—</span><span class="s" id="o-plibra"></span></div>
+    <div class="stat"><span class="k">Precio de equilibrio</span><span class="v" id="o-peq">—</span><span class="s">por debajo, con sus datos pierde plata</span></div>
+    <div class="stat"><span class="k">Precio que le ofrece <span class="dot" id="l-phoy"></span></span><span class="v" id="o-phoy">—</span><span class="s">a este cliente, por <span data-u="uno">kilo</span></span></div>
+  </div>
+  <div class="status" id="e-precio"><span class="dot" id="l-phoy2"></span><span id="m-precio"></span></div>
+  <p class="gtitle">Lo que suele llevar una cotización</p>
+  <div class="group" id="checks"></div>
+  <p class="foot" id="o-checks"></p>
+  <p class="gtitle">Comparar las cotizaciones de los operadores</p>
+  <p class="foot" style="margin:0 16px">Marque lo que incluye cada cotización. Lo que no incluya se suma con lo que usted escribió en los tramos de «Despacho».</p>
+  <div id="cotizaciones" style="display:grid;gap:12px"></div>
+  <div class="group"><div class="row add"><button class="link" id="b-add-cot" type="button">+ Agregar cotización</button></div></div>
+  <p class="foot" id="m-cot"></p>
+  <div class="next"><button class="btn" data-go="comprador" type="button">Atrás</button><button class="btn primary" data-go="ficha" type="button">Ver mi ficha</button></div>
+</section>
+
+<section class="panel" id="ficha" data-lab="0" hidden>
+  <div class="phead"><span class="lab">Su resultado</span><h2>Mi ficha</h2><p class="cli" id="ficha-cli"></p><p class="sub" id="ficha-sub"></p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Descárguela cada vez que actualice</span></div>
+  <div class="resumen" id="resumen"></div>
+  <p class="foot">En cada número, la barra va de rojo a verde y el punto muestra dónde está usted con sus datos.</p>
+  <div class="ficha" id="tiles"></div>
+  <div class="group noprint"><div class="row stack" style="gap:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><button class="btn primary" id="b-pdf" type="button">Descargar PDF</button><button class="btn" id="b-copiar" type="button">Copiar resumen</button><span class="copiado" id="msg-copia"></span></div>
+    <span class="note">El PDF lleva la fecha, el cliente potencial, sus resultados y todos sus datos. Guárdelo cada vez que actualice el análisis: así tiene su histórico.</span>
+    <textarea class="out" id="msg-copia-txt" hidden aria-label="Resumen para copiar"></textarea>
+  </div></div>
+</section>
+
+</div></main>
+<div class="sheet" id="sheet" hidden><div class="box" role="dialog" aria-modal="true" aria-label="Mis análisis">
+  <div class="toprow"><h3>Mis análisis</h3><button class="link" id="b-cerrar" type="button">Listo</button></div>
+  <p class="note" style="margin:-6px 0 0">Haga un análisis por cada cliente potencial. Se guardan solo en este aparato.</p>
+  <div id="lista" class="lista"></div>
+  <div style="display:grid;gap:10px">
+    <button class="btn primary" id="b-copia" type="button">Nuevo análisis para otro cliente</button>
+    <span class="note" style="margin-top:-4px">Copia los datos de su empresa. Solo cambie lo de ese cliente.</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="b-nueva" type="button">Empezar en blanco</button><button class="btn" id="b-ejemplo" type="button">Ver el ejemplo</button></div>
+  </div>
+  <p class="gtitle" style="margin:4px 0 -8px 16px">Copia de seguridad</p>
+  <div class="group"><div class="row stack" style="gap:10px">
+    <span class="note">Guarde una copia cada vez que actualice y antes del 12 de mayo de 2027. Con ella recupera sus datos si se borran del navegador, o los pasa a otro aparato.</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" id="b-bk-guardar" type="button">Guardar copia</button><button class="btn" id="b-bk-abrir" type="button">Abrir una copia</button><input type="file" id="bk-file" accept=".json,application/json" hidden></div>
+    <span class="note"><button class="link sm" id="b-bk-copiar" type="button">Copiar como texto</button> · <button class="link sm" id="b-bk-pegar" type="button">Pegar texto</button></span>
+    <textarea class="out" id="bk-txt" hidden aria-label="Texto de la copia" style="min-height:6em"></textarea>
+    <button class="btn primary" id="b-bk-ok" type="button" hidden>Recuperar</button>
+    <span class="copiado" id="bk-msg" role="status"></span>
+  </div></div>
+  <div class="group"><div class="row stack" style="gap:6px" id="borrar-todo">
+    <button class="link sm danger" id="b-borrar-todo" type="button">Borrar todo lo guardado en este aparato</button>
+    <span class="note">Úselo si otra persona usa este computador o celular.</span>
+  </div></div>
+</div></div>
+<footer><div class="wrap" id="aviso"></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+// Utilidades compartidas de las herramientas de análisis
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const ok = (x) => typeof x === "number" && isFinite(x);
+const fmt = (n, d = 0) => ok(n) ? n.toLocaleString("es-CO", { minimumFractionDigits: d, maximumFractionDigits: d }) : "—";
+const pesos = (n) => ok(n) ? (n < 0 ? "−$ " : "$ ") + fmt(Math.abs(Math.round(n))) : "—";
+const usd = (n) => ok(n) ? "US$ " + fmt(n, 2) : "—";
+const pct = (n, d = 1) => ok(n) ? fmt(n * 100, d) + " %" : "—";
+const hi = (x, g, a) => !ok(x) ? "" : x >= g ? "V" : x >= a ? "A" : "R";
+const lo = (x, g, a) => !ok(x) ? "" : x <= g ? "V" : x <= a ? "A" : "R";
+const pick = (c, v, a, r, e = "") => c === "V" ? v : c === "A" ? a : c === "R" ? r : e;
+const N = (v) => (v === "" || v == null ? NaN : Number(v));
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+const EMO = { V: "🟢", A: "🟡", R: "🔴" };
+
+// ---------- Unidad en que mide la empresa: kilos, prendas o unidades ----------
+const UNIDADES = {
+  kg: { abbr: "kg", uno: "kilo", unos: "kilos", Uno: "Kilo", Unos: "Kilos", art: "un kilo", Art: "Un kilo", libra: true },
+  prendas: { abbr: "prendas", uno: "prenda", unos: "prendas", Uno: "Prenda", Unos: "Prendas", art: "una prenda", Art: "Una prenda", libra: false },
+  unidades: { abbr: "und.", uno: "unidad", unos: "unidades", Uno: "Unidad", Unos: "Unidades", art: "una unidad", Art: "Una unidad", libra: false },
+};
+const U = (st) => UNIDADES[(st && st.unidad) || "kg"] || UNIDADES.kg;
+// Pinta las palabras de unidad que hay en la página: <span data-u="unos"></span>
+function pintarUnidad(st) { const u = U(st); $$("[data-u]").forEach((el) => { const v = u[el.dataset.u]; if (v !== undefined) el.textContent = v; }); }
+
+function parseNum(s) {
+  if (typeof s === "number") return s;
+  s = String(s || "").trim().replace(/\s|\$|%|US/gi, "");
+  if (!s) return NaN;
+  if (s.includes(",")) s = s.replace(/\./g, "").replace(",", ".");
+  else if (/^-?\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, "");
+  return Number(s);
+}
+const getPath = (o, p) => p.split(".").reduce((x, k) => (x == null ? x : x[k]), o);
+function setPath(o, p, v) { const ks = p.split("."); let x = o; ks.slice(0, -1).forEach((k) => (x = x[k])); x[ks[ks.length - 1]] = v; }
+const showNum = (v, d) => (v === "" || v == null || !ok(Number(v))) ? "" : Number(v).toLocaleString("es-CO", { maximumFractionDigits: d ?? 2 });
+
+function setLight(id, c) { const el = document.getElementById(id); if (el) el.dataset.c = c || ""; }
+function setText(id, t) { const el = document.getElementById(id); if (el) el.textContent = t; }
+
+// Campos dentro de "root": data-k="ruta", data-kind="num|text|sel"; controles segmentados .seg[data-k] con botones data-v
+function bindFields(root, st, onChange) {
+  $$("[data-k]", root).forEach((el) => {
+    if (el.classList.contains("seg")) return;
+    const k = el.dataset.k, kind = el.dataset.kind || (el.tagName === "SELECT" ? "sel" : "num");
+    const v = getPath(st, k);
+    el.value = kind === "num" ? showNum(v, el.dataset.d ? Number(el.dataset.d) : 2) : (v ?? "");
+    el.oninput = () => {
+      const val = kind === "num" ? (el.value.trim() === "" ? "" : parseNum(el.value)) : el.value;
+      setPath(st, k, val); onChange(k);
+    };
+  });
+  $$(".seg[data-k]", root).forEach((g) => {
+    const k = g.dataset.k;
+    $$("button", g).forEach((b) => {
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(getPath(st, k) === b.dataset.v));
+      b.onclick = () => {
+        setPath(st, k, b.dataset.v);
+        $$("button", g).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        onChange(k);
+      };
+    });
+  });
+}
+
+function tabs() {
+  const btns = $$("nav.tabs button");
+  const show = (id) => {
+    btns.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.p === id)));
+    $$("section.panel").forEach((p) => (p.hidden = p.id !== id));
+  };
+  btns.forEach((b) => (b.onclick = () => { show(b.dataset.p); window.scrollTo({ top: 0 }); }));
+  $$("[data-go]").forEach((b) => (b.onclick = () => { show(b.dataset.go); window.scrollTo({ top: 0 }); }));
+  const h = (location.hash || "").slice(1);
+  show(h && $(`nav.tabs button[data-p="${h}"]`) ? h : btns[0].dataset.p);
+}
+
+function copiar(text, msgId) {
+  const done = () => setText(msgId, "Copiado. Ya lo puede pegar en un correo o un mensaje.");
+  const fallback = () => { const ta = document.getElementById(msgId + "-txt"); if (ta) { ta.hidden = false; ta.value = text; ta.select(); } setText(msgId, "Seleccione el texto y cópielo."); };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+}
+// ---------- PDF de la ficha (histórico) ----------
+const PDFCOL = { V: [79, 138, 60], A: [211, 154, 34], R: [192, 73, 47] };
+const limpio = (t) => String(t ?? "").replace(/−/g, "-").replace(/ /g, " ").replace(/[→]/g, "a").replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\xFF€•–—“”‘’]/g, "");
+function hoyLargo() { try { return new Date().toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return new Date().toISOString().slice(0, 10); } }
+function construirPDF(sp) {
+  const J = window.jspdf && window.jspdf.jsPDF; if (!J) return null;
+  const doc = new J({ unit: "mm", format: "letter" });
+  const W = 215.9, H = 279.4, M = 18; let y = M;
+  const gris = () => doc.setTextColor(122, 104, 88), negro = () => doc.setTextColor(42, 29, 22);
+  const pie = () => { doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); gris(); doc.text(doc.splitTextToSize(limpio(AVISO), W - 2 * M), M, H - 14); };
+  const salto = (h) => { if (y + h > H - 22) { pie(); doc.addPage(); y = M; } };
+  const punto = (x, yy, c) => { const col = PDFCOL[c] || [216, 203, 184]; doc.setFillColor(col[0], col[1], col[2]); doc.circle(x, yy - 1.2, 1.6, "F"); };
+  doc.setFillColor(184, 132, 79); doc.rect(0, 0, W, 3, "F");
+  doc.setFont("helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(138, 90, 43); doc.text("RUTA DE PRODUCTIVIDAD Y LOGISTICA PARA LA EXPORTACION", M, y); y += 6;
+  doc.setFont("times", "bold"); doc.setFontSize(21); negro(); doc.text(limpio(sp.titulo), M, y + 4); y += 11;
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5); gris();
+  doc.text(limpio(`Empresa: ${sp.st.empresa || "—"}   ·   Producto: ${sp.st.producto || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Cliente potencial: ${sp.st.cliente || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Fecha: ${hoyLargo()}${sp.ejemplo ? "   ·   Ejemplo con datos inventados" : ""}`), M, y); y += 9;
+  const seccion = (t) => { salto(12); doc.setFont("helvetica", "bold"); doc.setFontSize(12.5); negro(); doc.text(limpio(t), M, y); y += 3; doc.setDrawColor(227, 216, 200); doc.line(M, y, W - M, y); y += 6; };
+  seccion("Resultados");
+  const rs = resumenFicha(sp.defs, sp.c1);
+  if (rs.tot) {
+    let x = M; const bw = 60, tot = rs.tot;
+    ["R", "A", "V"].forEach((k) => { if (!rs.n[k]) return; const w = (bw * rs.n[k]) / tot, col = PDFCOL[k]; doc.setFillColor(col[0], col[1], col[2]); doc.rect(x, y - 3, w, 3.2, "F"); x += w; });
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); negro(); doc.text(limpio(`${rs.n.V} en verde · ${rs.n.A} en amarillo · ${rs.n.R} en rojo`), M + bw + 5, y - 0.4); y += 8;
+  }
+  const escPDF = (e, x, yy, w) => { if (!e) return; const seg = [["R", 0, e.a], ["A", e.a, e.g], ["V", e.g, 1]]; seg.forEach(([k, a0, a1]) => { if (a1 <= a0) return; const col = PDFCOL[k]; doc.setFillColor(col[0] + (255 - col[0]) * 0.45, col[1] + (255 - col[1]) * 0.45, col[2] + (255 - col[2]) * 0.45); doc.rect(x + w * a0, yy - 2.6, w * (a1 - a0), 1.8, "F"); }); doc.setFillColor(42, 29, 22); doc.circle(x + w * e.p, yy - 1.7, 1.25, "F"); };
+  const cx1 = M + 76, cx2 = M + 128, wv = sp.c2 ? 46 : 68, gx = M + 148, gw = W - M - gx;
+  if (sp.c2) { doc.setFont("helvetica", "bold"); doc.setFontSize(8.5); gris(); doc.text("ANTES", cx1, y); doc.text("AHORA", cx2, y); y += 5; }
+  sp.defs.forEach((d) => {
+    const a = d.f(sp.c1), b = sp.c2 ? d.f(sp.c2) : null;
+    doc.setFontSize(10); doc.setFont("helvetica", "bold");
+    const lab = doc.splitTextToSize(limpio(d.k), 72);
+    doc.setFont("helvetica", "normal");
+    const va = doc.splitTextToSize(limpio(a[1] + (!b && a[2] ? "  (" + a[2] + ")" : "")), wv - 5);
+    const vb = b ? doc.splitTextToSize(limpio(b[1]), wv - 5) : [];
+    const h = Math.max(lab.length, va.length, vb.length) * 4.6 + 2.5;
+    salto(h);
+    doc.setFontSize(10); doc.setFont("helvetica", "bold"); negro(); doc.text(lab, M, y);
+    doc.setFont("helvetica", "normal");
+    if (!d.neutral) punto(cx1 + 1.6, y, a[0]); doc.text(va, cx1 + (d.neutral ? 0 : 5), y);
+    if (!sp.c2 && d.g && a[0]) escPDF(d.g(sp.c1), gx, y, gw);
+    if (b) { if (!d.neutral) punto(cx2 + 1.6, y, b[0]); doc.text(vb, cx2 + (d.neutral ? 0 : 5), y); }
+    y += h;
+  });
+  y += 3;
+  (sp.datos || []).forEach(([t, rows]) => {
+    seccion("Sus datos · " + t);
+    rows.forEach(([k, v]) => {
+      doc.setFontSize(9.5); doc.setFont("helvetica", "normal");
+      const kl = doc.splitTextToSize(limpio(k), 92), vl = doc.splitTextToSize(limpio(v || "—"), W - 2 * M - 98);
+      const h = Math.max(kl.length, vl.length) * 4.3 + 1.8;
+      salto(h); doc.setFontSize(9.5); doc.setFont("helvetica", "normal"); gris(); doc.text(kl, M, y); negro(); doc.text(vl, M + 98, y); y += h;
+    });
+    y += 3;
+  });
+  pie();
+  return doc;
+}
+// ---------- Descargas: dentro de claude.ai, con la confirmación del visitante; fuera, directo ----------
+const ENMARCADO = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
+let _dl = null;
+const listoDescargas = new Promise((res) => {
+  if (!ENMARCADO) return res(true);
+  try { if (window.claude && window.claude.use) window.claude.use("downloads").then((d) => { _dl = d; res(!!d); }, () => res(false)); else res(false); } catch (e) { res(false); }
+});
+async function guardarArchivo(nombre, blob, msg) {
+  if (_dl) {
+    try { await _dl.save({ filename: nombre, data: blob }); return true; }
+    catch (e) { if (msg) msg(e && e.code === "declined" ? "" : "No se pudo guardar aquí."); return false; }
+  }
+  if (!ENMARCADO) {
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); return true;
+  }
+  return false;
+}
+const fechaArchivo = () => { const f = new Date(); return `${String(f.getDate()).padStart(2, "0")}-${String(f.getMonth() + 1).padStart(2, "0")}-${f.getFullYear()}`; };
+const nombreArchivo = (t, ext) => limpio(t).replace(/[\\/:*?"<>|]/g, "").replace(/\s+/g, " ").trim() + "." + ext;
+
+function setupPDF(btnId, getSpec) {
+  const b = document.getElementById(btnId); if (!b) return;
+  const msg = (t) => setText("msg-copia", t);
+  b.hidden = ENMARCADO;
+  listoDescargas.then((okd) => { b.hidden = !okd; });
+  b.onclick = async () => {
+    const sp = getSpec(); const doc = construirPDF(sp);
+    if (!doc) return;
+    const nombre = nombreArchivo(`Ficha ${sp.corto} ${sp.st.empresa || "sin nombre"} ${sp.st.cliente || ""} ${fechaArchivo()}`, "pdf");
+    if (await guardarArchivo(nombre, doc.output("blob"), msg)) msg("PDF guardado.");
+  };
+}
+
+// ---------- Análisis guardados en este aparato: uno por cada cliente potencial, agrupados por empresa ----------
+const FIN = "12 de mayo de 2027"; // hasta cuándo quedan disponibles las herramientas
+// Nombre de empresa comparable: sin tildes, mayúsculas, espacios, puntos ni sigla societaria
+const normE = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "").replace(/(sasbic|sas|ltda|sa|eu|sca|scs)$/, "");
+const claveDe = (st, id) => normE(st && st.empresa) || "#" + id;
+function tieneDatos(x) { if (x == null || x === "") return false; if (Array.isArray(x)) return x.some(tieneDatos); if (typeof x === "object") return Object.values(x).some(tieneDatos); return true; }
+// Completa lo vacío de «d» con lo de «s»; en listas, mes por mes, sin mezclar dentro de un mismo mes
+function fusionar(d, s) {
+  if (Array.isArray(d) && Array.isArray(s)) { s.forEach((x, i) => { if (i >= d.length) d.push(x); else if (!tieneDatos(d[i]) && tieneDatos(x)) d[i] = x; }); return d; }
+  if (d && s && typeof d === "object" && typeof s === "object") { Object.keys(s).forEach((k) => { if (!tieneDatos(d[k])) d[k] = s[k]; else if (d[k] && typeof d[k] === "object") fusionar(d[k], s[k]); }); return d; }
+  return tieneDatos(d) ? d : s;
+}
+
+// opt.propio: campos de cada cliente (se vacían al copiar un análisis)
+// opt.compartido: campos de toda la empresa (iguales en todos los análisis de esa empresa, nunca entre empresas)
+// opt.migrar: arregla datos de versiones anteriores
+function makeStore(KEY, EX, BLANK, opt = {}) {
+  const SH = opt.compartido || [], PROPIO = opt.propio || ["cliente"], MIG = opt.migrar || (() => {});
+  let db = null;
+  try { db = JSON.parse(localStorage.getItem(KEY)); } catch (e) { db = null; }
+  if (!db || typeof db !== "object" || !db.items || typeof db.items !== "object") db = { items: {}, actual: "" };
+  if (!db.porEmpresa || typeof db.porEmpresa !== "object") {
+    db.porEmpresa = {};
+    if (db.comp && SH.some((f) => tieneDatos(db.comp[f]))) { // versión anterior: un solo histórico por aparato
+      const id = db.items[db.actual] ? db.actual : Object.keys(db.items)[0];
+      if (id) db.porEmpresa[claveDe(db.items[id].st, id)] = db.comp;
+    }
+  }
+  delete db.comp;
+  Object.keys(db.items).forEach((i) => { const it = db.items[i]; if (!it || !it.st || it.nuevo) delete db.items[i]; }); // análisis en blanco que nunca se tocaron
+  Object.values(db.items).forEach((it) => MIG(it.st));
+  Object.values(db.porEmpresa).forEach((b) => b && MIG(b));
+  const vacio = (k) => (BLANK[k] === undefined ? "" : clone(BLANK[k]));
+  const ligar = (st, id) => {
+    if (!SH.length) return;
+    const k = claveDe(st, id); let b = db.porEmpresa[k];
+    if (!b) b = db.porEmpresa[k] = {};
+    SH.forEach((f) => { if (b[f] != null) st[f] = b[f]; else b[f] = st[f]; });
+  };
+  const usadas = () => new Set(Object.entries(db.items).map(([i, it]) => claveDe(it.st, i)));
+  const podar = () => { const u = usadas(); Object.keys(db.porEmpresa).forEach((k) => { if (!u.has(k)) delete db.porEmpresa[k]; }); };
+  const recientes = () => Object.entries(db.items).sort((a, b) => (b[1].upd || 0) - (a[1].upd || 0)).map((x) => x[0]);
+  const S = {
+    db, st: null, ejemplo: false, previo: "",
+    persist() { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} },
+    clave() { return S.ejemplo ? "" : claveDe(S.st, db.actual); },
+    lista() { return Object.entries(db.items).map(([id, it]) => ({ id, clave: claveDe(it.st, id), empresa: it.st.empresa || "", cliente: it.st.cliente || "", upd: it.upd || 0 })).sort((a, b) => b.upd - a.upd); },
+    verEjemplo() { if (!S.ejemplo && db.actual) S.previo = db.actual; S.ejemplo = true; db.actual = ""; S.persist(); S.st = clone(EX); },
+    volver() { const id = S.previo && db.items[S.previo] ? S.previo : recientes()[0]; if (id) S.abrir(id); else S.nueva(false); },
+    tocar() { const it = db.items[db.actual]; if (!S.ejemplo && it && it.nuevo) { delete it.nuevo; S.persist(); } },
+    nueva(copiar) {
+      const id = "a" + Date.now() + Math.floor(Math.random() * 1000);
+      let st = clone(BLANK);
+      if (copiar && !S.ejemplo && S.st) { st = clone(S.st); PROPIO.forEach((k) => (st[k] = vacio(k))); }
+      db.items[id] = copiar ? { st, upd: Date.now() } : { st, upd: Date.now(), nuevo: true }; db.actual = id; S.ejemplo = false; S.st = st; ligar(st, id); S.persist();
+    },
+    abrir(id) { const it = db.items[id]; if (!it) return S.volver(); S.ejemplo = false; db.actual = id; S.st = it.st; ligar(S.st, id); S.persist(); },
+    borrar(id) { delete db.items[id]; podar(); if (S.previo === id) S.previo = ""; if (db.actual === id) { db.actual = ""; S.previo = ""; S.volver(); } S.persist(); },
+    guardar() { if (S.ejemplo) return; const it = db.items[db.actual]; if (!it) return; it.upd = Date.now(); S.persist(); },
+    // Cambió el nombre de la empresa: el histórico de la empresa anterior nunca pasa a otra empresa
+    cambioEmpresa(k0) {
+      if (S.ejemplo || !SH.length || !k0) return false;
+      const id = db.actual, k = claveDe(S.st, id); if (k === k0) return false;
+      const otros = Object.entries(db.items).some(([i, it]) => i !== id && claveDe(it.st, i) === k0);
+      const nuevo = db.porEmpresa[k];
+      if (nuevo) SH.forEach((f) => { if (nuevo[f] == null) nuevo[f] = otros ? vacio(f) : S.st[f]; else if (!otros) fusionar(nuevo[f], S.st[f]); S.st[f] = nuevo[f]; });
+      else { const b = {}; SH.forEach((f) => { b[f] = otros ? vacio(f) : S.st[f]; S.st[f] = b[f]; }); db.porEmpresa[k] = b; }
+      podar(); S.persist(); return true;
+    },
+    // Copia de seguridad: los análisis de la empresa abierta y su histórico
+    exportar() {
+      if (S.ejemplo) return null;
+      const k = S.clave(), items = {}, pe = {};
+      Object.entries(db.items).forEach(([i, it]) => { if (claveDe(it.st, i) === k) items[i] = it; });
+      if (db.porEmpresa[k]) pe[k] = db.porEmpresa[k];
+      return { app: "ruta-cch", herramienta: KEY, version: 2, fecha: new Date().toISOString(), empresa: S.st.empresa || "", items, porEmpresa: pe };
+    },
+    importar(o) {
+      if (o && o.st && !o.app) { const i = "a" + Date.now(); o = { app: "ruta-cch", herramienta: KEY, items: { [i]: { st: o.st, upd: Date.now() } }, porEmpresa: o.comp ? { [claveDe(o.st, i)]: o.comp } : {} }; } // copia en texto de la versión anterior
+      if (!o || o.app !== "ruta-cch") throw new Error("formato");
+      if (o.herramienta !== KEY) throw new Error("otra");
+      const ids = Object.keys(o.items || {}).filter((i) => o.items[i] && o.items[i].st);
+      if (!ids.length) throw new Error("vacia");
+      ids.forEach((i) => { const it = o.items[i]; MIG(it.st); const ya = db.items[i]; if (!ya || (it.upd || 0) > (ya.upd || 0)) db.items[i] = { st: it.st, upd: it.upd || Date.now() }; });
+      Object.entries(o.porEmpresa || {}).forEach(([k, b]) => { if (!b) return; MIG(b); if (db.porEmpresa[k]) fusionar(db.porEmpresa[k], b); else db.porEmpresa[k] = b; });
+      ids.sort((a, b) => (o.items[b].upd || 0) - (o.items[a].upd || 0));
+      S.abrir(ids[0]);
+      return ids.length;
+    },
+    borrarTodo() { try { localStorage.removeItem(KEY); } catch (e) {} db.items = {}; db.porEmpresa = {}; db.actual = ""; S.previo = ""; S.ejemplo = false; S.nueva(false); },
+  };
+  if (db.actual && db.items[db.actual]) S.abrir(db.actual); else S.volver(); // arranca en blanco; el ejemplo se ve con «Ver ejemplo»
+  podar(); S.persist();
+  return S;
+}
+function fechaCorta(t) { try { return new Date(t).toLocaleDateString("es-CO", { day: "numeric", month: "short", year: "numeric" }); } catch (e) { return ""; } }
+
+// Encabezado común: empresa, producto, cliente potencial, y la lista de análisis guardados
+function setupShell(S, onOpen) {
+  const sheet = $("#sheet");
+  const paintHeader = () => { $("#banner").hidden = !S.ejemplo; $("#b-copia").hidden = S.ejemplo; $("#b-verej").hidden = S.ejemplo; };
+  const abrirListo = () => { sheet.hidden = true; paintHeader(); onOpen(); window.scrollTo({ top: 0 }); };
+  const fila = (e) => `<div class="row item${!S.ejemplo && e.id === S.db.actual ? " on" : ""}" data-row="${e.id}">
+      <button class="open" data-open="${e.id}" type="button"><b>${esc(e.cliente || "Sin cliente potencial")}</b><small>${esc(fechaCorta(e.upd))}${!S.ejemplo && e.id === S.db.actual ? " · abierto" : ""}</small></button>
+      <button class="x" data-del="${e.id}" type="button" aria-label="Borrar este análisis">×</button></div>`;
+  const listar = () => {
+    const L = S.lista(), G = new Map();
+    L.forEach((e) => { if (!G.has(e.clave)) G.set(e.clave, { nombre: e.empresa, items: [] }); G.get(e.clave).items.push(e); });
+    $("#lista").innerHTML = L.length ? [...G.values()].map((g) => `<div class="grupo"><p class="gtitle">${esc(g.nombre || "Sin nombre de empresa")}</p><div class="group">${g.items.map(fila).join("")}</div></div>`).join("")
+      : `<div class="group"><div class="row"><span class="l" style="color:var(--muted)">Todavía no hay análisis guardados en este aparato.</span></div></div>`;
+    $$("[data-open]", sheet).forEach((b) => (b.onclick = () => { S.abrir(b.dataset.open); abrirListo(); }));
+    $$("[data-del]", sheet).forEach((b) => (b.onclick = () => {
+      const row = b.closest(".item"), id = b.dataset.del;
+      row.innerHTML = `<span class="l">¿Borrar este análisis? No se puede recuperar.</span><span class="r"><button class="btn danger" type="button" data-si>Borrar</button><button class="btn" type="button" data-no>No</button></span>`;
+      $("[data-si]", row).onclick = () => { const era = !S.ejemplo && S.db.actual === id; S.borrar(id); listar(); if (era) { paintHeader(); onOpen(); } };
+      $("[data-no]", row).onclick = listar;
+    }));
+  };
+  $("#b-empresas").onclick = () => { listar(); bkMsg(""); sheet.hidden = false; };
+  $("#b-cerrar").onclick = () => (sheet.hidden = true);
+  sheet.onclick = (e) => { if (e.target === sheet) sheet.hidden = true; };
+  const nueva = (copiar) => { S.nueva(copiar); abrirListo(); const f = $(copiar ? "#f-cliente" : "#f-empresa"); if (f) f.focus(); };
+  $("#b-nueva").onclick = () => nueva(false);
+  $("#b-volver").onclick = () => { S.volver(); abrirListo(); };
+  $("#b-verej").onclick = () => { S.verEjemplo(); abrirListo(); };
+  // Un análisis en blanco cuenta como suyo apenas escriba o marque algo
+  const marcar = (e) => { if (S.ejemplo) return; const t = e.target; if (!t || !t.closest || t.closest("#sheet, nav.tabs, .toprow, .banner, .next")) return; if (e.type === "click" && !t.closest("button, [role=checkbox]")) return; S.tocar(); };
+  document.addEventListener("input", marcar, true); document.addEventListener("click", marcar, true);
+  $("#b-copia").onclick = () => nueva(true);
+  $("#b-ejemplo").onclick = () => { S.verEjemplo(); abrirListo(); };
+  // Si cambia el nombre de la empresa, cada empresa conserva su propio histórico
+  const fe = $("#f-empresa"); let k0 = "";
+  if (fe) { fe.addEventListener("focus", () => { k0 = S.clave(); }); fe.addEventListener("change", () => { if (S.cambioEmpresa(k0)) onOpen(); k0 = S.clave(); }); }
+  // Copia de seguridad en un archivo; en texto si el aparato no deja descargar
+  const bkMsg = (t) => setText("bk-msg", t);
+  const leer = (o) => {
+    try { const n = S.importar(o); $("#bk-txt").hidden = true; $("#b-bk-ok").hidden = true; abrirListo(); listar(); bkMsg(n === 1 ? "Se recuperó 1 análisis." : `Se recuperaron ${n} análisis.`); sheet.hidden = false; }
+    catch (err) { bkMsg(err && err.message === "otra" ? "Esa copia es de la otra herramienta. Ábrala allá." : "Esa copia no se pudo leer."); }
+  };
+  const gb = $("#b-bk-guardar");
+  gb.hidden = ENMARCADO; listoDescargas.then((okd) => { gb.hidden = !okd; });
+  gb.onclick = async () => {
+    const o = S.exportar(); if (!o) { bkMsg("Abra primero uno de sus análisis."); return; }
+    const nombre = nombreArchivo(`Copia ${document.title} ${o.empresa || "sin nombre"} ${fechaArchivo()}`, "json");
+    if (await guardarArchivo(nombre, new Blob([JSON.stringify(o)], { type: "application/json" }), bkMsg)) bkMsg("Copia guardada. Déjela en su correo o en una carpeta donde no se pierda.");
+  };
+  const fi = $("#bk-file");
+  $("#b-bk-abrir").onclick = () => { fi.value = ""; fi.click(); };
+  fi.onchange = () => {
+    const f = fi.files && fi.files[0]; if (!f) return;
+    const r = new FileReader();
+    r.onload = () => { let o = null; try { o = JSON.parse(String(r.result)); } catch (e) { bkMsg("Esa copia no se pudo leer."); return; } leer(o); };
+    r.onerror = () => bkMsg("Esa copia no se pudo leer.");
+    r.readAsText(f);
+  };
+  $("#b-bk-copiar").onclick = () => {
+    const o = S.exportar(); if (!o) { bkMsg("Abra primero uno de sus análisis."); return; }
+    const code = "RC2:" + btoa(unescape(encodeURIComponent(JSON.stringify(o))));
+    const done = () => bkMsg("Copia copiada. Péguela en un correo para usted mismo.");
+    const fb = () => { const ta = $("#bk-txt"); ta.hidden = false; ta.value = code; ta.select(); bkMsg("Seleccione el texto y cópielo."); };
+    try { navigator.clipboard.writeText(code).then(done, fb); } catch (err) { fb(); }
+  };
+  $("#b-bk-pegar").onclick = () => { const ta = $("#bk-txt"); ta.hidden = false; ta.value = ""; ta.focus(); $("#b-bk-ok").hidden = false; bkMsg("Pegue aquí el texto de la copia y toque «Recuperar»."); };
+  $("#b-bk-ok").onclick = () => {
+    let o = null;
+    try { const raw = $("#bk-txt").value.trim().replace(/^(AN1|RC2):/, ""); o = JSON.parse(decodeURIComponent(escape(atob(raw)))); }
+    catch (err) { bkMsg("Ese texto no se pudo leer. Copie el texto completo."); return; }
+    leer(o);
+  };
+  // Borrar todo lo de este aparato
+  const bt = $("#b-borrar-todo");
+  bt.onclick = () => {
+    const box = $("#borrar-todo"), antes = box.innerHTML;
+    box.innerHTML = `<span class="l">¿Borrar todos los análisis guardados en este aparato? No se pueden recuperar, salvo con una copia.</span><span class="r" style="justify-content:flex-start"><button class="btn danger" type="button" data-si>Borrar todo</button><button class="btn" type="button" data-no>No</button></span>`;
+    $("[data-si]", box).onclick = () => { S.borrarTodo(); box.innerHTML = antes; setupBorrar(); listar(); paintHeader(); onOpen(); bkMsg("Se borró todo lo de este aparato."); };
+    $("[data-no]", box).onclick = () => { box.innerHTML = antes; setupBorrar(); };
+  };
+  const setupBorrar = () => { $("#b-borrar-todo").onclick = bt.onclick; };
+  paintHeader();
+}
+
+// Encabezado de la ficha: cliente potencial y fecha
+function fichaCliente(S) {
+  const c = S.st.cliente;
+  $("#ficha-cli").innerHTML = c ? `Cliente potencial: <b>${esc(c)}</b>` : `Cliente potencial: <span style="color:var(--muted)">escríbalo arriba</span>`;
+  setText("ficha-sub", S.ejemplo ? "Ejemplo: Café Ejemplo S.A.S., con datos inventados." : "Análisis del " + hoyLargo() + ".");
+}
+
+// Listas que crecen: botón «+» y «×» para quitar
+function listaEditable(arr, min, max, nuevo, rebuild, btnId) {
+  const b = document.getElementById(btnId);
+  if (b) { b.hidden = arr.length >= max; b.onclick = () => { if (arr.length < max) { arr.push(nuevo()); rebuild(); } }; }
+  return (i) => { if (arr.length > min) { arr.splice(i, 1); rebuild(); } };
+}
+
+// Escala de rojo a verde: dónde queda un número. dir "hi": más es mejor; "lo": menos es mejor
+function escala(v, min, max, a, g, dir) {
+  if (!ok(v) || !ok(a) || !ok(g)) return null;
+  const pos = (x) => { const t = (x - min) / (max - min); return Math.max(0, Math.min(1, dir === "hi" ? t : 1 - t)); };
+  return { p: pos(v), a: pos(a), g: pos(g) };
+}
+function escalaHTML(e) {
+  if (!e) return "";
+  const w = (x) => (x * 100).toFixed(1) + "%";
+  return `<span class="gauge" aria-hidden="true"><i data-c="R" style="width:${w(e.a)}"></i><i data-c="A" style="width:${w(e.g - e.a)}"></i><i data-c="V" style="width:${w(1 - e.g)}"></i><b style="left:${w(e.p)}"></b></span>`;
+}
+// Ficha: una tarjeta por indicador, con su escala de rojo a verde
+function fichaTiles(defs, c1, c2) {
+  return defs.map((d) => {
+    const a = d.f(c1), b = c2 ? d.f(c2) : null;
+    const dt = (x, L) => d.neutral ? "" : `<span class="dot${L ? " L" : ""}" data-c="${x[0]}"></span>`;
+    const ga = d.g && a[0] ? escalaHTML(d.g(c1)) : "";
+    if (!b) return `<div class="tile"><span class="k">${esc(d.k)}</span><span class="v${String(a[1]).length > 22 ? " long" : ""}">${dt(a, 1)}${esc(a[1])}</span>${ga}${a[2] ? `<span class="s">${esc(a[2])}</span>` : ""}</div>`;
+    return `<div class="tile"><span class="k">${esc(d.k)}</span><div class="cmp"><span class="w">Antes</span><b>${dt(a)}${esc(a[1])}</b><span class="w">Ahora</span><b>${dt(b)}${esc(b[1])}</b></div>${b[2] ? `<span class="s">${esc(b[2])}</span>` : ""}</div>`;
+  }).join("");
+}
+function fichaTexto(titulo, st, defs, c1, c2, extra) {
+  const L = [titulo, `Empresa: ${st.empresa || "—"} · Producto: ${st.producto || "—"}`, `Cliente potencial: ${st.cliente || "—"}`, ""];
+  defs.forEach((d) => {
+    const a = d.f(c1), b = c2 ? d.f(c2) : null;
+    const e = (x) => d.neutral ? "•" : (EMO[x[0]] || "⚪");
+    L.push(b ? `${d.k}: antes ${e(a)} ${a[1]} → ahora ${e(b)} ${b[1]}` : `${e(a)} ${d.k}: ${a[1]}${a[2] ? " (" + a[2] + ")" : ""}`);
+  });
+  if (extra) L.push("", extra);
+  L.push("", "Análisis propio con los datos escritos por la empresa. No es una recomendación.");
+  return L.join("\n");
+}
+
+function resumenFicha(defs, c) {
+  const col = defs.filter((d) => !d.neutral).map((d) => [d, d.f(c)[0]]);
+  const n = { V: 0, A: 0, R: 0 }; col.forEach(([, x]) => { if (n[x] !== undefined) n[x]++; });
+  const rojos = col.filter((x) => x[1] === "R").map((x) => x[0].k.toLowerCase());
+  const faltan = col.filter((x) => !x[1]).map((x) => x[0].k.toLowerCase());
+  const tot = n.V + n.A + n.R, partes = [];
+  if (tot) partes.push(`De ${tot} números: ${n.V} en verde, ${n.A} en amarillo y ${n.R} en rojo.`);
+  if (rojos.length) partes.push("En rojo: " + rojos.join(", ") + ".");
+  if (faltan.length) partes.push("Sin datos todavía: " + faltan.join(", ") + ".");
+  return { n, tot, c: n.R ? "R" : n.A ? "A" : tot ? "V" : "", text: partes.join(" ") || "Complete las secciones para ver su ficha." };
+}
+function resumenHTML(rs) {
+  const bar = rs.tot ? `<div class="mix" role="img" aria-label="${rs.n.V} en verde, ${rs.n.A} en amarillo y ${rs.n.R} en rojo">${["R", "A", "V"].map((k) => (rs.n[k] ? `<i data-c="${k}" style="flex:${rs.n[k]}"><span>${rs.n[k]}</span></i>` : "")).join("")}</div>` : "";
+  return `<span class="k">Su ficha en un vistazo</span>${bar}<p>${esc(rs.text)}</p>`;
+}
+
+const AVISO = "Herramienta de análisis para uso propio. Los resultados salen solo de los datos que usted escribe y sirven para entender su operación. No son una recomendación de vender, comprar, invertir, contratar ni fijar un precio: cada decisión es de su empresa. Lo que escribe se guarda solo en este aparato. Disponible hasta el " + FIN + "; antes de esa fecha, guarde su ficha en PDF y una copia de sus datos.";
+
+// Herramienta 2 · Mi logística y mi comprador (v7)
+const KEY = "analisis:h2:v5";
+const PREG = [
+  ["Cantidad", "¿Tiene producto suficiente para atender a este cliente sin quedarle mal a sus clientes de aquí?", "Lo máximo que puede sacar al mes está en la herramienta 1."],
+  ["Constancia", "¿Puede entregarle esa cantidad cada mes, con la misma calidad?", "Un cliente de afuera suele valorar que el pedido se repita igual."],
+  ["Precio", "Con el precio que le ofrece a este cliente y después de pagar todos sus costos, ¿le queda por lo menos el 10 % de lo que vende?", "Por ejemplo: si vende algo en $10.000, que le queden $1.000 o más. Lo ve en la herramienta 1, «Costo»."],
+  ["Plata", "¿Tiene la plata para producir y despachar el pedido de este cliente, y esperar de uno a tres meses a que le pague?", "Entre producir, despachar y cobrar pueden pasar semanas o meses."],
+  ["Distancia y vías", "¿Su bodega está a menos de un día de camino del puerto o aeropuerto de salida, por vías que no se cierran seguido?", "Más distancia o vías inestables suman días y costo."],
+  ["Documentos", "¿Tiene los papeles para exportarle a este cliente? Por ejemplo: RUT como exportador y los registros o permisos que pide su país.", "Sin documentos completos la carga no sale."],
+  ["Empaque y cuidado de la carga", "¿Puede empacar y proteger la carga para que le llegue bien a este cliente, sin humedad, golpes ni robos?", "Son los riesgos más comunes del camino."],
+  ["Quién le ayuda", "¿Tiene o conoce una agencia de carga o de aduanas que le ayude con el trámite?", "Ellos conocen el trámite y los tiempos."],
+  ["Experiencia", "¿Ya ha enviado carga a otra ciudad o país y se encargó de que llegara bien?", "La experiencia en envíos reduce errores."],
+];
+const ESL = ["Empaque de exportación y cargue", "Transporte al puerto o aeropuerto", "Aduana y documentos de salida", "Gastos en el puerto de salida", "Flete internacional y seguro", "Llegada: aduana e impuestos en destino"];
+const NBASE = ESL.length;
+const PAGA = { EXW: "SNNNNN", FCA: "SSSNNN", FOB: "SSSSNN", CFR: "SSSSSN", CIF: "SSSSSN", DAP: "SSSSSN", DDP: "SSSSSS" };
+const QUIEN = [["Yo", "Yo mismo"], ["Contrato", "Contrato a alguien"], ["Comprador", "El comprador"]];
+const quienPor = (inco) => (PAGA[inco] || "SSSSSS").split("").map((x, i) => (x === "N" ? "Comprador" : i === 0 ? "Yo" : "Contrato"));
+const tramosPor = (inco, vals) => ESL.map((n, i) => ({ nombre: n, valor: vals ? vals[i] : "", quien: quienPor(inco)[i] }));
+const INCO_TIP = {
+  EXW: "EXW: entrega en su bodega. El comprador se encarga de casi todo el trámite y el transporte.",
+  FCA: "FCA: entrega al transportador que diga el comprador, con la exportación hecha. Sirve para cualquier transporte.",
+  FOB: "FOB: entrega a bordo del barco en el puerto de salida. Solo por mar. Lo normal: el comprador paga el flete y la llegada.",
+  CFR: "CFR: además paga el flete hasta el puerto del comprador. Solo por mar. El seguro es del comprador.",
+  CIF: "CIF: paga el flete y un seguro mínimo hasta el puerto del comprador. Solo por mar.",
+  DAP: "DAP: lleva la carga hasta el lugar acordado en destino, sin los impuestos de entrada.",
+  DDP: "DDP: paga todo, incluidos los impuestos de entrada en destino.",
+};
+const CHECKS = ["El Incoterm y el lugar, por ejemplo «FOB Buenaventura»", "El producto, la calidad y el empaque", "La cantidad y el precio por unidad en dólares", "La forma de pago", "La fecha de despacho", "Hasta cuándo vale la oferta"];
+const TIPOS = ["Importador", "Tostador o fábrica", "Distribuidor", "Marca", "Cadena o supermercado", "Tienda pequeña", "Otro"];
+const MONEDAS = ["Dólares", "Euros", "Pesos", "Otra"];
+const PAGOS = ["Anticipo 100 %", "Anticipo parcial", "Carta de crédito", "Plazo (paga después)", "Consignación (paga si vende)"];
+const CONOCE = ["No lo conozco", "Tiene referencias", "Ya me ha pagado bien"];
+const REG = ["Sí", "En trámite", "No"];
+const incs = (n, ...idx) => Array.from({ length: n }, (_, i) => idx.includes(i));
+
+const EX = {
+  empresa: "Café Ejemplo S.A.S.", producto: "Café verde excelso", cliente: "Importador en Nueva York", unidad: "kg", kgMes: 2100, precio: 10, dolar: 3194.44,
+  resp: ["Sí", "A medias", "No", "A medias", "Sí", "Sí", "A medias", "A medias", "Sí"],
+  inco: "FOB", dkg: 2100, tramos: tramosPor("FOB", [735000, 3000000, 1360000, 650000, 2240000, ""]),
+  aTiempo: 6, dias: 8, consolidado: 650, contenedor: 1900,
+  cot: [{ op: "Operador A", q: 4800000, inc: incs(6, 1, 2, 3) }, { op: "Operador B", q: 4300000, inc: incs(6, 1, 2) }, { op: "Operador C", q: 2900000, inc: incs(6, 1) }],
+  buyer: { pais: "Estados Unidos", tipo: "Importador", moneda: "Dólares", kgAno: 12600, pedidos: 6, pago: "Anticipo parcial", conoce: "Ya me ha pagado bien", reg: "Sí" },
+  cprod: 30577, incluyeLog: "Sí", quiere: 20, colchon: 5, checks: [true, true, true, true, false, false],
+};
+const BLANK = {
+  empresa: "", producto: "", cliente: "", unidad: "kg", kgMes: "", precio: "", dolar: "", resp: Array(9).fill(""),
+  inco: "FCA", dkg: "", tramos: tramosPor("FCA"), aTiempo: "", dias: "", consolidado: "", contenedor: "",
+  cot: [1, 2, 3].map((i) => ({ op: "Operador " + i, q: "", inc: [] })),
+  buyer: { pais: "", tipo: "", moneda: "", kgAno: "", pedidos: "", pago: "", conoce: "", reg: "" },
+  cprod: "", incluyeLog: "Sí", quiere: 20, colchon: 5, checks: Array(6).fill(false),
+};
+const S = makeStore(KEY, EX, BLANK, { propio: ["cliente", "precio", "buyer"], migrar: (o) => { if (o) delete o.meses; } }); // «Ventas» se quitó el 19 oct
+const sum = (a) => a.reduce((x, y) => x + (ok(N(y)) ? N(y) : 0), 0);
+const opts = (arr) => "<option></option>" + arr.map((x) => `<option>${x}</option>`).join("");
+const VERD = { V: "Bases sólidas", A: "Bases por fortalecer", R: "Temas clave por resolver" };
+const ENC = { V: "Encaje alto", A: "Encaje medio", R: "Encaje bajo" };
+const INCO_S = {
+  "EXW o FCA": "Entregar en su bodega, o al transportador que diga el cliente.",
+  "FCA o FOB": "Entregar al transportador del cliente, o a bordo del barco en Colombia, con apoyo de una agencia de carga.",
+  "FOB o CFR": "Poner la carga a bordo del barco, o pagar además el flete hasta el puerto del cliente.",
+};
+
+function buyerEval(b, kgMes, u) {
+  const kg = N(b.kgAno), cap = N(kgMes) * 12;
+  const alc = ok(kg) && ok(cap) ? (kg <= cap ? "V" : kg <= cap * 1.5 ? "A" : "R") : "";
+  const conf = { "No lo conozco": "R", "Tiene referencias": "A", "Ya me ha pagado bien": "V" }[b.conoce] || "";
+  let pago = "";
+  if (b.pago === "Anticipo 100 %" || b.pago === "Carta de crédito") pago = "V";
+  else if (b.pago === "Anticipo parcial") pago = b.conoce === "Ya me ha pagado bien" ? "V" : "A";
+  else if (b.pago) pago = b.conoce && b.conoce !== "No lo conozco" ? "A" : "R";
+  const reg = { "Sí": "V", "En trámite": "A", "No": "R" }[b.reg] || "";
+  const all = [alc, pago, conf, reg];
+  let v = "";
+  if (all.every((x) => x)) {
+    if ([alc, pago, reg].includes("R")) v = "R";
+    else if (conf === "R" || all.filter((x) => x === "A").length >= 2) v = "A";
+    else v = "V";
+  }
+  const pts = [];
+  if (alc === "R") pts.push(`Pide ${fmt(kg)} ${u.abbr} al año; usted puede ofrecer ${fmt(cap)}.`);
+  if (alc === "A") pts.push(`Pide algo más de lo que usted puede ofrecer en un año (${fmt(cap)} ${u.abbr}).`);
+  if (pago === "R") pts.push("Paga después del despacho y no hay historial con este cliente.");
+  if (pago === "A") pts.push(b.pago === "Anticipo parcial" ? "Una parte del pago llega después del despacho." : "Paga después del despacho, con algo de historial.");
+  if (conf === "R") pts.push("Sin historial ni referencias de este cliente.");
+  if (conf === "A") pts.push("Solo hay referencias de terceros.");
+  if (reg === "R") pts.push("Faltan registros o permisos que pide ese país.");
+  if (reg === "A") pts.push("Registros en trámite.");
+  if (b.moneda === "Euros" || b.moneda === "Otra") pts.push(`Paga en ${b.moneda === "Euros" ? "euros" : "otra moneda"}: hay un cambio de moneda adicional.`);
+  if (v && !pts.length) pts.push("Sin alertas con estos datos.");
+  return { v, pts, porPedido: N(b.kgAno) / N(b.pedidos), cap };
+}
+
+function calc(s) {
+  const c = { s }, u = U(s);
+  const pts = { "Sí": 2, "A medias": 1, "No": 0 };
+  const r = s.resp.map((x) => pts[x]);
+  c.faltan = r.filter((x) => x === undefined).length;
+  c.puntos = r.reduce((a, b) => a + (b || 0), 0);
+  const no = (i) => s.resp[i] === "No";
+  c.cListo = c.faltan ? "" : (no(2) || no(3) || no(5) || c.puntos < 8) ? "R" : (c.puntos >= 14 && !s.resp.includes("No")) ? "V" : "A";
+  const nos = PREG.filter((_, i) => s.resp[i] === "No").map((p) => p[0]);
+  const med = PREG.filter((_, i) => s.resp[i] === "A medias").map((p) => p[0]);
+  c.frena = nos.length ? nos : med;
+  const sub = [3, 5, 6, 7, 8].reduce((a, i) => a + (r[i] || 0), 0);
+  c.inco = c.faltan ? "" : sub >= 8 ? "FOB o CFR" : sub >= 5 ? "FCA o FOB" : "EXW o FCA";
+  c.incoS = INCO_S[c.inco] || "";
+  const T = s.tramos || [];
+  c.dcosto = T.reduce((a, t) => a + (t.quien !== "Comprador" && ok(N(t.valor)) ? N(t.valor) : 0), 0);
+  c.dkilo = N(s.dkg) > 0 && c.dcosto > 0 ? c.dcosto / N(s.dkg) : NaN;
+  c.ventaUsd = N(s.dkg) * N(s.precio); c.ventaCop = c.ventaUsd * N(s.dolar);
+  c.dpct = c.dcosto > 0 ? c.dcosto / c.ventaCop : NaN; c.cD = lo(c.dpct, 0.08, 0.15);
+  c.cTiempo = hi(N(s.aTiempo), 9, 7); c.cDias = lo(N(s.dias), 7, 15);
+  c.contrata = T.map((t, i) => (t.quien === "Contrato" ? i : -1)).filter((i) => i >= 0);
+  c.faltaCot = s.cot.map((x) => c.contrata.filter((j) => !(x.inc || [])[j]));
+  c.reales = s.cot.map((x, i) => ok(N(x.q)) ? N(x.q) + c.faltaCot[i].reduce((a, j) => a + (ok(N(T[j].valor)) ? N(T[j].valor) : 0), 0) : NaN);
+  const val = c.reales.filter(ok); c.mejor = val.length ? c.reales.indexOf(Math.min(...val)) : -1;
+  const qs = s.cot.map((x) => N(x.q)), qv = qs.filter(ok); c.parecia = qv.length ? qs.indexOf(Math.min(...qv)) : -1;
+  c.buyer = buyerEval(s.buyer || {}, s.kgMes, u);
+  c.plog = ok(c.dkilo) ? c.dkilo : 0;
+  c.costo = N(s.cprod) + (s.incluyeLog === "No" ? c.plog : 0);
+  c.dcot = N(s.dolar) * (1 - N(s.colchon) / 100);
+  c.pmin = c.costo / (1 - N(s.quiere) / 100) / c.dcot;
+  c.peq = c.costo / N(s.dolar);
+  const p = N(s.precio);
+  c.cP = !ok(p) || !ok(c.pmin) ? "" : p >= c.pmin ? "V" : p >= c.peq ? "A" : "R";
+  return c;
+}
+
+function fichaDefs(u) {
+  const nm = (c, i) => c.s.cot[i].op || "Operador " + (i + 1);
+  return [
+    { k: "Punto de partida con este cliente", f: (c) => [c.cListo, c.faltan ? "—" : VERD[c.cListo], c.faltan ? "" : `${c.puntos} de 18 · pesa: ${c.frena.length ? c.frena.join(", ").toLowerCase() : "nada en particular"}`] },
+    { k: "Hasta dónde puede llevar su carga hoy", neutral: true, f: (c) => ["", c.inco || "—", c.incoS] },
+    { k: "Logística sobre la venta", g: (c) => escala(c.dpct, 0, 0.25, 0.15, 0.08, "lo"), f: (c) => [c.cD, pct(c.dpct), ok(c.dkilo) ? `${pesos(c.dkilo)} por ${u.uno} en ${c.s.inco}` : ""] },
+    { k: "Pedidos que llegan a tiempo", g: (c) => escala(N(c.s.aTiempo), 0, 10, 7, 9, "hi"), f: (c) => [c.cTiempo, ok(N(c.s.aTiempo)) ? fmt(N(c.s.aTiempo)) + " de cada 10" : "—"] },
+    { k: "Días para tener listo un pedido", g: (c) => escala(N(c.s.dias), 0, 30, 15, 7, "lo"), f: (c) => [c.cDias, ok(N(c.s.dias)) ? fmt(N(c.s.dias)) + " días" : "—"] },
+    { k: "Encaje con este cliente", f: (c) => [c.buyer.v, ENC[c.buyer.v] || "—", [c.s.buyer.pais, c.s.buyer.tipo].filter(Boolean).join(" · ")] },
+    { k: "Precio que le ofrece", g: (c) => (ok(c.peq) && ok(c.pmin) ? escala(N(c.s.precio), 0.85 * c.peq, 1.15 * c.pmin, c.peq, c.pmin, "hi") : null), f: (c) => [c.cP, usd(N(c.s.precio)), ok(c.pmin) ? `Precio de referencia: ${usd(c.pmin)} · equilibrio: ${usd(c.peq)}` : ""] },
+    { k: "Cotización de menor costo", neutral: true, f: (c) => ["", c.mejor >= 0 ? nm(c, c.mejor) : "—", c.mejor >= 0 ? pesos(c.reales[c.mejor]) + " con todo sumado" : ""] },
+  ];
+}
+
+function datosPDF(s, c) {
+  const u = U(s), qn = (x) => (QUIEN.find((q) => q[0] === x) || ["", "—"])[1];
+  return [
+    ["Este cliente", [["Mide en", u.unos], [`Lo que le puede ofrecer cada mes`, ok(N(s.kgMes)) ? fmt(N(s.kgMes)) + " " + u.abbr : "—"], [`Precio que le ofrece por ${u.uno}`, usd(N(s.precio))], ["Dólar usado", pesos(N(s.dolar))]]],
+    ["¿Qué tan preparado está para este cliente?", PREG.map((p, i) => [p[0], s.resp[i] || "—"])],
+    ["Despacho", [["Incoterm", s.inco], ["Cantidad del despacho", ok(N(s.dkg)) ? fmt(N(s.dkg)) + " " + u.abbr : "—"]]
+      .concat((s.tramos || []).map((t) => [t.nombre || "Tramo", qn(t.quien) + (t.quien !== "Comprador" && ok(N(t.valor)) ? " · " + pesos(N(t.valor)) : "")]))
+      .concat([["Pedidos a tiempo de cada 10", ok(N(s.aTiempo)) ? fmt(N(s.aTiempo)) : "—"], ["Días para tener listo un pedido", ok(N(s.dias)) ? fmt(N(s.dias)) : "—"], ["Compartiendo contenedor", ok(N(s.consolidado)) ? usd(N(s.consolidado)) : "—"], ["Contenedor propio", ok(N(s.contenedor)) ? usd(N(s.contenedor)) : "—"]])],
+    ["Encaje con este cliente", (() => { const b = s.buyer || {}; return [["País", b.pais || "—"], ["Tipo de cliente", b.tipo || "—"], ["Moneda en que paga", b.moneda || "—"], [`Cantidad al año`, ok(N(b.kgAno)) ? fmt(N(b.kgAno)) + " " + u.abbr : "—"], ["Pedidos al año", ok(N(b.pedidos)) ? fmt(N(b.pedidos)) : "—"], ["Cómo le pagaría", b.pago || "—"], ["¿Lo conoce?", b.conoce || "—"], ["Registros que pide su país", b.reg || "—"], ["Encaje", ENC[c.buyer.v] || "—"]]; })()],
+    ["Precio", [[`${u.Art} le cuesta`, pesos(N(s.cprod))], ["¿Incluye el despacho?", s.incluyeLog || "—"], ["Margen que quisiera", ok(N(s.quiere)) ? fmt(N(s.quiere)) + " %" : "—"], ["Colchón por el dólar", ok(N(s.colchon)) ? fmt(N(s.colchon)) + " %" : "—"], ["Precio de referencia", usd(c.pmin)], ["Precio de equilibrio", usd(c.peq)]]
+      .concat(s.cot.filter((x) => ok(N(x.q))).map((x) => { const i = s.cot.indexOf(x); return [x.op || "Operador", `Cotizó ${pesos(N(x.q))} · con todo sumado ${pesos(c.reales[i])}`]; }))],
+  ];
+}
+
+// ---------- construcción ----------
+function asegurarTramos() {
+  const st = S.st;
+  if (!Array.isArray(st.tramos) || !st.tramos.length) st.tramos = tramosPor(st.inco);
+}
+function buildChain() {
+  const st = S.st; asegurarTramos();
+  const quitar = listaEditable(st.tramos, NBASE, 10, () => ({ nombre: "", valor: "", quien: "Contrato" }), () => { buildChain(); buildCot(); render(); }, "b-add-tramo");
+  $("#chain").innerHTML = st.tramos.map((t, i) => `<div class="row tramo">${i < NBASE ? `<span class="l">${esc(t.nombre)}</span>` : `<span class="l" style="display:flex;gap:8px;align-items:center"><input class="t" id="f-tn-${i}" data-k="tramos.${i}.nombre" data-kind="text" placeholder="¿Qué otro cobro?" aria-label="Tramo ${i + 1}" style="flex:1;min-width:0"><button class="x" type="button" data-qt="${i}" aria-label="Quitar este tramo">×</button></span>`}
+    <label class="mini" style="justify-self:end"><span id="t-esl-${i}">Me cuesta</span><span class="unit"><input class="n" id="f-esl-${i}" data-k="tramos.${i}.valor" inputmode="decimal" aria-label="${esc(t.nombre || "Tramo")}: lo que le cuesta"><em>$</em></span></label>
+    <span class="seg small" data-k="tramos.${i}.quien" role="group" aria-label="¿Quién lo hace?">${QUIEN.map(([v, tx]) => `<button data-v="${v}">${tx}</button>`).join("")}</span></div>`).join("");
+  $$("[data-qt]").forEach((b) => (b.onclick = () => quitar(Number(b.dataset.qt))));
+  bindFields($("#chain"), st, onField);
+}
+function buildCot() {
+  const st = S.st, c = calc(st);
+  const quitar = listaEditable(st.cot, 1, 5, () => ({ op: "Operador " + (st.cot.length + 1), q: "", inc: [] }), () => { buildCot(); render(); }, "b-add-cot");
+  $("#cotizaciones").innerHTML = st.cot.map((x, i) => `<div class="group">
+    <div class="row wrapm"><div class="mejora-top"><input class="t" id="f-op-${i}" data-k="cot.${i}.op" data-kind="text" aria-label="Operador ${i + 1}" style="font-weight:600">${st.cot.length > 1 ? `<button class="x" type="button" data-qc="${i}" aria-label="Quitar esta cotización">×</button>` : ""}</div>
+      <label class="mini">Cotizó<span class="unit"><input class="n" id="f-q-${i}" data-k="cot.${i}.q" inputmode="decimal" aria-label="Lo que cotizó"><em>$</em></span></label></div>
+    <div class="row stack"><span class="mini">¿Qué incluye?</span><div class="togs">${c.contrata.length ? c.contrata.map((j) => `<button type="button" class="tog" data-cot="${i}" data-j="${j}" aria-pressed="${!!(x.inc || [])[j]}">${esc(st.tramos[j].nombre || "Tramo " + (j + 1))}</button>`).join("") : '<span class="note">Marque en «Despacho» qué tramos contrata a alguien.</span>'}</div></div>
+    <div class="row"><span class="l">Costo con todo sumado<small id="o-falta-${i}"></small></span><span class="r"><span class="pill" data-c="V" id="o-mejor-${i}" hidden>Menor costo</span><b id="o-real-${i}"></b></span></div>
+  </div>`).join("");
+  $$("#cotizaciones .tog").forEach((b) => (b.onclick = () => {
+    const i = Number(b.dataset.cot), j = Number(b.dataset.j), x = st.cot[i];
+    if (!Array.isArray(x.inc)) x.inc = []; x.inc[j] = !x.inc[j]; b.setAttribute("aria-pressed", String(!!x.inc[j])); render();
+  }));
+  $$("[data-qc]").forEach((b) => (b.onclick = () => quitar(Number(b.dataset.qc))));
+  bindFields($("#cotizaciones"), st, onField);
+}
+function buildRows() {
+  const st = S.st;
+  $("#preguntas").innerHTML = PREG.map(([t, q], i) => `<div class="row q"><span class="dot" id="l-q${i}"></span>
+    <span class="l">${q}<small id="t-q${i}">${t}</small></span>
+    <span class="seg small" data-k="resp.${i}" role="group" aria-label="Respuesta ${i + 1}"><button data-v="Sí">Sí</button><button data-v="A medias">A medias</button><button data-v="No">No</button></span></div>`).join("");
+  $("#checks").innerHTML = CHECKS.map((t, i) => `<div class="row tap" role="checkbox" tabindex="0" id="ck-${i}" aria-checked="${!!st.checks[i]}" style="grid-template-columns:22px minmax(0,1fr)"><span class="check">✓</span><span class="l">${t}</span></div>`).join("");
+  CHECKS.forEach((_, i) => { const el = $("#ck-" + i); const t = () => { st.checks[i] = !st.checks[i]; el.setAttribute("aria-checked", String(st.checks[i])); render(); };
+    el.onclick = t; el.onkeydown = (e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); t(); } }; });
+  buildBuyer();
+}
+function buildBuyer() {
+  const k = "buyer", u = U(S.st);
+  if (!S.st.buyer) S.st.buyer = clone(BLANK.buyer);
+  $("#bform").innerHTML = `<div class="group">
+    <div class="row wrapm"><span class="l">País de este cliente</span><input class="t" style="width:min(16em,100%)" id="f-bp" data-k="${k}.pais" data-kind="text" aria-label="País"></div>
+    <div class="row wrapm"><span class="l">Tipo de cliente</span><select class="s" id="f-bt" data-k="${k}.tipo" aria-label="Tipo">${opts(TIPOS)}</select></div>
+    <div class="row wrapm"><span class="l">Moneda en que le pagaría</span><select class="s" id="f-bm" data-k="${k}.moneda" aria-label="Moneda">${opts(MONEDAS)}</select></div>
+  </div>
+  <div class="group">
+    <div class="row wrapm"><span class="l">1. ¿Cuántos ${u.unos} le pediría al año?</span><span class="unit"><input class="n" id="f-bk" data-k="${k}.kgAno" inputmode="decimal" aria-label="Cantidad al año"><em>${u.abbr}</em></span></div>
+    <div class="row wrapm"><span class="l">2. ¿En cuántos pedidos al año?<small id="o-bpp"></small></span><span class="unit"><input class="n sm" id="f-bf" data-k="${k}.pedidos" inputmode="decimal" aria-label="Pedidos al año"></span></div>
+    <div class="row wrapm"><span class="l">3. ¿Cómo le pagaría?</span><select class="s" id="f-bpa" data-k="${k}.pago" aria-label="Forma de pago">${opts(PAGOS)}</select></div>
+    <div class="row wrapm"><span class="l">4. ¿Lo conoce?</span><select class="s" id="f-bc" data-k="${k}.conoce" aria-label="¿Lo conoce?">${opts(CONOCE)}</select></div>
+    <div class="row wrapm"><span class="l">5. ¿Tiene los registros que pide el país de este cliente?</span><select class="s" id="f-br" data-k="${k}.reg" aria-label="Registros">${opts(REG)}</select></div>
+  </div>
+  <div class="status" id="e-b"><span class="dot" id="l-b"></span><span><b id="o-bv">—</b><br><span id="m-b" style="font-size:14.5px"></span></span></div>`;
+  bindFields($("#bform"), S.st, render);
+}
+
+function onField(k) {
+  if (k === "unidad") return open();
+  if (k === "inco") { const q = quienPor(S.st.inco); S.st.tramos.forEach((t, i) => { if (i < NBASE) t.quien = q[i]; }); buildChain(); buildCot(); }
+  else if (k && /^tramos\.\d+\.(quien|nombre)$/.test(k)) buildCot();
+  render();
+}
+
+function render() {
+  S.guardar();
+  const st = S.st, c = calc(st), u = U(st);
+  pintarUnidad(st);
+  // ¿Preparado?
+  PREG.forEach((p, i) => { const cc = { "Sí": "V", "A medias": "A", "No": "R" }[st.resp[i]] || ""; setLight("l-q" + i, cc); });
+  setLight("l-listo", c.cListo); setLight("l-listo2", c.cListo); $("#e-listo").dataset.c = c.cListo;
+  setText("o-listo", c.faltan ? "—" : VERD[c.cListo]);
+  setText("o-puntos", c.faltan ? `Faltan ${c.faltan} de 9 preguntas` : `${c.puntos} de 18 puntos`);
+  setText("o-frena", c.faltan ? "—" : c.frena.length ? c.frena.join(", ") : "Nada en particular");
+  setText("o-inco", c.inco || "—"); setText("o-inco-s", c.incoS);
+  setText("m-listo", c.faltan ? "Conteste las nueve preguntas para ver su resultado." : pick(c.cListo,
+    "Sus respuestas muestran bases sólidas en los nueve temas.",
+    "Hay temas a medias. Ninguno frena por sí solo, pero juntos pesan.",
+    "Hay un «No» en precio, plata o documentos, o el puntaje es bajo. Son temas que frenan cualquier pedido."));
+  // Despacho
+  setText("o-inco-tip", INCO_TIP[st.inco] || "");
+  st.tramos.forEach((t, i) => { const el = $("#f-esl-" + i), cp = t.quien === "Comprador"; if (el) el.disabled = cp; setText("t-esl-" + i, cp ? "Lo paga el comprador" : "Me cuesta"); });
+  setText("o-dcosto", c.dcosto > 0 ? pesos(c.dcosto) : "—");
+  setText("o-dkilo", pesos(c.dkilo)); setText("o-dpct", pct(c.dpct)); setLight("l-dpct", c.cD); setLight("l-dpct2", c.cD); $("#e-dpct").dataset.c = c.cD;
+  setText("o-venta", ok(c.ventaUsd) && c.ventaUsd > 0 ? `Venta: ${usd(c.ventaUsd)}` : "");
+  setText("m-dpct", pick(c.cD, "La logística pesa poco sobre la venta.", "La logística pesa una parte importante de la venta.", "La logística pesa mucho sobre la venta.", "Escriba la cantidad, el costo de cada tramo y, arriba, su precio y el dólar."));
+  setLight("l-tiempo", c.cTiempo); setLight("l-dias", c.cDias);
+  const cs = N(st.consolidado), ct = N(st.contenedor);
+  setText("m-cons", ok(cs) && ok(ct) ? (cs <= ct ? `Con estos valores, compartir contenedor cuesta ${usd(ct - cs)} menos por despacho.` : `Con estos valores, el contenedor propio cuesta ${usd(cs - ct)} menos.`) : "Pida las dos tarifas a una agencia de carga para comparar.");
+  st.cot.forEach((x, i) => {
+    setText("o-real-" + i, pesos(c.reales[i]));
+    const m = $("#o-mejor-" + i); if (m) m.hidden = i !== c.mejor;
+    const f = c.faltaCot[i];
+    setText("o-falta-" + i, !ok(N(x.q)) ? "" : f.length ? "Se suma: " + f.map((j) => (st.tramos[j].nombre || "tramo").toLowerCase() + " " + pesos(N(st.tramos[j].valor))).join(" · ") : "Incluye todo lo que usted contrata");
+  });
+  const nm = (i) => st.cot[i].op || "Operador " + (i + 1);
+  setText("m-cot", c.mejor >= 0 ? `Con todo sumado, la de menor costo es ${nm(c.mejor)}: ${pesos(c.reales[c.mejor])}.` + (c.parecia >= 0 && c.parecia !== c.mejor ? ` ${nm(c.parecia)} cotizó menos, pero le faltaba ${pesos(c.reales[c.parecia] - N(st.cot[c.parecia].q))}.` : "") : "Pida lo mismo a todos: mismo Incoterm, mismo puerto, misma cantidad. Y pregunte por escrito qué incluye.");
+  // Este cliente
+  const be = c.buyer;
+  setLight("l-b", be.v); $("#e-b").dataset.c = be.v; setText("o-bv", ENC[be.v] || "Conteste las cinco preguntas");
+  setText("m-b", be.pts.join(" "));
+  setText("o-bpp", ok(be.porPedido) ? `Cada pedido: ${fmt(be.porPedido)} ${u.abbr}` : "");
+  // Precio
+  setText("o-plog-s", ok(c.dkilo) ? `Si responde «No», se suman ${pesos(c.dkilo)} por ${u.uno} de «Despacho».` : "Si responde «No», se suma lo que cuesta el despacho en «Despacho».");
+  setText("o-dcot", ok(c.dcot) ? `Calcula con un dólar de ${pesos(c.dcot)}: el de hoy menos el colchón.` : "Escriba arriba el dólar de hoy.");
+  setText("o-pmin", usd(c.pmin)); setText("o-plibra", ok(c.pmin) ? (u.libra ? `por kilo · ${usd(c.pmin / 2.20462)} por libra internacional (453,6 g)` : `por ${u.uno}`) : "");
+  setText("o-peq", usd(c.peq)); setText("o-phoy", usd(N(st.precio))); setLight("l-phoy", c.cP); setLight("l-phoy2", c.cP); $("#e-precio").dataset.c = c.cP;
+  setText("m-precio", pick(c.cP, "El precio que le ofrece a este cliente cubre el precio de referencia.", "El precio que le ofrece a este cliente cubre el costo, pero no el margen que usted quisiera.", "El precio que le ofrece a este cliente no cubre el costo.", "Escriba su costo y, arriba, el precio que le ofrece a este cliente."));
+  const falt = CHECKS.filter((_, i) => !st.checks[i]);
+  setText("o-checks", falt.length ? `${6 - falt.length} de 6 marcados.` : "Los seis puntos están marcados.");
+  // Ficha
+  const defs = fichaDefs(u);
+  fichaCliente(S);
+  $("#tiles").innerHTML = fichaTiles(defs, c, null);
+  $("#resumen").innerHTML = resumenHTML(resumenFicha(defs, c));
+  window.__ficha = () => fichaTexto("Ficha · Mi logística y mi comprador", st, defs, c, null, `Dólar usado: ${pesos(N(st.dolar))} · Precio que le ofrece: ${usd(N(st.precio))} por ${u.uno}`);
+  window.__pdf = () => ({ titulo: "Mi logística y mi comprador", corto: "logística y comprador", st, defs, c1: c, c2: null, ejemplo: S.ejemplo, datos: datosPDF(st, c) });
+}
+
+function open() {
+  asegurarTramos();
+  buildRows();
+  bindFields(document.body, S.st, onField);
+  buildChain(); buildCot();
+  render();
+}
+$("#b-copiar").onclick = () => copiar(window.__ficha(), "msg-copia");
+setupPDF("b-pdf", () => window.__pdf());
+setupShell(S, open);
+tabs();
+open();
+
+document.getElementById('aviso').textContent = AVISO;
+</script>
+</body>
+</html>
