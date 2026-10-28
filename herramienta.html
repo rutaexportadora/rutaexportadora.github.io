@@ -1,0 +1,2002 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23D7A56C'/%3E%3Cstop offset='1' stop-color='%233F6631'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M18 46 30 20l8 14 4-6 6 18Z' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi ruta para exportar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Herramientas de análisis · paleta de la Ruta: crema y café, un color por laboratorio, semáforo propio */
+:root {
+  --bg: #F7F2EA; --card: #FFFDF9; --ink: #2A1D16; --muted: #7A6858; --faint: #B3A391;
+  --hair: rgba(42, 29, 22, .1); --fill: #F1E9DD; --track: #EAE0D2; --thumb: #FFFDF9;
+  --accent: #8A5A2B; --accent-soft: rgba(184, 132, 79, .16); --on-accent: #FFFFFF;
+  --v: #4F8A3C; --a: #D39A22; --r: #C0492F; --off: #D8CBB8;
+  --v-ink: #3F6631; --a-ink: #95600F; --r-ink: #A33A22;
+  --v-soft: rgba(79, 138, 60, .13); --a-soft: rgba(211, 154, 34, .16); --r-soft: rgba(192, 73, 47, .11);
+  --bar: #D8CBB8; --shadow: 0 1px 2px rgba(42, 29, 22, .05), 0 6px 18px -6px rgba(42, 29, 22, .08);
+  --l0: #8A5A2B; --l0s: rgba(184, 132, 79, .16); --l1: #3F6631; --l1s: rgba(127, 168, 98, .17); --l2: #9A6A1A; --l2s: rgba(221, 176, 79, .2);
+  --l3: #1B5470; --l3s: rgba(63, 149, 181, .15); --l4: #8E3A26; --l4s: rgba(207, 114, 83, .15);
+  --lab: var(--accent); --lab-soft: var(--accent-soft);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1B130E; --card: #2A1F18; --ink: #F7F2EA; --muted: #BBAA97; --faint: #7E6B5A;
+  --hair: rgba(255, 250, 243, .11); --fill: #36291F; --track: #36291F; --thumb: #5A4636;
+  --accent: #D7A56C; --accent-soft: rgba(215, 165, 108, .18); --on-accent: #2A1D16;
+  --v: #7FBF63; --a: #E5B04A; --r: #E5735A; --off: #4A3B30;
+  --v-ink: #A9CF8C; --a-ink: #F0C46A; --r-ink: #F2A58C;
+  --v-soft: rgba(127, 191, 99, .16); --a-soft: rgba(229, 176, 74, .16); --r-soft: rgba(229, 115, 90, .16);
+  --bar: #4A3B30; --shadow: none;
+  --l0: #D7A56C; --l0s: rgba(215, 165, 108, .18); --l1: #A9CF8C; --l1s: rgba(141, 184, 111, .18); --l2: #E5BC5C; --l2s: rgba(229, 188, 92, .18);
+  --l3: #7CC0DA; --l3s: rgba(79, 166, 198, .18); --l4: #EE9C80; --l4s: rgba(217, 128, 95, .18); color-scheme: dark } }
+:root[data-theme="dark"], header.top {
+  --bg: #1B130E; --card: #2A1F18; --ink: #F7F2EA; --muted: #BBAA97; --faint: #7E6B5A;
+  --hair: rgba(255, 250, 243, .11); --fill: #36291F; --track: #36291F; --thumb: #5A4636;
+  --accent: #D7A56C; --accent-soft: rgba(215, 165, 108, .18); --on-accent: #2A1D16;
+  --v: #7FBF63; --a: #E5B04A; --r: #E5735A; --off: #4A3B30;
+  --v-ink: #A9CF8C; --a-ink: #F0C46A; --r-ink: #F2A58C;
+  --v-soft: rgba(127, 191, 99, .16); --a-soft: rgba(229, 176, 74, .16); --r-soft: rgba(229, 115, 90, .16);
+  --bar: #4A3B30; --shadow: none;
+  --l0: #D7A56C; --l0s: rgba(215, 165, 108, .18); --l1: #A9CF8C; --l1s: rgba(141, 184, 111, .18); --l2: #E5BC5C; --l2s: rgba(229, 188, 92, .18);
+  --l3: #7CC0DA; --l3s: rgba(79, 166, 198, .18); --l4: #EE9C80; --l4s: rgba(217, 128, 95, .18); color-scheme: dark }
+
+* { box-sizing: border-box }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 760px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+button { font: inherit; color: inherit; }
+input, select { font: inherit; color: var(--ink); }
+
+/* Encabezado */
+header.top .wrap { padding-block: 28px 10px; display: grid; gap: 12px; }
+.toprow { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.kicker { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
+h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.08; font-weight: 700; letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+.who { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 10px; }
+.who .fld { display: grid; gap: 4px; min-width: 0; }
+.who .fld > span { font-size: 12.5px; font-weight: 600; color: var(--muted); padding-left: 4px; }
+.who .fld.wide { grid-column: 1 / -1; }
+.who input { width: 100%; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 11px 14px; font-size: 17px; font-weight: 600; }
+.who input::placeholder { color: var(--faint); font-weight: 500; }
+.privado { display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px; border-radius: 14px; background: var(--accent-soft); color: var(--ink); font-size: 15px; line-height: 1.45; }
+.privado svg { color: var(--accent); flex: none; margin-top: 1px; }
+.cli { margin: 2px 0 0; font-size: 18px; }
+.cli b { font-weight: 700; }
+.ctxrow { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.hint { font-size: 14px; color: var(--muted); }
+
+/* Botones */
+.link { border: 0; background: none; color: var(--accent); font-size: 17px; font-weight: 500; cursor: pointer; padding: 6px 2px; }
+.btn { border: 0; border-radius: 999px; padding: 10px 18px; font-size: 16px; font-weight: 600; cursor: pointer; background: var(--accent-soft); color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn:focus-visible, .link:focus-visible, input:focus-visible, select:focus-visible, .seg button:focus-visible, .pick:focus-visible, .row.tap:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; box-shadow: 0 0 0 1px var(--accent); }
+
+/* Control segmentado */
+.seg { display: inline-flex; background: var(--track); border-radius: 10px; padding: 2px; gap: 2px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { border: 0; background: transparent; border-radius: 8px; padding: 6px 14px; font-size: 14px; font-weight: 500; color: var(--ink); cursor: pointer; white-space: nowrap; flex: 1 0 auto; }
+.seg button[aria-pressed="true"], .seg button[aria-selected="true"] { background: var(--thumb); box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 0 0 .5px rgba(0, 0, 0, .04); font-weight: 600; }
+.seg.small button { padding: 5px 11px; font-size: 13.5px; }
+
+/* Aviso de ejemplo */
+.banner { background: var(--card); border-radius: 14px; padding: 12px 14px 12px 16px; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; box-shadow: var(--shadow); }
+.banner span { font-size: 15px; color: var(--muted); }
+.banner b { color: var(--ink); font-weight: 600; }
+
+/* Pestañas */
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); }
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  nav.tabs { background: color-mix(in srgb, var(--bg) 80%, transparent); -webkit-backdrop-filter: saturate(180%) blur(18px); backdrop-filter: saturate(180%) blur(18px); }
+}
+nav.tabs .wrap { padding-block: 10px; display: flex; }
+nav.tabs .seg { width: 100%; }
+
+/* Secciones */
+main .wrap { padding-block: 12px 48px; }
+section.panel { display: grid; gap: 22px; }
+.phead { display: grid; gap: 6px; padding-top: 10px; }
+.phead .lab { font-size: 13px; font-weight: 600; color: var(--muted); }
+h2 { font-size: clamp(26px, 5vw, 32px); line-height: 1.12; font-weight: 700; letter-spacing: -.022em; margin: 0; text-wrap: balance; }
+.sub { margin: 0; color: var(--muted); font-size: 17px; max-width: 58ch; }
+
+/* Listas agrupadas */
+.gtitle { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin: 0 0 -14px 16px; }
+.group { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 14px; align-items: center; padding: 11px 16px; min-height: 50px; position: relative; }
+.row + .row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 1px; background: var(--hair); }
+.row .l { font-size: 16.5px; min-width: 0; }
+.row .l small { display: block; font-size: 13.5px; color: var(--muted); margin-top: 1px; }
+.row .l .mark { color: var(--a-ink); font-weight: 700; }
+.row.stack { grid-template-columns: minmax(0, 1fr); }
+.row.q { grid-template-columns: 14px minmax(0, 1fr) auto; }
+.row.q .dot { align-self: start; margin-top: 6px; }
+.row.tap { cursor: pointer; }
+.row .chev { color: var(--faint); font-size: 22px; line-height: 1; }
+.row .r { display: flex; gap: 8px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+.foot { font-size: 13.5px; color: var(--muted); margin: -14px 16px 0; }
+.unit { display: inline-flex; align-items: center; gap: 6px; }
+.unit em { font-style: normal; font-size: 14px; color: var(--muted); min-width: 2.2em; }
+input.n, input.t, select.s { background: var(--fill); border: 0; border-radius: 9px; padding: 8px 11px; font-size: 17px; font-weight: 600; min-width: 0; }
+input.n { width: 8.6em; text-align: right; font-variant-numeric: tabular-nums; }
+input.n.sm { width: 5.2em; }
+input.n:disabled { opacity: .35; }
+input.t { width: 100%; }
+select.s { -webkit-appearance: none; appearance: none; padding-right: 30px; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%; background-size: 5px 5px; background-repeat: no-repeat; cursor: pointer; max-width: 100%; }
+input::placeholder { color: var(--faint); font-weight: 500; }
+.paso { grid-template-columns: 20px minmax(0, 1fr) auto; align-items: start; gap: 8px 10px; }
+.paso .x { margin-top: 5px; }
+.paso .pn { color: var(--muted); font-weight: 600; font-size: 15px; text-align: center; padding-top: 9px; }
+.paso .fields { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-end; }
+.mini { display: grid; gap: 4px; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
+.mini input.n { width: 7.4em; font-size: 16px; padding: 7px 10px; }
+.mini input.t { font-size: 16px; padding: 7px 10px; }
+.mini select.s { font-size: 15px; padding: 7px 28px 7px 10px; width: auto; }
+.eq { font-size: 13px; color: var(--muted); padding-bottom: 9px; }
+.steprow { display: grid; grid-template-columns: 20px minmax(0, 1fr) 7.2em; gap: 10px; align-items: center; }
+.steprow b { color: var(--muted); font-weight: 600; font-size: 15px; text-align: center; }
+.steprow input.n { width: 100%; }
+.check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--faint); display: inline-grid; place-items: center; font-size: 13px; font-weight: 700; color: transparent; flex: none; }
+.row[aria-checked="true"] .check { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+
+/* Semáforo */
+.dot { width: 12px; height: 12px; border-radius: 50%; background: var(--off); display: inline-block; flex: none; }
+.dot.L { width: 16px; height: 16px; }
+.dot[data-c="V"] { background: var(--v) } .dot[data-c="A"] { background: var(--a) } .dot[data-c="R"] { background: var(--r) }
+.status { display: flex; gap: 11px; align-items: flex-start; padding: 13px 16px; border-radius: 14px; background: var(--card); box-shadow: var(--shadow); font-size: 15.5px; }
+.status .dot { margin-top: 4px; }
+.status[data-c="V"] { background: var(--v-soft); box-shadow: none } .status[data-c="A"] { background: var(--a-soft); box-shadow: none } .status[data-c="R"] { background: var(--r-soft); box-shadow: none }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--fill); color: var(--muted); white-space: nowrap; }
+.pill[data-c="V"] { background: var(--v-soft); color: var(--v-ink) } .pill[data-c="A"] { background: var(--a-soft); color: var(--a-ink) } .pill[data-c="R"] { background: var(--r-soft); color: var(--r-ink) }
+.pill.you { background: var(--accent-soft); color: var(--accent); }
+.row > .pill { justify-self: start; }
+.row > .pill:last-child { justify-self: end; }
+
+/* Cifras */
+.stats { display: flex; flex-wrap: wrap; gap: 12px; }
+.stat { flex: 1 1 160px; background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 3px; align-content: start; box-shadow: var(--shadow); min-width: 0; }
+.stat .k { font-size: 13.5px; font-weight: 600; color: var(--muted); display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.stat .v { font-size: clamp(24px, 4.6vw, 30px); font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.15; overflow-wrap: anywhere; }
+.stat .s { font-size: 13.5px; color: var(--muted); }
+.stat.hero { flex-basis: 100%; padding: 20px; }
+.stat.hero .v { font-size: clamp(38px, 9vw, 56px); letter-spacing: -.03em; }
+
+/* Barras */
+.bars { display: grid; gap: 12px; padding: 14px 16px 16px; }
+.bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 10px; font-size: 14.5px; }
+.bar .lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar .val { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar .track { grid-column: 1 / -1; height: 8px; background: var(--fill); border-radius: 4px; overflow: hidden; }
+.bar .fill { display: block; height: 100%; background: var(--bar); border-radius: 4px; }
+.bar.cuello .fill { background: var(--r); }
+.bar.cuello .lbl, .bar.cuello .val { color: var(--r-ink); font-weight: 600; }
+
+/* Tarjetas para escoger */
+.picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.pick { border: 0; text-align: left; background: var(--card); border-radius: 14px; padding: 12px 13px; display: grid; gap: 5px; box-shadow: var(--shadow); cursor: pointer; min-width: 0; outline: 2px solid transparent; outline-offset: -2px; }
+.pick[aria-pressed="true"] { outline-color: var(--accent); }
+.pick .nm { font-size: 14.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pick .vd { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+
+/* Gráfico mensual */
+.months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6px; align-items: end; height: 132px; padding: 16px 16px 12px; }
+.months .m { display: grid; gap: 6px; justify-items: center; align-self: end; font-size: 11px; color: var(--muted); }
+.months .col { width: 64%; border-radius: 4px; background: var(--fill); min-height: 3px; display: block; }
+.months .col[data-c="V"] { background: var(--v) } .months .col[data-c="A"] { background: var(--a) } .months .col[data-c="R"] { background: var(--r) }
+
+/* Ficha */
+.ficha { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.tile { background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 4px; box-shadow: var(--shadow); min-width: 0; align-content: start; }
+.tile .k { font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.tile .v { font-size: 22px; font-weight: 700; letter-spacing: -.015em; display: flex; gap: 9px; align-items: center; overflow-wrap: anywhere; }
+.tile .v.long { font-size: 17px; }
+.tile .s { font-size: 13.5px; color: var(--muted); }
+.tile .cmp { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; align-items: center; margin-top: 4px; font-size: 15px; }
+.tile .cmp .w { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.tile .cmp b { display: flex; gap: 8px; align-items: center; font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+
+/* Hoja de empresas */
+.sheet { position: fixed; inset: 0; z-index: 20; background: rgba(0, 0, 0, .32); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sheet .box { background: var(--bg); border-radius: 18px; width: min(440px, 100%); max-height: 80vh; overflow: auto; padding: 18px; display: grid; gap: 16px; }
+.sheet h3 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+.x { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--fill); color: var(--muted); font-size: 19px; line-height: 1; cursor: pointer; display: inline-grid; place-items: center; flex: none; padding: 0; }
+.x:hover { color: var(--r-ink); background: var(--r-soft); }
+.x:focus-visible { outline: 3px solid var(--accent-soft); box-shadow: 0 0 0 1px var(--accent); }
+.item .open { border: 0; background: none; text-align: left; padding: 2px 0; cursor: pointer; display: grid; gap: 2px; min-width: 0; }
+.item .open b { font-size: 16.5px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.item .open small { font-size: 13.5px; color: var(--muted); }
+.item.on { background: var(--accent-soft); }
+.btn.danger { background: var(--r); color: #fff; }
+.row.add { min-height: 46px; padding-block: 6px; }
+.row.add .link { font-size: 16px; font-weight: 600; padding: 6px 0; }
+.mejora-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+
+.next { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; padding-top: 4px; }
+.note { font-size: 13.5px; color: var(--muted); }
+.copiado { font-size: 14px; color: var(--v-ink); font-weight: 600; }
+textarea.out { width: 100%; min-height: 10em; font: inherit; font-size: 14px; background: var(--card); color: var(--ink); border: 1px solid var(--hair); border-radius: 12px; padding: 12px; }
+footer .wrap { padding-block: 8px 40px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+@media (max-width: 600px) {
+  .who { grid-template-columns: minmax(0, 1fr); }
+  .row.q { grid-template-columns: 14px minmax(0, 1fr); }
+  .row.q .seg { grid-column: 2; justify-self: start; }
+  .row.wrapm { grid-template-columns: minmax(0, 1fr); }
+  .row.wrapm > :last-child { justify-self: start; }
+  .row.wrapm:has(> .unit) { grid-template-columns: minmax(0, 1fr) auto; }
+  .row.wrapm:has(> .unit) > :last-child { justify-self: end; }
+  input.n { width: 6.8em; }
+  .seg button { padding: 6px 10px; }
+  .picks { grid-template-columns: minmax(0, 1fr); }
+  body { font-size: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) { .bar .fill, .months .col { transition: width .35s ease, height .35s ease } }
+@media print {
+  nav.tabs, .banner, .next, .noprint, header .seg, #b-empresas, .x, .row.add { display: none !important }
+  section.panel[hidden] { display: grid !important }
+  section.panel { break-inside: avoid-page; margin-bottom: 24px }
+  body { background: #fff }
+  .group, .stat, .tile, .status { box-shadow: none; border: 1px solid #ddd }
+}
+.tramo .seg { grid-column: 1 / -1; justify-self: start; }
+.togs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tog { border: 1.5px solid var(--hair); background: var(--card); border-radius: 999px; padding: 6px 12px; font-size: 14px; cursor: pointer; color: var(--muted); }
+.tog[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.tog[aria-pressed="true"]::before { content: "✓ "; }
+
+/* Escala de rojo a verde en cada número de la ficha */
+.gauge { position: relative; display: flex; height: 6px; border-radius: 3px; margin: 8px 0 4px; }
+.gauge i { display: block; height: 100%; opacity: .38; }
+.gauge i:first-child { border-radius: 3px 0 0 3px; } .gauge i:nth-child(3) { border-radius: 0 3px 3px 0; }
+.gauge i[data-c="R"] { background: var(--r) } .gauge i[data-c="A"] { background: var(--a) } .gauge i[data-c="V"] { background: var(--v) }
+.gauge b { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); border: 2.5px solid var(--card); box-shadow: 0 0 0 .5px var(--hair); }
+/* Resumen de la ficha */
+.resumen { background: var(--card); border-radius: 16px; padding: 15px 16px; display: grid; gap: 10px; box-shadow: var(--shadow); }
+.resumen .k { font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.resumen p { margin: 0; font-size: 15.5px; }
+.mix { display: flex; gap: 3px; height: 26px; }
+.mix i { display: grid; place-items: center; border-radius: 6px; font-style: normal; font-size: 13px; font-weight: 700; color: #fff; min-width: 26px; }
+.mix i[data-c="R"] { background: var(--r) } .mix i[data-c="A"] { background: var(--a) } .mix i[data-c="V"] { background: var(--v) }
+/* Tubo: el producto baja paso por paso; el ancho es lo máximo de cada paso */
+.tubo { padding: 14px 16px 16px; display: grid; gap: 12px; }
+.tleg { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13.5px; color: var(--muted); }
+.tleg i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+.tleg i.flow { background: var(--accent); } .tleg i.wall { background: var(--bar); } .tleg i.neck { background: var(--r); }
+.trows { display: grid; }
+.trow { display: grid; grid-template-columns: minmax(0, 34%) minmax(0, 1fr) minmax(64px, auto); gap: 0 12px; align-items: stretch; min-height: 44px; }
+.trow .tn, .trow .tv { display: flex; align-items: center; font-size: 14.5px; padding: 6px 0; min-width: 0; overflow-wrap: anywhere; }
+.trow .tv { justify-content: flex-end; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+.trow .tp { display: flex; justify-content: center; }
+.trow .pipe { display: flex; justify-content: center; background: var(--bar); height: 100%; min-width: 6px; transition: width .35s ease; }
+.trow .pipe .fl { display: block; height: 100%; background: var(--accent); max-width: 100%; }
+.trow:first-child .pipe { border-radius: 8px 8px 0 0; } .trow:last-child .pipe { border-radius: 0 0 8px 8px; }
+.trow.neck .pipe { background: var(--r); }
+.trow .tn small { display: block; font-size: 12px; font-weight: 600; color: var(--r-ink); }
+.trow .tn > span { display: block; }
+.trow.neck .pipe .fl.over { background: var(--r); }
+.trow.neck .tn, .trow.neck .tv { color: var(--r-ink); font-weight: 600; }
+.lineas { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; counter-reset: l; }
+.lineas li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; font-size: 15.5px; counter-increment: l; }
+.lineas li::before { content: counter(l); width: 24px; height: 24px; border-radius: 50%; background: var(--fill); color: var(--muted); font-size: 13px; font-weight: 700; display: grid; place-items: center; }
+@media (max-width: 600px) { .trow { grid-template-columns: minmax(0, 36%) minmax(0, 1fr) minmax(58px, auto); gap: 0 8px; } .trow .tn, .trow .tv { font-size: 13.5px; } }
+@media print { .gauge i { opacity: .5 } }
+
+/* v7: qué produce, unidad, cuándo se usa cada pestaña */
+.uso { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 4px 11px; }
+.uso svg { flex: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--hair); background: var(--card); border-radius: 999px; padding: 8px 14px; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+.mide { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.mide > span:first-child { font-size: 12.5px; font-weight: 600; color: var(--muted); padding-left: 4px; }
+.confirm { display: grid; gap: 10px; padding: 12px 14px; border-radius: 12px; background: var(--a-soft); }
+.confirm .acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.home { font-size: 15px; font-weight: 600; color: var(--accent); text-decoration: none; }
+
+/* v7.1: celular */
+@media (max-width: 600px) {
+  .row.wrapm.gasto { grid-template-columns: minmax(0, 1fr); }
+  .row.wrapm.gasto > .unit { justify-self: end; }
+}
+@media (max-width: 480px) {
+  nav.tabs .seg { flex-wrap: wrap; overflow: visible; }
+  nav.tabs .seg button { flex: 1 0 30%; }
+  .tramo .seg { width: 100%; flex-wrap: wrap; overflow: visible; }
+  .tramo .seg button { padding: 5px 6px; font-size: 12.5px; }
+}
+
+/* v8: identidad de la Ruta (misma entrada que el inicio, un color por laboratorio) */
+section.panel[data-lab="0"], nav.tabs button[data-lab="0"] { --lab: var(--l0); --lab-soft: var(--l0s); }
+section.panel[data-lab="1"], nav.tabs button[data-lab="1"] { --lab: var(--l1); --lab-soft: var(--l1s); }
+section.panel[data-lab="2"], nav.tabs button[data-lab="2"] { --lab: var(--l2); --lab-soft: var(--l2s); }
+section.panel[data-lab="3"], nav.tabs button[data-lab="3"] { --lab: var(--l3); --lab-soft: var(--l3s); }
+section.panel[data-lab="4"], nav.tabs button[data-lab="4"] { --lab: var(--l4); --lab-soft: var(--l4s); }
+h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.012em; }
+h1 { font-size: clamp(31px, 6vw, 42px); }
+.sheet h3 { font-family: var(--serif); font-weight: 600; }
+header.top { position: relative; overflow: hidden; color: var(--ink); background: radial-gradient(90% 140% at 100% -10%, rgba(63, 102, 49, .55), transparent 58%), radial-gradient(70% 120% at -5% 0%, rgba(168, 116, 31, .4), transparent 62%), radial-gradient(60% 90% at 60% 120%, rgba(27, 84, 112, .45), transparent 60%), #1B130E; }
+header.top .wrap { position: relative; padding-block: 24px 22px; }
+header.top .kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); }
+header.top .kicker .mark { width: 26px; height: 26px; border-radius: 8px; flex: none; background: linear-gradient(140deg, #D7A56C, #3F6631); box-shadow: 0 1px 0 rgba(255, 255, 255, .3) inset; }
+header.top .who input, header.top .banner { background: rgba(255, 250, 243, .07); border: 1px solid var(--hair); box-shadow: none; }
+header.top .seg { background: rgba(0, 0, 0, .25); }
+header.top .btn.primary { background: linear-gradient(180deg, #F7F2EA, #E9DFD0); color: #2A1D16; }
+.phead .lab { display: inline-flex; align-items: center; gap: 8px; justify-self: start; font-size: 12.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--lab); }
+.phead .lab::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--lab); flex: none; }
+.uso { color: var(--lab); background: var(--lab-soft); }
+nav.tabs { border-bottom: 1px solid var(--hair); }
+nav.tabs .seg button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+nav.tabs .seg button::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lab); opacity: .55; flex: none; }
+nav.tabs .seg button[aria-selected="true"] { color: var(--lab); }
+nav.tabs .seg button[aria-selected="true"]::before { opacity: 1; }
+.stat.hero { border-top: 3px solid var(--lab); }
+.tleg i.flow, .trow .pipe .fl { background: var(--lab); }
+.group, .stat, .tile, .resumen, .pick { border: 1px solid var(--hair); }
+.status[data-c] { border: 0; }
+@media print { header.top { background: none; } }
+header.top .kicker .kt::before { content: "·"; margin-right: 10px; }
+.home, #b-empresas { white-space: nowrap; }
+@media (max-width: 600px) { header.top .kicker .kt { display: none; } }
+
+/* v9: análisis agrupados por empresa, copia de seguridad, borrar todo */
+.lista { display: grid; gap: 14px; }
+.lista .grupo { display: grid; gap: 6px; }
+.lista .gtitle { margin: 0 0 0 16px; text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); }
+.link.sm { font-size: 14px; padding: 0; }
+.link.danger { color: var(--r-ink); justify-self: start; }
+#borrar-todo .r { display: flex; gap: 8px; flex-wrap: wrap; }
+.rango { margin: -4px 16px 12px; font-size: 13px; color: var(--muted); text-align: center; }
+.months .m.sel { color: var(--ink); font-weight: 700; }
+/* v10: arranca en blanco; el ejemplo se abre con un botón */
+header.top .acts { display: inline-flex; align-items: center; gap: 6px 14px; flex-wrap: wrap; justify-content: flex-end; }
+header.top .link.ej { font-size: 14.5px; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--hair); color: var(--ink); }
+header.top .link.ej:hover { background: rgba(255, 250, 243, .08); }
+/* v10: un poco más claro (cabecera y modo oscuro) */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #2A1F17; --card: #372A20; --fill: #433428; --track: #433428; --hair: rgba(255, 250, 243, .13); } }
+:root[data-theme="dark"], header.top { --bg: #2A1F17; --card: #372A20; --fill: #433428; --track: #433428; --muted: #CBBBA8; --hair: rgba(255, 250, 243, .14); }
+header.top { background: radial-gradient(90% 140% at 100% -10%, rgba(63, 102, 49, .6), transparent 58%), radial-gradient(70% 120% at -5% 0%, rgba(168, 116, 31, .48), transparent 62%), radial-gradient(60% 90% at 60% 120%, rgba(27, 84, 112, .5), transparent 60%), #3A2B20; }
+header.top .who input, header.top .banner { background: rgba(255, 250, 243, .1); }
+header.top .seg { background: rgba(0, 0, 0, .18); }
+/* v10: índice de preparación */
+.resumen .ind { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 18px; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--hair); }
+.resumen .ind .ik { display: grid; gap: 2px; }
+.resumen .ind b { font-family: var(--serif); font-size: 44px; line-height: 1; font-weight: 600; letter-spacing: -.02em; color: var(--ink); }
+.resumen .ind b[data-c="V"] { color: var(--v-ink) } .resumen .ind b[data-c="A"] { color: var(--a-ink) } .resumen .ind b[data-c="R"] { color: var(--r-ink) }
+.resumen .ind b small { font-family: var(--font); font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.resumen .ind p { font-size: 13.5px; color: var(--muted); }
+@media (max-width: 480px) { .resumen .ind { grid-template-columns: minmax(0, 1fr); } }
+.movil { display: none; margin: -4px 0 0; font-size: 13.5px; color: var(--muted); }
+@media (max-width: 600px) { .movil { display: block; } }
+/* v10: Incoterm en palabras */
+.incos .row.inco { width: 100%; border: 0; background: none; font: inherit; color: inherit; text-align: left; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 12px; }
+.incos .row.inco .l { font-size: 16px; }
+.incos .row.inco[aria-checked="true"] { background: var(--lab-soft); }
+.incos .row.inco[aria-checked="true"] .l { font-weight: 600; }
+.incos .row.inco .pill { min-width: 3.4em; justify-content: center; font-variant-numeric: tabular-nums; }
+.incos .row.inco .pill.you { background: var(--lab); color: #fff; }
+.incos .sug { color: var(--lab) !important; font-weight: 600; }
+.incos .row.inco:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: -3px; }
+
+/* v11 · Herramienta única de la Ruta: 4 partes que se llenan en orden */
+:root { --c1: var(--l1); --c2: var(--l2); --c3: var(--l3); }
+nav.tabs .seg button .n { font-family: var(--serif); font-weight: 600; font-size: 15px; }
+nav.tabs .seg button[data-done="1"]::after { content: "✓"; font-size: 12px; font-weight: 800; color: var(--v-ink); margin-left: 2px; }
+
+/* Por qué detallar */
+.porque { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 14px; align-items: center; padding: 16px 18px; border-radius: 16px; background: var(--lab-soft); }
+.porque .ic { width: 46px; height: 46px; border-radius: 13px; background: var(--lab); color: #fff; display: grid; place-items: center; }
+.porque p { margin: 0; font-size: 15.5px; line-height: 1.45; }
+.porque p b { display: block; font-family: var(--serif); font-weight: 600; font-size: 19px; margin-bottom: 3px; letter-spacing: -.005em; }
+
+/* Número de cada bloque dentro de una parte */
+.bloque { display: flex; align-items: center; gap: 10px; margin: 6px 0 -10px; }
+.bloque .num { width: 28px; height: 28px; border-radius: 50%; background: var(--lab); color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center; flex: none; }
+.bloque h3 { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: -.008em; }
+.bloque + .sub { margin-top: -6px; font-size: 15.5px; }
+
+/* Del insumo al producto: merma, cuello y costo en un solo dibujo */
+.flujo { padding: 16px 16px 6px; display: grid; }
+.nodo { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 4px 12px; position: relative; padding-bottom: 16px; }
+.nodo .pt { width: 18px; height: 18px; border-radius: 50%; background: var(--card); border: 3px solid var(--lab); margin: 2px 4px 0; position: relative; z-index: 1; }
+.nodo:not(:last-child)::before { content: ""; position: absolute; left: 11.5px; top: 22px; bottom: -1px; width: 3px; border-radius: 2px; background: repeating-linear-gradient(180deg, var(--lab) 0 6px, transparent 6px 11px); opacity: .5; }
+.nodo.ini .pt { background: var(--lab); }
+.nodo.fin .pt { background: var(--ink); border-color: var(--ink); }
+.nodo.neck .pt { border-color: var(--r); background: var(--r); }
+.nodo .nm { font-weight: 600; font-size: 15.5px; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; min-width: 0; overflow-wrap: anywhere; }
+.nodo .cost { text-align: right; font-variant-numeric: tabular-nums; font-size: 15px; font-weight: 600; white-space: nowrap; }
+.nodo .cost small { display: block; font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.nodo .meta { grid-column: 2 / -1; display: grid; gap: 6px; }
+.embudo { height: 10px; border-radius: 5px; background: var(--fill); overflow: hidden; display: flex; }
+.embudo i { display: block; height: 100%; background: var(--lab); transition: width .5s ease; }
+.embudo i.pierde { background: repeating-linear-gradient(135deg, var(--r) 0 4px, var(--r-soft) 4px 8px); }
+.nodo .cap { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 3px 14px; }
+.nodo .cap b { color: var(--ink); font-weight: 600; }
+.nodo .cap .rj { color: var(--r-ink); font-weight: 600; }
+.nodo .capbar { height: 4px; border-radius: 2px; background: var(--fill); overflow: hidden; max-width: 220px; }
+.nodo .capbar i { display: block; height: 100%; background: var(--bar); transition: width .5s ease; }
+.nodo.neck .capbar i { background: var(--r); }
+.tag { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--r-soft); color: var(--r-ink); white-space: nowrap; }
+.tag.v { background: var(--v-soft); color: var(--v-ink); }
+.tag.b { background: var(--l3s); color: var(--l3); }
+.flujo-ley { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--muted); padding: 0 16px 14px; }
+.flujo-ley i { display: inline-block; width: 18px; height: 8px; border-radius: 3px; vertical-align: 0; margin-right: 6px; background: var(--lab); }
+.flujo-ley i.p { background: repeating-linear-gradient(135deg, var(--r) 0 4px, var(--r-soft) 4px 8px); }
+.flujo-ley i.c { background: var(--r); height: 4px; vertical-align: 2px; }
+
+/* Capítulos de costo */
+.capit { background: var(--card); border: 1px solid var(--hair); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+.capit > header { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--hair); }
+.capit > header .num { width: 34px; height: 34px; border-radius: 10px; color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 16px; }
+.capit[data-cap="1"] { --cc: var(--c1); } .capit[data-cap="2"] { --cc: var(--c2); } .capit[data-cap="3"] { --cc: var(--c3); }
+.capit > header .num { background: var(--cc); }
+.capit > header b { font-size: 16.5px; display: block; }
+.capit > header small { display: block; font-size: 13px; color: var(--muted); }
+.capit > header .tot { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; font-size: 18px; color: var(--cc); white-space: nowrap; }
+.capit > header .tot small { font-weight: 500; }
+.capit .sugs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 16px 4px; }
+.capit .sugs .note { width: 100%; }
+.sug { border: 1px dashed var(--faint); background: none; border-radius: 999px; padding: 5px 11px; font-size: 13.5px; cursor: pointer; color: var(--muted); }
+.sug:hover { border-style: solid; color: var(--ink); }
+.sug[aria-pressed="true"] { border: 1px solid var(--cc); background: color-mix(in srgb, var(--cc) 14%, transparent); color: var(--ink); }
+.sug[aria-pressed="true"]::before { content: "✓ "; font-weight: 700; color: var(--cc); }
+.auto { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding: 10px 16px; font-size: 15.5px; align-items: center; position: relative; }
+.auto + .auto::before, .row + .auto::before, .auto + .row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 1px; background: var(--hair); }
+.auto small { display: block; font-size: 13px; color: var(--muted); }
+.auto b { font-variant-numeric: tabular-nums; }
+.linea .fields { align-items: flex-end; }
+.linea .mini.c { flex: 1 1 210px; } .linea .mini.c input { width: 100%; }
+
+/* Escalera del costo */
+.escalera { padding: 16px; display: grid; gap: 7px; }
+.esc-row { display: grid; grid-template-columns: minmax(0, 36%) minmax(0, 1fr) minmax(74px, auto); gap: 10px; align-items: center; font-size: 14px; }
+.esc-row .lb { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.esc-row .tr { position: relative; height: 18px; background: var(--fill); border-radius: 4px; overflow: hidden; }
+.esc-row .tr i { position: absolute; top: 0; bottom: 0; border-radius: 3px; background: var(--c1); transition: left .55s ease, width .55s ease; }
+.esc-row[data-cap="2"] .tr i { background: var(--c2); } .esc-row[data-cap="3"] .tr i { background: var(--c3); }
+.esc-row .vl { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.esc-row.tot { font-weight: 700; padding-top: 6px; border-top: 1px solid var(--hair); margin-top: 3px; }
+.esc-row.tot .tr i { background: var(--ink); }
+.esc-row.tot .vl { color: var(--ink); }
+.reparto { display: flex; gap: 3px; height: 40px; border-radius: 10px; overflow: hidden; margin: 0 16px 6px; }
+.reparto i { display: grid; place-items: center; font-style: normal; color: #fff; font-size: 13px; font-weight: 700; min-width: 0; transition: flex .5s ease; overflow: hidden; white-space: nowrap; }
+.reparto i[data-cap="1"] { background: var(--c1); } .reparto i[data-cap="2"] { background: var(--c2); } .reparto i[data-cap="3"] { background: var(--c3); }
+.reparto-ley { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--muted); padding: 0 16px 16px; }
+.reparto-ley i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.top3 { display: grid; gap: 0; }
+.top3 .row .l b { font-weight: 600; }
+.top3 .row .pc { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 17px; }
+
+/* Cómo se arma la carga: unidad → caja → palet → contenedor */
+.anida { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; padding: 16px; }
+.nivel { background: var(--fill); border-radius: 14px; padding: 12px 12px 14px; display: grid; gap: 4px; align-content: start; position: relative; min-width: 0; }
+.nivel .vis { height: 96px; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+.nivel .k { font-size: 11.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.nivel .v { font-family: var(--serif); font-size: 21px; font-weight: 600; line-height: 1.1; overflow-wrap: anywhere; }
+.nivel .s { font-size: 12.5px; color: var(--muted); }
+.nivel .mult { position: absolute; right: -19px; top: 44px; z-index: 2; background: var(--lab); color: #fff; font-size: 11.5px; font-weight: 700; border-radius: 999px; padding: 3px 7px; white-space: nowrap; }
+.mini-grid { display: grid; gap: 2px; justify-content: center; }
+.mini-grid i { display: block; width: var(--sz, 8px); height: var(--sz, 8px); border-radius: 2px; background: var(--lab); }
+.anim .mini-grid i { animation: pop .32s ease both; animation-delay: calc(var(--i) * 7ms); }
+@keyframes pop { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.cont { border: 2.5px solid var(--lab); border-radius: 4px; padding: 4px; display: grid; gap: 2px; width: 100%; max-width: 150px; position: relative; }
+.cont::after { content: ""; position: absolute; right: -2.5px; top: 18%; bottom: 18%; width: 5px; background: var(--fill); }
+.cont .mini-grid i { border-radius: 1px; }
+.bolsa { width: 46px; height: 62px; color: var(--lab); }
+.anim .bolsa { animation: pop .4s ease both; }
+.palet-base { width: 74%; height: 5px; border-radius: 1px; background: repeating-linear-gradient(90deg, var(--a) 0 8px, transparent 8px 12px); margin: 2px auto 0; }
+@media (max-width: 600px) { .anida { grid-template-columns: repeat(2, minmax(0, 1fr)); } .nivel .mult { display: none; } }
+
+/* Escenarios A, B, C */
+.escs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.escb { border: 0; text-align: left; background: var(--card); border-radius: 16px; padding: 14px; display: grid; gap: 3px; box-shadow: var(--shadow); cursor: pointer; min-width: 0; outline: 2px solid transparent; outline-offset: -2px; border: 1px solid var(--hair); }
+.escb[aria-pressed="true"] { outline-color: var(--lab); background: var(--lab-soft); }
+.escb .lt { width: 30px; height: 30px; border-radius: 9px; background: var(--lab); color: #fff; font-weight: 800; display: grid; place-items: center; margin-bottom: 4px; }
+.escb .nm { font-size: 15px; font-weight: 700; }
+.escb .sb { font-size: 12.5px; color: var(--muted); }
+.escb .pu { font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 700; margin-top: 4px; color: var(--lab); }
+.escb .pu small { font-size: 12px; font-weight: 500; color: var(--muted); }
+@media (max-width: 600px) { .escs { grid-template-columns: minmax(0, 1fr); } .escb { grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; column-gap: 12px; } .escb .lt { margin: 0; grid-row: span 2; } .escb .pu { grid-column: 3; grid-row: 1 / span 2; margin: 0; } }
+.op { display: grid; grid-template-columns: minmax(0, 1fr) 7.6em 4.6em 30px; gap: 8px 10px; align-items: end; padding: 10px 16px; position: relative; }
+.op + .op::before, .ophead + .op::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 1px; background: var(--hair); }
+.op input.n, .op input.t { width: 100%; font-size: 16px; padding: 7px 10px; }
+.op .x { margin-bottom: 4px; }
+.op .bdg { grid-column: 1 / -1; display: flex; gap: 6px; flex-wrap: wrap; margin-top: -2px; }
+.op .bdg:empty { display: none; }
+.op .bdg span.note { font-variant-numeric: tabular-nums; }
+.op.best { background: var(--v-soft); }
+.ophead { display: grid; grid-template-columns: minmax(0, 1fr) 7.6em 4.6em 30px; gap: 10px; padding: 10px 16px 0; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .02em; }
+@media (max-width: 480px) { .op, .ophead { grid-template-columns: minmax(0, 1fr) 6.4em 3.8em 30px; gap: 6px; } }
+
+/* Economía de escala */
+.barras3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: end; height: 220px; padding: 18px 22px 12px; }
+.b3 { display: grid; grid-template-rows: auto 1fr auto; gap: 6px; height: 100%; justify-items: center; min-width: 0; }
+.b3 .vv { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 16px; white-space: nowrap; }
+.b3 .col { align-self: end; width: min(70px, 70%); border-radius: 8px 8px 3px 3px; background: var(--lab); transition: height .6s cubic-bezier(.2, .8, .2, 1); min-height: 3px; }
+.b3:nth-child(1) .col { opacity: .55; } .b3:nth-child(2) .col { opacity: .78; }
+.b3 .nn { font-size: 13px; color: var(--muted); text-align: center; }
+.b3 .nn b { display: block; color: var(--ink); font-size: 14px; }
+.ahorro { margin: 0 16px 16px; padding: 12px 14px; border-radius: 12px; background: var(--lab-soft); font-size: 15px; }
+.ahorro b { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--lab); }
+
+/* Puente del costo al precio */
+.puente { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; }
+.pz { flex: 1 1 0; background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 12px 14px; display: grid; gap: 2px; box-shadow: var(--shadow); min-width: 0; }
+.pz .k { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.pz .v { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.pz.fin { background: var(--lab); border-color: var(--lab); color: #fff; }
+.pz.fin .k { color: rgba(255, 255, 255, .85); }
+.pz.fin { flex-grow: 1.25; }
+.pz.fin .v { font-size: 24px; }
+.sg { display: grid; place-items: center; font-size: 22px; font-weight: 700; color: var(--lab); flex: 0 0 auto; padding: 0 2px; }
+@media (max-width: 600px) { .puente { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); } .pz.fin { grid-column: 1 / -1; } .puente .sg.ult { display: none; } }
+
+/* Barras deslizables */
+.slide { padding: 14px 16px 16px; display: grid; gap: 8px; }
+.slide .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.slide .top .l { font-size: 16px; }
+.slide .top .l small { display: block; font-size: 13px; color: var(--muted); }
+.slide .val { display: inline-flex; align-items: center; gap: 6px; }
+.slide .val input.n { width: 6.6em; font-size: 19px; }
+.slide .scale { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+input.rng { -webkit-appearance: none; appearance: none; width: 100%; height: 30px; background: transparent; margin: 0; cursor: pointer; }
+input.rng:focus-visible { outline: none; }
+input.rng::-webkit-slider-runnable-track { height: 10px; border-radius: 5px; background: var(--trk, var(--fill)); }
+input.rng::-moz-range-track { height: 10px; border-radius: 5px; background: var(--trk, var(--fill)); }
+input.rng::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 28px; height: 28px; border-radius: 50%; background: var(--card); border: 3px solid var(--lab); margin-top: -9px; box-shadow: 0 2px 6px rgba(0, 0, 0, .2); }
+input.rng::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--card); border: 3px solid var(--lab); box-shadow: 0 2px 6px rgba(0, 0, 0, .2); }
+input.rng:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--lab-soft); }
+.dentro { position: relative; }
+.dentro .marca { position: absolute; top: -2px; width: 2px; height: 34px; background: var(--ink); border-radius: 1px; pointer-events: none; transform: translateX(-1px); }
+.dentro .marca span { position: absolute; top: 36px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 700; white-space: nowrap; color: var(--ink); }
+
+/* El dólar hoy */
+.trm { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 14px 20px; padding: 16px; align-items: center; }
+.trm .big { font-family: var(--serif); font-size: clamp(32px, 7vw, 44px); font-weight: 600; letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+.trm .k { font-size: 12.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.trm .s { font-size: 13px; color: var(--muted); }
+.trm svg { width: 100%; height: 78px; display: block; overflow: visible; }
+.trm .mm { display: flex; gap: 8px; flex-wrap: wrap; grid-column: 1 / -1; }
+.trm .mm .pill b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.trm a { color: var(--lab); font-weight: 600; font-size: 14px; }
+@media (max-width: 600px) { .trm { grid-template-columns: minmax(0, 1fr); } }
+.tabla { width: 100%; border-collapse: collapse; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+.tabla th { text-align: right; font-size: 12px; font-weight: 700; color: var(--muted); padding: 10px 16px 6px; }
+.tabla th:first-child, .tabla td:first-child { text-align: left; }
+.tabla td { text-align: right; padding: 9px 16px; border-top: 1px solid var(--hair); }
+.tabla tr.hoy td { font-weight: 700; background: var(--lab-soft); }
+.tabla td .dot { margin-right: 6px; vertical-align: 0; }
+.cotiza { background: var(--card); border-radius: 18px; border: 1px solid var(--hair); box-shadow: var(--shadow); padding: 20px; display: grid; gap: 10px; border-top: 4px solid var(--lab); }
+.cotiza .k { font-size: 12.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.cotiza .v { font-family: var(--serif); font-size: clamp(38px, 9vw, 56px); font-weight: 600; letter-spacing: -.02em; line-height: 1; }
+.cotiza .v small { font-family: var(--font); font-size: 16px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.cotiza p { margin: 0; font-size: 15px; color: var(--muted); }
+.cotiza p b { color: var(--ink); }
+
+/* Semáforo del negocio */
+.sema { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: center; padding: 22px; background: var(--card); border-radius: 20px; border: 1px solid var(--hair); box-shadow: var(--shadow); }
+.luces { background: #241912; border-radius: 26px; padding: 12px; display: grid; gap: 10px; box-shadow: inset 0 2px 6px rgba(0, 0, 0, .5); }
+.luces i { width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, .07); display: block; transition: background .35s ease, box-shadow .35s ease; }
+.luces[data-c="R"] i:nth-child(1) { background: #E5573B; box-shadow: 0 0 22px 4px rgba(229, 87, 59, .55); }
+.luces[data-c="A"] i:nth-child(2) { background: #F0B43C; box-shadow: 0 0 22px 4px rgba(240, 180, 60, .55); }
+.luces[data-c="V"] i:nth-child(3) { background: #5FAE45; box-shadow: 0 0 22px 4px rgba(95, 174, 69, .55); }
+.sema h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 5vw, 34px); margin: 0 0 6px; letter-spacing: -.01em; line-height: 1.1; }
+.sema h3[data-c="V"] { color: var(--v-ink); } .sema h3[data-c="A"] { color: var(--a-ink); } .sema h3[data-c="R"] { color: var(--r-ink); }
+.sema p { margin: 0; font-size: 15.5px; color: var(--muted); }
+@media (max-width: 480px) { .sema { grid-template-columns: minmax(0, 1fr); justify-items: start; } .luces { grid-auto-flow: column; } .luces i { width: 40px; height: 40px; } }
+.vars .row.q .l b { font-weight: 600; }
+.vars .row.q .val { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; text-align: right; }
+.incos2 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 12px 16px 16px; }
+.incob { border: 1px solid var(--hair); background: var(--card); border-radius: 12px; padding: 10px 12px; text-align: left; cursor: pointer; display: grid; gap: 2px; min-width: 0; }
+.incob b { font-size: 16px; letter-spacing: .02em; }
+.incob span { font-size: 12.5px; color: var(--muted); line-height: 1.3; }
+.incob[aria-pressed="true"] { border-color: var(--lab); background: var(--lab-soft); box-shadow: inset 0 0 0 1px var(--lab); }
+.incob[aria-pressed="true"] b { color: var(--lab); }
+@media (max-width: 600px) { .incos2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.seg.wrap2 { flex-wrap: wrap; overflow: visible; }
+.seg.wrap2 button { flex: 0 1 auto; }
+.ficha-sema { display: flex; gap: 16px; align-items: center; }
+.ficha-sema .luces { grid-auto-flow: column; padding: 8px; gap: 6px; border-radius: 18px; }
+.ficha-sema .luces i { width: 26px; height: 26px; }
+.ficha-sema b { font-family: var(--serif); font-size: 26px; font-weight: 600; }
+.tiles-t { font-size: 12.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin: 4px 0 -10px 4px; display: flex; align-items: center; gap: 8px; }
+.tiles-t::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--tc, var(--accent)); }
+@media (prefers-reduced-motion: reduce) { .anim .mini-grid i, .anim .bolsa { animation: none; } .b3 .col, .embudo i, .esc-row .tr i, .reparto i { transition: none; } }
+@media print { .sugs, .ophead + .op .x { display: none !important; } }
+/* Editor compacto: una fila por paso o por costo */
+.ed-head, .ed-row { display: grid; gap: 6px 10px; align-items: center; padding: 7px 16px; position: relative; }
+.ed-head { font-size: 12px; font-weight: 700; color: var(--muted); padding-top: 12px; padding-bottom: 0; letter-spacing: .01em; }
+.ed-row + .ed-row::before { content: ""; position: absolute; top: 0; left: 48px; right: 0; height: 1px; background: var(--hair); }
+.ed-row input.n, .ed-row input.t, .ed-row select.s { width: 100%; font-size: 16px; padding: 8px 10px; }
+.ed-row select.s { padding-right: 28px; }
+.ed-row .pn { color: var(--muted); font-weight: 600; font-size: 14px; text-align: center; }
+.ed-row label.ef { display: grid; gap: 3px; min-width: 0; }
+.ed-row .ml { display: none; font-size: 11.5px; font-weight: 700; color: var(--muted); }
+.ed-row .x { justify-self: end; }
+.ed-p { grid-template-columns: 22px minmax(0, 1fr) 7.2em 5.6em 7.2em 30px; }
+.ed-l { grid-template-columns: 22px minmax(0, 1fr) 8.4em 8.6em 30px; }
+.ed-e { grid-template-columns: 22px minmax(0, 1fr) 8.4em 30px; }
+.ed-head > span:not(:nth-child(2)) { text-align: left; }
+@media (max-width: 640px) {
+  .ed-head { display: none; }
+  .ed-row .ml { display: block; }
+  .ed-row + .ed-row::before { left: 16px; }
+  .ed-p { grid-template-columns: 22px repeat(3, minmax(0, 1fr)) 30px; }
+  .ed-p > .t { grid-column: 2 / 5; grid-row: 1; } .ed-p > .x { grid-column: 5; grid-row: 1; }
+  .ed-p > label.ef { grid-row: 2; } .ed-p > label.ef:nth-of-type(1) { grid-column: 2; } .ed-p > label.ef:nth-of-type(2) { grid-column: 3; } .ed-p > label.ef:nth-of-type(3) { grid-column: 4; }
+  .ed-l { grid-template-columns: 22px repeat(2, minmax(0, 1fr)) 30px; }
+  .ed-l > .t { grid-column: 2 / 4; grid-row: 1; } .ed-l > .x { grid-column: 4; grid-row: 1; }
+  .ed-l > label.ef { grid-row: 2; } .ed-l > label.ef:nth-of-type(1) { grid-column: 2; } .ed-l > label.ef:nth-of-type(2) { grid-column: 3; }
+  .ed-e { grid-template-columns: 22px minmax(0, 1fr) 7.4em 30px; }
+}
+@media (max-width: 600px) {
+  .puente { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .puente .sg { display: none; }
+  .pz .v { font-size: 18px; }
+  .tabla th, .tabla td { padding: 8px 10px; font-size: 13.5px; white-space: nowrap; }
+  .tabla th { white-space: normal; }
+  .vars .row.q .val { grid-column: 2; justify-self: start; }
+}
+:root { --on-lab: #FFFFFF; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --on-lab: #1B130E; } }
+:root[data-theme="dark"] { --on-lab: #1B130E; }
+.porque .ic, .bloque .num, .escb .lt, .nivel .mult, .capit > header .num, .pz.fin { color: var(--on-lab); }
+.pz.fin .k { color: var(--on-lab); opacity: .85; }
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="toprow"><span class="kicker"><span class="mark" aria-hidden="true"></span><a class="home" href="./">← Inicio</a><span class="kt">Herramienta de la Ruta · 4 partes</span></span><span class="acts"><button class="link ej" id="b-verej" type="button">Ver ejemplo</button><button class="link" id="b-empresas" type="button">Mis análisis</button></span></div>
+  <h1>Mi ruta para exportar</h1>
+  <p class="movil">Funciona en el celular, pero en el computador se trabaja más cómodo.</p>
+  <div class="banner" id="banner" hidden><span><b>Ejemplo:</b> Café Ejemplo S.A.S., un café inventado para practicar.</span><button class="btn primary" id="b-volver" type="button">Volver a mi empresa</button></div>
+  <div class="who">
+    <label class="fld"><span>Su empresa</span><input id="f-empresa" data-k="empresa" data-kind="text" placeholder="Nombre de la empresa"></label>
+    <label class="fld"><span>Producto</span><input id="f-producto" data-k="producto" data-kind="text" placeholder="Qué vende"></label>
+    <label class="fld wide"><span>Cliente potencial</span><input id="f-cliente" data-k="cliente" data-kind="text" placeholder="Ej.: importador en Nueva York"></label>
+  </div>
+  <div class="mide"><span>Mide su producto en</span><span class="seg small" data-k="unidad" role="group" aria-label="Unidad de medida"><button data-v="kg">Kilos</button><button data-v="lb">Libras</button><button data-v="unidades">Unidades</button><button data-v="prendas">Prendas</button><button data-v="litros">Litros</button></span></div>
+</div></header>
+<nav class="tabs" aria-label="Secciones"><div class="wrap"><div class="seg" role="tablist"><button type="button" role="tab" data-p="p1" data-lab="1"><span class="n">1</span>&nbsp;Costos</button><button type="button" role="tab" data-p="p2" data-lab="3"><span class="n">2</span>&nbsp;Logística</button><button type="button" role="tab" data-p="p3" data-lab="2"><span class="n">3</span>&nbsp;Precio</button><button type="button" role="tab" data-p="p4" data-lab="4"><span class="n">4</span>&nbsp;Cotizar</button><button type="button" role="tab" data-p="ficha" data-lab="0">Ficha</button></div></div></nav>
+<main><div class="wrap">
+<section class="panel" id="p1" data-lab="1">
+  <div class="phead"><span class="lab">Parte 1 · Laboratorio 1</span><h2>Mis costos iniciales de producción</h2><p class="sub">Desde la primera compra hasta el producto listo y empacado. Todo termina en pesos por <span data-u="uno">kilo</span>.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Se llena en el laboratorio 1 · revísela cuando cambien sus costos</span></div>
+  <div class="privado"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Zm3 4a1.5 1.5 0 0 1 .8 2.77V18a.8.8 0 0 1-1.6 0v-1.23A1.5 1.5 0 0 1 12 14Z"/></svg><span><b>Sus datos son suyos.</b> Se guardan solo en este aparato y nadie más los ve, a menos que usted comparta su ficha. Escriba lo más cercano a la realidad que pueda: entre más reales los datos, más útil el análisis.</span></div>
+  <div class="porque"><span class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 20V10m6 10V4m6 16v-7m4 7H2"/></svg></span><p><b>Un costo detallado es su mejor argumento.</b>Con él negocia sin regalar margen, ve dónde puede bajar y sabe cuánto gana de verdad. Un costo agrupado esconde dónde se le va la plata.</p></div>
+
+  <div class="bloque"><span class="num">1</span><h3>De dónde sale lo que transforma</h3></div>
+  <div class="group">
+    <div class="row stack" style="gap:10px"><span class="l">¿Qué produce?<small>Escoja uno y la herramienta le propone los pasos típicos. Los puede cambiar.</small></span><div class="chips" id="modelos" role="group" aria-label="Qué produce"></div>
+      <div class="confirm" id="w-modelo" hidden><span id="t-modelo"></span><div class="acts"><button class="btn primary" id="b-modelo-si" type="button">Usar los pasos típicos</button><button class="btn" id="b-modelo-no" type="button">Dejar los míos</button></div></div></div>
+    <div class="row wrapm"><span class="l">Su materia prima</span><span class="seg small" data-k="origen" role="group" aria-label="De dónde sale la materia prima"><button data-v="compra">La compro</button><button data-v="propia">La produzco</button></span></div>
+    <div class="row wrapm"><span class="l">¿Cuál es?</span><input class="t" id="f-mpn" data-k="mpNombre" data-kind="text" placeholder="Ej.: café pergamino seco" style="max-width:15em"></div>
+    <div class="row wrapm"><span class="l">¿Cómo sabe lo que le cuesta?<small>Use la primera si ya tiene el costo de la materia prima de cada unidad de su producto final</small></span><span class="seg small wrap2" data-k="mpModo" role="group" aria-label="Cómo sabe lo que le cuesta la materia prima"><button data-v="directo">Ya sé lo que me cuesta por unidad</button><button data-v="calculo">Lo calculo con lo que compro</button></span></div>
+    <div class="row wrapm gasto" data-modo="directo"><span class="l"><span id="t-mpdir">Materia prima de cada <span data-u="uno">kilo</span></span><small>Lo que le cuesta la materia prima que lleva una unidad de su producto final. Si la compra ya procesada (trillada, tostada, cortada), ese paso no se repite abajo</small></span><span class="unit"><input class="n" id="f-mpdir" data-k="mpDirecto" inputmode="decimal" aria-label="Costo de la materia prima por unidad"><em>$</em></span></div>
+    <div class="row wrapm gasto" data-modo="calculo"><span class="l"><span id="t-mpcosto">Le cuesta</span><small id="s-mpcosto">Lo que paga, puesto en su planta</small></span><span class="unit"><input class="n" id="f-mpc" data-k="mpCosto" inputmode="decimal" aria-label="Costo de la materia prima"><select class="s" id="f-mpu" data-k="mpU" data-kind="sel" aria-label="Unidad en que la compra" style="font-size:15px;padding:7px 28px 7px 10px"><option value="kg">por kilo</option><option value="lb">por libra (500 g)</option><option value="arroba">por arroba</option><option value="carga">por carga (125 kg)</option><option value="tonelada">por tonelada</option><option value="litro">por litro</option><option value="metro">por metro</option><option value="unidad">por unidad</option></select></span></div>
+    <div class="row wrapm gasto" data-modo="calculo"><span class="l">Cada <span data-u="uno">kilo</span> que vende lleva<small>Lo que pesa o mide el producto que vende, sin empaque. Ej.: una bolsa de 340 g lleva 0,34 kg</small></span><span class="unit"><input class="n" id="f-cont" data-k="contenido" inputmode="decimal" aria-label="Cuánto lleva una unidad terminada"><em id="u-cont">kg</em></span></div>
+    <div class="row wrapm gasto"><span class="l">Hoy produce al mes</span><span class="unit"><input class="n" id="f-prod" data-k="produce" inputmode="decimal" aria-label="Lo que produce hoy al mes"><em data-u="abbr">kg</em></span></div>
+  </div>
+
+  <div class="bloque"><span class="num">2</span><h3>Su proceso, paso a paso</h3></div>
+  <p class="sub">En orden, desde que entra la materia prima hasta que el producto queda listo. Para cada paso: cuánto le cuesta y lo máximo que saca al mes.</p>
+  <div class="group"><div id="pasos"></div><div class="row add"><button class="link" id="b-add-paso" type="button">+ Agregar paso</button></div></div>
+  <p class="foot"><b>Me cuesta:</b> lo que paga por ese paso, repartido por <span data-u="uno">kilo</span> (la mano de obra fija va abajo, en el capítulo 1). <b>De 100, salen (opcional):</b> si sabe que en un paso se pierde producto, escriba cuántos salen buenos de cada 100 que entran. Ej.: al trillar 100 kg de pergamino salen unos 80 de café verde. Si no lo sabe, déjelo vacío: su costo no cambia. <b>Máximo al mes:</b> lo más que ese paso alcanzaría a sacar en un mes, contado en <span data-u="unos">kilos</span> del producto final.</p>
+
+  <p class="gtitle">Del insumo al producto</p>
+  <div class="group"><div class="flujo" id="flujo"></div>
+    <div class="flujo-ley"><span class="lm"><i></i>Lo que sigue</span><span class="lm"><i class="p"></i>Lo que se pierde en ese paso</span><span><i class="c"></i>El paso que lo frena</span></div></div>
+  <div class="stats">
+    <div class="stat lm"><span class="k">Llega a su producto</span><span class="v" id="o-rend">—</span><span class="s" id="o-rend-s">de cada 100 que compra</span></div>
+    <div class="stat lm"><span class="k">La merma le cuesta</span><span class="v" id="o-merma">—</span><span class="s">por <span data-u="uno">kilo</span></span></div>
+    <div class="stat"><span class="k">El paso que lo frena</span><span class="v" id="o-cuello" style="font-size:22px">—</span><span class="s" id="o-cuello-s"></span></div>
+    <div class="stat"><span class="k">Hoy usa <span class="dot" id="l-uso"></span></span><span class="v" id="o-uso">—</span><span class="s" id="o-uso-s">de lo que puede producir</span></div>
+  </div>
+  <div class="status" id="e-flujo"><span class="dot" id="l-flujo"></span><span id="m-flujo">Escriba sus pasos para ver dónde se pierde producto y qué lo frena.</span></div>
+
+  <div class="bloque"><span class="num">3</span><h3>Todos sus costos, en tres capítulos</h3></div>
+  <p class="sub">Toque las sugerencias para agregar lo que le aplica. Escriba cada costo como lo paga: por <span data-u="uno">kilo</span> o al mes. La herramienta lo reparte.</p>
+  <div class="capit" data-cap="1"><header><span class="num">1</span><span><b>Productivos</b><small>Lo que cuesta hacer el producto</small></span><span class="tot" id="o-cap1">—</span></header>
+    <div class="auto"><span>Materia prima<small id="o-mpdet">Sale del bloque 1 y de la merma</small></span><b id="o-mpu">—</b></div>
+    <div class="auto"><span>Sus pasos<small>Sale del bloque 2</small></span><b id="o-pasosu">—</b></div>
+    <div class="sugs" data-sug="1"></div><div id="cap1"></div><div class="row add"><button class="link" data-add="1" type="button">+ Agregar costo</button></div></div>
+  <div class="capit" data-cap="2"><header><span class="num">2</span><span><b>Administrativos y tributarios</b><small>Lo que paga cada mes, venda o no venda</small></span><span class="tot" id="o-cap2">—</span></header>
+    <div class="sugs" data-sug="2"></div><div id="cap2"></div><div class="row add"><button class="link" data-add="2" type="button">+ Agregar costo</button></div></div>
+  <div class="capit" data-cap="3"><header><span class="num">3</span><span><b>Alistamiento y embalaje</b><small>Para dejarlo listo para despachar</small></span><span class="tot" id="o-cap3">—</span></header>
+    <div class="sugs" data-sug="3"></div><div id="cap3"></div><div class="row add"><button class="link" data-add="3" type="button">+ Agregar costo</button></div></div>
+  <p class="foot">El transporte, el seguro y la agencia de aduanas para exportar van en la Parte 2.</p>
+
+  <p class="gtitle">Su costo, del insumo al producto empacado</p>
+  <div class="group"><div class="escalera" id="escalera"></div><div class="reparto" id="reparto" aria-hidden="true"></div><div class="reparto-ley" id="reparto-ley"></div></div>
+  <div class="stats"><div class="stat hero"><span class="k"><span>Su costo total por <span data-u="uno">kilo</span></span></span><span class="v" id="o-costo">—</span><span class="s" id="o-costo-s">Complete los tres capítulos</span></div></div>
+  <p class="gtitle">Dónde mirar primero</p>
+  <div class="group top3" id="top3"></div>
+  <p class="foot">Son los costos que más pesan. Ahí es donde una negociación o una mejora mueve más su utilidad.</p>
+  <div class="next"><span></span><button class="btn primary" data-go="p2" type="button">Siguiente: Parte 2</button></div>
+</section>
+
+<section class="panel" id="p2" data-lab="3" hidden>
+  <div class="phead"><span class="lab">Parte 2 · Laboratorio 3</span><h2>Mis costos logísticos y optimización</h2><p class="sub">Desde que el producto está listo y empacado hasta donde lo recibe el cliente. Solo cantidades: no es un cotizador.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Se llena en el laboratorio 3 · con las cotizaciones de sus operadores</span></div>
+
+  <div class="bloque"><span class="num">1</span><h3>Cómo se arma su carga</h3></div>
+  <div class="group">
+    <div class="row wrapm gasto"><span class="l"><span data-u="Unos">Kilos</span> en cada caja máster</span><span class="unit"><input class="n" data-k="emp.cajaU" inputmode="decimal" aria-label="Unidades por caja"><em data-u="abbr">kg</em></span></div>
+    <div class="row wrapm gasto"><span class="l">Cajas en cada palet</span><span class="unit"><input class="n" data-k="emp.paletC" inputmode="decimal" aria-label="Cajas por palet"><em>cajas</em></span></div>
+    <div class="row wrapm gasto"><span class="l">Palets en un contenedor de 20 pies</span><span class="unit"><input class="n" data-k="emp.c20" inputmode="decimal" aria-label="Palets en contenedor de 20"><em>palets</em></span></div>
+    <div class="row wrapm gasto"><span class="l">Palets en un contenedor de 40 pies</span><span class="unit"><input class="n" data-k="emp.c40" inputmode="decimal" aria-label="Palets en contenedor de 40"><em>palets</em></span></div>
+  </div>
+  <p class="foot">Se lo dice su proveedor de cajas o su operador logístico. Cambian según el tamaño de la caja.</p>
+  <div class="group"><div class="anida" id="anida"></div></div>
+
+  <div class="bloque"><span class="num">2</span><h3>Tres formas de enviar</h3></div>
+  <p class="sub">Escriba lo que le cobra cada operador en total y en cuántos días llega. La herramienta le dice cuál es más barato y cuál más rápido.</p>
+  <div class="escs" id="escs" role="group" aria-label="Escenarios"></div>
+  <div class="group" id="escpanel"></div>
+
+  <div class="bloque"><span class="num">3</span><h3>La economía de escala</h3></div>
+  <div class="group"><div class="barras3" id="barras3"></div><div class="ahorro" id="ahorro">Complete los escenarios para comparar.</div></div>
+
+  <p class="gtitle">¿Cuál se parece a su primer envío?</p>
+  <div class="group"><div class="row wrapm"><span class="l">Escenario para cotizar<small>Su costo logístico pasa a la Parte 4</small></span><span class="seg small" data-k="escUso" role="group" aria-label="Escenario para cotizar"><button data-v="A">A · Cajas</button><button data-v="B">B · Palet</button><button data-v="C">C · Contenedor</button></span></div></div>
+  <div class="stats"><div class="stat hero"><span class="k"><span>Costo logístico por <span data-u="uno">kilo</span></span></span><span class="v" id="o-logu">—</span><span class="s" id="o-logu-s">Escoja un escenario</span></div></div>
+  <div class="next"><button class="btn" data-go="p1" type="button">Atrás</button><button class="btn primary" data-go="p3" type="button">Siguiente: Parte 3</button></div>
+</section>
+
+<section class="panel" id="p3" data-lab="2" hidden>
+  <div class="phead"><span class="lab">Parte 3 · Laboratorio 2</span><h2>Mi precio y el dólar</h2><p class="sub">Del costo al precio en su bodega (EXW), en pesos y en dólares, y cuánto aguanta si el dólar se mueve.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Se llena en el laboratorio 2 · revísela antes de cada cotización</span></div>
+
+  <div class="puente" id="puente"></div>
+
+  <div class="bloque"><span class="num">1</span><h3>¿Cuánto quiere ganar?</h3></div>
+  <div class="group"><div class="slide">
+    <div class="top"><span class="l">Margen sobre el precio<small id="t-margen">De cada $100 que le paguen, ¿cuántos le quedan?</small></span><span class="val"><input class="n" id="f-margen" data-k="margen" inputmode="decimal" aria-label="Margen"><em>%</em><span class="dot L" id="l-margen"></span></span></div>
+    <input type="range" class="rng" id="r-margen" min="0" max="60" step="1" aria-label="Margen">
+    <div class="scale"><span>0 %</span><span>15 %</span><span>25 %</span><span>60 %</span></div>
+  </div></div>
+  <div class="status" id="e-margen"><span class="dot" id="l-margen2"></span><span id="m-margen">Mueva la barra o escriba su margen.</span></div>
+
+  <div class="bloque"><span class="num">2</span><h3>El dólar hoy</h3></div>
+  <div class="group"><div class="trm" id="trm"><span class="note">Trayendo la tasa oficial del dólar…</span></div></div>
+  <div class="group"><div class="row wrapm gasto"><span class="l">Dólar para sus cálculos<small id="s-dolar">Si lo deja vacío, usa la TRM de hoy</small></span><span class="unit"><input class="n" id="f-dolar" data-k="dolar" inputmode="decimal" aria-label="Dólar para sus cálculos"><em>$</em></span></div>
+    <div class="row add"><button class="link" id="b-trm" type="button">Usar la TRM de hoy</button></div></div>
+
+  <div class="bloque"><span class="num">3</span><h3>Juegue con el dólar</h3></div>
+  <div class="group"><div class="slide">
+    <div class="top"><span class="l">Si el dólar llegara a<small>Mueva la barra. La franja oscura es por donde anduvo el último mes.</small></span><span class="val"><input class="n" id="f-sim" data-k="sim" inputmode="decimal" aria-label="Dólar simulado"><em>$</em></span></div>
+    <div class="dentro"><input type="range" class="rng" id="r-sim" step="10" aria-label="Dólar simulado"><span class="marca" id="m-hoy" hidden><span>hoy</span></span></div>
+    <div class="scale"><span id="sim-min"></span><span id="sim-max"></span></div>
+  </div>
+  <table class="tabla" id="t-sim"></table></div>
+  <p class="foot">«Le queda» es lo que gana de cada $100 si ya cotizó con el precio de abajo y el dólar llega a ese valor.</p>
+
+  <div class="bloque"><span class="num">4</span><h3>Cuánto sostener la cotización</h3></div>
+  <div class="group">
+    <div class="row wrapm"><span class="l">Vigencia de la cotización</span><span class="seg small" data-k="vig" role="group" aria-label="Vigencia"><button data-v="8">8 días</button><button data-v="15">15 días</button><button data-v="30">30 días</button><button data-v="60">60 días</button></span></div>
+    <div class="slide"><div class="top"><span class="l">Colchón por si baja el dólar<small id="t-colchon">Sube un poco el precio en dólares para que una baja no se coma su margen</small></span><span class="val"><input class="n sm" id="f-colchon" data-k="colchon" inputmode="decimal" aria-label="Colchón"><em>%</em></span></div>
+      <input type="range" class="rng" id="r-colchon" min="0" max="10" step="0.5" aria-label="Colchón"><div class="scale"><span>0 %</span><span>5 %</span><span>10 %</span></div></div>
+  </div>
+  <div class="status" id="e-vol"><span class="dot" id="l-vol"></span><span id="m-vol">Cuando cargue el dólar, aquí verá cuánto se movió.</span></div>
+  <div class="cotiza"><span class="k">Su precio EXW para cotizar</span><span class="v" id="o-cot">—</span><p id="o-cot-s">Complete su costo (Parte 1) y su margen.</p></div>
+  <div class="stats">
+    <div class="stat"><span class="k">En pesos</span><span class="v" id="o-pcop">—</span><span class="s">por <span data-u="uno">kilo</span>, en su bodega</span></div>
+    <div class="stat"><span class="k">Dólar de equilibrio</span><span class="v" id="o-deq">—</span><span class="s">si baja de aquí, con ese precio pierde plata</span></div>
+    <div class="stat"><span class="k">El dólar puede bajar <span class="dot" id="l-holg"></span></span><span class="v" id="o-holg">—</span><span class="s">antes de que pierda plata</span></div>
+  </div>
+  <div class="next"><button class="btn" data-go="p2" type="button">Atrás</button><button class="btn primary" data-go="p4" type="button">Siguiente: Parte 4</button></div>
+</section>
+
+<section class="panel" id="p4" data-lab="4" hidden>
+  <div class="phead"><span class="lab">Parte 4 · Laboratorio 4</span><h2>Cómo cotizo a mi cliente</h2><p class="sub">Con todo lo anterior y lo que pide el cliente. La herramienta no decide por usted: le muestra dónde está el riesgo.</p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Una vez por cada cliente potencial</span></div>
+
+  <div class="bloque"><span class="num">1</span><h3>Lo que pide el cliente</h3></div>
+  <p class="gtitle">Hasta dónde entrega usted (Incoterm)</p>
+  <div class="group"><div class="incos2" id="incos" role="group" aria-label="Incoterm"></div></div>
+  <div class="group">
+    <div class="row wrapm gasto"><span class="l">Precio que pide el cliente<small>por <span data-u="uno">kilo</span>, con ese Incoterm</small></span><span class="unit"><input class="n" id="f-pcli" data-k="precioCli" inputmode="decimal" aria-label="Precio que pide el cliente"><em>US$</em></span></div>
+    <div class="row wrapm gasto"><span class="l">Cantidad por pedido</span><span class="unit"><input class="n" id="f-ped" data-k="pedido" inputmode="decimal" aria-label="Cantidad por pedido"><em data-u="abbr">kg</em></span></div>
+    <div class="row wrapm"><span class="l">¿Cada cuánto pediría?</span><span class="seg small wrap2" data-k="frec" role="group" aria-label="Recurrencia"><button data-v="0">Una sola vez</button><button data-v="2">Cada 15 días</button><button data-v="1">Cada mes</button><button data-v="0.5">Cada 2 meses</button><button data-v="0.333">Cada 3 meses</button></span></div>
+    <div class="row wrapm gasto"><span class="l">Días para entregar el pedido</span><span class="unit"><input class="n sm" id="f-plazo" data-k="plazo" inputmode="decimal" aria-label="Días para entregar"><em>días</em></span></div>
+    <div class="row wrapm"><span class="l">Forma de pago</span><select class="s" id="f-pago" data-k="pago" data-kind="sel" aria-label="Forma de pago"><option value="">Escoja una</option><option value="ant">Anticipado (todo antes de despachar)</option><option value="5050">50 % antes y 50 % al despachar</option><option value="cc">Carta de crédito</option><option value="doc">Contra documentos</option><option value="30">A 30 días</option><option value="60">A 60 días</option><option value="90">A 90 días o más</option><option value="cons">En consignación (cuando venda)</option></select></div>
+    <div class="row wrapm gasto"><span class="l">Logística que paga usted, por <span data-u="uno">kilo</span><small id="s-logu">Sale de la Parte 2 según el Incoterm</small></span><span class="unit"><input class="n" id="f-logu" data-k="logU" inputmode="decimal" aria-label="Logística que paga usted"><em>US$</em></span></div>
+  </div>
+
+  <div class="bloque"><span class="num">2</span><h3>¿Es viable?</h3></div>
+  <div class="sema"><div class="luces" id="luces" aria-hidden="true"><i></i><i></i><i></i></div><div><h3 id="o-sema">Faltan datos</h3><p id="o-sema-s">Complete lo que pide el cliente.</p></div></div>
+  <p class="gtitle">Lo que lo explica</p>
+  <div class="group vars" id="vars"></div>
+  <div class="stats">
+    <div class="stat"><span class="k">Su costo con este Incoterm</span><span class="v" id="o-ctot">—</span><span class="s">producción y logística, por <span data-u="uno">kilo</span></span></div>
+    <div class="stat"><span class="k">Su precio con este Incoterm</span><span class="v" id="o-psu">—</span><span class="s">el de la Parte 3 más la logística</span></div>
+    <div class="stat"><span class="k">Con el precio del cliente le queda <span class="dot" id="l-mcli"></span></span><span class="v" id="o-mcli">—</span><span class="s" id="o-mcli-s">de cada $100</span></div>
+    <div class="stat"><span class="k">Plata para producir el pedido</span><span class="v" id="o-capt">—</span><span class="s">lo que pone antes de que le paguen</span></div>
+  </div>
+  <div class="next"><button class="btn" data-go="p3" type="button">Atrás</button><button class="btn primary" data-go="ficha" type="button">Ver mi ficha</button></div>
+</section>
+
+<section class="panel" id="ficha" data-lab="0" hidden>
+  <div class="phead"><span class="lab">Su resultado</span><h2>Mi ficha</h2><p class="cli" id="ficha-cli"></p><p class="sub" id="ficha-sub"></p><span class="uso"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z"/></svg>Descárguela cada vez que actualice</span></div>
+  <div class="resumen"><div class="ficha-sema"><div class="luces" id="f-luces" aria-hidden="true"><i></i><i></i><i></i></div><div><span class="k">El negocio con este cliente</span><br><b id="f-sema">—</b></div></div><p id="f-resumen"></p></div>
+  <div id="tiles"></div>
+  <div class="group noprint"><div class="row stack" style="gap:12px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><button class="btn primary" id="b-pdf" type="button">Descargar PDF</button><button class="btn" id="b-copiar" type="button">Copiar resumen</button><span class="copiado" id="msg-copia"></span></div>
+    <span class="note">El PDF lleva la fecha, el cliente potencial, el semáforo, sus resultados y todos sus datos. Guárdelo cada vez que actualice: así tiene su histórico.</span>
+    <textarea class="out" id="msg-copia-txt" hidden aria-label="Resumen para copiar"></textarea>
+  </div></div>
+</section>
+
+</div></main>
+<div class="sheet" id="sheet" hidden><div class="box" role="dialog" aria-modal="true" aria-label="Mis análisis">
+  <div class="toprow"><h3>Mis análisis</h3><button class="link" id="b-cerrar" type="button">Listo</button></div>
+  <p class="note" style="margin:-6px 0 0">Haga un análisis por cada cliente potencial. Se guardan solo en este aparato.</p>
+  <div id="lista" class="lista"></div>
+  <div style="display:grid;gap:10px">
+    <button class="btn primary" id="b-copia" type="button">Nuevo análisis para otro cliente</button>
+    <span class="note" style="margin-top:-4px">Copia los datos de su empresa. Solo cambie lo de ese cliente.</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" id="b-nueva" type="button">Empezar en blanco</button><button class="btn" id="b-ejemplo" type="button">Ver el ejemplo</button></div>
+  </div>
+  <p class="gtitle" style="margin:4px 0 -8px 16px">Copia de seguridad</p>
+  <div class="group"><div class="row stack" style="gap:10px">
+    <span class="note">Guarde una copia cada vez que actualice y antes del 12 de mayo de 2027. Con ella recupera sus datos si se borran del navegador, o los pasa a otro aparato.</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" id="b-bk-guardar" type="button">Guardar copia</button><button class="btn" id="b-bk-abrir" type="button">Abrir una copia</button><input type="file" id="bk-file" accept=".json,application/json" hidden></div>
+    <span class="note"><button class="link sm" id="b-bk-copiar" type="button">Copiar como texto</button> · <button class="link sm" id="b-bk-pegar" type="button">Pegar texto</button></span>
+    <textarea class="out" id="bk-txt" hidden aria-label="Texto de la copia" style="min-height:6em"></textarea>
+    <button class="btn primary" id="b-bk-ok" type="button" hidden>Recuperar</button>
+    <span class="copiado" id="bk-msg" role="status"></span>
+  </div></div>
+  <div class="group"><div class="row stack" style="gap:6px" id="borrar-todo">
+    <button class="link sm danger" id="b-borrar-todo" type="button">Borrar todo lo guardado en este aparato</button>
+    <span class="note">Úselo si otra persona usa este computador o celular.</span>
+  </div></div>
+</div></div>
+<footer><div class="wrap" id="aviso"></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+// Utilidades compartidas de las herramientas de análisis
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const ok = (x) => typeof x === "number" && isFinite(x);
+const fmt = (n, d = 0) => ok(n) ? n.toLocaleString("es-CO", { minimumFractionDigits: d, maximumFractionDigits: d }) : "—";
+const pesos = (n) => ok(n) ? (n < 0 ? "−$\u00A0" : "$\u00A0") + fmt(Math.abs(Math.round(n))) : "—";
+const usd = (n) => ok(n) ? "US$\u00A0" + fmt(n, 2) : "—";
+const pct = (n, d = 1) => ok(n) ? fmt(n * 100, d) + " %" : "—";
+const hi = (x, g, a) => !ok(x) ? "" : x >= g ? "V" : x >= a ? "A" : "R";
+const lo = (x, g, a) => !ok(x) ? "" : x <= g ? "V" : x <= a ? "A" : "R";
+const pick = (c, v, a, r, e = "") => c === "V" ? v : c === "A" ? a : c === "R" ? r : e;
+const N = (v) => (v === "" || v == null ? NaN : Number(v));
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+const EMO = { V: "🟢", A: "🟡", R: "🔴" };
+
+// ---------- Unidad en que mide la empresa: kilos, prendas o unidades ----------
+const UNIDADES = {
+  kg: { abbr: "kg", uno: "kilo", unos: "kilos", Uno: "Kilo", Unos: "Kilos", art: "un kilo", Art: "Un kilo", libra: true },
+  prendas: { abbr: "prendas", uno: "prenda", unos: "prendas", Uno: "Prenda", Unos: "Prendas", art: "una prenda", Art: "Una prenda", libra: false },
+  unidades: { abbr: "und.", uno: "unidad", unos: "unidades", Uno: "Unidad", Unos: "Unidades", art: "una unidad", Art: "Una unidad", libra: false },
+};
+const U = (st) => UNIDADES[(st && st.unidad) || "kg"] || UNIDADES.kg;
+// Pinta las palabras de unidad que hay en la página: <span data-u="unos"></span>
+function pintarUnidad(st) { const u = U(st); $$("[data-u]").forEach((el) => { const v = u[el.dataset.u]; if (v !== undefined) el.textContent = v; }); }
+
+function parseNum(s) {
+  if (typeof s === "number") return s;
+  s = String(s || "").trim().replace(/\s|\$|%|US/gi, "");
+  if (!s) return NaN;
+  if (s.includes(",")) s = s.replace(/\./g, "").replace(",", ".");
+  else if (/^-?\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, "");
+  return Number(s);
+}
+const getPath = (o, p) => p.split(".").reduce((x, k) => (x == null ? x : x[k]), o);
+function setPath(o, p, v) { const ks = p.split("."); let x = o; ks.slice(0, -1).forEach((k) => (x = x[k])); x[ks[ks.length - 1]] = v; }
+const showNum = (v, d) => (v === "" || v == null || !ok(Number(v))) ? "" : Number(v).toLocaleString("es-CO", { maximumFractionDigits: d ?? 2 });
+
+function setLight(id, c) { const el = document.getElementById(id); if (el) el.dataset.c = c || ""; }
+function setText(id, t) { const el = document.getElementById(id); if (el) el.textContent = t; }
+
+// Campos dentro de "root": data-k="ruta", data-kind="num|text|sel"; controles segmentados .seg[data-k] con botones data-v
+function bindFields(root, st, onChange) {
+  $$("[data-k]", root).forEach((el) => {
+    if (el.classList.contains("seg")) return;
+    const k = el.dataset.k, kind = el.dataset.kind || (el.tagName === "SELECT" ? "sel" : "num");
+    const v = getPath(st, k);
+    el.value = kind === "num" ? showNum(v, el.dataset.d ? Number(el.dataset.d) : 2) : (v ?? "");
+    el.oninput = () => {
+      const val = kind === "num" ? (el.value.trim() === "" ? "" : parseNum(el.value)) : el.value;
+      setPath(st, k, val); onChange(k);
+    };
+  });
+  $$(".seg[data-k]", root).forEach((g) => {
+    const k = g.dataset.k;
+    $$("button", g).forEach((b) => {
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(getPath(st, k) === b.dataset.v));
+      b.onclick = () => {
+        setPath(st, k, b.dataset.v);
+        $$("button", g).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        onChange(k);
+      };
+    });
+  });
+}
+
+function tabs() {
+  const btns = $$("nav.tabs button");
+  const show = (id) => {
+    btns.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.p === id)));
+    $$("section.panel").forEach((p) => (p.hidden = p.id !== id));
+  };
+  btns.forEach((b) => (b.onclick = () => { show(b.dataset.p); window.scrollTo({ top: 0 }); }));
+  $$("[data-go]").forEach((b) => (b.onclick = () => { show(b.dataset.go); window.scrollTo({ top: 0 }); }));
+  const h = (location.hash || "").slice(1);
+  show(h && $(`nav.tabs button[data-p="${h}"]`) ? h : btns[0].dataset.p);
+}
+
+function copiar(text, msgId) {
+  const done = () => setText(msgId, "Copiado. Ya lo puede pegar en un correo o un mensaje.");
+  const fallback = () => { const ta = document.getElementById(msgId + "-txt"); if (ta) { ta.hidden = false; ta.value = text; ta.select(); } setText(msgId, "Seleccione el texto y cópielo."); };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+}
+// ---------- PDF de la ficha (histórico) ----------
+const PDFCOL = { V: [79, 138, 60], A: [211, 154, 34], R: [192, 73, 47] };
+const limpio = (t) => String(t ?? "").replace(/−/g, "-").replace(/ /g, " ").replace(/[→]/g, "a").replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\xFF€•–—“”‘’]/g, "");
+function hoyLargo() { try { return new Date().toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return new Date().toISOString().slice(0, 10); } }
+function construirPDF(sp) {
+  const J = window.jspdf && window.jspdf.jsPDF; if (!J) return null;
+  const doc = new J({ unit: "mm", format: "letter" });
+  const W = 215.9, H = 279.4, M = 18; let y = M;
+  const gris = () => doc.setTextColor(122, 104, 88), negro = () => doc.setTextColor(42, 29, 22);
+  const pie = () => { doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); gris(); doc.text(doc.splitTextToSize(limpio(AVISO), W - 2 * M), M, H - 14); };
+  const salto = (h) => { if (y + h > H - 22) { pie(); doc.addPage(); y = M; } };
+  const punto = (x, yy, c) => { const col = PDFCOL[c] || [216, 203, 184]; doc.setFillColor(col[0], col[1], col[2]); doc.circle(x, yy - 1.2, 1.6, "F"); };
+  doc.setFillColor(184, 132, 79); doc.rect(0, 0, W, 3, "F");
+  doc.setFont("helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(138, 90, 43); doc.text("RUTA DE PRODUCTIVIDAD Y LOGISTICA PARA LA EXPORTACION", M, y); y += 6;
+  doc.setFont("times", "bold"); doc.setFontSize(21); negro(); doc.text(limpio(sp.titulo), M, y + 4); y += 11;
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5); gris();
+  doc.text(limpio(`Empresa: ${sp.st.empresa || "—"}   ·   Producto: ${sp.st.producto || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Cliente potencial: ${sp.st.cliente || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Fecha: ${hoyLargo()}${sp.ejemplo ? "   ·   Ejemplo con datos inventados" : ""}`), M, y); y += 9;
+  const seccion = (t) => { salto(12); doc.setFont("helvetica", "bold"); doc.setFontSize(12.5); negro(); doc.text(limpio(t), M, y); y += 3; doc.setDrawColor(227, 216, 200); doc.line(M, y, W - M, y); y += 6; };
+  seccion("Resultados");
+  const rs = resumenFicha(sp.defs, sp.c1);
+  if (rs.tot) {
+    let x = M; const bw = 60, tot = rs.tot;
+    ["R", "A", "V"].forEach((k) => { if (!rs.n[k]) return; const w = (bw * rs.n[k]) / tot, col = PDFCOL[k]; doc.setFillColor(col[0], col[1], col[2]); doc.rect(x, y - 3, w, 3.2, "F"); x += w; });
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); negro(); doc.text(limpio(`${rs.n.V} en verde · ${rs.n.A} en amarillo · ${rs.n.R} en rojo`), M + bw + 5, y - 0.4); y += 8;
+  }
+  if (rs.ind != null) {
+    doc.setFont("helvetica", "bold"); doc.setFontSize(12); negro(); doc.text(limpio(`Índice de preparación: ${rs.ind} de 100`), M, y); y += 8;
+  }
+  const escPDF = (e, x, yy, w) => { if (!e) return; const seg = [["R", 0, e.a], ["A", e.a, e.g], ["V", e.g, 1]]; seg.forEach(([k, a0, a1]) => { if (a1 <= a0) return; const col = PDFCOL[k]; doc.setFillColor(col[0] + (255 - col[0]) * 0.45, col[1] + (255 - col[1]) * 0.45, col[2] + (255 - col[2]) * 0.45); doc.rect(x + w * a0, yy - 2.6, w * (a1 - a0), 1.8, "F"); }); doc.setFillColor(42, 29, 22); doc.circle(x + w * e.p, yy - 1.7, 1.25, "F"); };
+  const cx1 = M + 76, cx2 = M + 128, wv = sp.c2 ? 46 : 68, gx = M + 148, gw = W - M - gx;
+  if (sp.c2) { doc.setFont("helvetica", "bold"); doc.setFontSize(8.5); gris(); doc.text("ANTES", cx1, y); doc.text("AHORA", cx2, y); y += 5; }
+  sp.defs.forEach((d) => {
+    const a = d.f(sp.c1), b = sp.c2 ? d.f(sp.c2) : null;
+    doc.setFontSize(10); doc.setFont("helvetica", "bold");
+    const lab = doc.splitTextToSize(limpio(d.k), 72);
+    doc.setFont("helvetica", "normal");
+    const va = doc.splitTextToSize(limpio(a[1] + (!b && a[2] ? "  (" + a[2] + ")" : "")), wv - 5);
+    const vb = b ? doc.splitTextToSize(limpio(b[1]), wv - 5) : [];
+    const h = Math.max(lab.length, va.length, vb.length) * 4.6 + 2.5;
+    salto(h);
+    doc.setFontSize(10); doc.setFont("helvetica", "bold"); negro(); doc.text(lab, M, y);
+    doc.setFont("helvetica", "normal");
+    if (!d.neutral) punto(cx1 + 1.6, y, a[0]); doc.text(va, cx1 + (d.neutral ? 0 : 5), y);
+    if (!sp.c2 && d.g && a[0]) escPDF(d.g(sp.c1), gx, y, gw);
+    if (b) { if (!d.neutral) punto(cx2 + 1.6, y, b[0]); doc.text(vb, cx2 + (d.neutral ? 0 : 5), y); }
+    y += h;
+  });
+  y += 3;
+  (sp.datos || []).forEach(([t, rows]) => {
+    seccion("Sus datos · " + t);
+    rows.forEach(([k, v]) => {
+      doc.setFontSize(9.5); doc.setFont("helvetica", "normal");
+      const kl = doc.splitTextToSize(limpio(k), 92), vl = doc.splitTextToSize(limpio(v || "—"), W - 2 * M - 98);
+      const h = Math.max(kl.length, vl.length) * 4.3 + 1.8;
+      salto(h); doc.setFontSize(9.5); doc.setFont("helvetica", "normal"); gris(); doc.text(kl, M, y); negro(); doc.text(vl, M + 98, y); y += h;
+    });
+    y += 3;
+  });
+  pie();
+  return doc;
+}
+// ---------- Descargas: dentro de claude.ai, con la confirmación del visitante; fuera, directo ----------
+const ENMARCADO = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
+let _dl = null;
+const listoDescargas = new Promise((res) => {
+  if (!ENMARCADO) return res(true);
+  try { if (window.claude && window.claude.use) window.claude.use("downloads").then((d) => { _dl = d; res(!!d); }, () => res(false)); else res(false); } catch (e) { res(false); }
+});
+async function guardarArchivo(nombre, blob, msg) {
+  if (_dl) {
+    try { await _dl.save({ filename: nombre, data: blob }); return true; }
+    catch (e) { if (msg) msg(e && e.code === "declined" ? "" : "No se pudo guardar aquí."); return false; }
+  }
+  if (!ENMARCADO) {
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); return true;
+  }
+  return false;
+}
+const fechaArchivo = () => { const f = new Date(); return `${String(f.getDate()).padStart(2, "0")}-${String(f.getMonth() + 1).padStart(2, "0")}-${f.getFullYear()}`; };
+const nombreArchivo = (t, ext) => limpio(t).replace(/[\\/:*?"<>|]/g, "").replace(/\s+/g, " ").trim() + "." + ext;
+
+function setupPDF(btnId, getSpec) {
+  const b = document.getElementById(btnId); if (!b) return;
+  const msg = (t) => setText("msg-copia", t);
+  b.hidden = ENMARCADO;
+  listoDescargas.then((okd) => { b.hidden = !okd; });
+  b.onclick = async () => {
+    const sp = getSpec(); const doc = construirPDF(sp);
+    if (!doc) return;
+    const nombre = nombreArchivo(`Ficha ${sp.corto} ${sp.st.empresa || "sin nombre"} ${sp.st.cliente || ""} ${fechaArchivo()}`, "pdf");
+    if (await guardarArchivo(nombre, doc.output("blob"), msg)) msg("PDF guardado.");
+  };
+}
+
+// ---------- Análisis guardados en este aparato: uno por cada cliente potencial, agrupados por empresa ----------
+const FIN = "12 de mayo de 2027"; // hasta cuándo quedan disponibles las herramientas
+// Nombre de empresa comparable: sin tildes, mayúsculas, espacios, puntos ni sigla societaria
+const normE = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "").replace(/(sasbic|sas|ltda|sa|eu|sca|scs)$/, "");
+const claveDe = (st, id) => normE(st && st.empresa) || "#" + id;
+function tieneDatos(x) { if (x == null || x === "") return false; if (Array.isArray(x)) return x.some(tieneDatos); if (typeof x === "object") return Object.values(x).some(tieneDatos); return true; }
+// Completa lo vacío de «d» con lo de «s»; en listas, mes por mes, sin mezclar dentro de un mismo mes
+function fusionar(d, s) {
+  if (Array.isArray(d) && Array.isArray(s)) { s.forEach((x, i) => { if (i >= d.length) d.push(x); else if (!tieneDatos(d[i]) && tieneDatos(x)) d[i] = x; }); return d; }
+  if (d && s && typeof d === "object" && typeof s === "object") { Object.keys(s).forEach((k) => { if (!tieneDatos(d[k])) d[k] = s[k]; else if (d[k] && typeof d[k] === "object") fusionar(d[k], s[k]); }); return d; }
+  return tieneDatos(d) ? d : s;
+}
+
+// opt.propio: campos de cada cliente (se vacían al copiar un análisis)
+// opt.compartido: campos de toda la empresa (iguales en todos los análisis de esa empresa, nunca entre empresas)
+// opt.migrar: arregla datos de versiones anteriores
+function makeStore(KEY, EX, BLANK, opt = {}) {
+  const SH = opt.compartido || [], PROPIO = opt.propio || ["cliente"], MIG = opt.migrar || (() => {});
+  let db = null;
+  try { db = JSON.parse(localStorage.getItem(KEY)); } catch (e) { db = null; }
+  if (!db || typeof db !== "object" || !db.items || typeof db.items !== "object") db = { items: {}, actual: "" };
+  if (!db.porEmpresa || typeof db.porEmpresa !== "object") {
+    db.porEmpresa = {};
+    if (db.comp && SH.some((f) => tieneDatos(db.comp[f]))) { // versión anterior: un solo histórico por aparato
+      const id = db.items[db.actual] ? db.actual : Object.keys(db.items)[0];
+      if (id) db.porEmpresa[claveDe(db.items[id].st, id)] = db.comp;
+    }
+  }
+  delete db.comp;
+  Object.keys(db.items).forEach((i) => { const it = db.items[i]; if (!it || !it.st || it.nuevo) delete db.items[i]; }); // análisis en blanco que nunca se tocaron
+  Object.values(db.items).forEach((it) => MIG(it.st));
+  Object.values(db.porEmpresa).forEach((b) => b && MIG(b));
+  const vacio = (k) => (BLANK[k] === undefined ? "" : clone(BLANK[k]));
+  const ligar = (st, id) => {
+    if (!SH.length) return;
+    const k = claveDe(st, id); let b = db.porEmpresa[k];
+    if (!b) b = db.porEmpresa[k] = {};
+    SH.forEach((f) => { if (b[f] != null) st[f] = b[f]; else b[f] = st[f]; });
+  };
+  const usadas = () => new Set(Object.entries(db.items).map(([i, it]) => claveDe(it.st, i)));
+  const podar = () => { const u = usadas(); Object.keys(db.porEmpresa).forEach((k) => { if (!u.has(k)) delete db.porEmpresa[k]; }); };
+  const recientes = () => Object.entries(db.items).sort((a, b) => (b[1].upd || 0) - (a[1].upd || 0)).map((x) => x[0]);
+  const S = {
+    db, st: null, ejemplo: false, previo: "",
+    persist() { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {} },
+    clave() { return S.ejemplo ? "" : claveDe(S.st, db.actual); },
+    lista() { return Object.entries(db.items).map(([id, it]) => ({ id, clave: claveDe(it.st, id), empresa: it.st.empresa || "", cliente: it.st.cliente || "", upd: it.upd || 0 })).sort((a, b) => b.upd - a.upd); },
+    verEjemplo() { if (!S.ejemplo && db.actual) S.previo = db.actual; S.ejemplo = true; db.actual = ""; S.persist(); S.st = clone(EX); },
+    volver() { const id = S.previo && db.items[S.previo] ? S.previo : recientes()[0]; if (id) S.abrir(id); else S.nueva(false); },
+    tocar() { const it = db.items[db.actual]; if (!S.ejemplo && it && it.nuevo) { delete it.nuevo; S.persist(); } },
+    nueva(copiar) {
+      const id = "a" + Date.now() + Math.floor(Math.random() * 1000);
+      let st = clone(BLANK);
+      if (copiar && !S.ejemplo && S.st) { st = clone(S.st); PROPIO.forEach((k) => (st[k] = vacio(k))); }
+      db.items[id] = copiar ? { st, upd: Date.now() } : { st, upd: Date.now(), nuevo: true }; db.actual = id; S.ejemplo = false; S.st = st; ligar(st, id); S.persist();
+    },
+    abrir(id) { const it = db.items[id]; if (!it) return S.volver(); S.ejemplo = false; db.actual = id; S.st = it.st; ligar(S.st, id); S.persist(); },
+    borrar(id) { delete db.items[id]; podar(); if (S.previo === id) S.previo = ""; if (db.actual === id) { db.actual = ""; S.previo = ""; S.volver(); } S.persist(); },
+    guardar() { if (S.ejemplo) return; const it = db.items[db.actual]; if (!it) return; it.upd = Date.now(); S.persist(); },
+    // Cambió el nombre de la empresa: el histórico de la empresa anterior nunca pasa a otra empresa
+    cambioEmpresa(k0) {
+      if (S.ejemplo || !SH.length || !k0) return false;
+      const id = db.actual, k = claveDe(S.st, id); if (k === k0) return false;
+      const otros = Object.entries(db.items).some(([i, it]) => i !== id && claveDe(it.st, i) === k0);
+      const nuevo = db.porEmpresa[k];
+      if (nuevo) SH.forEach((f) => { if (nuevo[f] == null) nuevo[f] = otros ? vacio(f) : S.st[f]; else if (!otros) fusionar(nuevo[f], S.st[f]); S.st[f] = nuevo[f]; });
+      else { const b = {}; SH.forEach((f) => { b[f] = otros ? vacio(f) : S.st[f]; S.st[f] = b[f]; }); db.porEmpresa[k] = b; }
+      podar(); S.persist(); return true;
+    },
+    // Copia de seguridad: los análisis de la empresa abierta y su histórico
+    exportar() {
+      if (S.ejemplo) return null;
+      const k = S.clave(), items = {}, pe = {};
+      Object.entries(db.items).forEach(([i, it]) => { if (claveDe(it.st, i) === k) items[i] = it; });
+      if (db.porEmpresa[k]) pe[k] = db.porEmpresa[k];
+      return { app: "ruta-cch", herramienta: KEY, version: 2, fecha: new Date().toISOString(), empresa: S.st.empresa || "", items, porEmpresa: pe };
+    },
+    importar(o) {
+      if (o && o.st && !o.app) { const i = "a" + Date.now(); o = { app: "ruta-cch", herramienta: KEY, items: { [i]: { st: o.st, upd: Date.now() } }, porEmpresa: o.comp ? { [claveDe(o.st, i)]: o.comp } : {} }; } // copia en texto de la versión anterior
+      if (!o || o.app !== "ruta-cch") throw new Error("formato");
+      if (o.herramienta !== KEY) throw new Error("otra");
+      const ids = Object.keys(o.items || {}).filter((i) => o.items[i] && o.items[i].st);
+      if (!ids.length) throw new Error("vacia");
+      ids.forEach((i) => { const it = o.items[i]; MIG(it.st); const ya = db.items[i]; if (!ya || (it.upd || 0) > (ya.upd || 0)) db.items[i] = { st: it.st, upd: it.upd || Date.now() }; });
+      Object.entries(o.porEmpresa || {}).forEach(([k, b]) => { if (!b) return; MIG(b); if (db.porEmpresa[k]) fusionar(db.porEmpresa[k], b); else db.porEmpresa[k] = b; });
+      ids.sort((a, b) => (o.items[b].upd || 0) - (o.items[a].upd || 0));
+      S.abrir(ids[0]);
+      return ids.length;
+    },
+    borrarTodo() { try { localStorage.removeItem(KEY); } catch (e) {} db.items = {}; db.porEmpresa = {}; db.actual = ""; S.previo = ""; S.ejemplo = false; S.nueva(false); },
+  };
+  if (db.actual && db.items[db.actual]) S.abrir(db.actual); else S.volver(); // arranca en blanco; el ejemplo se ve con «Ver ejemplo»
+  podar(); S.persist();
+  return S;
+}
+function fechaCorta(t) { try { return new Date(t).toLocaleDateString("es-CO", { day: "numeric", month: "short", year: "numeric" }); } catch (e) { return ""; } }
+
+// Encabezado común: empresa, producto, cliente potencial, y la lista de análisis guardados
+function setupShell(S, onOpen) {
+  const sheet = $("#sheet");
+  const paintHeader = () => { $("#banner").hidden = !S.ejemplo; $("#b-copia").hidden = S.ejemplo; $("#b-verej").hidden = S.ejemplo; };
+  const abrirListo = () => { sheet.hidden = true; paintHeader(); onOpen(); window.scrollTo({ top: 0 }); };
+  const fila = (e) => `<div class="row item${!S.ejemplo && e.id === S.db.actual ? " on" : ""}" data-row="${e.id}">
+      <button class="open" data-open="${e.id}" type="button"><b>${esc(e.cliente || "Sin cliente potencial")}</b><small>${esc(fechaCorta(e.upd))}${!S.ejemplo && e.id === S.db.actual ? " · abierto" : ""}</small></button>
+      <button class="x" data-del="${e.id}" type="button" aria-label="Borrar este análisis">×</button></div>`;
+  const listar = () => {
+    const L = S.lista(), G = new Map();
+    L.forEach((e) => { if (!G.has(e.clave)) G.set(e.clave, { nombre: e.empresa, items: [] }); G.get(e.clave).items.push(e); });
+    $("#lista").innerHTML = L.length ? [...G.values()].map((g) => `<div class="grupo"><p class="gtitle">${esc(g.nombre || "Sin nombre de empresa")}</p><div class="group">${g.items.map(fila).join("")}</div></div>`).join("")
+      : `<div class="group"><div class="row"><span class="l" style="color:var(--muted)">Todavía no hay análisis guardados en este aparato.</span></div></div>`;
+    $$("[data-open]", sheet).forEach((b) => (b.onclick = () => { S.abrir(b.dataset.open); abrirListo(); }));
+    $$("[data-del]", sheet).forEach((b) => (b.onclick = () => {
+      const row = b.closest(".item"), id = b.dataset.del;
+      row.innerHTML = `<span class="l">¿Borrar este análisis? No se puede recuperar.</span><span class="r"><button class="btn danger" type="button" data-si>Borrar</button><button class="btn" type="button" data-no>No</button></span>`;
+      $("[data-si]", row).onclick = () => { const era = !S.ejemplo && S.db.actual === id; S.borrar(id); listar(); if (era) { paintHeader(); onOpen(); } };
+      $("[data-no]", row).onclick = listar;
+    }));
+  };
+  $("#b-empresas").onclick = () => { listar(); bkMsg(""); sheet.hidden = false; };
+  $("#b-cerrar").onclick = () => (sheet.hidden = true);
+  sheet.onclick = (e) => { if (e.target === sheet) sheet.hidden = true; };
+  const nueva = (copiar) => { S.nueva(copiar); abrirListo(); const f = $(copiar ? "#f-cliente" : "#f-empresa"); if (f) f.focus(); };
+  $("#b-nueva").onclick = () => nueva(false);
+  $("#b-volver").onclick = () => { S.volver(); abrirListo(); };
+  $("#b-verej").onclick = () => { S.verEjemplo(); abrirListo(); };
+  // Un análisis en blanco cuenta como suyo apenas escriba o marque algo
+  const marcar = (e) => { if (S.ejemplo) return; const t = e.target; if (!t || !t.closest || t.closest("#sheet, nav.tabs, .toprow, .banner, .next")) return; if (e.type === "click" && !t.closest("button, [role=checkbox]")) return; S.tocar(); };
+  document.addEventListener("input", marcar, true); document.addEventListener("click", marcar, true);
+  $("#b-copia").onclick = () => nueva(true);
+  $("#b-ejemplo").onclick = () => { S.verEjemplo(); abrirListo(); };
+  // Si cambia el nombre de la empresa, cada empresa conserva su propio histórico
+  const fe = $("#f-empresa"); let k0 = "";
+  if (fe) { fe.addEventListener("focus", () => { k0 = S.clave(); }); fe.addEventListener("change", () => { if (S.cambioEmpresa(k0)) onOpen(); k0 = S.clave(); }); }
+  // Copia de seguridad en un archivo; en texto si el aparato no deja descargar
+  const bkMsg = (t) => setText("bk-msg", t);
+  const leer = (o) => {
+    try { const n = S.importar(o); $("#bk-txt").hidden = true; $("#b-bk-ok").hidden = true; abrirListo(); listar(); bkMsg(n === 1 ? "Se recuperó 1 análisis." : `Se recuperaron ${n} análisis.`); sheet.hidden = false; }
+    catch (err) { bkMsg(err && err.message === "otra" ? "Esa copia es de la otra herramienta. Ábrala allá." : "Esa copia no se pudo leer."); }
+  };
+  const gb = $("#b-bk-guardar");
+  gb.hidden = ENMARCADO; listoDescargas.then((okd) => { gb.hidden = !okd; });
+  gb.onclick = async () => {
+    const o = S.exportar(); if (!o) { bkMsg("Abra primero uno de sus análisis."); return; }
+    const nombre = nombreArchivo(`Copia ${document.title} ${o.empresa || "sin nombre"} ${fechaArchivo()}`, "json");
+    if (await guardarArchivo(nombre, new Blob([JSON.stringify(o)], { type: "application/json" }), bkMsg)) bkMsg("Copia guardada. Déjela en su correo o en una carpeta donde no se pierda.");
+  };
+  const fi = $("#bk-file");
+  $("#b-bk-abrir").onclick = () => { fi.value = ""; fi.click(); };
+  fi.onchange = () => {
+    const f = fi.files && fi.files[0]; if (!f) return;
+    const r = new FileReader();
+    r.onload = () => { let o = null; try { o = JSON.parse(String(r.result)); } catch (e) { bkMsg("Esa copia no se pudo leer."); return; } leer(o); };
+    r.onerror = () => bkMsg("Esa copia no se pudo leer.");
+    r.readAsText(f);
+  };
+  $("#b-bk-copiar").onclick = () => {
+    const o = S.exportar(); if (!o) { bkMsg("Abra primero uno de sus análisis."); return; }
+    const code = "RC2:" + btoa(unescape(encodeURIComponent(JSON.stringify(o))));
+    const done = () => bkMsg("Copia copiada. Péguela en un correo para usted mismo.");
+    const fb = () => { const ta = $("#bk-txt"); ta.hidden = false; ta.value = code; ta.select(); bkMsg("Seleccione el texto y cópielo."); };
+    try { navigator.clipboard.writeText(code).then(done, fb); } catch (err) { fb(); }
+  };
+  $("#b-bk-pegar").onclick = () => { const ta = $("#bk-txt"); ta.hidden = false; ta.value = ""; ta.focus(); $("#b-bk-ok").hidden = false; bkMsg("Pegue aquí el texto de la copia y toque «Recuperar»."); };
+  $("#b-bk-ok").onclick = () => {
+    let o = null;
+    try { const raw = $("#bk-txt").value.trim().replace(/^(AN1|RC2):/, ""); o = JSON.parse(decodeURIComponent(escape(atob(raw)))); }
+    catch (err) { bkMsg("Ese texto no se pudo leer. Copie el texto completo."); return; }
+    leer(o);
+  };
+  // Borrar todo lo de este aparato
+  const bt = $("#b-borrar-todo");
+  bt.onclick = () => {
+    const box = $("#borrar-todo"), antes = box.innerHTML;
+    box.innerHTML = `<span class="l">¿Borrar todos los análisis guardados en este aparato? No se pueden recuperar, salvo con una copia.</span><span class="r" style="justify-content:flex-start"><button class="btn danger" type="button" data-si>Borrar todo</button><button class="btn" type="button" data-no>No</button></span>`;
+    $("[data-si]", box).onclick = () => { S.borrarTodo(); box.innerHTML = antes; setupBorrar(); listar(); paintHeader(); onOpen(); bkMsg("Se borró todo lo de este aparato."); };
+    $("[data-no]", box).onclick = () => { box.innerHTML = antes; setupBorrar(); };
+  };
+  const setupBorrar = () => { $("#b-borrar-todo").onclick = bt.onclick; };
+  paintHeader();
+}
+
+// Encabezado de la ficha: cliente potencial y fecha
+function fichaCliente(S) {
+  const c = S.st.cliente;
+  $("#ficha-cli").innerHTML = c ? `Cliente potencial: <b>${esc(c)}</b>` : `Cliente potencial: <span style="color:var(--muted)">escríbalo arriba</span>`;
+  setText("ficha-sub", S.ejemplo ? "Ejemplo: Café Ejemplo S.A.S., con datos inventados." : "Análisis del " + hoyLargo() + ".");
+}
+
+// Listas que crecen: botón «+» y «×» para quitar
+function listaEditable(arr, min, max, nuevo, rebuild, btnId) {
+  const b = document.getElementById(btnId);
+  if (b) { b.hidden = arr.length >= max; b.onclick = () => { if (arr.length < max) { arr.push(nuevo()); rebuild(); } }; }
+  return (i) => { if (arr.length > min) { arr.splice(i, 1); rebuild(); } };
+}
+
+// Escala de rojo a verde: dónde queda un número. dir "hi": más es mejor; "lo": menos es mejor
+function escala(v, min, max, a, g, dir) {
+  if (!ok(v) || !ok(a) || !ok(g)) return null;
+  const pos = (x) => { const t = (x - min) / (max - min); return Math.max(0, Math.min(1, dir === "hi" ? t : 1 - t)); };
+  return { p: pos(v), a: pos(a), g: pos(g) };
+}
+function escalaHTML(e) {
+  if (!e) return "";
+  const w = (x) => (x * 100).toFixed(1) + "%";
+  return `<span class="gauge" aria-hidden="true"><i data-c="R" style="width:${w(e.a)}"></i><i data-c="A" style="width:${w(e.g - e.a)}"></i><i data-c="V" style="width:${w(1 - e.g)}"></i><b style="left:${w(e.p)}"></b></span>`;
+}
+// Ficha: una tarjeta por indicador, con su escala de rojo a verde
+function fichaTiles(defs, c1, c2) {
+  return defs.map((d) => {
+    const a = d.f(c1), b = c2 ? d.f(c2) : null;
+    const dt = (x, L) => d.neutral ? "" : `<span class="dot${L ? " L" : ""}" data-c="${x[0]}"></span>`;
+    const ga = d.g && a[0] ? escalaHTML(d.g(c1)) : "";
+    if (!b) return `<div class="tile"><span class="k">${esc(d.k)}</span><span class="v${String(a[1]).length > 22 ? " long" : ""}">${dt(a, 1)}${esc(a[1])}</span>${ga}${a[2] ? `<span class="s">${esc(a[2])}</span>` : ""}</div>`;
+    return `<div class="tile"><span class="k">${esc(d.k)}</span><div class="cmp"><span class="w">Antes</span><b>${dt(a)}${esc(a[1])}</b><span class="w">Ahora</span><b>${dt(b)}${esc(b[1])}</b></div>${b[2] ? `<span class="s">${esc(b[2])}</span>` : ""}</div>`;
+  }).join("");
+}
+function fichaTexto(titulo, st, defs, c1, c2, extra) {
+  const L = [titulo, `Empresa: ${st.empresa || "—"} · Producto: ${st.producto || "—"}`, `Cliente potencial: ${st.cliente || "—"}`, ""];
+  defs.forEach((d) => {
+    const a = d.f(c1), b = c2 ? d.f(c2) : null;
+    const e = (x) => d.neutral ? "•" : (EMO[x[0]] || "⚪");
+    L.push(b ? `${d.k}: antes ${e(a)} ${a[1]} → ahora ${e(b)} ${b[1]}` : `${e(a)} ${d.k}: ${a[1]}${a[2] ? " (" + a[2] + ")" : ""}`);
+  });
+  if (extra) L.push("", extra);
+  const ri = resumenFicha(defs, c1); if (ri.ind != null) L.splice(4, 0, `Índice de preparación: ${ri.ind} de 100`, "");
+  L.push("", "Análisis propio con los datos escritos por la empresa. No es una recomendación.");
+  return L.join("\n");
+}
+
+function resumenFicha(defs, c) {
+  const col = defs.filter((d) => !d.neutral).map((d) => [d, d.f(c)[0]]);
+  const n = { V: 0, A: 0, R: 0 }; col.forEach(([, x]) => { if (n[x] !== undefined) n[x]++; });
+  const rojos = col.filter((x) => x[1] === "R").map((x) => x[0].k.toLowerCase());
+  const faltan = col.filter((x) => !x[1]).map((x) => x[0].k.toLowerCase());
+  const tot = n.V + n.A + n.R, partes = [];
+  if (tot) partes.push(`De ${tot} números: ${n.V} en verde, ${n.A} en amarillo y ${n.R} en rojo.`);
+  if (rojos.length) partes.push("En rojo: " + rojos.join(", ") + ".");
+  if (faltan.length) partes.push("Sin datos todavía: " + faltan.join(", ") + ".");
+  // Índice de preparación: verde 100, amarillo 50, rojo 0; sale cuando hay datos en al menos 6 de cada 10 números
+  const ind = col.length && tot / col.length >= 0.6 ? Math.round((n.V * 100 + n.A * 50) / tot) : null;
+  return { n, tot, ind, c: n.R ? "R" : n.A ? "A" : tot ? "V" : "", text: partes.join(" ") || "Complete las secciones para ver su ficha." };
+}
+const NOTA_IND = "Verde vale 100, amarillo 50 y rojo 0. Sirve para compararse consigo mismo con el tiempo, no con otras empresas.";
+function resumenHTML(rs) {
+  const bar = rs.tot ? `<div class="mix" role="img" aria-label="${rs.n.V} en verde, ${rs.n.A} en amarillo y ${rs.n.R} en rojo">${["R", "A", "V"].map((k) => (rs.n[k] ? `<i data-c="${k}" style="flex:${rs.n[k]}"><span>${rs.n[k]}</span></i>` : "")).join("")}</div>` : "";
+  const ci = rs.ind == null ? "" : rs.ind >= 70 ? "V" : rs.ind >= 40 ? "A" : "R";
+  const ind = `<div class="ind"><div class="ik"><span class="k">Índice de preparación</span><b data-c="${ci}">${rs.ind == null ? "—" : rs.ind}<small> de 100</small></b></div>${rs.ind == null ? "<p>Sale cuando complete más números.</p>" : ""}</div>`;
+  return `${ind}<span class="k">Su ficha en un vistazo</span>${bar}<p>${esc(rs.text)}</p>`;
+}
+
+const AVISO = "Herramienta de análisis para uso propio. Los resultados salen solo de los datos que usted escribe y sirven para entender su operación. No son una recomendación de vender, comprar, invertir, contratar ni fijar un precio: cada decisión es de su empresa. Lo que escribe se guarda solo en este aparato. Disponible hasta el " + FIN + "; antes de esa fecha, guarde su ficha en PDF y una copia de sus datos.";
+
+// Mi ruta para exportar · herramienta única de la Ruta (v11): 4 partes que se llenan en orden
+const KEY = "analisis:ruta:v1";
+Object.assign(UNIDADES, {
+  lb: { abbr: "lb", uno: "libra", unos: "libras", Uno: "Libra", Unos: "Libras", art: "una libra", Art: "Una libra", libra: false },
+  litros: { abbr: "L", uno: "litro", unos: "litros", Uno: "Litro", Unos: "Litros", art: "un litro", Art: "Un litro", libra: false },
+});
+const paso = (n = "", c = "", r = "", max = "") => ({ n, c, r, max });
+const linea = (n = "", v = "", m = "u") => ({ n, v, m });
+const op = (n = "", v = "", d = "") => ({ n, v, d });
+const ext = (n = "", v = "") => ({ n, v });
+const escV = (t) => Object.assign({ q: "", mon: "usd", ops: [op(), op(), op()], ext: [] }, t ? { t } : {});
+
+// Pasos típicos por producto (se pueden cambiar)
+const MODELOS = {
+  "Café verde": { u: "kg", mp: "Café pergamino seco", mpU: "carga", pasos: ["Recibir y pesar el pergamino", "Trillar", "Seleccionar", "Empacar en sacos"] },
+  "Café tostado": { u: "unidades", mp: "Café pergamino seco", mpU: "carga", pasos: ["Recibir y seleccionar", "Trillar", "Tostar", "Moler y empacar"] },
+  "Panela": { u: "kg", mp: "Caña", mpU: "tonelada", pasos: ["Cortar y llevar la caña", "Moler", "Evaporar en la hornilla", "Moldear y empacar"] },
+  "Cacao": { u: "kg", mp: "Cacao en baba", mpU: "kg", pasos: ["Recibir el cacao en baba", "Fermentar", "Secar", "Seleccionar"] },
+  "Miel": { u: "kg", mp: "Miel en panal", mpU: "kg", pasos: ["Cosechar los panales", "Extraer", "Filtrar y madurar", "Envasar"] },
+  "Pescado": { u: "kg", mp: "Pescado entero", mpU: "kg", pasos: ["Cosechar", "Sacrificar y eviscerar", "Filetear", "Congelar y empacar"] },
+  "Tabaco": { u: "kg", mp: "Hoja de tabaco", mpU: "kg", pasos: ["Cosechar", "Curar", "Fermentar", "Clasificar y enfardar"] },
+  "Confección": { u: "prendas", mp: "Tela", mpU: "metro", pasos: ["Cortar", "Coser", "Terminar y revisar", "Planchar, etiquetar y empacar"] },
+  "Otro": { u: null, mp: "", mpU: "kg", pasos: ["", "", "", ""] },
+};
+// Sugerencias de costos por capítulo: la ruta práctica de lo que debe tener claro
+const SUG = {
+  1: ["Mano de obra de producción", "Jornales", "Plántulas o semillas", "Abonos e insumos", "Energía y gas", "Agua", "Maquila o servicio de terceros", "Transporte de la materia prima", "Mantenimiento de máquinas", "Control de calidad"],
+  2: ["Su propio sueldo", "Personal administrativo", "Contador", "Arriendo", "Servicios públicos", "Internet y teléfono", "Impuestos (ICA, predial, 4 x 1.000)", "Registros y certificaciones", "Software y papelería", "Desgaste de equipos"],
+  3: ["Empaque (bolsa, frasco o saco)", "Etiqueta", "Caja máster", "Cinta y sellos", "Mano de obra de alistamiento", "Marcación de cajas"],
+};
+const MES = new Set(["Mano de obra de producción", "Jornales", "Energía y gas", "Agua", "Mantenimiento de máquinas", "Control de calidad", "Mano de obra de alistamiento"]);
+const CAPN = { 1: "Productivos", 2: "Administrativos y tributarios", 3: "Alistamiento y embalaje" };
+const EXTRAS = ["Transporte terrestre", "Cargue y descargue", "Agencia de aduanas", "Póliza de seguro", "Estiba y embalaje del palet", "Certificados y documentos", "Otro"];
+const ESC = {
+  A: { nm: "Cajas", sb: "Pocas cajas por courier, puerta a puerta", q: "¿Cuántas cajas?", qu: "cajas" },
+  B: { nm: "Palet", sb: "Uno o varios palets, aéreo o marítimo", q: "¿Cuántos palets?", qu: "palets" },
+  C: { nm: "Contenedor", sb: "Contenedor completo de 20 o 40 pies", q: "¿Cuántos contenedores?", qu: "contenedores" },
+};
+const INCOS = [
+  ["EXW", "En su bodega", "El cliente recoge y pone todo el transporte."],
+  ["FCA", "Al transportador", "Entrega al transportador del cliente, con la exportación hecha."],
+  ["FOB", "A bordo en Colombia", "Entrega la carga subida al barco, en el puerto de salida."],
+  ["CIF", "Puerto del cliente", "Paga el flete y el seguro hasta el puerto de destino."],
+  ["DAP", "Puerta del cliente", "La lleva hasta el cliente, sin pagar los impuestos de allá."],
+  ["DDP", "Puerta, con impuestos", "La lleva hasta el cliente y paga los impuestos de allá."],
+];
+const INCO_C = { EXW: "V", FCA: "V", FOB: "V", CIF: "A", DAP: "A", DDP: "R" };
+const INCO_T = {
+  EXW: "Su responsabilidad termina en su bodega.",
+  FCA: "Su responsabilidad termina al entregar la carga al transportador del cliente, en Colombia.",
+  FOB: "Su responsabilidad termina cuando la carga sube al barco en Colombia.",
+  CIF: "Paga el flete y el seguro hasta el puerto del cliente: más costos a su cargo, aunque el riesgo pasa al cliente al cargar.",
+  DAP: "Responde por la carga hasta la puerta del cliente.",
+  DDP: "Responde hasta la puerta del cliente y además paga los impuestos de importación de allá.",
+};
+const PAGO = {
+  ant: ["V", "Anticipado", "Le pagan antes de despachar: no pone plata ni corre riesgo de no pago."],
+  "5050": ["V", "50 % de anticipo", "La mitad llega antes de producir: cubre buena parte del costo."],
+  cc: ["V", "Carta de crédito", "Un banco garantiza el pago si usted cumple con los documentos."],
+  doc: ["A", "Contra documentos", "Le pagan cuando el cliente recibe los documentos: hay riesgo si no los recoge."],
+  "30": ["A", "A 30 días", "Pone la plata del pedido y espera un mes para recuperarla."],
+  "60": ["A", "A 60 días", "Pone la plata del pedido y espera dos meses para recuperarla."],
+  "90": ["R", "A 90 días o más", "La plata del pedido queda afuera tres meses o más."],
+  cons: ["R", "En consignación", "Le pagan solo cuando el cliente venda: el riesgo de no venta es suyo."],
+};
+const FRECN = { "0": "una sola vez", "2": "cada 15 días", "1": "cada mes", "0.5": "cada 2 meses", "0.333": "cada 3 meses" };
+const FAC = { kg: 1, lb: 0.5, arroba: 12.5, carga: 125, tonelada: 1000 }; // en kilos
+const MPU_N = { kg: "kilo", lb: "libra", arroba: "arroba", carga: "carga", tonelada: "tonelada", litro: "litro", metro: "metro", unidad: "unidad" };
+const BANDA = { r: 0.15, v: 0.25 }; // margen de referencia: rojo por debajo de 15 %, verde desde 25 %
+const DOLAR_EJ = 3162.35; // TRM del 29 de octubre de 2026, solo si no se puede traer la de hoy en el ejemplo
+const REF = "Valores aproximados de referencia (octubre de 2026). Cada empresa debe pedir sus propias cotizaciones.";
+
+const EX = {
+  empresa: "Café Ejemplo S.A.S.", producto: "Café tostado en grano, bolsa de 340 g", cliente: "Importador en Miami", unidad: "unidades",
+  modelo: "Café tostado", origen: "compra", mpModo: "directo", mpDirecto: 8241, mpNombre: "Café pergamino seco", mpU: "carga", mpCosto: 2000000, contenido: 0.34, produce: 2000,
+  pasos: [paso("Recibir y seleccionar", 60, 98, 9000), paso("Trillar", 210, 81, 6000), paso("Tostar", 1050, 84, 3000), paso("Moler y empacar", 380, 99, 4500)],
+  cap1: [linea("Mano de obra de producción", 3000000, "m"), linea("Control de calidad", 120000, "m")],
+  cap2: [linea("Su propio sueldo", 2500000, "m"), linea("Contador", 600000, "m"), linea("Arriendo", 1200000, "m"), linea("Servicios públicos", 350000, "m"), linea("Impuestos (ICA, predial, 4 x 1.000)", 250000, "m"), linea("Registros y certificaciones", 150000, "m")],
+  cap3: [linea("Empaque (bolsa, frasco o saco)", 900), linea("Etiqueta", 250), linea("Caja máster", 200), linea("Mano de obra de alistamiento", 300000, "m")],
+  emp: { cajaU: 15, paletC: 81, c20: 10, c40: 22 },
+  esc: {
+    A: { q: 10, mon: "usd", ops: [op("Operador 1", 760, 4), op("Operador 2", 820, 3), op("Operador 3", 700, 6)], ext: [] },
+    B: { q: 1, mon: "usd", ops: [op("Operador 1 · aéreo desde Bogotá", 3050, 6), op("Operador 2 · aéreo desde Bogotá", 3400, 4), op("Operador 3 · aéreo consolidado", 2850, 8)], ext: [ext("Transporte terrestre", 420), ext("Agencia de aduanas", 230), ext("Póliza de seguro", 70)] },
+    C: { q: 1, t: "40", mon: "usd", ops: [op("Operador 1 · desde Cartagena", 3400, 7), op("Operador 2 · desde Cartagena", 3150, 12), op("Operador 3 · desde Cartagena", 3700, 6)], ext: [ext("Transporte terrestre", 2800), ext("Cargue y descargue", 250), ext("Agencia de aduanas", 380), ext("Póliza de seguro", 480)] },
+  },
+  escUso: "B",
+  margen: 25, dolar: "", sim: "", colchon: 3, vig: "15",
+  inco: "DAP", precioCli: 8.6, pedido: 1215, frec: "0.5", plazo: 30, pago: "5050", logU: "",
+};
+const BLANK = {
+  empresa: "", producto: "", cliente: "", unidad: "kg", modelo: "", origen: "", mpModo: "directo", mpDirecto: "", mpNombre: "", mpU: "kg", mpCosto: "", contenido: "", produce: "",
+  pasos: Array.from({ length: 4 }, () => paso()), cap1: [], cap2: [linea("Su propio sueldo", "", "m")], cap3: [],
+  emp: { cajaU: "", paletC: "", c20: "", c40: "" }, esc: { A: escV(), B: escV(), C: escV("40") }, escUso: "",
+  margen: "", dolar: "", sim: "", colchon: "", vig: "",
+  inco: "", precioCli: "", pedido: "", frec: "", plazo: "", pago: "", logU: "",
+};
+const S = makeStore(KEY, EX, BLANK, { propio: ["cliente", "inco", "precioCli", "pedido", "frec", "plazo", "pago", "logU"] });
+
+// ---------- Dólar oficial (TRM) de datos abiertos ----------
+const TRM = { ok: false, serie: [], hoy: null, err: false };
+const hoyISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
+const masDias = (iso, n) => { const d = new Date(iso + "T12:00:00"); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
+const fechaL = (iso) => { try { return new Date(iso + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return iso; } };
+function rango(desde) {
+  const xs = TRM.serie.filter((x) => x.h >= desde && x.d <= hoyISO()).map((x) => x.v);
+  if (!xs.length) return null;
+  const mn = Math.min(...xs), mx = Math.max(...xs);
+  return { mn, mx, mov: (mx - mn) / mx };
+}
+async function traerTRM() {
+  try {
+    const r = await fetch("https://www.datos.gov.co/resource/32sa-8pi3.json?$order=vigenciadesde%20DESC&$limit=60");
+    if (!r.ok) throw new Error("http");
+    const j = await r.json();
+    TRM.serie = j.map((x) => ({ v: Number(x.valor), d: String(x.vigenciadesde).slice(0, 10), h: String(x.vigenciahasta).slice(0, 10) })).filter((x) => ok(x.v) && x.v > 0).reverse();
+    const h = hoyISO();
+    TRM.hoy = TRM.serie.find((x) => x.d <= h && x.h >= h) || TRM.serie.filter((x) => x.d <= h).pop() || TRM.serie[TRM.serie.length - 1];
+    TRM.ok = !!TRM.hoy;
+    TRM.r7 = rango(masDias(h, -7)); TRM.r30 = rango(masDias(h, -30));
+  } catch (e) { TRM.err = true; }
+  render();
+}
+
+// ---------- Cálculos ----------
+const z = (x) => (ok(N(x)) ? N(x) : 0);
+const contDefault = (s) => {
+  const peso = s.mpU in FAC;
+  if (peso && s.unidad === "kg") return 1;
+  if (peso && s.unidad === "lb") return 0.4536;
+  if (s.mpU === "litro" && s.unidad === "litros") return 1;
+  return NaN;
+};
+function calc(s) {
+  const c = { s }, u = U(s);
+  // Parte 1 · materia prima, proceso, merma y cuello
+  c.prod = N(s.produce);
+  c.peso = s.mpU in FAC;
+  c.mpBase = N(s.mpCosto) / (FAC[s.mpU] || 1);
+  c.contU = c.peso ? "kg" : s.mpU === "unidad" ? "unidades" : s.mpU === "metro" ? "metros" : "litros";
+  c.cont = ok(N(s.contenido)) && N(s.contenido) > 0 ? N(s.contenido) : contDefault(s);
+  const pasos = (s.pasos || []).map((p, i) => ({ i, n: p.n, nm: p.n || "Paso " + (i + 1), cu: N(p.c), rr: N(p.r), r: ok(N(p.r)) && N(p.r) > 0 && N(p.r) <= 100 ? N(p.r) / 100 : 1, mx: N(p.max) }));
+  c.pasos = pasos.filter((p) => p.n || ok(p.cu) || ok(p.rr) || ok(p.mx));
+  let f = 100; c.flow = c.pasos.map((p) => { const ent = f; f = f * p.r; return Object.assign({}, p, { ent, sal: f }); });
+  c.llega = f; c.rend = f / 100;
+  c.modo = s.mpModo === "calculo" ? "calculo" : "directo";
+  c.hayMerma = c.pasos.some((p) => p.r < 1);
+  if (c.modo === "directo") {
+    // Ya conoce el costo de la materia prima de cada unidad final: la merma ya va adentro
+    c.mpPorU = NaN; c.costoMP = N(s.mpDirecto); c.costoMerma = c.costoMP * (1 - c.rend);
+  } else {
+    c.mpPorU = c.cont / c.rend; c.costoMP = c.mpBase * c.mpPorU; c.costoMerma = c.mpBase * c.cont * (1 / c.rend - 1);
+  }
+  c.hayPasosC = c.pasos.some((p) => ok(p.cu));
+  c.pasosU = c.pasos.reduce((a, p) => a + (ok(p.cu) ? p.cu : 0), 0);
+  const perU = (l) => { const v = N(l.v); if (!ok(v)) return NaN; return l.m === "m" ? v / c.prod : v; };
+  [1, 2, 3].forEach((k) => {
+    const L = (s["cap" + k] || []).map((l, i) => Object.assign({}, l, { i, pu: perU(l) }));
+    c["L" + k] = L; c["x" + k] = L.reduce((a, l) => a + (ok(l.pu) ? l.pu : 0), 0);
+    c["h" + k] = L.some((l) => ok(l.pu));
+  });
+  c.faltaProd = [1, 2, 3].some((k) => (s["cap" + k] || []).some((l) => l.m === "m" && ok(N(l.v)))) && !(ok(c.prod) && c.prod > 0);
+  c.c1 = (ok(c.costoMP) ? c.costoMP : 0) + c.pasosU + c.x1; c.c2 = c.x2; c.c3 = c.x3;
+  c.hayCosto = ok(c.costoMP) || c.hayPasosC || c.h1 || c.h2 || c.h3;
+  c.costo = c.hayCosto && !c.faltaProd ? c.c1 + c.c2 + c.c3 : NaN;
+  const conMax = c.pasos.filter((p) => ok(p.mx) && p.mx > 0);
+  c.techo = conMax.length ? Math.min(...conMax.map((p) => p.mx)) : NaN;
+  c.maxMx = conMax.length ? Math.max(...conMax.map((p) => p.mx)) : NaN;
+  c.cuello = conMax.find((p) => p.mx === c.techo) || null;
+  c.uso = c.prod / c.techo; c.cUso = c.uso > 1 ? "R" : hi(c.uso, 0.6, 0.4);
+  c.libre = Math.max(0, c.techo - c.prod);
+  c.peor = c.flow.length ? c.flow.reduce((a, p) => ((p.ent - p.sal) > (a.ent - a.sal) ? p : a)) : null;
+  const items = [];
+  if (ok(c.costoMP)) items.push({ k: "Materia prima" + (s.mpNombre ? " · " + s.mpNombre.toLowerCase() : ""), v: c.costoMP, cap: 1 });
+  c.pasos.forEach((p) => { if (ok(p.cu) && p.cu > 0) items.push({ k: p.nm, v: p.cu, cap: 1 }); });
+  [1, 2, 3].forEach((k) => c["L" + k].forEach((l) => { if (ok(l.pu) && l.pu > 0) items.push({ k: l.n || "Costo sin nombre", v: l.pu, cap: k }); }));
+  c.top = items.sort((a, b) => b.v - a.v).slice(0, 3);
+
+  // Parte 2 · logística
+  const E = s.emp || {};
+  c.cajaU = N(E.cajaU); c.paletC = N(E.paletC); c.c20 = N(E.c20); c.c40 = N(E.c40);
+  c.dolarHoy = TRM.ok ? TRM.hoy.v : S.ejemplo ? DOLAR_EJ : NaN;
+  c.dolar = ok(N(s.dolar)) && N(s.dolar) > 0 ? N(s.dolar) : c.dolarHoy;
+  c.esc = {};
+  ["A", "B", "C"].forEach((k) => {
+    const e = (s.esc && s.esc[k]) || escV(); const q = N(e.q);
+    let cajas = NaN, palets = NaN;
+    if (k === "A") cajas = q;
+    if (k === "B") { palets = q; cajas = q * c.paletC; }
+    if (k === "C") { palets = q * (e.t === "20" ? c.c20 : c.c40); cajas = palets * c.paletC; }
+    const und = cajas * c.cajaU;
+    const extra = (e.ext || []).reduce((a, x) => a + z(x.v), 0);
+    const ops = (e.ops || []).map((o, i) => ({ i, n: o.n || "Operador " + (i + 1), v: N(o.v), d: N(o.d) })).map((o) => Object.assign(o, { tot: ok(o.v) && o.v > 0 ? o.v + extra : NaN }));
+    const val = ops.filter((o) => ok(o.tot));
+    const best = val.length ? val.reduce((a, b) => (b.tot < a.tot ? b : a)) : null;
+    const conD = val.filter((o) => ok(o.d) && o.d > 0);
+    const fast = conD.length ? conD.reduce((a, b) => (b.d < a.d || (b.d === a.d && b.tot < a.tot) ? b : a)) : null;
+    const aUsd = (v) => (e.mon === "cop" ? v / c.dolar : v), aCop = (v) => (e.mon === "cop" ? v : v * c.dolar);
+    const r = { k, q, t: e.t, cajas, palets, und, extra, ops, best, fast, mon: e.mon, aUsd, aCop };
+    r.puUsd = best ? aUsd(best.tot) / und : NaN; r.puCop = best ? aCop(best.tot) / und : NaN;
+    r.fastPuUsd = fast ? aUsd(fast.tot) / und : NaN;
+    c.esc[k] = r;
+  });
+  c.escUso = s.escUso;
+  c.logUsd = c.escUso && c.esc[c.escUso] ? c.esc[c.escUso].puUsd : NaN;
+  c.logCop = c.escUso && c.esc[c.escUso] ? c.esc[c.escUso].puCop : NaN;
+  const pA = c.esc.A.puUsd, pC = c.esc.C.puUsd, pB = c.esc.B.puUsd;
+  const conP = [pA, pB, pC].filter((x) => ok(x) && x > 0);
+  c.ahorro = conP.length >= 2 ? 1 - Math.min(...conP) / Math.max(...conP) : NaN;
+
+  // Parte 3 · precio y dólar
+  c.m = ok(N(s.margen)) ? N(s.margen) / 100 : NaN;
+  c.cM = !ok(c.m) ? "" : c.m >= BANDA.v ? "V" : c.m >= BANDA.r ? "A" : "R";
+  c.pcop = ok(c.m) && c.m < 1 ? c.costo / (1 - c.m) : NaN;
+  c.colchon = ok(N(s.colchon)) ? N(s.colchon) / 100 : 0;
+  c.dCol = c.dolar * (1 - c.colchon);
+  c.pusd = c.pcop / c.dCol;
+  c.deq = c.costo / c.pusd;
+  c.holg = 1 - c.deq / c.dolar;
+  c.mov30 = TRM.r30 ? TRM.r30.mov : NaN; c.mov7 = TRM.r7 ? TRM.r7.mov : NaN;
+  c.umbral = Math.max(0.05, ok(c.mov30) ? c.mov30 : 0.05);
+  c.cHolg = !ok(c.holg) ? "" : c.holg < 0 ? "R" : c.holg < c.umbral ? "A" : "V";
+  c.sim = ok(N(s.sim)) && N(s.sim) > 0 ? N(s.sim) : c.dolar;
+  c.vig = N(s.vig);
+  c.hasta = ok(c.vig) ? masDias(hoyISO(), c.vig) : "";
+  c.movVig = c.vig <= 8 ? c.mov7 : c.mov30;
+  c.cVol = !ok(c.movVig) || !s.colchon && s.colchon !== 0 ? "" : c.colchon >= c.movVig ? "V" : "A";
+
+  // Parte 4 · el cliente
+  c.inco = s.inco;
+  c.logAuto = c.inco === "EXW" ? 0 : c.logUsd;
+  c.logU = ok(N(s.logU)) ? N(s.logU) : c.logAuto;
+  c.costoUsd = c.costo / c.dolar;
+  c.ctot = c.costoUsd + c.logU;
+  c.psu = c.pusd + c.logU;
+  c.pcli = N(s.precioCli);
+  c.mcli = (c.pcli - c.ctot) / c.pcli;
+  c.ped = N(s.pedido);
+  c.frec = s.frec === "" || s.frec == null ? NaN : N(s.frec);
+  c.plazo = ok(N(s.plazo)) && N(s.plazo) > 0 ? N(s.plazo) : 30;
+  c.demMes = c.ped * c.frec;
+  c.puedePlazo = c.libre * c.plazo / 30; c.maxPlazo = c.techo * c.plazo / 30;
+  c.capt = c.costo * c.ped;
+  c.deqCli = c.costo / (c.pcli - c.logU);
+  c.holgCli = 1 - c.deqCli / c.dolar;
+  c.vars = variables(c, u);
+  const col = c.vars.filter((v) => v.c);
+  c.sema = col.some((v) => v.c === "R") ? "R" : col.some((v) => v.c === "A") ? "A" : col.length === c.vars.length ? "V" : col.length ? "P" : "";
+  return c;
+}
+function variables(c, u) {
+  const V = [];
+  const mObj = ok(c.m) ? c.m : BANDA.v;
+  const mObjT = ok(c.m) ? `el ${pct(c.m, 0)} que usted definió en la Parte 3` : `el ${pct(BANDA.v, 0)} de referencia`;
+  // 1 · Precio y margen
+  if (ok(c.pcli) && c.pcli > 0 && ok(c.ctot)) {
+    const cc = c.mcli < 0 ? "R" : c.mcli < mObj ? "A" : "V";
+    V.push({ k: "Precio y margen", c: cc, val: pct(c.mcli, 0), t: pick(cc, `Le deja ${pct(c.mcli, 0)} de cada $100, igual o más que ${mObjT}.`, `Cubre su costo, pero le deja ${pct(c.mcli, 0)}: menos que ${mObjT}.`, `El precio del cliente (${usd(c.pcli)}) no cubre su costo con este Incoterm (${usd(c.ctot)}).`) });
+  } else V.push({ k: "Precio y margen", c: "", val: "—", t: !ok(c.costo) ? "Falta su costo (Parte 1)." : !ok(c.logU) ? "Falta el costo logístico (Parte 2) o el Incoterm." : !ok(c.dolar) ? "Falta el dólar (Parte 3)." : "Falta el precio que pide el cliente." });
+  // 2 · Volumen del pedido frente a la capacidad
+  if (ok(c.ped) && c.ped > 0 && ok(c.techo) && ok(c.prod)) {
+    const cc = c.ped > c.maxPlazo ? "R" : c.ped > c.puedePlazo ? "A" : "V";
+    V.push({ k: "Volumen del pedido", c: cc, val: fmt(c.ped) + " " + u.abbr, t: pick(cc, `Cabe en su espacio libre: en ${fmt(c.plazo)} días puede sacar ${fmt(c.puedePlazo)} ${u.unos} más.`, `En ${fmt(c.plazo)} días le quedan libres ${fmt(c.puedePlazo)} ${u.unos}: para cumplir tiene que producir al máximo o quitarle a otros clientes.`, `Es más de lo que puede producir en ${fmt(c.plazo)} días (${fmt(c.maxPlazo)} ${u.unos}), aun usando toda su capacidad.`) });
+  } else V.push({ k: "Volumen del pedido", c: "", val: "—", t: !ok(c.techo) || !ok(c.prod) ? "Falta su capacidad (Parte 1: lo que produce hoy y el máximo de cada paso)." : "Falta la cantidad por pedido." });
+  // 3 · Recurrencia frente a la capacidad de cada mes
+  if (ok(c.frec) && ok(c.ped) && c.ped > 0 && ok(c.techo) && ok(c.prod)) {
+    const cc = c.frec === 0 ? "V" : c.demMes > c.techo ? "R" : c.demMes > c.libre ? "A" : "V";
+    V.push({ k: "Recurrencia", c: cc, val: c.frec === 0 ? "Una vez" : fmt(c.demMes) + " al mes", t: c.frec === 0 ? "Pedido único: no compromete su producción de los meses siguientes." : pick(cc, `Pedir ${FRECN[String(c.s.frec)] || ""} son ${fmt(c.demMes)} ${u.unos} al mes: caben en su espacio libre (${fmt(c.libre)}).`, `Son ${fmt(c.demMes)} ${u.unos} al mes, más que su espacio libre (${fmt(c.libre)}): tendría que producir cerca del máximo todos los meses.`, `Son ${fmt(c.demMes)} ${u.unos} al mes, más de lo máximo que puede producir (${fmt(c.techo)}).`) });
+  } else V.push({ k: "Recurrencia", c: "", val: "—", t: "Falta cada cuánto pediría." });
+  // 4 · Forma de pago
+  const pg = PAGO[c.s.pago];
+  if (pg) V.push({ k: "Forma de pago", c: pg[0], val: pg[1], t: pg[2] + (ok(c.capt) && ["30", "60", "90", "doc", "cons"].includes(c.s.pago) ? ` Producir este pedido le cuesta ${millones(c.capt)}.` : "") });
+  else V.push({ k: "Forma de pago", c: "", val: "—", t: "Falta la forma de pago." });
+  // 5 · Incoterm
+  if (INCO_C[c.inco]) V.push({ k: "Incoterm", c: INCO_C[c.inco], val: c.inco, t: INCO_T[c.inco] });
+  else V.push({ k: "Incoterm", c: "", val: "—", t: "Falta escoger hasta dónde entrega." });
+  // 6 · Dólar
+  if (ok(c.holgCli) && ok(c.pcli) && c.pcli > (c.logU || 0)) {
+    const cc = c.holgCli < 0 ? "R" : c.holgCli < c.umbral ? "A" : "V";
+    const mv = ok(c.mov30) ? ` En el último mes el dólar se movió ${pct(c.mov30, 1)}.` : "";
+    V.push({ k: "Dólar", c: cc, val: pesos(c.deqCli), t: (cc === "R" ? `Con el dólar de hoy (${pesos(c.dolar)}) ya pierde plata con este precio: su equilibrio es ${pesos(c.deqCli)}.` : `Con este precio pierde plata si el dólar baja de ${pesos(c.deqCli)}: puede bajar ${pct(c.holgCli, 0)} desde ${pesos(c.dolar)}.`) + mv });
+  } else V.push({ k: "Dólar", c: "", val: "—", t: "Sale cuando tenga su costo, el dólar y el precio del cliente." });
+  return V;
+}
+
+// ---------- Construcción de las listas ----------
+const MAXP = 8, MAXL = 14, MAXO = 4, MAXE = 6;
+function buildModelos() {
+  const box = $("#modelos");
+  box.innerHTML = Object.keys(MODELOS).map((m) => `<button class="chip" type="button" data-m="${esc(m)}" aria-pressed="${S.st.modelo === m}">${esc(m)}</button>`).join("");
+  $$("[data-m]", box).forEach((b) => (b.onclick = () => {
+    const m = b.dataset.m, mod = MODELOS[m], s = S.st;
+    const tiene = (s.pasos || []).some((p) => p.n || ok(N(p.c)) || ok(N(p.max)));
+    const aplicar = () => {
+      s.modelo = m; s.pasos = mod.pasos.map((n) => paso(n));
+      if (!s.mpNombre) s.mpNombre = mod.mp;
+      if (!ok(N(s.mpCosto))) s.mpU = mod.mpU;
+      if (mod.u) s.unidad = mod.u;
+      $("#w-modelo").hidden = true; S.guardar(); abrir();
+    };
+    if (!tiene) return aplicar();
+    s.modelo = m; S.guardar(); buildModelos();
+    setText("t-modelo", `¿Cambiar sus pasos por los típicos de ${m.toLowerCase()}? Se borran los que escribió.`);
+    $("#w-modelo").hidden = false;
+    $("#b-modelo-si").onclick = aplicar;
+    $("#b-modelo-no").onclick = () => ($("#w-modelo").hidden = true);
+  }));
+}
+function buildPasos() {
+  const s = S.st, box = $("#pasos"), u = U(s);
+  const quitar = listaEditable(s.pasos, 1, MAXP, () => paso(), () => { buildPasos(); render(); S.guardar(); }, "b-add-paso");
+  box.innerHTML = `<div class="ed-head ed-p"><span></span><span>Paso</span><span>Me cuesta, por ${esc(u.uno)}</span><span>De 100, salen<br><small style="font-weight:500">opcional</small></span><span>Máximo al mes</span><span></span></div>` +
+    s.pasos.map((p, i) => `<div class="ed-row ed-p"><span class="pn">${i + 1}</span><input class="t" data-k="pasos.${i}.n" data-kind="text" placeholder="Nombre del paso" aria-label="Nombre del paso ${i + 1}">
+      <label class="ef"><span class="ml">Me cuesta</span><input class="n" data-k="pasos.${i}.c" inputmode="decimal" aria-label="Costo del paso ${i + 1}"></label>
+      <label class="ef"><span class="ml">De 100, salen</span><input class="n" data-k="pasos.${i}.r" inputmode="decimal" placeholder="—" aria-label="De cada 100 salen, paso ${i + 1} (opcional)"></label>
+      <label class="ef"><span class="ml">Máximo al mes</span><input class="n" data-k="pasos.${i}.max" inputmode="decimal" aria-label="Máximo al mes, paso ${i + 1}"></label>
+      ${s.pasos.length > 1 ? `<button class="x" type="button" data-q="${i}" aria-label="Quitar paso ${i + 1}">×</button>` : "<span></span>"}</div>`).join("");
+  $$("[data-q]", box).forEach((b) => (b.onclick = () => quitar(Number(b.dataset.q))));
+  bindFields(box, s, onChange);
+}
+function buildCap(k) {
+  const s = S.st, key = "cap" + k; s[key] = s[key] || [];
+  const arr = s[key], box = $("#" + key), u = U(s);
+  const reb = () => { buildCap(k); render(); S.guardar(); };
+  box.innerHTML = (arr.length ? `<div class="ed-head ed-l"><span></span><span>Concepto</span><span>Valor</span><span>Se paga</span><span></span></div>` : "") +
+    arr.map((l, i) => `<div class="ed-row ed-l"><span class="pn">·</span><input class="t" data-k="${key}.${i}.n" data-kind="text" placeholder="Ej.: ${esc(SUG[k][i % SUG[k].length])}" aria-label="Concepto">
+      <label class="ef"><span class="ml">Valor</span><input class="n" data-k="${key}.${i}.v" inputmode="decimal" aria-label="Valor"></label>
+      <label class="ef"><span class="ml">Se paga</span><select class="s" data-k="${key}.${i}.m" data-kind="sel" aria-label="Cómo se paga"><option value="u">por ${esc(u.uno)}</option><option value="m">al mes</option></select></label>
+      <button class="x" type="button" data-q="${i}" aria-label="Quitar">×</button></div>`).join("");
+  $$("[data-q]", box).forEach((b) => (b.onclick = () => { arr.splice(Number(b.dataset.q), 1); reb(); }));
+  const add = $(`[data-add="${k}"]`); add.hidden = arr.length >= MAXL;
+  add.onclick = () => { if (arr.length < MAXL) { arr.push(linea("", "", k === 2 ? "m" : "u")); reb(); const ins = $$("input.t", box); if (ins.length) ins[ins.length - 1].focus(); } };
+  const sg = $(`[data-sug="${k}"]`), usados = new Set(arr.map((l) => l.n));
+  sg.innerHTML = `<span class="note">${k === 1 ? "Desde la primera compra: lo que paga para hacer el producto" : k === 2 ? "Casi siempre se olvidan su propio sueldo, los impuestos y el desgaste de los equipos" : "El empaque y la caja máster van aquí; el palet y el transporte, en la Parte 2"}</span>` +
+    SUG[k].map((n) => `<button class="sug" type="button" data-s="${esc(n)}" aria-pressed="${usados.has(n)}">${esc(n)}</button>`).join("");
+  $$("[data-s]", sg).forEach((b) => (b.onclick = () => {
+    const n = b.dataset.s, i = arr.findIndex((l) => l.n === n);
+    if (i >= 0) { if (!ok(N(arr[i].v))) arr.splice(i, 1); else return; }
+    else if (arr.length < MAXL) arr.push(linea(n, "", k === 2 || MES.has(n) ? "m" : "u"));
+    reb();
+    if (i < 0) { const ins = $$(`input[data-k$=".v"]`, box); if (ins.length) ins[ins.length - 1].focus(); }
+  }));
+  bindFields(box, s, onChange);
+}
+let escSel = "A";
+function buildEscs() {
+  $("#escs").innerHTML = ["A", "B", "C"].map((k) => `<button class="escb" type="button" data-esc="${k}" aria-pressed="${k === escSel}"><span class="lt">${k}</span><span class="nm">${ESC[k].nm}</span><span class="sb">${ESC[k].sb}</span><span class="pu" id="pu-${k}">—</span></button>`).join("");
+  $$("#escs [data-esc]").forEach((b) => (b.onclick = () => { escSel = b.dataset.esc; buildEscs(); buildEscPanel(); render(); }));
+}
+function buildEscPanel() {
+  const k = escSel, s = S.st; s.esc = s.esc || {}; s.esc[k] = s.esc[k] || escV(k === "C" ? "40" : "");
+  const e = s.esc[k], P = `esc.${k}`, box = $("#escpanel");
+  e.ops = e.ops || []; e.ext = e.ext || [];
+  const reb = () => { buildEscPanel(); render(); S.guardar(); };
+  box.innerHTML = `
+    <div class="row wrapm gasto"><span class="l">${ESC[k].q}<small id="o-esc-und">—</small></span><span class="r">${k === "C" ? `<span class="seg small" data-k="${P}.t" role="group" aria-label="Tipo de contenedor"><button data-v="20">20 pies</button><button data-v="40">40 pies</button></span>` : ""}<span class="unit"><input class="n sm" data-k="${P}.q" inputmode="decimal" aria-label="${ESC[k].q}"><em>${ESC[k].qu}</em></span></span></div>
+    <div class="row wrapm"><span class="l">Valores en</span><span class="seg small" data-k="${P}.mon" role="group" aria-label="Moneda"><button data-v="usd">Dólares</button><button data-v="cop">Pesos</button></span></div>
+    <div class="ophead"><span>Operador</span><span>Costo total</span><span>Días</span><span></span></div>
+    ${e.ops.map((o, i) => `<div class="op" id="op-${i}"><input class="t" data-k="${P}.ops.${i}.n" data-kind="text" placeholder="Operador ${i + 1}" aria-label="Nombre del operador ${i + 1}"><input class="n" data-k="${P}.ops.${i}.v" inputmode="decimal" aria-label="Costo total operador ${i + 1}"><input class="n" data-k="${P}.ops.${i}.d" inputmode="decimal" aria-label="Días operador ${i + 1}">${e.ops.length > 1 ? `<button class="x" type="button" data-qo="${i}" aria-label="Quitar operador">×</button>` : "<span></span>"}<div class="bdg" id="bdg-${i}"></div></div>`).join("")}
+    <div class="row add"><button class="link" id="b-add-op" type="button"${e.ops.length >= MAXO ? " hidden" : ""}>+ Agregar operador</button></div>
+    <div class="auto" style="padding-top:14px"><span><b>Costos extra</b><small>Opcional. Lo que no incluye el operador; se suma a todos.</small></span><span></span></div>
+    ${e.ext.map((x, i) => `<div class="ed-row ed-e"><span class="pn">+</span><select class="s" data-k="${P}.ext.${i}.n" data-kind="sel" aria-label="Concepto">${EXTRAS.map((n) => `<option>${esc(n)}</option>`).join("")}</select><input class="n" data-k="${P}.ext.${i}.v" inputmode="decimal" aria-label="Valor del costo extra"><button class="x" type="button" data-qe="${i}" aria-label="Quitar">×</button></div>`).join("")}
+    <div class="row add"><button class="link" id="b-add-ext" type="button"${e.ext.length >= MAXE ? " hidden" : ""}>+ Agregar costo extra</button></div>
+    <div class="auto"><span>Total con el más barato</span><b id="o-esc-tot">—</b></div>
+    <div class="auto"><span><b>Costo logístico por <span data-u="uno">${esc(U(s).uno)}</span></b><small id="o-esc-pu-s"></small></span><b id="o-esc-pu" style="font-size:19px">—</b></div>`;
+  $$("[data-qo]", box).forEach((b) => (b.onclick = () => { e.ops.splice(Number(b.dataset.qo), 1); reb(); }));
+  $$("[data-qe]", box).forEach((b) => (b.onclick = () => { e.ext.splice(Number(b.dataset.qe), 1); reb(); }));
+  $("#b-add-op").onclick = () => { if (e.ops.length < MAXO) { e.ops.push(op()); reb(); } };
+  $("#b-add-ext").onclick = () => { if (e.ext.length < MAXE) { const usados = new Set(e.ext.map((x) => x.n)); e.ext.push(ext(EXTRAS.find((n) => !usados.has(n)) || "Otro")); reb(); } };
+  bindFields(box, s, onChange);
+}
+function buildIncos() {
+  const box = $("#incos");
+  box.innerHTML = INCOS.map(([k, n, d]) => `<button class="incob" type="button" data-i="${k}" aria-pressed="${S.st.inco === k}"><b>${k}</b><span><b style="font-size:12.5px;letter-spacing:0">${esc(n)}.</b> ${esc(d)}</span></button>`).join("");
+  $$("[data-i]", box).forEach((b) => (b.onclick = () => { S.st.inco = b.dataset.i; S.guardar(); buildIncos(); render(); }));
+}
+function bindRange(rid, key, scale) {
+  const r = $(rid);
+  r.oninput = () => {
+    const v = Number(r.value) * (scale || 1);
+    setPath(S.st, key, v);
+    const f = $(`input.n[data-k="${key}"]`); if (f) f.value = showNum(v, 2);
+    onChange(key);
+  };
+}
+
+// ---------- Pintar ----------
+const pesosU = (v) => (ok(v) ? pesos(v) : "—");
+const millones = (v) => (!ok(v) ? "—" : Math.abs(v) >= 1e7 ? "$ " + fmt(v / 1e6, 1) + " millones" : pesos(v));
+const usd2 = (v) => (ok(v) ? "US$\u00A0" + fmt(v, v < 10 ? 2 : 0) : "—");
+function render() {
+  const s = S.st, c = calc(s), u = U(s);
+  pintarUnidad(s);
+  // ---- Parte 1
+  $$("[data-modo]").forEach((el) => (el.hidden = el.dataset.modo !== c.modo));
+  $$("#p1 .lm").forEach((el) => (el.hidden = !c.hayMerma));
+  setText("u-cont", c.contU);
+  const fc = $("#f-cont"); if (fc) fc.placeholder = ok(contDefault(s)) ? showNum(contDefault(s), 4) : "";
+  setText("s-mpcosto", s.origen === "propia" ? "Lo que le cuesta producirla: plántulas, abonos, jornales, beneficio…" : "Lo que paga, puesto en su planta");
+  setText("t-mpcosto", s.origen === "propia" ? "Producirla le cuesta" : "Le cuesta");
+  // Flujo del insumo al producto
+  const fl = $("#flujo");
+  if (!c.flow.length && !ok(c.costoMP)) fl.innerHTML = `<p class="note" style="margin:0 0 12px">Aquí aparece su proceso dibujado: lo que se pierde en cada paso, el que lo frena y cómo crece el costo.</p>`;
+  else {
+    let acum = ok(c.costoMP) ? c.costoMP : 0;
+    const nodos = [`<div class="nodo ini"><span class="pt"></span><span class="nm">${esc(s.mpNombre || "Materia prima")}</span><span class="cost">${pesosU(c.costoMP)}<small>materia prima por ${esc(u.uno)}</small></span>
+      ${c.hayMerma || ok(c.mpPorU) ? `<div class="meta">${c.hayMerma ? '<div class="embudo"><i style="width:100%"></i></div>' : ""}<div class="cap">${c.hayMerma ? "<span>Entran <b>100</b></span>" : ""}${ok(c.mpPorU) ? `<span>${esc(u.Art)} necesita <b>${fmt(c.mpPorU, c.mpPorU < 10 ? 3 : 1)} ${esc(c.contU)}</b></span>` : ""}</div></div>` : ""}</div>`];
+    c.flow.forEach((p) => {
+      if (ok(p.cu)) acum += p.cu;
+      const neck = c.cuello && c.cuello.i === p.i;
+      const pierde = p.ent - p.sal;
+      nodos.push(`<div class="nodo${neck ? " neck" : ""}"><span class="pt"></span><span class="nm">${esc(p.nm)}${neck ? '<span class="tag">Lo frena</span>' : ""}${c.peor && c.peor.i === p.i && pierde > 0.5 ? '<span class="tag b">Aquí se pierde más</span>' : ""}</span><span class="cost">${ok(p.cu) ? "+ " + pesos(p.cu) : "—"}<small>${pesos(acum)} acumulado</small></span>
+        <div class="meta">${c.hayMerma ? `<div class="embudo"><i style="width:${p.sal.toFixed(1)}%"></i><i class="pierde" style="width:${pierde.toFixed(1)}%"></i></div>` : ""}
+        <div class="cap">${c.hayMerma ? `<span>Salen <b>${fmt(p.sal, p.sal < 10 ? 1 : 0)}</b></span>` : ""}${pierde > 0.05 ? `<span class="rj">se pierden ${fmt(pierde, pierde < 10 ? 1 : 0)}</span>` : ""}${ok(p.mx) ? `<span>Máximo <b>${fmt(p.mx)}</b> ${esc(u.unos)} al mes</span>` : ""}</div>
+        ${ok(p.mx) && ok(c.maxMx) ? `<div class="capbar"><i style="width:${(100 * p.mx / c.maxMx).toFixed(1)}%"></i></div>` : ""}</div></div>`);
+    });
+    nodos.push(`<div class="nodo fin"><span class="pt"></span><span class="nm">Producto terminado</span><span class="cost">${pesos(acum)}<small>materia prima y pasos</small></span>${c.hayMerma ? `<div class="meta"><div class="cap"><span>Llegan <b>${fmt(c.llega, 0)}</b> de cada 100 que entran</span></div></div>` : ""}</div>`);
+    fl.innerHTML = nodos.join("");
+  }
+  setText("o-rend", c.hayMerma ? fmt(c.llega, 0) : "—");
+  setText("o-rend-s", !c.hayMerma ? "opcional: escriba en cada paso de 100 cuántos salen" : s.mpNombre ? `de cada 100 de ${s.mpNombre.toLowerCase()}` : "de cada 100 que compra");
+  setText("o-merma", c.hayMerma && ok(c.costoMerma) ? pesos(c.costoMerma) : "—");
+  setText("o-cuello", c.cuello ? c.cuello.nm : "—");
+  setText("o-cuello-s", c.cuello ? `máximo ${fmt(c.techo)} ${u.unos} al mes` : "escriba el máximo de cada paso");
+  setText("o-uso", ok(c.uso) ? pct(Math.min(c.uso, 9.99), 0) : "—"); setLight("l-uso", c.cUso);
+  setText("o-uso-s", ok(c.libre) ? `le quedan ${fmt(c.libre)} ${u.unos} libres al mes` : "de lo que puede producir");
+  const mf = [];
+  if (c.hayMerma && c.peor && c.peor.ent - c.peor.sal > 0.5) mf.push(`Donde más se pierde es en «${c.peor.nm}»: de cada 100 que entran salen ${fmt(c.peor.sal / c.peor.ent * 100, 0)}. Parte de la merma es natural (cáscara, agua, recortes); la que sí se puede bajar es la de daños, repetidos y desperdicio.`);
+  if (c.cuello) mf.push(`Lo frena «${c.cuello.nm}»: por más que crezcan los otros pasos, no saca más de ${fmt(c.techo)} ${u.unos} al mes.`);
+  setText("m-flujo", mf.join(" ") || "Escriba sus pasos y lo máximo de cada uno al mes para ver qué lo frena.");
+  $("#e-flujo").dataset.c = c.cuello ? (c.cUso || "") : ""; setLight("l-flujo", c.cuello ? c.cUso : "");
+  // Capítulos
+  setText("o-mpu", ok(c.costoMP) ? pesos(c.costoMP) : "—");
+  setText("o-mpdet", c.modo === "directo" ? "Sale del bloque 1" : ok(c.costoMP) && c.hayMerma ? `Incluye la merma: ${fmt(c.mpPorU, c.mpPorU < 10 ? 3 : 1)} ${c.contU} por ${u.uno}` : "Sale del bloque 1");
+  setText("o-pasosu", c.hayPasosC ? pesos(c.pasosU) : "—");
+  const tot = (k) => (c["h" + k] || (k === 1 && (ok(c.costoMP) || c.hayPasosC)) ? (c.faltaProd && c["L" + k].some((l) => l.m === "m" && ok(N(l.v))) ? "Falta lo que produce al mes" : pesos(c["c" + k])) : "—");
+  [1, 2, 3].forEach((k) => { $("#o-cap" + k).innerHTML = `${esc(tot(k))}<small> por ${esc(u.uno)}</small>`; });
+  // Escalera
+  const filas = [["Materia prima", ok(c.costoMP) ? c.costoMP : 0, 1], ["Sus pasos", c.pasosU, 1], ["Otros productivos", c.x1, 1], ["Administrativos y tributarios", c.x2, 2], ["Alistamiento y embalaje", c.x3, 3]];
+  if (ok(c.costo) && c.costo > 0) {
+    let cum = 0;
+    $("#escalera").innerHTML = filas.map(([k, v, cap]) => { const l = (100 * cum / c.costo).toFixed(2), w = (100 * v / c.costo).toFixed(2); cum += v; return `<div class="esc-row" data-cap="${cap}"><span class="lb">${esc(k)}</span><span class="tr"><i style="left:${l}%;width:${w}%"></i></span><span class="vl">${pesos(v)}</span></div>`; }).join("") +
+      `<div class="esc-row tot"><span class="lb">Costo por ${esc(u.uno)}</span><span class="tr"><i style="left:0;width:100%"></i></span><span class="vl">${pesos(c.costo)}</span></div>`;
+    const sh = [1, 2, 3].map((k) => c["c" + k] / c.costo);
+    $("#reparto").innerHTML = [1, 2, 3].map((k, i) => (sh[i] > 0 ? `<i data-cap="${k}" style="flex:${sh[i].toFixed(4)}">${sh[i] >= 0.08 ? pct(sh[i], 0) : ""}</i>` : "")).join("");
+    $("#reparto-ley").innerHTML = [1, 2, 3].map((k, i) => `<span><i style="background:var(--c${k})"></i>${CAPN[k]} · ${pct(sh[i], 0)}</span>`).join("");
+  } else { $("#escalera").innerHTML = `<p class="note" style="margin:0">${c.faltaProd ? "Escriba arriba cuánto produce al mes: con eso se reparten los costos mensuales." : "Cuando escriba sus costos, aquí ve cómo se arma su costo, del insumo al producto empacado."}</p>`; $("#reparto").innerHTML = ""; $("#reparto-ley").innerHTML = ""; }
+  setText("o-costo", ok(c.costo) ? pesos(c.costo) : "—");
+  setText("o-costo-s", ok(c.costo) ? (ok(c.dolar) ? `${usd2(c.costo / c.dolar)} con un dólar de ${pesos(c.dolar)}` : "") : c.faltaProd ? "Falta lo que produce al mes" : "Complete los tres capítulos");
+  $("#top3").innerHTML = c.top.length && ok(c.costo) ? c.top.map((t) => `<div class="row"><span class="l"><b>${esc(t.k)}</b><small>${CAPN[t.cap]} · ${pesos(t.v)} por ${esc(u.uno)}</small></span><span class="pc" style="color:var(--c${t.cap})">${pct(t.v / c.costo, 0)}</span></div>`).join("")
+    : `<div class="row"><span class="l" style="color:var(--muted)">Aparece cuando complete sus costos.</span></div>`;
+
+  // ---- Parte 2
+  pintarAnida(c, u);
+  ["A", "B", "C"].forEach((k) => { const r = c.esc[k], el = $("#pu-" + k); if (el) el.innerHTML = ok(r.puUsd) ? `${usd2(r.puUsd)}<small> por ${esc(u.uno)}</small>` : ok(r.puCop) ? `${pesos(r.puCop)}<small> por ${esc(u.uno)}</small>` : "—"; });
+  const r = c.esc[escSel];
+  if ($("#o-esc-und")) {
+    setText("o-esc-und", ok(r.und) ? (escSel === "A" ? `Son ${fmt(r.und)} ${u.unos}` : `Son ${fmt(r.cajas)} cajas y ${fmt(r.und)} ${u.unos}${escSel === "C" ? ` (${fmt(r.palets)} palets)` : ""}`) : "Complete arriba cómo se arma su carga");
+    const mon = (v) => (r.mon === "cop" ? pesos(v) : usd2(v));
+    r.ops.forEach((o) => {
+      const b = $("#bdg-" + o.i), row = $("#op-" + o.i); if (!b) return;
+      const tags = [];
+      if (r.best && r.best.i === o.i && r.ops.filter((x) => ok(x.tot)).length > 1) tags.push('<span class="tag v">Más barato</span>');
+      if (r.fast && r.fast.i === o.i && r.ops.filter((x) => ok(x.tot)).length > 1) tags.push('<span class="tag b">Más rápido</span>');
+      if (ok(o.tot) && ok(r.und)) tags.push(`<span class="note">${r.extra ? mon(o.tot) + " con extras · " : ""}${ok(r.aUsd(o.tot)) ? usd2(r.aUsd(o.tot) / r.und) : pesos(o.tot / r.und)} por ${esc(u.uno)}</span>`);
+      b.innerHTML = tags.join(" "); row.classList.toggle("best", !!(r.best && r.best.i === o.i && tags.length > 1));
+    });
+    setText("o-esc-tot", r.best ? mon(r.best.tot) + " · " + r.best.n : "—");
+    setText("o-esc-pu", ok(r.puUsd) ? usd2(r.puUsd) : ok(r.puCop) ? pesos(r.puCop) : "—");
+    setText("o-esc-pu-s", ok(r.puUsd) && ok(r.puCop) ? `${pesos(r.puCop)} · con el más barato` : r.best && !ok(c.dolar) ? "Para pasarlo a dólares falta el dólar (Parte 3)" : "");
+  }
+  // Barras de escala
+  const ks = ["A", "B", "C"], pus = ks.map((k) => c.esc[k].puUsd), mxp = Math.max(...pus.filter(ok), 0);
+  $("#barras3").innerHTML = ks.map((k, i) => { const v = pus[i], h = ok(v) && mxp > 0 ? Math.max(2, 100 * v / mxp) : 0; return `<div class="b3"><span class="vv">${ok(v) ? usd2(v) : "—"}</span><span class="col" style="height:${h.toFixed(1)}%"></span><span class="nn"><b>${k} · ${ESC[k].nm}</b>${ok(c.esc[k].und) ? fmt(c.esc[k].und) + " " + esc(u.unos) : ""}</span></div>`; }).join("");
+  $("#ahorro").innerHTML = ok(c.ahorro) ? `Mandando más carga junta, cada ${esc(u.uno)} cuesta <b>${pct(c.ahorro, 0)}</b> menos en logística. ${REF}` : `Complete al menos dos escenarios para ver la economía de escala. ${REF}`;
+  setText("o-logu", ok(c.logUsd) ? usd2(c.logUsd) : ok(c.logCop) ? pesos(c.logCop) : "—");
+  setText("o-logu-s", c.escUso ? (ok(c.logUsd) ? `${pesos(c.logCop)} · Escenario ${c.escUso}, con el operador más barato` : "Complete ese escenario") : "Escoja un escenario");
+
+  // ---- Parte 3
+  const pz = (k, v, cl) => `<div class="pz${cl ? " " + cl : ""}"><span class="k">${k}</span><span class="v">${v}</span></div>`, sg = (t, cl) => `<span class="sg${cl ? " " + cl : ""}">${t}</span>`;
+  $("#puente").innerHTML = pz(`Costo por ${esc(u.uno)}`, pesosU(c.costo)) + sg("+") + pz(`Margen ${ok(c.m) ? pct(c.m, 0) : ""}`, ok(c.pcop) ? pesos(c.pcop - c.costo) : "—") + sg("=") + pz("Precio EXW", pesosU(c.pcop)) + sg("÷") + pz(c.colchon ? `Dólar con colchón de ${pct(c.colchon, 1)}` : "Dólar", pesosU(c.dCol)) + sg("=", "ult") + pz(`Precio por ${esc(u.uno)}`, usd2(c.pusd), "fin");
+  setLight("l-margen", c.cM); setLight("l-margen2", c.cM); $("#e-margen").dataset.c = c.cM;
+  setText("t-margen", ok(c.m) ? `De cada $100 que le paguen, le quedan $${fmt(c.m * 100, 0)}.` : "De cada $100 que le paguen, ¿cuántos le quedan?");
+  setText("m-margen", pick(c.cM, `Margen amplio (desde ${pct(BANDA.v, 0)}): cubre los costos que trae exportar y que no se ven en el costo, como muestras, reclamos, la plata quieta mientras le pagan y el dólar.`, `Margen ajustado (entre ${pct(BANDA.r, 0)} y ${pct(BANDA.v, 0)}): queda poco espacio para imprevistos de la exportación.`, `Margen estrecho (menos de ${pct(BANDA.r, 0)}): cualquier imprevisto o una baja del dólar se lo come.`, "Mueva la barra o escriba su margen. La franja va de rojo a verde según la referencia de la Ruta."));
+  const rm = $("#r-margen"); rm.style.setProperty("--trk", `linear-gradient(90deg, color-mix(in srgb, var(--r) 45%, transparent) 0 ${(100 * BANDA.r / 0.6).toFixed(2)}%, color-mix(in srgb, var(--a) 50%, transparent) 0 ${(100 * BANDA.v / 0.6).toFixed(2)}%, color-mix(in srgb, var(--v) 45%, transparent) 0)`);
+  if (document.activeElement !== rm) rm.value = ok(c.m) ? Math.min(60, c.m * 100) : 0;
+  pintarTRM(c);
+  setText("s-dolar", ok(N(s.dolar)) ? (TRM.ok && Math.abs(N(s.dolar) - TRM.hoy.v) > 0.5 ? `La TRM de hoy es ${pesos(TRM.hoy.v)}` : "Igual a la TRM de hoy") : TRM.ok ? `Vacío: usa la TRM de hoy, ${pesos(TRM.hoy.v)}` : "Escriba el dólar con el que va a cotizar");
+  $("#b-trm").hidden = !TRM.ok;
+  // Simulador
+  const rs = $("#r-sim"), base = ok(c.dolar) ? c.dolar : 3500;
+  const lo0 = TRM.r30 ? Math.min(TRM.r30.mn, base) : base, hi0 = TRM.r30 ? Math.max(TRM.r30.mx, base) : base;
+  const mn = Math.floor(lo0 * 0.85 / 50) * 50, mx = Math.ceil(hi0 * 1.15 / 50) * 50;
+  rs.min = mn; rs.max = mx;
+  if (document.activeElement !== rs) rs.value = ok(c.sim) ? c.sim : base;
+  const P = (v) => (100 * (v - mn) / (mx - mn)).toFixed(2);
+  rs.style.setProperty("--trk", TRM.r30 ? `linear-gradient(90deg, var(--fill) 0 ${P(TRM.r30.mn)}%, color-mix(in srgb, var(--lab) 55%, transparent) 0 ${P(TRM.r30.mx)}%, var(--fill) 0)` : "var(--fill)");
+  const mh = $("#m-hoy"); if (TRM.ok) { mh.hidden = false; mh.style.left = `calc(${P(TRM.hoy.v)}% + ${(14 - 28 * P(TRM.hoy.v) / 100).toFixed(1)}px)`; } else mh.hidden = true;
+  setText("sim-min", pesos(mn)); setText("sim-max", pesos(mx));
+  const fila = (lbl, d, cl) => { const nuevo = c.pcop / (d * (1 - c.colchon)), queda = (c.pusd * d - c.costo) / (c.pusd * d); const cc = !ok(queda) ? "" : queda < BANDA.r ? "R" : queda < BANDA.v ? "A" : "V"; return `<tr${cl ? ` class="${cl}"` : ""}><td>${lbl}</td><td>${pesos(d)}</td><td>${usd2(nuevo)}</td><td><span class="dot" data-c="${cc}"></span>${ok(queda) ? pct(queda, 0) : "—"}</td></tr>`; };
+  $("#t-sim").innerHTML = ok(c.dolar) ? `<tr><th>Si el dólar…</th><th>Dólar</th><th>Precio nuevo</th><th>Le queda</th></tr>` +
+    fila("Baja 10 %", c.dolar * 0.9) + fila("Baja 5 %", c.dolar * 0.95) + fila("Como hoy", c.dolar, "hoy") + fila("Sube 5 %", c.dolar * 1.05) + (Math.abs(c.sim - c.dolar) > 1 ? fila("Su prueba", c.sim, "hoy") : "") : `<tr><td class="note">Falta el dólar.</td></tr>`;
+  // Cotización
+  const rc = $("#r-colchon"); if (document.activeElement !== rc) rc.value = c.colchon * 100;
+  setText("t-colchon", c.colchon ? `Con ${pct(c.colchon, 1)}, el precio en dólares se calcula con ${pesos(c.dCol)} en vez de ${pesos(c.dolar)}.` : "Sube un poco el precio en dólares para que una baja no se coma su margen");
+  if (ok(c.movVig)) {
+    const per = c.vig <= 8 ? "la última semana" : "el último mes", rg = c.vig <= 8 ? TRM.r7 : TRM.r30;
+    setText("m-vol", `En ${per} el dólar anduvo entre ${pesos(rg.mn)} y ${pesos(rg.mx)}: se movió ${pct(c.movVig, 1)}. ${ok(c.vig) ? `Su cotización dura ${fmt(c.vig)} días y su colchón es de ${pct(c.colchon, 1)}.` : "Escoja cuántos días sostiene su cotización."}`);
+  } else setText("m-vol", TRM.err ? "No se pudo traer el dólar oficial. Escriba el dólar y su colchón." : "Cuando cargue el dólar, aquí verá cuánto se movió.");
+  $("#e-vol").dataset.c = c.cVol; setLight("l-vol", c.cVol);
+  $("#o-cot").innerHTML = ok(c.pusd) ? `${usd2(c.pusd)}<small> por ${esc(u.uno)}</small>` : "—";
+  setText("o-cot-s", ok(c.pusd) ? `En su bodega (EXW)${ok(c.vig) ? `, válido ${fmt(c.vig)} días, hasta el ${fechaL(c.hasta)}` : ""}. Con un dólar de ${pesos(c.dolar)}${c.colchon ? ` y un colchón de ${pct(c.colchon, 1)}` : ""}.` : !ok(c.costo) ? "Complete su costo (Parte 1) y su margen." : !ok(c.m) ? "Escoja su margen." : "Falta el dólar.");
+  const fs = $("#f-sim"); if (fs) fs.placeholder = ok(c.dolar) ? showNum(c.dolar, 0) : "";
+  const fd = $("#f-dolar"); if (fd) fd.placeholder = TRM.ok ? showNum(TRM.hoy.v, 2) : "";
+  setText("o-pcop", pesosU(c.pcop)); setText("o-deq", pesosU(c.deq)); setText("o-holg", ok(c.holg) ? pct(c.holg, 0) : "—"); setLight("l-holg", c.cHolg);
+
+  // ---- Parte 4
+  setText("s-logu", ok(N(s.logU)) ? (ok(c.logAuto) ? `Lo escribió usted. La Parte 2 da ${usd2(c.logAuto)}` : "Lo escribió usted") : c.inco === "EXW" ? "En EXW el cliente paga la logística" : ok(c.logUsd) ? `Vacío: usa el escenario ${c.escUso} de la Parte 2, ${usd2(c.logUsd)}. Si con este Incoterm paga solo una parte del trayecto, escriba aquí esa parte` : "Vacío: escoja un escenario en la Parte 2 o escríbalo aquí");
+  const fl2 = $("#f-logu"); if (fl2) fl2.placeholder = ok(c.logAuto) ? showNum(c.logAuto, 2) : "";
+  $("#luces").dataset.c = c.sema === "P" ? "" : c.sema;
+  const malos = (cc) => c.vars.filter((v) => v.c === cc).map((v) => v.k.toLowerCase());
+  const lista = (a) => a.length > 1 ? a.slice(0, -1).join(", ") + " y " + a[a.length - 1] : a[0] || "";
+  const h3 = $("#o-sema"); h3.dataset.c = c.sema === "P" ? "" : c.sema;
+  h3.textContent = { V: "Viable", A: "Viable, con riesgo", R: "Alto riesgo", P: "Va en verde", "": "Faltan datos" }[c.sema];
+  setText("o-sema-s", { V: "Con sus datos, este negocio cumple en las seis variables.", A: `Con sus datos se puede, pero vigile: ${lista(malos("A"))}.`, R: `Con sus datos, así como está no es viable. En rojo: ${lista(malos("R"))}.${malos("A").length ? " En amarillo: " + lista(malos("A")) + "." : ""}`, P: "Lo que ya tiene está en verde. Complete lo que falta.", "": "Complete lo que pide el cliente." }[c.sema]);
+  $("#vars").innerHTML = c.vars.map((v) => `<div class="row q"><span class="dot" data-c="${v.c}"></span><span class="l"><b>${esc(v.k)}</b><small>${esc(v.t)}</small></span><span class="val">${esc(v.val)}</span></div>`).join("");
+  setText("o-ctot", usd2(c.ctot)); setText("o-psu", usd2(c.psu));
+  const v1 = c.vars[0]; setText("o-mcli", ok(c.mcli) && v1.c ? pct(c.mcli, 0) : "—"); setLight("l-mcli", v1.c);
+  setText("o-mcli-s", ok(c.pcli) ? `de cada $100, con ${usd2(c.pcli)} por ${u.uno}` : "de cada $100");
+  setText("o-capt", millones(c.capt));
+
+  // ---- Pestañas hechas y ficha
+  const done = { p1: ok(c.costo), p2: ok(c.logUsd) || ok(c.logCop), p3: ok(c.pusd), p4: ["V", "A", "R"].includes(c.sema) };
+  $$("nav.tabs button").forEach((b) => (b.dataset.done = done[b.dataset.p] ? "1" : ""));
+  pintarFicha(c, u);
+  window._c = c;
+}
+let firmaAnida = "";
+function pintarAnida(c, u) {
+  const t = (S.st.esc && S.st.esc.C && S.st.esc.C.t) === "20" ? "20" : "40", pal = t === "20" ? c.c20 : c.c40;
+  const firma = [c.cajaU, c.paletC, pal, t, u.uno].join("|");
+  if (firma === firmaAnida) return; firmaAnida = firma;
+  const grid = (n, cap, sz, cols) => { const k = Math.max(0, Math.min(n, cap)); const cc = cols || Math.ceil(Math.sqrt(k)) || 1; return `<span class="mini-grid" style="grid-template-columns:repeat(${cc}, ${sz}px);--sz:${sz}px">${Array.from({ length: k }, (_, i) => `<i style="--i:${i}"></i>`).join("")}</span>`; };
+  const bolsa = `<svg class="bolsa" viewBox="0 0 46 62" aria-hidden="true"><path d="M9 10h28l4 46a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4Z" fill="currentColor" opacity=".9"/><path d="M9 10l3-6h22l3 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><rect x="14" y="26" width="18" height="12" rx="2" fill="var(--card)" opacity=".85"/></svg>`;
+  const okc = ok(c.cajaU) && c.cajaU > 0, okp = ok(c.paletC) && c.paletC > 0, okk = ok(pal) && pal > 0;
+  const uPal = c.cajaU * c.paletC, uCont = uPal * pal;
+  const otro = t === "40" ? (ok(c.c20) ? `En uno de 20 pies: ${fmt(c.c20)} palets, ${fmt(c.cajaU * c.paletC * c.c20)} ${u.unos}` : "") : (ok(c.c40) ? `En uno de 40 pies: ${fmt(c.c40)} palets, ${fmt(c.cajaU * c.paletC * c.c40)} ${u.unos}` : "");
+  $("#anida").innerHTML = `
+    <div class="nivel"><span class="vis">${bolsa}</span><span class="k">${esc(u.Uno)}</span><span class="v">1</span><span class="s">su producto empacado</span>${okc ? `<span class="mult">× ${fmt(c.cajaU)}</span>` : ""}</div>
+    <div class="nivel"><span class="vis">${okc ? grid(c.cajaU, 36, 9) : '<span class="note">—</span>'}</span><span class="k">Caja máster</span><span class="v">${okc ? fmt(c.cajaU) : "—"}</span><span class="s">${esc(u.unos)}</span>${okp ? `<span class="mult">× ${fmt(c.paletC)}</span>` : ""}</div>
+    <div class="nivel"><span class="vis" style="flex-direction:column">${okp ? grid(c.paletC, 100, 6) + '<span class="palet-base"></span>' : '<span class="note">—</span>'}</span><span class="k">Palet</span><span class="v">${okp ? fmt(c.paletC) + " cajas" : "—"}</span><span class="s">${okc && okp ? "= " + fmt(uPal) + " " + esc(u.unos) : ""}</span>${okk ? `<span class="mult">× ${fmt(pal)}</span>` : ""}</div>
+    <div class="nivel"><span class="vis">${okk ? `<span class="cont">${grid(pal, 30, 10, Math.ceil(Math.min(pal, 30) / 2))}</span>` : '<span class="note">—</span>'}</span><span class="k">Contenedor de ${t} pies</span><span class="v">${okk ? fmt(pal) + " palets" : "—"}</span><span class="s">${okk && okp ? "= " + fmt(c.paletC * pal) + " cajas" + (okc ? " = " + fmt(uCont) + " " + esc(u.unos) : "") : ""}</span>${otro ? `<span class="s" style="margin-top:4px">${esc(otro)}</span>` : ""}</div>`;
+  const a = $("#anida"); a.classList.remove("anim"); void a.offsetWidth; a.classList.add("anim");
+}
+function pintarTRM(c) {
+  const box = $("#trm");
+  if (!TRM.ok) { box.innerHTML = TRM.err ? `<span class="note">No se pudo traer el dólar oficial en este momento. Escríbalo abajo. Lo puede consultar en <a href="https://www.superfinanciera.gov.co/publicaciones/60819/trm/">la Superintendencia Financiera</a>.</span>` : `<span class="note">Trayendo la tasa oficial del dólar…</span>`; return; }
+  if (box.dataset.ok === "1") return; box.dataset.ok = "1";
+  const ser = TRM.serie.filter((x) => x.h >= masDias(hoyISO(), -45));
+  const vs = ser.map((x) => x.v), mn = Math.min(...vs), mx = Math.max(...vs), W = 300, H = 70;
+  const X = (i) => (ser.length > 1 ? (W * i) / (ser.length - 1) : W / 2), Y = (v) => (mx > mn ? H - 6 - ((H - 12) * (v - mn)) / (mx - mn) : H / 2);
+  const d = ser.map((x, i) => `${i ? "L" : "M"}${X(i).toFixed(1)},${Y(x.v).toFixed(1)}`).join("");
+  const r7 = TRM.r7, r30 = TRM.r30;
+  box.innerHTML = `<div style="display:grid;gap:4px"><span class="k">TRM de hoy</span><span class="big">${pesos(TRM.hoy.v)}</span><span class="s">Vigente desde el ${fechaL(TRM.hoy.d)} · Superintendencia Financiera</span></div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="El dólar en las últimas semanas"><path d="${d}" fill="none" stroke="var(--lab)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${X(ser.length - 1).toFixed(1)}" cy="${Y(ser[ser.length - 1].v).toFixed(1)}" r="4" fill="var(--lab)"/><text x="0" y="${H + 12}" font-size="11" fill="var(--muted)">${fechaL(ser[0].d).replace(/ de \d{4}$/, "")}</text><text x="${W}" y="${H + 12}" font-size="11" fill="var(--muted)" text-anchor="end">hoy</text></svg>
+    <div class="mm">${r7 ? `<span class="pill">Última semana: <b>${pesos(r7.mn)} – ${pesos(r7.mx)}</b></span>` : ""}${r30 ? `<span class="pill">Último mes: <b>${pesos(r30.mn)} – ${pesos(r30.mx)}</b> · se movió ${pct(r30.mov, 1)}</span>` : ""}<a href="https://www.superfinanciera.gov.co/publicaciones/60819/trm/">Ver el dólar oficial</a></div>`;
+}
+
+// ---------- Ficha ----------
+function defsFicha(c, u) {
+  const T = (cc, v, sub) => [cc || "", v, sub || ""];
+  return [
+    ["Parte 1 · Mis costos iniciales de producción", "var(--l1)", [
+      { k: `Costo total por ${u.uno}`, neutral: true, f: () => T("", pesosU(c.costo), ok(c.costo) && ok(c.dolar) ? usd2(c.costo / c.dolar) + " con un dólar de " + pesos(c.dolar) : "") },
+      { k: "Lo que más pesa en su costo", neutral: true, f: () => T("", c.top[0] && ok(c.costo) ? c.top[0].k : "—", c.top[0] && ok(c.costo) ? pct(c.top[0].v / c.costo, 0) + " del costo" : "") },
+      { k: "Llega a su producto", neutral: true, f: () => T("", c.hayMerma ? fmt(c.llega, 0) + " de cada 100" : "—", c.hayMerma && ok(c.costoMerma) ? "La merma le cuesta " + pesos(c.costoMerma) + " por " + u.uno : "Opcional: la merma de cada paso") },
+      { k: "Uso de su capacidad", g: () => escala(c.uso, 0, 1, 0.4, 0.6, "hi"), f: () => T(c.cUso, ok(c.uso) ? pct(Math.min(c.uso, 9.99), 0) : "—", c.cuello ? "Lo frena: " + c.cuello.nm + ", " + fmt(c.techo) + " al mes" : "") },
+    ]],
+    ["Parte 2 · Mis costos logísticos y optimización", "var(--l3)", [
+      { k: `Costo logístico por ${u.uno}`, neutral: true, f: () => T("", ok(c.logUsd) ? usd2(c.logUsd) : "—", c.escUso && ok(c.logUsd) ? `Escenario ${c.escUso} · ${ESC[c.escUso].nm.toLowerCase()} · ${pesos(c.logCop)}` : "") },
+      { k: "Economía de escala", neutral: true, f: () => T("", ok(c.ahorro) ? pct(c.ahorro, 0) + " menos" : "—", ok(c.ahorro) ? `por ${u.uno}, del escenario más caro al más barato` : "") },
+    ]],
+    ["Parte 3 · Mi precio y el dólar", "var(--l2)", [
+      { k: "Margen que definió", g: () => escala(c.m, 0, 0.5, BANDA.r, BANDA.v, "hi"), f: () => T(c.cM, ok(c.m) ? pct(c.m, 0) : "—", "Referencia: verde desde " + pct(BANDA.v, 0)) },
+      { k: "Precio EXW para cotizar", neutral: true, f: () => T("", usd2(c.pusd), ok(c.pcop) ? pesos(c.pcop) + (ok(c.vig) ? " · válido " + fmt(c.vig) + " días" : "") : "") },
+      { k: "El dólar puede bajar", g: () => escala(c.holg, -0.1, 0.4, 0, c.umbral, "hi"), f: () => T(c.cHolg, ok(c.holg) ? pct(c.holg, 0) : "—", ok(c.deq) ? "Dólar de equilibrio: " + pesos(c.deq) : "") },
+    ]],
+    ["Parte 4 · Cómo cotizo a mi cliente", "var(--l4)", c.vars.map((v) => ({ k: v.k, f: () => T(v.c, v.val, v.t) }))],
+  ];
+}
+function pintarFicha(c, u) {
+  fichaCliente(S);
+  $("#f-luces").dataset.c = c.sema === "P" ? "" : c.sema;
+  setText("f-sema", { V: "Viable", A: "Viable, con riesgo", R: "Alto riesgo", P: "Va en verde, faltan datos", "": "Faltan datos" }[c.sema]);
+  const n = { V: 0, A: 0, R: 0 }; c.vars.forEach((v) => v.c && n[v.c]++);
+  setText("f-resumen", c.vars.some((v) => v.c) ? `De las seis variables del negocio: ${n.V} en verde, ${n.A} en amarillo y ${n.R} en rojo. La herramienta no decide por usted: le muestra el riesgo con sus datos.` : "Complete las cuatro partes para ver su ficha.");
+  $("#tiles").innerHTML = defsFicha(c, u).map(([t, col, defs]) => `<p class="tiles-t" style="--tc:${col}">${esc(t)}</p><div class="ficha" style="margin-top:22px;margin-bottom:22px">${fichaTiles(defs, c)}</div>`).join("");
+}
+function textoFicha(c, u) {
+  const s = S.st, L = ["Mi ruta para exportar · ficha", `Empresa: ${s.empresa || "—"} · Producto: ${s.producto || "—"}`, `Cliente potencial: ${s.cliente || "—"}`, `Fecha: ${hoyLargo()}`, ""];
+  L.push(`Semáforo del negocio: ${EMO[c.sema] || "⚪"} ${{ V: "Viable", A: "Viable, con riesgo", R: "Alto riesgo", P: "Va en verde, faltan datos", "": "Faltan datos" }[c.sema]}`, "");
+  defsFicha(c, u).forEach(([t, , defs]) => { L.push(t); defs.forEach((d) => { const a = d.f(); L.push(`${d.neutral ? "•" : EMO[a[0]] || "⚪"} ${d.k}: ${a[1]}${a[2] ? " (" + a[2] + ")" : ""}`); }); L.push(""); });
+  L.push("Análisis propio con los datos escritos por la empresa. No es una recomendación.");
+  return L.join("\n");
+}
+function datosPDF(c, u) {
+  const s = S.st, n = (v, d) => (ok(N(v)) ? fmt(N(v), d ?? 0) : "—");
+  const d1 = [["Qué produce", s.modelo || "—"], ["Materia prima", `${s.mpNombre || "—"} · ${s.origen === "propia" ? "la produce" : s.origen === "compra" ? "la compra" : "—"}`]];
+  if (c.modo === "directo") d1.push([`Materia prima de cada ${u.uno}`, pesosU(c.costoMP)]);
+  else d1.push(["Costo de la materia prima", ok(N(s.mpCosto)) ? `${pesos(N(s.mpCosto))} por ${MPU_N[s.mpU] || s.mpU}` : "—"], [`Cada ${u.uno} que vende lleva`, ok(c.cont) ? `${fmt(c.cont, 4)} ${c.contU}` : "—"]);
+  d1.push(["Produce al mes", `${n(s.produce)} ${u.unos}`]);
+  c.pasos.forEach((p, i) => d1.push([`Paso ${i + 1}: ${p.nm}`, `cuesta ${ok(p.cu) ? pesos(p.cu) : "—"}${ok(p.rr) ? " · de 100 salen " + fmt(p.rr) : ""} · máximo ${ok(p.mx) ? fmt(p.mx) : "—"} al mes`]));
+  [1, 2, 3].forEach((k) => c["L" + k].forEach((l) => d1.push([`${CAPN[k]}: ${l.n || "sin nombre"}`, ok(N(l.v)) ? `${pesos(N(l.v))} ${l.m === "m" ? "al mes" : "por " + u.uno}` : "—"])));
+  const d2 = [["Caja máster", `${n(s.emp.cajaU)} ${u.unos}`], ["Palet", `${n(s.emp.paletC)} cajas`], ["Contenedor de 20 y de 40 pies", `${n(s.emp.c20)} y ${n(s.emp.c40)} palets`]];
+  ["A", "B", "C"].forEach((k) => { const r = c.esc[k]; if (!r.ops.some((o) => ok(o.tot))) return; const mon = (v) => (r.mon === "cop" ? pesos(v) : usd2(v)); d2.push([`Escenario ${k} · ${ESC[k].nm}${k === "C" ? " de " + (r.t || "40") + " pies" : ""}`, `${n(r.q)} ${ESC[k].qu} · ${ok(r.und) ? fmt(r.und) + " " + u.unos : "—"}`]); r.ops.filter((o) => ok(o.tot)).forEach((o) => d2.push([`  ${o.n}`, `${mon(o.v)} · ${ok(o.d) ? fmt(o.d) + " días" : "—"}`])); (s.esc[k].ext || []).forEach((x) => ok(N(x.v)) && d2.push([`  Extra: ${x.n}`, mon(N(x.v))])); });
+  d2.push(["Escenario para cotizar", c.escUso || "—"]);
+  const d3 = [["Margen", ok(c.m) ? pct(c.m, 0) : "—"], ["Dólar para sus cálculos", pesosU(c.dolar)], ["Colchón", pct(c.colchon, 1)], ["Vigencia de la cotización", ok(c.vig) ? `${fmt(c.vig)} días, hasta el ${fechaL(c.hasta)}` : "—"]];
+  if (TRM.ok) d3.push(["TRM de hoy", `${pesos(TRM.hoy.v)} (vigente desde el ${fechaL(TRM.hoy.d)})`]);
+  const d4 = [["Incoterm", s.inco || "—"], ["Precio que pide el cliente", ok(c.pcli) ? usd2(c.pcli) + " por " + u.uno : "—"], ["Cantidad por pedido", `${n(s.pedido)} ${u.unos}`], ["Cada cuánto", FRECN[String(s.frec)] || "—"], ["Días para entregar", n(c.plazo)], ["Forma de pago", PAGO[s.pago] ? PAGO[s.pago][1] : "—"], ["Logística que paga usted, por " + u.uno, usd2(c.logU)]];
+  return [["Parte 1", d1], ["Parte 2", d2], ["Parte 3", d3], ["Parte 4", d4]];
+}
+function pdfRuta(c, u) {
+  const J = window.jspdf && window.jspdf.jsPDF; if (!J) return null;
+  const doc = new J({ unit: "mm", format: "letter" }), s = S.st;
+  const W = 215.9, H = 279.4, M = 18; let y = M;
+  const gris = () => doc.setTextColor(122, 104, 88), negro = () => doc.setTextColor(42, 29, 22);
+  const pie = () => { doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); gris(); doc.text(doc.splitTextToSize(limpio(AVISO), W - 2 * M), M, H - 14); };
+  const salto = (h) => { if (y + h > H - 22) { pie(); doc.addPage(); y = M; } };
+  const punto = (x, yy, cc) => { const col = PDFCOL[cc] || [216, 203, 184]; doc.setFillColor(col[0], col[1], col[2]); doc.circle(x, yy - 1.2, 1.6, "F"); };
+  const seccion = (t, rgb) => { salto(14); doc.setFillColor(rgb[0], rgb[1], rgb[2]); doc.rect(M, y - 3.6, 2.2, 4.6, "F"); doc.setFont("helvetica", "bold"); doc.setFontSize(12); negro(); doc.text(limpio(t), M + 4.5, y); y += 3; doc.setDrawColor(227, 216, 200); doc.line(M, y, W - M, y); y += 6; };
+  doc.setFillColor(184, 132, 79); doc.rect(0, 0, W, 3, "F");
+  doc.setFont("helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(138, 90, 43); doc.text("RUTA DE PRODUCTIVIDAD Y LOGISTICA PARA LA EXPORTACION", M, y); y += 6;
+  doc.setFont("times", "bold"); doc.setFontSize(21); negro(); doc.text("Mi ruta para exportar · ficha", M, y + 4); y += 11;
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5); gris();
+  doc.text(limpio(`Empresa: ${s.empresa || "—"}   ·   Producto: ${s.producto || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Cliente potencial: ${s.cliente || "—"}`), M, y); y += 5.5;
+  doc.text(limpio(`Fecha: ${hoyLargo()}${S.ejemplo ? "   ·   Ejemplo con datos inventados" : ""}`), M, y); y += 9;
+  // Semáforo
+  const cs = c.sema === "P" ? "" : c.sema, col = PDFCOL[cs] || [216, 203, 184];
+  doc.setFillColor(36, 25, 18); doc.roundedRect(M, y - 4, 30, 11, 5, 5, "F");
+  ["R", "A", "V"].forEach((k, i) => { const cc = PDFCOL[k]; if (k === cs) doc.setFillColor(cc[0], cc[1], cc[2]); else doc.setFillColor(70, 58, 50); doc.circle(M + 5.5 + i * 9.5, y + 1.5, 3.2, "F"); });
+  doc.setFont("times", "bold"); doc.setFontSize(17); doc.setTextColor(col[0] * 0.8, col[1] * 0.8, col[2] * 0.8); if (!cs) negro();
+  doc.text(limpio({ V: "Viable", A: "Viable, con riesgo", R: "Alto riesgo", P: "Va en verde, faltan datos", "": "Faltan datos" }[c.sema]), M + 36, y + 3.5); y += 14;
+  const PCOL = { "var(--l1)": [63, 102, 49], "var(--l3)": [27, 84, 112], "var(--l2)": [154, 106, 26], "var(--l4)": [142, 58, 38] };
+  defsFicha(c, u).forEach(([t, cv, defs]) => {
+    seccion(t, PCOL[cv] || [138, 90, 43]);
+    defs.forEach((d) => {
+      const a = d.f();
+      doc.setFontSize(10); doc.setFont("helvetica", "bold");
+      const lab = doc.splitTextToSize(limpio(d.k), 58);
+      doc.setFont("helvetica", "normal");
+      const va = doc.splitTextToSize(limpio(a[1]), 48), vs = doc.splitTextToSize(limpio(a[2] || ""), W - M - (M + 118));
+      const h = Math.max(lab.length, va.length, vs.length) * 4.4 + 2.6;
+      salto(h);
+      doc.setFontSize(10); doc.setFont("helvetica", "bold"); negro(); doc.text(lab, M, y);
+      doc.setFont("helvetica", "normal"); if (!d.neutral) punto(M + 62, y, a[0]); doc.text(va, M + 66, y);
+      doc.setFontSize(8.8); gris(); doc.text(vs, M + 118, y);
+      y += h;
+    });
+    y += 3;
+  });
+  datosPDF(c, u).forEach(([t, rows]) => {
+    seccion("Sus datos · " + t, [184, 132, 79]);
+    rows.forEach(([k, v]) => {
+      doc.setFontSize(9.2); doc.setFont("helvetica", "normal");
+      const kl = doc.splitTextToSize(limpio(k), 88), vl = doc.splitTextToSize(limpio(v || "—"), W - 2 * M - 94);
+      const h = Math.max(kl.length, vl.length) * 4.2 + 1.6;
+      salto(h); doc.setFontSize(9.2); gris(); doc.text(kl, M, y); negro(); doc.text(vl, M + 94, y); y += h;
+    });
+    y += 3;
+  });
+  pie();
+  return doc;
+}
+
+// ---------- Arranque ----------
+function onChange(k) {
+  S.guardar();
+  if (k === "unidad") { buildPasos(); [1, 2, 3].forEach(buildCap); buildEscPanel(); firmaAnida = ""; }
+  render();
+}
+function abrir() {
+  const s = S.st;
+  ["pasos", "cap1", "cap2", "cap3"].forEach((k) => { if (!Array.isArray(s[k])) s[k] = clone(BLANK[k]); });
+  s.emp = s.emp || clone(BLANK.emp); s.esc = s.esc || clone(BLANK.esc);
+  bindFields(document.querySelector("header.top"), s, onChange);
+  $$("section.panel").forEach((p) => bindFields(p, s, onChange));
+  buildModelos(); buildPasos(); [1, 2, 3].forEach(buildCap); buildEscs(); buildEscPanel(); buildIncos();
+  firmaAnida = "";
+  render();
+}
+setupShell(S, abrir);
+tabs();
+bindRange("#r-margen", "margen"); bindRange("#r-sim", "sim"); bindRange("#r-colchon", "colchon");
+$("#b-trm").onclick = () => { if (!TRM.ok) return; S.st.dolar = TRM.hoy.v; const f = $("#f-dolar"); f.value = showNum(TRM.hoy.v, 2); onChange("dolar"); };
+$("#b-copiar").onclick = () => { const c = calc(S.st); copiar(textoFicha(c, U(S.st)), "msg-copia"); };
+(() => {
+  const b = $("#b-pdf"), msg = (t) => setText("msg-copia", t);
+  b.hidden = ENMARCADO; listoDescargas.then((okd) => { b.hidden = !okd; });
+  b.onclick = async () => {
+    const c = calc(S.st), doc = pdfRuta(c, U(S.st)); if (!doc) return;
+    const nombre = nombreArchivo(`Ficha Mi ruta ${S.st.empresa || "sin nombre"} ${S.st.cliente || ""} ${fechaArchivo()}`, "pdf");
+    if (await guardarArchivo(nombre, doc.output("blob"), msg)) msg("PDF guardado.");
+  };
+})();
+abrir();
+traerTRM();
+
+document.getElementById('aviso').textContent = AVISO;
+</script>
+</body>
+</html>
