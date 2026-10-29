@@ -653,6 +653,23 @@ input.rng:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--lab-
 </style>
 </head>
 <body>
+<div id="gate-ruta" style="position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;background:radial-gradient(90% 140% at 100% -10%,rgba(63,102,49,.6),transparent 58%),radial-gradient(70% 120% at -5% 0%,rgba(168,116,31,.48),transparent 62%),#3A2B20">
+<form id="gate-f" style="width:min(380px,100%);display:grid;gap:14px;background:rgba(255,250,243,.08);border:1px solid rgba(255,250,243,.16);border-radius:20px;padding:26px;color:#F7F2EA">
+<span style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#D7A56C">Ruta de Productividad y Logística</span>
+<h1 style="margin:0;font-family:Fraunces,Georgia,serif;font-size:30px;color:#F7F2EA">Mi ruta para exportar</h1>
+<label style="display:grid;gap:6px;font-size:14px;color:#CBBBA8">Clave del programa<input id="gate-c" type="password" autocomplete="off" style="font:inherit;font-size:18px;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,250,243,.2);background:rgba(255,250,243,.1);color:#F7F2EA"></label>
+<button type="submit" style="font:inherit;font-weight:700;font-size:16px;padding:12px;border:0;border-radius:999px;background:#F7F2EA;color:#2A1D16;cursor:pointer">Entrar</button>
+<span id="gate-m" role="status" style="font-size:13.5px;color:#F2A58C;min-height:1em"></span>
+<span style="font-size:12.5px;color:#CBBBA8">La clave se la da el equipo del programa.</span></form></div>
+<script>(function(){var H="43e1deb908dc700b995aec2817f25fab32509f283b706cc75add17f8f486aa23",K="rutacch:entrada",g=document.getElementById("gate-ruta");
+function ok(){g.remove();}
+try{if(localStorage.getItem(K)===H)return ok();}catch(e){}
+var n=function(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/\s+/g,"");};
+setTimeout(function(){var c=document.getElementById("gate-c");if(c)c.focus();},50);
+document.getElementById("gate-f").addEventListener("submit",function(ev){ev.preventDefault();var v=n(document.getElementById("gate-c").value),m=document.getElementById("gate-m");
+var fin=function(h){if(h===H){try{localStorage.setItem(K,H);}catch(e){}ok();}else m.textContent=v?"Esa no es la clave. Revise el correo del programa.":"Escriba la clave del programa.";};
+if(window.crypto&&crypto.subtle&&window.TextEncoder){crypto.subtle.digest("SHA-256",new TextEncoder().encode(v)).then(function(b){fin(Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0");}).join(""));},function(){fin(v==="huila"?H:"");});}else fin(v==="huila"?H:"");});})();</script>
+
 <header class="top"><div class="wrap">
   <div class="toprow"><span class="kicker"><span class="mark" aria-hidden="true"></span><a class="home" href="./">← Inicio</a><span class="kt">Herramienta de la Ruta · 4 partes</span></span><span class="acts"><button class="link ej" id="b-verej" type="button">Ver ejemplo</button><button class="link" id="b-empresas" type="button">Mis análisis</button></span></div>
   <h1>Mi ruta para exportar</h1>
