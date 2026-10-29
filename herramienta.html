@@ -647,6 +647,9 @@ input.rng:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--lab-
 .porque .ic, .bloque .num, .escb .lt, .nivel .mult, .capit > header .num, .pz.fin { color: var(--on-lab); }
 .pz.fin .k { color: var(--on-lab); opacity: .85; }
 
+.mide .nomu { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.mide .nomu input { width: 9em; background: rgba(255, 250, 243, .1); border: 1px solid var(--hair); border-radius: 9px; padding: 5px 10px; font-size: 14px; font-weight: 600; color: var(--ink); }
+
 </style>
 </head>
 <body>
@@ -660,7 +663,7 @@ input.rng:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--lab-
     <label class="fld"><span>Producto</span><input id="f-producto" data-k="producto" data-kind="text" placeholder="Qué vende"></label>
     <label class="fld wide"><span>Cliente potencial</span><input id="f-cliente" data-k="cliente" data-kind="text" placeholder="Ej.: importador en Nueva York"></label>
   </div>
-  <div class="mide"><span>Mide su producto en</span><span class="seg small" data-k="unidad" role="group" aria-label="Unidad de medida"><button data-v="kg">Kilos</button><button data-v="lb">Libras</button><button data-v="unidades">Unidades</button><button data-v="prendas">Prendas</button><button data-v="litros">Litros</button></span></div>
+  <div class="mide"><span>Mide su producto en</span><span class="seg small" data-k="unidad" role="group" aria-label="Unidad de medida"><button data-v="kg">Kilos</button><button data-v="lb">Libras</button><button data-v="unidades">Unidades</button><button data-v="prendas">Prendas</button><button data-v="litros">Litros</button></span><label class="nomu" id="w-nomu" hidden><span>¿Cómo le dice a cada una?</span><input id="f-nomu" data-k="nombreU" data-kind="text" placeholder="bolsa, frasco, caja…" aria-label="Nombre de su unidad"></label></div>
 </div></header>
 <nav class="tabs" aria-label="Secciones"><div class="wrap"><div class="seg" role="tablist"><button type="button" role="tab" data-p="p1" data-lab="1"><span class="n">1</span>&nbsp;Costos</button><button type="button" role="tab" data-p="p2" data-lab="3"><span class="n">2</span>&nbsp;Logística</button><button type="button" role="tab" data-p="p3" data-lab="2"><span class="n">3</span>&nbsp;Precio</button><button type="button" role="tab" data-p="p4" data-lab="4"><span class="n">4</span>&nbsp;Cotizar</button><button type="button" role="tab" data-p="ficha" data-lab="0">Ficha</button></div></div></nav>
 <main><div class="wrap">
@@ -701,8 +704,8 @@ input.rng:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--lab-
   <div class="bloque"><span class="num">3</span><h3>Todos sus costos, en tres capítulos</h3></div>
   <p class="sub">Toque las sugerencias para agregar lo que le aplica. Escriba cada costo como lo paga: por <span data-u="uno">kilo</span> o al mes. La herramienta lo reparte.</p>
   <div class="capit" data-cap="1"><header><span class="num">1</span><span><b>Productivos</b><small>Lo que cuesta hacer el producto</small></span><span class="tot" id="o-cap1">—</span></header>
-    <div class="auto"><span>Materia prima<small id="o-mpdet">Sale del bloque 1 y de la merma</small></span><b id="o-mpu">—</b></div>
-    <div class="auto"><span>Sus pasos<small>Sale del bloque 2</small></span><b id="o-pasosu">—</b></div>
+    <div class="auto"><span>Materia prima<small id="o-mpdet">Lo que escribió en el bloque 1</small></span><b id="o-mpu">—</b></div>
+    <div class="auto"><span>Sus pasos<small>Suma de lo que le cuesta cada paso (bloque 2, arriba)</small></span><b id="o-pasosu">—</b></div>
     <div class="sugs" data-sug="1"></div><div id="cap1"></div><div class="row add"><button class="link" data-add="1" type="button">+ Agregar costo</button></div></div>
   <div class="capit" data-cap="2"><header><span class="num">2</span><span><b>Administrativos y tributarios</b><small>Lo que paga cada mes, venda o no venda</small></span><span class="tot" id="o-cap2">—</span></header>
     <div class="sugs" data-sug="2"></div><div id="cap2"></div><div class="row add"><button class="link" data-add="2" type="button">+ Agregar costo</button></div></div>
@@ -1362,9 +1365,9 @@ const DOLAR_EJ = 3162.35; // TRM del 29 de octubre de 2026, solo si no se puede 
 const REF = "Valores aproximados de referencia (octubre de 2026). Cada empresa debe pedir sus propias cotizaciones.";
 
 const EX = {
-  empresa: "Café Ejemplo S.A.S.", producto: "Café tostado en grano, bolsa de 340 g", cliente: "Importador en Miami", unidad: "unidades",
+  empresa: "Café Ejemplo S.A.S.", producto: "Café tostado en grano, bolsa de 340 g", cliente: "Importador en Miami", unidad: "unidades", nombreU: "bolsa",
   modelo: "Café tostado", origen: "compra", mpModo: "directo", mpDirecto: 8241, mpNombre: "Café pergamino seco", mpU: "carga", mpCosto: 2000000, contenido: 0.34, produce: 2000,
-  pasos: [paso("Recibir y seleccionar", 60, 98, 9000), paso("Trillar", 210, 81, 6000), paso("Tostar", 1050, 84, 3000), paso("Moler y empacar", 380, 99, 4500)],
+  pasos: [paso("Recibir y seleccionar", 60, "", 9000), paso("Trillar", 210, "", 6000), paso("Tostar", 1050, "", 3000), paso("Moler y empacar", 380, "", 4500)],
   cap1: [linea("Mano de obra de producción", 3000000, "m"), linea("Control de calidad", 120000, "m")],
   cap2: [linea("Su propio sueldo", 2500000, "m"), linea("Contador", 600000, "m"), linea("Arriendo", 1200000, "m"), linea("Servicios públicos", 350000, "m"), linea("Impuestos (ICA, predial, 4 x 1.000)", 250000, "m"), linea("Registros y certificaciones", 150000, "m")],
   cap3: [linea("Empaque (bolsa, frasco o saco)", 900), linea("Etiqueta", 250), linea("Caja máster", 200), linea("Mano de obra de alistamiento", 300000, "m")],
@@ -1421,7 +1424,16 @@ const contDefault = (s) => {
   if (s.mpU === "litro" && s.unidad === "litros") return 1;
   return NaN;
 };
+// Nombre propio de la unidad (bolsa, frasco, caja…) cuando mide en unidades
+const UBASE = Object.assign({}, UNIDADES.unidades);
+function aplicarNombre(s) {
+  const n = String((s && s.nombreU) || "").trim().toLowerCase();
+  if (!s || s.unidad !== "unidades" || !n) { UNIDADES.unidades = Object.assign({}, UBASE); return; }
+  const pl = /[aeiouáéó]$/.test(n) ? n + "s" : /z$/.test(n) ? n.slice(0, -1) + "ces" : n + "es", may = (x) => x.charAt(0).toUpperCase() + x.slice(1), art = (/a$/.test(n) ? "una " : "un ") + n;
+  UNIDADES.unidades = { abbr: pl, uno: n, unos: pl, Uno: may(n), Unos: may(pl), art, Art: may(art), libra: false };
+}
 function calc(s) {
+  aplicarNombre(s);
   const c = { s }, u = U(s);
   // Parte 1 · materia prima, proceso, merma y cuello
   c.prod = N(s.produce);
@@ -1599,7 +1611,7 @@ function buildModelos() {
 function buildPasos() {
   const s = S.st, box = $("#pasos"), u = U(s);
   const quitar = listaEditable(s.pasos, 1, MAXP, () => paso(), () => { buildPasos(); render(); S.guardar(); }, "b-add-paso");
-  box.innerHTML = `<div class="ed-head ed-p"><span></span><span>Paso</span><span>Me cuesta, por ${esc(u.uno)}</span><span>De 100, salen<br><small style="font-weight:500">opcional</small></span><span>Máximo al mes</span><span></span></div>` +
+  box.innerHTML = `<div class="ed-head ed-p"><span></span><span>Paso</span><span>Me cuesta, por ${esc(u.uno)}</span><span>De 100, salen<br><small style="font-weight:500">opcional</small></span><span>Máximo al mes<br><small style="font-weight:500">en ${esc(u.unos)}</small></span><span></span></div>` +
     s.pasos.map((p, i) => `<div class="ed-row ed-p"><span class="pn">${i + 1}</span><input class="t" data-k="pasos.${i}.n" data-kind="text" placeholder="Nombre del paso" aria-label="Nombre del paso ${i + 1}">
       <label class="ef"><span class="ml">Me cuesta</span><input class="n" data-k="pasos.${i}.c" inputmode="decimal" aria-label="Costo del paso ${i + 1}"></label>
       <label class="ef"><span class="ml">De 100, salen</span><input class="n" data-k="pasos.${i}.r" inputmode="decimal" placeholder="—" aria-label="De cada 100 salen, paso ${i + 1} (opcional)"></label>
@@ -1681,6 +1693,7 @@ const usd2 = (v) => (ok(v) ? "US$\u00A0" + fmt(v, v < 10 ? 2 : 0) : "—");
 function render() {
   const s = S.st, c = calc(s), u = U(s);
   pintarUnidad(s);
+  { const w = $("#w-nomu"); if (w) w.hidden = s.unidad !== "unidades"; }
   // ---- Parte 1
   $$("[data-modo]").forEach((el) => (el.hidden = el.dataset.modo !== c.modo));
   $$("#p1 .lm").forEach((el) => (el.hidden = !c.hayMerma));
@@ -1693,7 +1706,7 @@ function render() {
   if (!c.flow.length && !ok(c.costoMP)) fl.innerHTML = `<p class="note" style="margin:0 0 12px">Aquí aparece su proceso dibujado: lo que se pierde en cada paso, el que lo frena y cómo crece el costo.</p>`;
   else {
     let acum = ok(c.costoMP) ? c.costoMP : 0;
-    const nodos = [`<div class="nodo ini"><span class="pt"></span><span class="nm">${esc(s.mpNombre || "Materia prima")}</span><span class="cost">${pesosU(c.costoMP)}<small>materia prima por ${esc(u.uno)}</small></span>
+    const nodos = [`<div class="nodo ini"><span class="pt"></span><span class="nm">${esc(s.mpNombre || "Materia prima")}</span><span class="cost">${pesosU(c.costoMP)}<small>${c.modo === "directo" ? "lo que escribió arriba, por " : "materia prima por "}${esc(u.uno)}</small></span>
       ${c.hayMerma || ok(c.mpPorU) ? `<div class="meta">${c.hayMerma ? '<div class="embudo"><i style="width:100%"></i></div>' : ""}<div class="cap">${c.hayMerma ? "<span>Entran <b>100</b></span>" : ""}${ok(c.mpPorU) ? `<span>${esc(u.Art)} necesita <b>${fmt(c.mpPorU, c.mpPorU < 10 ? 3 : 1)} ${esc(c.contU)}</b></span>` : ""}</div></div>` : ""}</div>`];
     c.flow.forEach((p) => {
       if (ok(p.cu)) acum += p.cu;
@@ -1702,7 +1715,7 @@ function render() {
       nodos.push(`<div class="nodo${neck ? " neck" : ""}"><span class="pt"></span><span class="nm">${esc(p.nm)}${neck ? '<span class="tag">Lo frena</span>' : ""}${c.peor && c.peor.i === p.i && pierde > 0.5 ? '<span class="tag b">Aquí se pierde más</span>' : ""}</span><span class="cost">${ok(p.cu) ? "+ " + pesos(p.cu) : "—"}<small>${pesos(acum)} acumulado</small></span>
         <div class="meta">${c.hayMerma ? `<div class="embudo"><i style="width:${p.sal.toFixed(1)}%"></i><i class="pierde" style="width:${pierde.toFixed(1)}%"></i></div>` : ""}
         <div class="cap">${c.hayMerma ? `<span>Salen <b>${fmt(p.sal, p.sal < 10 ? 1 : 0)}</b></span>` : ""}${pierde > 0.05 ? `<span class="rj">se pierden ${fmt(pierde, pierde < 10 ? 1 : 0)}</span>` : ""}${ok(p.mx) ? `<span>Máximo <b>${fmt(p.mx)}</b> ${esc(u.unos)} al mes</span>` : ""}</div>
-        ${ok(p.mx) && ok(c.maxMx) ? `<div class="capbar"><i style="width:${(100 * p.mx / c.maxMx).toFixed(1)}%"></i></div>` : ""}</div></div>`);
+        </div></div>`);
     });
     nodos.push(`<div class="nodo fin"><span class="pt"></span><span class="nm">Producto terminado</span><span class="cost">${pesos(acum)}<small>materia prima y pasos</small></span>${c.hayMerma ? `<div class="meta"><div class="cap"><span>Llegan <b>${fmt(c.llega, 0)}</b> de cada 100 que entran</span></div></div>` : ""}</div>`);
     fl.innerHTML = nodos.join("");
@@ -1721,7 +1734,7 @@ function render() {
   $("#e-flujo").dataset.c = c.cuello ? (c.cUso || "") : ""; setLight("l-flujo", c.cuello ? c.cUso : "");
   // Capítulos
   setText("o-mpu", ok(c.costoMP) ? pesos(c.costoMP) : "—");
-  setText("o-mpdet", c.modo === "directo" ? "Sale del bloque 1" : ok(c.costoMP) && c.hayMerma ? `Incluye la merma: ${fmt(c.mpPorU, c.mpPorU < 10 ? 3 : 1)} ${c.contU} por ${u.uno}` : "Sale del bloque 1");
+  setText("o-mpdet", c.modo === "directo" ? "Lo que escribió en el bloque 1" : ok(c.costoMP) && c.hayMerma ? `Incluye la merma: ${fmt(c.mpPorU, c.mpPorU < 10 ? 3 : 1)} ${c.contU} por ${u.uno}` : "Sale del bloque 1");
   setText("o-pasosu", c.hayPasosC ? pesos(c.pasosU) : "—");
   const tot = (k) => (c["h" + k] || (k === 1 && (ok(c.costoMP) || c.hayPasosC)) ? (c.faltaProd && c["L" + k].some((l) => l.m === "m" && ok(N(l.v))) ? "Falta lo que produce al mes" : pesos(c["c" + k])) : "—");
   [1, 2, 3].forEach((k) => { $("#o-cap" + k).innerHTML = `${esc(tot(k))}<small> por ${esc(u.uno)}</small>`; });
@@ -1863,7 +1876,7 @@ function defsFicha(c, u) {
     ["Parte 1 · Mis costos iniciales de producción", "var(--l1)", [
       { k: `Costo total por ${u.uno}`, neutral: true, f: () => T("", pesosU(c.costo), ok(c.costo) && ok(c.dolar) ? usd2(c.costo / c.dolar) + " con un dólar de " + pesos(c.dolar) : "") },
       { k: "Lo que más pesa en su costo", neutral: true, f: () => T("", c.top[0] && ok(c.costo) ? c.top[0].k : "—", c.top[0] && ok(c.costo) ? pct(c.top[0].v / c.costo, 0) + " del costo" : "") },
-      { k: "Llega a su producto", neutral: true, f: () => T("", c.hayMerma ? fmt(c.llega, 0) + " de cada 100" : "—", c.hayMerma && ok(c.costoMerma) ? "La merma le cuesta " + pesos(c.costoMerma) + " por " + u.uno : "Opcional: la merma de cada paso") },
+      ...(!c.hayMerma ? [] : [{ k: "Llega a su producto", neutral: true, f: () => T("", c.hayMerma ? fmt(c.llega, 0) + " de cada 100" : "—", c.hayMerma && ok(c.costoMerma) ? "La merma le cuesta " + pesos(c.costoMerma) + " por " + u.uno : "Opcional: la merma de cada paso") }]),
       { k: "Uso de su capacidad", g: () => escala(c.uso, 0, 1, 0.4, 0.6, "hi"), f: () => T(c.cUso, ok(c.uso) ? pct(Math.min(c.uso, 9.99), 0) : "—", c.cuello ? "Lo frena: " + c.cuello.nm + ", " + fmt(c.techo) + " al mes" : "") },
     ]],
     ["Parte 2 · Mis costos logísticos y optimización", "var(--l3)", [
@@ -1966,11 +1979,12 @@ function pdfRuta(c, u) {
 // ---------- Arranque ----------
 function onChange(k) {
   S.guardar();
-  if (k === "unidad") { buildPasos(); [1, 2, 3].forEach(buildCap); buildEscPanel(); firmaAnida = ""; }
+  if (k === "unidad" || k === "nombreU") { aplicarNombre(S.st); buildPasos(); [1, 2, 3].forEach(buildCap); buildEscPanel(); firmaAnida = ""; }
   render();
 }
 function abrir() {
   const s = S.st;
+  aplicarNombre(s);
   ["pasos", "cap1", "cap2", "cap3"].forEach((k) => { if (!Array.isArray(s[k])) s[k] = clone(BLANK[k]); });
   s.emp = s.emp || clone(BLANK.emp); s.esc = s.esc || clone(BLANK.esc);
   bindFields(document.querySelector("header.top"), s, onChange);
